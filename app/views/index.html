@@ -1,0 +1,42 @@
+{% extends "layout_guidance.html" %}
+
+{% block page_title %}
+  Design pattern: task lists
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+{% include "includes/phase_banner_beta.html" %}
+
+<div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge"><span class="design-pattern">Design pattern
+      <br></span>Task lists
+      </h1>
+
+      <p class="">
+        Help users understand and complete all the tasks involved to achieve their goal; become a childminder, learn to drive, start a business.
+      </p>
+
+      <p class="">
+        As the pattern is bigger than a web-page, we've used an example service – become a childminder – to show it in use.
+      </p>
+
+      <p>Starting points for users:</p>
+
+      <ul class="list list-bullet">
+        <li><a href="#">Single task to list of tasks</a>, non-linear</li>
+        <li><a href="/task_list_ordered">List of tasks to single tasks</a>, linear</li>
+      </ul>
+
+  </div>
+</div>
+
+</main>
+
+{% endblock %}
+
+

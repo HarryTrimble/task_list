@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+{% block page_title %} Task list {% endblock %}
+
+{% block extra_css %}<link rel="stylesheet" href="/public/stylesheets/dm_list.css" />{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+   <div id="">
+      
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+      
+        <header class="page-heading page-heading-with-context page-heading-without-breadcrumb"><p class="context">
+              Overview
+            </p><h1>
+            Become a childminder
+          </h1>
+        </header>
+
+        <p class="">Complete the tasks below</p>
+
+        <h3 class="heading-medium">Check you can be a childminder</h3>
+
+        <ul class="list">
+          <li><a href="#">Check eligibility</a></li>
+          <li><a href="#">Read rules</a></li>
+          <li><a href="#">Check criminal history</a></li>
+          <li><a href="#">Get health check</a></li>
+        </ul>
+
+        <h3 class="heading-medium">Train to be a childminder</h3>
+
+        <ul class="list">
+          <li><a href="#">Contact your local council</a></li>
+          <li><a href="#">Book childminder training</a></li>
+          <li><a href="#">Book first aide training</a></li>
+        </ul>
+
+        <h3 class="heading-medium">Get references</h3>
+
+        <ul class="list">
+          <li><a href="#">Read who can be a referee</a></li>
+        </ul>
+
+        <h3 class="heading-medium">Apply to Oftsted</h3>
+
+        <ul class="list">
+          <li><a href="#">Complete Ofsted application</a></li>
+          <li><a href="#">Pay register fee</a></li>
+        </ul>
+
+        <h3 class="heading-medium">Prepare for inspection</h3>
+
+        <ul class="list">
+          <li><a href="#">Read inspection guidance</a></li>
+          <li><a href="#">Find an Ofsted inspection report</a></li>
+        </ul>
+
+        <h3 class="heading-medium">Get insured</h3>
+
+        <ul class="list">
+          <li><a href="#">Get Public liability insurance</a></li>
+          <li><a href="#">Get Employer's Liability Insurance</a></li>
+        </ul>
+
+        <h3 class="heading-medium">Pay tax</h3>
+
+        <ul class="list">
+          <li><a href="#">Register as self employed</a></li>
+          <li><a href="#">Register a Limited Company</a></li>
+          <li><a href="#">Do self assessment tax return</a></li>
+          <li><a href="#">Do company tax return</a></li>
+        </ul>
+
+        <h3 class="heading-medium">After you register</h3>
+
+        <ul class="list">
+          <li><a href="#">Pay annual fee</a></li>
+          <li><a href="#">Join criminal check update service</a></li>
+          <li><a href="#">Prepare for regular inspections</a></li>
+        </ul>
+
+
+    {{formData | safe}}
+
+    </div>
+
+  </div>
+
+</main>
+{% endblock %}
+{% block extra_js_1 %}<!-- ticky list javascript one -->{% endblock %}
+{% block extra_js_2 %}<!-- ticky list javascript two -->{% endblock %}
