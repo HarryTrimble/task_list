@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% block page_title %} Example - Forms {% endblock %}
+{% block page_title %} Task list {% endblock %}
 
 {% block extra_css %}<link rel="stylesheet" href="/public/stylesheets/dm_list.css" />{% endblock %}
 
@@ -16,300 +16,240 @@
         <header class="page-heading page-heading-with-context page-heading-without-breadcrumb"><p class="context">
               Overview
             </p><h1>
-            Apply to be a childminder
+            Become a childminder
           </h1>
         </header>
 
-        <p class="">You must do all of the following before you apply to become a childminder.</p>
+        <p class="">Complete the tasks below</p>
+
+        <br>
       
 
     {{formData | safe}}
-
-      <ol class="instruction-list steps">
-          
-          <!-- check eligibility -->
-          <li class="instruction-list-item divider">
-
-            <h2 class="instruction-list-item-body">
-              <span class="step-number" role="presentation"></span>
-              Check eligibility
-            </h2>
-          
-            <p class="instruction-list-item-extra-information">Before applying, check you're eligible to be a childminder so to avoid wasting time:
-            </p>
-  
-              <ul class="instruction-list-item-extra-information">
-
-                <span class="tick">
-                  <img src="/public/images/tick.svg" alt="done" width="15" height="14">
-                </span>
-            
-                <li>
-                  <a href="/start-page" class="field">Check eligibility</a>
-                </li> 
-
-              </ul> 
-
-          </li>
-
-          <!-- read childminder rules -->
-          <li class="instruction-list-item divider">
-
-            <h2 class="instruction-list-item-body">
-              <span class="step-number" role="presentation"></span>
-              Read rules
-            </h2>
-          
-            <p class="instruction-list-item-extra-information">Read the rules to find out if they'll affect your ability to apply:  
-            </p>
-  
-              <ul class="instruction-list-item-extra-information">
-
-                <li>
-                  <a href="/show_rules" class="field">Read rules for being a childminder</a>
-                </li> 
-
-              </ul> 
-
-          </li>
-          
-          <!-- check criminal history -->
-          <li class="instruction-list-item divider">
-            <h2 class="instruction-list-item-body">
-              <span class="step-number" role="presentation"></span>
-              Check criminal history
-            </h2>
-
-            <p class="instruction-list-item-extra-information">You can't have a criminal history if you want to apply to be a childminder:
-            </p>
-            
-            <ul class="instruction-list-item-extra-information">
-                            
-                <li>
-                  <a href="#" class="field">Use Disclosure and Barring Service</a>
-                </li>
-
-                <li>
-                  <a href="#" class="field">Join the DBS update service</a>
-                </li>
-
-            </ul>
-          </li>
-
-          
-          <!-- check criminal history for housemates -->
-          {% if data.shared_home=="yes" %}
-            <li class="instruction-list-item divider">
-              <h2 class="instruction-list-item-body">
-                <span class="step-number" role="presentation"></span>
-                Check others criminal history
-              </h2>
-
-              <p class="instruction-list-item-extra-information">You'll need apply for criminal checks if there's anyone else who'll be living or working at the premises where the child will be cared for:
-              </p>
-              
-              <ul class="instruction-list-item-extra-information">
-                              
-                  <li>
-                    <a href="#" class="field">Use Disclosure and Barring Service</a>
-                  </li>
-
-              </ul>
-            </li>
-          {% endif %}
-
-         <!-- fill healthcare declaration book -->
-          <li class="instruction-list-item divider">
-            <h2 class="instruction-list-item-body">
-              <span class="step-number" role="presentation"></span>
-              Get health check
-            </h2>
-
-            <p class="instruction-list-item-extra-information">You must download and complete this form as part of your childminder application:
-            </p>
-            
-            <ul class="instruction-list-item-extra-information">
-                            
-                <li>
-                  <a href="/task_list_ordered/medical_information" class="field">Fill in the Health declaration booklet</a>
-                </li>
-
-            </ul>
-          </li>
-
-          {% if data.child_age=="5_or_under" %}
-          <li class="instruction-list-item divider">
-            <h2 class="instruction-list-item-body">
-              <span class="step-number" role="presentation"></span>
-              Book first aid training
-            </h2>
-
-            <p class="instruction-list-item-extra-information">A 12- hour Paediatric First Aid course must be completed:
-            </p>
-            
-            <ul class="instruction-list-item-extra-information">
-                          
-                <li>
-                  <a href="#" class="field">Find acredited training providers</a>
-                </li>
-                <li>
-                  <a href="#" class="field">Complete first aid training</a>
-                </li>
-
-            </ul>
-          </li>
-          {% endif %}
-
-          <!-- sign up training -->
-          <li class="instruction-list-item divider">
-            <h2 class="instruction-list-item-body">
-              <span class="step-number" role="presentation"></span>
-              Book childminder training
-            </h2>
-
-            <p class="instruction-list-item-extra-information">Your Local Authority will be able to tell you which training is available to do:
-            </p>
-            
-            <ul class="instruction-list-item-extra-information">
-
-                <li>
-                  <a href="#" class="field">Contact your local council</a>
-                </li>
-
-                <li>
-                  <a href="#" class="field">Book childminder training</a>
-                </li>
-
-            </ul>
-          </li>
-
-         <!-- Apply online -->
-          <li class="instruction-list-item divider">
-            <h2 class="instruction-list-item-body">
-              <span class="step-number" role="presentation"></span>
-              Get references
-            </h2>
-
-            <p class="instruction-list-item-extra-information">Your need two people to vouch for you as part of applying to be childminder:
-            </p>
-            
-            <ul class="instruction-list-item-extra-information">
-                            
-                <li>
-                  <a href="#" class="field">Check who can be a referee</a>
-                </li>
-
-                <li>
-                  <a href="#" class="field">Contact referees</a>
-                </li>
-
-            </ul>
-          </li>  
-
-         <!-- Apply online -->
-          <li class="instruction-list-item divider">
-            <h2 class="instruction-list-item-body">
-              <span class="step-number" role="presentation"></span>
-              Complete Ofsted application
-            </h2>
-
-            <p class="instruction-list-item-extra-information">Apply online - you’ll need a Government Gateway account to log in:
-            </p>
-            
-            <ul class="instruction-list-item-extra-information">
-                            
-                <li>
-                  <a href="#" class="field">Apply to Ofsted through Government Gateway</a>
-                </li>
-
-            </ul>
-          </li>  
-
-         <!-- Inspect premises -->
-          <li class="instruction-list-item divider">
-            <h2 class="instruction-list-item-body">
-              <span class="step-number" role="presentation"></span>
-              Visit premises
-            </h2>
-
-            <p class="instruction-list-item-extra-information">Once you have completed your Ofsted application, you will need to prepare for your Ofsted Registration visit:
-            </p>
-            
-            <ul class="instruction-list-item-extra-information">
-                            
-                <li>
-                  <a href="https://www.gov.uk/government/publications/become-a-registered-early-years-or-childcare-provider-in-england" class="field">Read preparation guidance</a>
-                </li>
-
-                <li>
-                  <a href="#" class="field">Visit premise</a>
-                </li>
-
-            </ul>
-          </li>  
-
-
-         <!-- Get insured -->
-          <li class="instruction-list-item divider">
-            <h2 class="instruction-list-item-body">
-              <span class="step-number" role="presentation"></span>
-              Get insured
-            </h2>
-
-            <p class="instruction-list-item-extra-information">This needs to be in place as soon as you receive your registration:
-            </p>
-            
-            <ul class="instruction-list-item-extra-information">
-                            
-                <li>
-                  <a href="#" class="field">Get Public Liability Insurance</a>
-                </li>
-
-                <li>
-                  <a href="#" class="field">Get car insurance</a>
-                </li>
-
-            </ul>
-          </li> 
-
-         <!-- Register with HMRC -->
-          <li class="instruction-list-item divider">
-            <h2 class="instruction-list-item-body">
-              <span class="step-number" role="presentation"></span>
-              Register as self employed
-            </h2>
-
-            <p class="instruction-list-item-extra-information">Most childminders are self-employed, so they need to register with HMRC for tax:
-            </p>
-            
-            <ul class="instruction-list-item-extra-information">
-                            
-                <li>
-                  <a href="https://www.gov.uk/working-for-yourself/what-you-need-to-do" class="field">Register as self employed</a>
-                </li>
-
-            </ul>
-          </li>          
-
-      </ol>
 
     </div>
 
   </div>
 
-  <!-- bottom of list -->
+  <div class="grid-row">
 
-  <!--
-      <div class="grid-row">
-       <div class="column-two-thirds">
-         
-          <p>
-            <a class="button button-start" href="#" role="button">Apply now</a>
-          </p>
-         
-       </div>
-     </div>
-  --> 
+    <div class="column-three-quarters">  
+
+  <table>
+    <thead>
+      <tr>
+        <th scope="col" id="col-task"></th>
+        <th class="numeric" id="task-status" scope="col" id="col-status"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- check eligibility -->
+      <tr>
+        <td class="task">
+          <a href="/start-page">
+            <span class="step-number" id="task-number"></span>
+            <span class="task-name"> Check eligibility</span>
+          </a>
+        </td>
+        </td>
+        <td class="numeric" id="task-status">
+          {% include "includes/task_status_complete.html" %}
+        </td>
+      </tr>
+      <!-- read rules -->
+      <tr>
+        <td class="task">
+          <a href="/task_list/read_rules">
+            <span class="step-number" id="task-number"></span>
+            <span class="task-name"> Read rules</span>
+          </a>
+        </td>
+        </td>
+        <td class="numeric" id="task-status">
+          {% if data.read_rules=="complete" %}
+            {% include "includes/task_status_complete.html" %}
+          {% endif %}
+        </td>
+      </tr>
+      <!-- Check criminal history -->
+      <tr>
+        <td class="task">
+          <a href="#">
+            <span class="step-number" id="task-number"></span>
+            <span class="task-name"> Check criminal history</span>
+          </a>
+        </td>
+        </td>
+          {% if data.check_criminal_history=="complete" %}
+            {% include "includes/task_status_complete.html" %}
+          {% endif %}
+        <td class="numeric" id="task-status"></td>
+      </tr>
+      <!-- Check others criminal history -->
+      {% if data.shared_home=="yes" %}
+      <tr>
+        <td class="task">
+          <a href="#">
+            <span class="step-number" id="task-number"></span>
+            <span class="task-name"> Check others criminal history</span>
+          </a>
+        </td>
+        </td>
+          {% if data.check_other_criminal_history=="complete" %}
+            {% include "includes/task_status_complete.html" %}
+          {% endif %}
+        <td class="numeric" id="task-status"></td>
+      </tr>
+      {% endif %}
+      <!-- Get health check -->
+      <tr>
+        <td class="task">
+          <a href="/task_list/get_health_check">
+            <span class="step-number" id="task-number"></span>
+            <span class="task-name"> Get health check</span>
+          </a>
+        </td>
+        </td>
+        <td class="numeric" id="task-status">
+          {% if data.get_health_check=="complete" %}
+            {% include "includes/task_status_complete.html" %}
+          {% endif %}
+        </td>
+      </tr>
+      <!-- Book first aid training -->
+      {% if data.child_age=="5_or_under" %}
+      <tr>
+        <td class="task">
+          <a href="#">
+            <span class="step-number" id="task-number"></span>
+            <span class="task-name"> Book first aid training</span>
+          </a>
+        </td>
+        </td>
+        <td class="numeric" id="task-status">
+          {% if data.book_first_aid_training=="complete" %}
+            {% include "includes/task_status_complete.html" %}
+          {% endif %}
+        </td>
+      </tr>
+      {% endif %}
+      <!-- Book childminder training -->
+      <tr>
+        <td class="task">
+          <a href="#">
+            <span class="step-number" id="task-number"></span>
+            <span class="task-name"> Book childminder training</span>
+          </a>
+        </td>
+        </td>
+          {% if data.book_childminder_training=="complete" %}
+            {% include "includes/task_status_complete.html" %}
+          {% endif %}
+        <td class="numeric" id="task-status"></td>
+      </tr>
+      <!-- Get references -->
+      <tr>
+        <td class="task">
+          <a href="#">
+            <span class="step-number" id="task-number"></span>
+            <span class="task-name"> Get references</span>
+          </a>
+        </td>
+        </td>
+          {% if data.book_childminder_training=="complete" %}
+            {% include "includes/task_status_complete.html" %}
+          {% endif %}
+        <td class="numeric" id="task-status"></td>
+      </tr>
+      <!-- Complete Ofsted application -->
+      <tr>
+        <td class="task">
+          <a href="#">
+            <span class="step-number" id="task-number"></span>
+            <span class="task-name"> Complete Ofsted application</span>
+          </a>
+        </td>
+        </td>
+        <td class="numeric" id="task-status">          
+          {% if data.ofsted_application=="complete" %}
+            {% include "includes/task_status_complete.html" %}
+          {% endif %}
+        </td>
+      </tr>
+      <!-- Visit premises -->
+      <tr>
+        <td class="task">
+          <a href="#">
+            <span class="step-number" id="task-number"></span>
+            <span class="task-name"> Prepare for premises inspection</span>
+          </a>
+        </td>
+        </td>
+        <td class="numeric" id="task-status">          
+          {% if data.prepare_for_premises_inspection=="complete" %}
+            {% include "includes/task_status_complete.html" %}
+          {% endif %}
+        </td>
+      </tr>
+      <!-- Get insured -->
+      <tr>
+        <td class="task">
+          <a href="#">
+            <span class="step-number" id="task-number"></span>
+            <span class="task-name"> Get insured</span>
+          </a>
+        </td>
+        </td>
+        <td class="numeric" id="task-status">          
+          {% if data.get_insured=="complete" %}
+            {% include "includes/task_status_complete.html" %}
+          {% endif %}
+        </td>
+      </tr>
+      <!-- Register as self employed -->
+      <tr>
+        <td class="task">
+          <a href="#">
+            <span class="step-number" id="task-number"></span>
+            <span class="task-name"> Register as self employed</span>
+          </a>
+        </td>
+        </td>
+        <td class="numeric" id="task-status">          
+          {% if data.register_as_self_employed=="complete" %}
+            {% include "includes/task_status_complete.html" %}
+          {% endif %}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+
+<div class="column-quarter">
+
+      <ul class="actions">
+        <li class="action"><a href="#">Save and complete later</a></li>
+        <li class="action"><a href="#">Print list</a></li>
+        <li class="action"><a href="#">Delete list</a></li>
+      </ul>
+
+      <div class="meta-data">
+        <p class="last-edited font-xsmall">List number<br>
+          <span class="bold-xsmall">1280880</span>
+        </p>
+        <p class="last-edited font-xsmall">Created on<br>
+          <span class="bold-xsmall">25 July 2016</span>
+        </p>
+        <p class="last-edited font-xsmall">Status<br>
+          <span class="bold-xsmall">1 of 12 tasks completed</span>
+        </p>
+      </div>
+
+    </div>
+
+  </div>
     
   </div>
 

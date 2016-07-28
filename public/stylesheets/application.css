@@ -2042,3 +2042,8 @@ input[type=number] {
 .action a:hover {
   text-decoration: underline;
 }
+
+.task-heading {
+  font-size: 19px;
+  font-weight: 700;
+}
