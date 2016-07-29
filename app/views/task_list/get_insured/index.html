@@ -1,4 +1,4 @@
-{% extends "layout.html" %} {% block page_title %} Get health check {% endblock %} {% block content %}
+{% extends "layout.html" %} {% block page_title %} Get insured {% endblock %} {% block content %}
 <main id="content" role="main">
   {% include "includes/phase_banner_beta.html" %}
 
@@ -8,7 +8,7 @@
         <a href="/task_list/ordered">Become a childminder</a>
       </li>
       <li>
-        Get health check
+        Get insured
       </li> 
     </ol>
   </div>
@@ -21,28 +21,27 @@
       {{formData | safe}}
 
         <h1 class="heading-large">
-          Get health check
+          Get insured
         </h1>
 
         <fieldset>
           <legend class="visuallyhidden">
-            Get health check
+            Get insured
           </legend>
 
-          <p id="reason_for_task">
-            Information is needed about any health condition that may affect your ability to safely care for children. 
-          </p>
+          <p id="reason_for_task">Being childminder requires you to be insured.</p>
 
-          <p>Tasks to get health check:</p>
+          <p>Public liability insurance is what you will need.</p>
+
+          <p>Tasks to get insured:</p>
 
           <ol class="list list-number">
-            <li><a href="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/381218/Health_20declaration_20booklet.pdf">print form</a></li>
-            <li>fill in form</li>
-            <li>pay your GP to fill in form</li>
-            <li>give form to your GP to fill</li>
+            <li>choose insurance provide</li>
+            <li>pay for insurance</li>
+            <li>get proof of insurance</li>
           </ol>
 
-          <input type="hidden" name="get_health_check" value="complete">
+          <input type="hidden" name="get_references" value="complete">
 
         </fieldset>
 

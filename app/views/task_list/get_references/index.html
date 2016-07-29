@@ -1,4 +1,4 @@
-{% extends "layout.html" %} {% block page_title %} Fill in the Health declaration booklet {% endblock %} {% block content %}
+{% extends "layout.html" %} {% block page_title %} Get references {% endblock %} {% block content %}
 <main id="content" role="main">
   {% include "includes/phase_banner_beta.html" %}
 
@@ -8,7 +8,7 @@
         <a href="/task_list/ordered">Become a childminder</a>
       </li>
       <li>
-        Get health check
+        Get references
       </li> 
     </ol>
   </div>
@@ -21,22 +21,25 @@
       {{formData | safe}}
 
         <h1 class="heading-large">
-          Get health check
+          Get references
         </h1>
 
         <fieldset>
           <legend class="visuallyhidden">
-            Get health check
+            Get references
           </legend>
 
+          <p id="reason_for_task">To be a childmindee two people need to write references recommending you.</p>
+
+          <p>Tasks to get references:</p>
+
           <ol class="list list-number">
-            <li><a href="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/381218/Health_20declaration_20booklet.pdf">Print form</a></li>
-            <li>Fill in form</li>
-            <li>Pay your GP to fill in form</li>
-            <li>Give form to your GP</li>
+            <li><a href="#">read guidance on who can be a referee</a></li>
+            <li>choose two people to be your referees</li>
+            <li>get referees to write your references</li>
           </ol>
 
-          <input type="hidden" name="get_health_check" value="complete">
+          <input type="hidden" name="get_references" value="complete">
 
         </fieldset>
 

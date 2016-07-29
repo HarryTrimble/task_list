@@ -13,11 +13,11 @@
 
     <div class="column-two-thirds">
       
-        <header class="page-heading page-heading-with-context page-heading-without-breadcrumb"><p class="context">
-              Overview
-            </p><h1>
-            Become a childminder
-          </h1>
+        <header class="page-heading page-heading-with-context page-heading-without-breadcrumb">
+
+          <p class="context">Overview</p>
+          <h1>Become a childminder</h1>
+
         </header>
 
         <p class="">Complete the tasks below</p>
@@ -51,7 +51,6 @@
             <span class="task-name"> Check eligibility</span>
           </a>
         </td>
-        </td>
         <td class="numeric" id="task-status">
           {% include "includes/task_status_complete.html" %}
         </td>
@@ -64,7 +63,6 @@
             <span class="task-name"> Read rules</span>
           </a>
         </td>
-        </td>
         <td class="numeric" id="task-status">
           {% if data.read_rules=="complete" %}
             {% include "includes/task_status_complete.html" %}
@@ -74,32 +72,31 @@
       <!-- Check criminal history -->
       <tr>
         <td class="task">
-          <a href="#">
+          <a href="/task_list/check_criminal_history">
             <span class="step-number" id="task-number"></span>
             <span class="task-name"> Check criminal history</span>
           </a>
         </td>
-        </td>
+        <td class="numeric" id="task-status">
           {% if data.check_criminal_history=="complete" %}
             {% include "includes/task_status_complete.html" %}
           {% endif %}
-        <td class="numeric" id="task-status"></td>
+        </td>
       </tr>
       <!-- Check others criminal history -->
       {% if data.shared_home=="yes" %}
-      <tr>
-        <td class="task">
-          <a href="#">
-            <span class="step-number" id="task-number"></span>
-            <span class="task-name"> Check others criminal history</span>
-          </a>
-        </td>
-        </td>
-          {% if data.check_other_criminal_history=="complete" %}
-            {% include "includes/task_status_complete.html" %}
-          {% endif %}
-        <td class="numeric" id="task-status"></td>
-      </tr>
+        <tr>
+          <td class="task">
+            <a href="/task_list/check_others_criminal_history">
+              <span class="step-number" id="task-number"></span>
+              <span class="task-name"> Check others criminal history</span>
+            </a>
+          </td>
+            {% if data.check_other_criminal_history=="complete" %}
+              {% include "includes/task_status_complete.html" %}
+            {% endif %}
+          <td class="numeric" id="task-status"></td>
+        </tr>
       {% endif %}
       <!-- Get health check -->
       <tr>
@@ -109,96 +106,93 @@
             <span class="task-name"> Get health check</span>
           </a>
         </td>
-        </td>
         <td class="numeric" id="task-status">
           {% if data.get_health_check=="complete" %}
             {% include "includes/task_status_complete.html" %}
           {% endif %}
         </td>
       </tr>
-      <!-- Book first aid training -->
+      <!-- Do first aid training -->
       {% if data.child_age=="5_or_under" %}
+        <tr>
+          <td class="task">
+            <a href="/task_list/do_first_aid_training">
+              <span class="step-number" id="task-number"></span>
+              <span class="task-name"> Do first aid training</span>
+            </a>
+          </td>
+          <td class="numeric" id="task-status">
+            {% if data.do_first_aid_training=="complete" %}
+              {% include "includes/task_status_complete.html" %}
+            {% endif %}
+          </td>
+        </tr>
+      {% endif %}
+      <!-- Do childminder training -->
       <tr>
         <td class="task">
-          <a href="#">
+          <a href="/task_list/do_childminder_training">
             <span class="step-number" id="task-number"></span>
-            <span class="task-name"> Book first aid training</span>
+            <span class="task-name"> Do childminder training</span>
           </a>
-        </td>
         </td>
         <td class="numeric" id="task-status">
-          {% if data.book_first_aid_training=="complete" %}
+          {% if data.do_childminder_training=="complete" %}
             {% include "includes/task_status_complete.html" %}
           {% endif %}
         </td>
-      </tr>
-      {% endif %}
-      <!-- Book childminder training -->
-      <tr>
-        <td class="task">
-          <a href="#">
-            <span class="step-number" id="task-number"></span>
-            <span class="task-name"> Book childminder training</span>
-          </a>
-        </td>
-        </td>
-          {% if data.book_childminder_training=="complete" %}
-            {% include "includes/task_status_complete.html" %}
-          {% endif %}
-        <td class="numeric" id="task-status"></td>
       </tr>
       <!-- Get references -->
       <tr>
         <td class="task">
-          <a href="#">
+          <a href="/task_list/get_references">
             <span class="step-number" id="task-number"></span>
             <span class="task-name"> Get references</span>
           </a>
         </td>
-        </td>
-          {% if data.book_childminder_training=="complete" %}
+        <td class="numeric" id="task-status">
+          {% if data.get_references=="complete" %}
             {% include "includes/task_status_complete.html" %}
           {% endif %}
-        <td class="numeric" id="task-status"></td>
+        </td>
       </tr>
-      <!-- Complete Ofsted application -->
+      <!-- Apply to Ofsted -->
       <tr>
         <td class="task">
-          <a href="#">
+          <a href="/task_list/apply_to_ofsted">
             <span class="step-number" id="task-number"></span>
-            <span class="task-name"> Complete Ofsted application</span>
+            <span class="task-name"> Apply to Ofsted</span>
           </a>
         </td>
-        </td>
         <td class="numeric" id="task-status">          
-          {% if data.ofsted_application=="complete" %}
+          {% if data.apply_to_ofsted=="complete" %}
             {% include "includes/task_status_complete.html" %}
           {% endif %}
         </td>
       </tr>
-      <!-- Visit premises -->
-      <tr>
-        <td class="task">
-          <a href="#">
-            <span class="step-number" id="task-number"></span>
-            <span class="task-name"> Prepare for premises inspection</span>
-          </a>
-        </td>
-        </td>
-        <td class="numeric" id="task-status">          
-          {% if data.prepare_for_premises_inspection=="complete" %}
-            {% include "includes/task_status_complete.html" %}
-          {% endif %}
-        </td>
-      </tr>
+      <!-- Get premises inspected -->
+      {% if data.child_age=="5_or_under" %}
+        <tr>
+          <td class="task">
+            <a href="/task_list/get_premises_inspected">
+              <span class="step-number" id="task-number"></span>
+              <span class="task-name"> Get premises inspected</span>
+            </a>
+          </td>
+          <td class="numeric" id="task-status">          
+            {% if data.get_premises_inspected=="complete" %}
+              {% include "includes/task_status_complete.html" %}
+            {% endif %}
+          </td>
+        </tr>
+      {% endif %}
       <!-- Get insured -->
       <tr>
         <td class="task">
-          <a href="#">
+          <a href="/task_list/get_insured">
             <span class="step-number" id="task-number"></span>
             <span class="task-name"> Get insured</span>
           </a>
-        </td>
         </td>
         <td class="numeric" id="task-status">          
           {% if data.get_insured=="complete" %}
@@ -209,11 +203,10 @@
       <!-- Register as self employed -->
       <tr>
         <td class="task">
-          <a href="#">
+          <a href="/task_list/register_self_employed">
             <span class="step-number" id="task-number"></span>
             <span class="task-name"> Register as self employed</span>
           </a>
-        </td>
         </td>
         <td class="numeric" id="task-status">          
           {% if data.register_as_self_employed=="complete" %}
