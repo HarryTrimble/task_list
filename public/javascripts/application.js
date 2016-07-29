@@ -126,9 +126,20 @@ $(document).ready(function() {
 
 
   //orders task list numbers 
-  $( ".step-number" ).each(function(index) {
-  $( this ).append(index+1+".");
+  var $stepNumbers = $( ".step-number" );
 
-});
+  $stepNumbers.each(function(index) {
+
+    $( this ).append(index+1+".");
+
+  });
+
+  $('#total-steps').text($stepNumbers.length);
+  $('#total-steps').text($stepNumbers.length);
+
+
+  var $completedTasks = $( ".task-status-banner" );
+  
+  $('#completed-steps').text($completedTasks.length);
 
 });

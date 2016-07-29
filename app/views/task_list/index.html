@@ -58,7 +58,7 @@
       <!-- read rules -->
       <tr>
         <td class="task">
-          <a href="/task_list/read_rules">
+          <a href="/task_list/read_rules{{formQuery}}">
             <span class="step-number" id="task-number"></span>
             <span class="task-name"> Read rules</span>
           </a>
@@ -72,7 +72,7 @@
       <!-- Check criminal history -->
       <tr>
         <td class="task">
-          <a href="/task_list/check_criminal_history">
+          <a href="/task_list/check_criminal_history{{formQuery}}">
             <span class="step-number" id="task-number"></span>
             <span class="task-name"> Check criminal history</span>
           </a>
@@ -87,21 +87,22 @@
       {% if data.shared_home=="yes" %}
         <tr>
           <td class="task">
-            <a href="/task_list/check_others_criminal_history">
+            <a href="/task_list/check_others_criminal_history{{formQuery}}">
               <span class="step-number" id="task-number"></span>
               <span class="task-name"> Check others criminal history</span>
             </a>
           </td>
+          <td class="numeric" id="task-status">
             {% if data.check_other_criminal_history=="complete" %}
               {% include "includes/task_status_complete.html" %}
             {% endif %}
-          <td class="numeric" id="task-status"></td>
+          </td>
         </tr>
       {% endif %}
       <!-- Get health check -->
       <tr>
         <td class="task">
-          <a href="/task_list/get_health_check">
+          <a href="/task_list/get_health_check{{formQuery}}">
             <span class="step-number" id="task-number"></span>
             <span class="task-name"> Get health check</span>
           </a>
@@ -116,7 +117,7 @@
       {% if data.child_age=="5_or_under" %}
         <tr>
           <td class="task">
-            <a href="/task_list/do_first_aid_training">
+            <a href="/task_list/do_first_aid_training{{formQuery}}">
               <span class="step-number" id="task-number"></span>
               <span class="task-name"> Do first aid training</span>
             </a>
@@ -131,7 +132,7 @@
       <!-- Do childminder training -->
       <tr>
         <td class="task">
-          <a href="/task_list/do_childminder_training">
+          <a href="/task_list/do_childminder_training{{formQuery}}">
             <span class="step-number" id="task-number"></span>
             <span class="task-name"> Do childminder training</span>
           </a>
@@ -145,7 +146,7 @@
       <!-- Get references -->
       <tr>
         <td class="task">
-          <a href="/task_list/get_references">
+          <a href="/task_list/get_references{{formQuery}}">
             <span class="step-number" id="task-number"></span>
             <span class="task-name"> Get references</span>
           </a>
@@ -159,7 +160,7 @@
       <!-- Apply to Ofsted -->
       <tr>
         <td class="task">
-          <a href="/task_list/apply_to_ofsted">
+          <a href="/task_list/apply_to_ofsted{{formQuery}}">
             <span class="step-number" id="task-number"></span>
             <span class="task-name"> Apply to Ofsted</span>
           </a>
@@ -174,7 +175,7 @@
       {% if data.child_age=="5_or_under" %}
         <tr>
           <td class="task">
-            <a href="/task_list/get_premises_inspected">
+            <a href="/task_list/get_premises_inspected{{formQuery}}">
               <span class="step-number" id="task-number"></span>
               <span class="task-name"> Get premises inspected</span>
             </a>
@@ -189,7 +190,7 @@
       <!-- Get insured -->
       <tr>
         <td class="task">
-          <a href="/task_list/get_insured">
+          <a href="/task_list/get_insured{{formQuery}}">
             <span class="step-number" id="task-number"></span>
             <span class="task-name"> Get insured</span>
           </a>
@@ -203,13 +204,13 @@
       <!-- Register as self employed -->
       <tr>
         <td class="task">
-          <a href="/task_list/register_self_employed">
+          <a href="/task_list/register_self_employed{{formQuery}}">
             <span class="step-number" id="task-number"></span>
             <span class="task-name"> Register as self employed</span>
           </a>
         </td>
         <td class="numeric" id="task-status">          
-          {% if data.register_as_self_employed=="complete" %}
+          {% if data.register_self_employed=="complete" %}
             {% include "includes/task_status_complete.html" %}
           {% endif %}
         </td>
@@ -236,7 +237,7 @@
           <span class="bold-xsmall">25 July 2016</span>
         </p>
         <p class="last-edited font-xsmall">Status<br>
-          <span class="bold-xsmall">1 of 12 tasks completed</span>
+          <span class="bold-xsmall"><span id="completed-steps"></span> of <span id="total-steps"></span> tasks completed</span>
         </p>
       </div>
 
