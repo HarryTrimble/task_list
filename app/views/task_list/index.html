@@ -52,7 +52,9 @@
           </a>
         </td>
         <td class="numeric" id="task-status">
-          {% include "includes/task_status_complete.html" %}
+          {% if data.shared_home=="yes" or data.shared_home=="no"  %}
+            {% include "includes/task_status_complete.html" %}
+          {% endif %}
         </td>
       </tr>
       <!-- read rules -->
@@ -202,19 +204,37 @@
         </td>
       </tr>
       <!-- Register as self employed -->
-      <tr>
-        <td class="task">
-          <a href="/task_list/register_self_employed{{formQuery}}">
-            <span class="step-number" id="task-number"></span>
-            <span class="task-name"> Register as self employed</span>
-          </a>
-        </td>
-        <td class="numeric" id="task-status">          
-          {% if data.register_self_employed=="complete" %}
-            {% include "includes/task_status_complete.html" %}
-          {% endif %}
-        </td>
-      </tr>
+      {% if data.employment=="self_employed" %}
+        <tr>
+          <td class="task">
+            <a href="/task_list/register_self_employed{{formQuery}}">
+              <span class="step-number" id="task-number"></span>
+              <span class="task-name"> Register as self employed</span>
+            </a>
+          </td>
+          <td class="numeric" id="task-status">          
+            {% if data.register_self_employed=="complete" %}
+              {% include "includes/task_status_complete.html" %}
+            {% endif %}
+          </td>
+        </tr>
+      {% endif %}
+      <!-- Set up a private limited company -->
+      {% if data.employment=="limited_company" %}
+        <tr>
+          <td class="task">
+            <a href="/task_list/register_self_employed{{formQuery}}">
+              <span class="step-number" id="task-number"></span>
+              <span class="task-name"> Set up a limited company</span>
+            </a>
+          </td>
+          <td class="numeric" id="task-status">          
+            {% if data.set_up_limited_company=="complete" %}
+              {% include "includes/task_status_complete.html" %}
+            {% endif %}
+          </td>
+        </tr>
+      {% endif %}
     </tbody>
   </table>
 
