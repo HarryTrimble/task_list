@@ -1,31 +1,31 @@
-{% extends "layout.html" %} {% block page_title %} Example - Forms {% endblock %} {% block content %}
+{% extends "layout.html" %} {% block page_title %} Food {% endblock %} {% block content %}
 <main id="content" role="main">
   {% include "includes/phase_banner_beta.html" %}
 
   <div class="grid-row">
     <div class="column-two-thirds">
 
-      <form method="get" action="/questions/food" class="form">
+      <form method="get" action="/questions/employment" class="form">
 
       {{formData | safe}}
 
         <h1 class="heading-large">
-          Is the place where you'll look after children shared with other adults?
+          Will you be preparing food for children to eat? 
         </h1>
 
         <fieldset>
           <legend class="visuallyhidden">
-            Is the place where you'll look after children shared with other adults?
+            Will you be preparing food for children to eat? 
           </legend>
 
           <div class="form-group">
-            <label for="shared_home-1" class="block-label">
-              <input type="radio" id="shared_home-1" name="shared_home" value="yes">
+            <label for="food-1" class="block-label">
+              <input type="radio" id="food-1" name="food" value="yes">
               Yes
             </label>
 
-            <label for="shared_home-2" class="block-label">
-              <input type="radio" id="shared_home-2" name="shared_home" value="no">
+            <label for="food-2" class="block-label">
+              <input type="radio" id="food-2" name="food" value="no">
               No
             </label>
 
