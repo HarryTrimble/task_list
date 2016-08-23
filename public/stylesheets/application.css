@@ -2047,3 +2047,8 @@ input[type=number] {
   font-size: 19px;
   font-weight: 700;
 }
+
+.application_number {
+  font-size: 36px;
+  font-weight: 700;
+}
