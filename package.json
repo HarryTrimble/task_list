@@ -7,7 +7,7 @@
     "node": ">=4.0 <5.0"
   },
   "scripts": {
-    "start": "node start.js"
+    "start": "source keys.sh; node start.js"
   },
   "dependencies": {
     "basic-auth": "^1.0.3",
