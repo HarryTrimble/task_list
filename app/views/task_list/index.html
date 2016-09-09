@@ -71,6 +71,20 @@
           {% endif %}
         </td>
       </tr>
+      <!-- read rules -->
+      <tr>
+        <td class="task">
+          <a href="/task_list/prove_identity{{formQuery}}">
+            <span class="step-number" id="task-number"></span>
+            <span class="task-name"> Prove identity</span>
+          </a>
+        </td>
+        <td class="numeric" id="task-status">
+          {% if data.prove_identity=="complete" %}
+            {% include "includes/task_status_complete.html" %}
+          {% endif %}
+        </td>
+      </tr>
       <!-- Check criminal history -->
       <tr>
         <td class="task">
