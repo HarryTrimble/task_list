@@ -1,0 +1,253 @@
+{% extends "driving/layout.html" %}
+{% block page_title %} Task list {% endblock %}
+
+{% block extra_css %}<link rel="stylesheet" href="/public/stylesheets/dm_list.css" />{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+   <div id="">
+      
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+      
+        <header class="page-heading page-heading-with-context page-heading-without-breadcrumb">
+
+          <p class="context">Overview</p>
+          <h1>Learn to drive</h1>
+
+        </header>
+
+        <p class="">Complete the tasks below</p>
+
+        <br>
+      
+
+    {{formData | safe}}
+
+    </div>
+
+  </div>
+
+  <div class="grid-row">
+
+    <div class="column-three-quarters">  
+
+  <table>
+    <thead>
+      <tr>
+        <th scope="col" id="col-task"></th>
+        <th class="numeric" id="task-status" scope="col" id="col-status"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- check eligibility -->
+      <tr>
+        <td class="task">
+          <a href="/start-page-check">
+            <span class="step-number" id="task-number"></span>
+            <span class="task-name"> Check eligibility</span>
+          </a>
+        </td>
+        <td class="numeric" id="task-status">
+          {% if data.shared_home=="yes" or data.shared_home=="no"  %}
+            {% include "includes/task_status_complete.html" %}
+          {% endif %}
+        </td>
+      </tr>
+      <!-- read rules -->
+      <tr>
+        <td class="task">
+          <a href="/task_list/prove_identity{{formQuery}}">
+            <span class="step-number" id="task-number"></span>
+            <span class="task-name"> Get provisional licence</span>
+          </a>
+        </td>
+        <td class="numeric" id="task-status">
+          {% if data.prove_identity=="complete" %}
+            {% include "includes/task_status_complete.html" %}
+          {% endif %}
+        </td>
+      </tr>
+      <!-- Get health check-->
+        <tr>
+          <td class="task">
+            <a href="/task_list/get_health_check{{formQuery}}">
+              <span class="step-number" id="task-number"></span>
+              <span class="task-name"> Get health check</span>
+            </a>
+          </td>
+          <td class="numeric" id="task-status">
+            {% if data.get_health_check=="complete" %}
+              {% include "includes/task_status_complete.html" %}
+            {% endif %}
+          </td>
+        </tr>
+      <!-- Get adapted car -->
+        <tr>
+          <td class="task">
+            <a href="/task_list/get_health_check{{formQuery}}">
+              <span class="step-number" id="task-number"></span>
+              <span class="task-name"> Get adapted car</span>
+            </a>
+          </td>
+          <td class="numeric" id="task-status">
+            {% if data.get_health_check=="complete" %}
+              {% include "includes/task_status_complete.html" %}
+            {% endif %}
+          </td>
+        </tr>
+      <!-- Insure your car-->
+      <tr>
+        <td class="task">
+          <a href="/task_list/get_insured{{formQuery}}">
+            <span class="step-number" id="task-number"></span>
+            <span class="task-name"> Insure your car</span>
+          </a>
+        </td>
+        <td class="numeric" id="task-status">          
+          {% if data.get_insured=="complete" %}
+            {% include "includes/task_status_complete.html" %}
+          {% endif %}
+        </td>
+      </tr>
+      <!-- Book theory test -->
+      <tr>
+        <td class="task">
+          <a href="/task_list/get_insured{{formQuery}}">
+            <span class="step-number" id="task-number"></span>
+            <span class="task-name"> Book your theory test</span>
+          </a>
+        </td>
+        <td class="numeric" id="task-status">          
+          {% if data.get_insured=="complete" %}
+            {% include "includes/task_status_complete.html" %}
+          {% endif %}
+        </td>
+      </tr>
+      <!-- Revise for theory test -->
+      <tr>
+        <td class="task">
+          <a href="/task_list/get_insured{{formQuery}}">
+            <span class="step-number" id="task-number"></span>
+            <span class="task-name"> Revise for theory test</span>
+          </a>
+        </td>
+        <td class="numeric" id="task-status">          
+          {% if data.get_insured=="complete" %}
+            {% include "includes/task_status_complete.html" %}
+          {% endif %}
+        </td>
+      </tr>
+      <!-- Take theory test -->
+      <tr>
+        <td class="task">
+          <a href="/task_list/get_insured{{formQuery}}">
+            <span class="step-number" id="task-number"></span>
+            <span class="task-name"> Take theory test</span>
+          </a>
+        </td>
+        <td class="numeric" id="task-status">          
+          {% if data.get_insured=="complete" %}
+            {% include "includes/task_status_complete.html" %}
+          {% endif %}
+        </td>
+      </tr>
+      <!-- Practice driving -->
+      <tr>
+        <td class="task">
+          <a href="/task_list/get_insured{{formQuery}}">
+            <span class="step-number" id="task-number"></span>
+            <span class="task-name"> Practice driving</span>
+          </a>
+        </td>
+        <td class="numeric" id="task-status">          
+          {% if data.get_insured=="complete" %}
+            {% include "includes/task_status_complete.html" %}
+          {% endif %}
+        </td>
+      </tr>
+      <!-- Book practical test -->
+      <tr>
+        <td class="task">
+          <a href="/task_list/get_insured{{formQuery}}">
+            <span class="step-number" id="task-number"></span>
+            <span class="task-name"> Book practical test</span>
+          </a>
+        </td>
+        <td class="numeric" id="task-status">          
+          {% if data.get_insured=="complete" %}
+            {% include "includes/task_status_complete.html" %}
+          {% endif %}
+        </td>
+      </tr>
+      <!-- Book practical test -->
+      <tr>
+        <td class="task">
+          <a href="/task_list/get_insured{{formQuery}}">
+            <span class="step-number" id="task-number"></span>
+            <span class="task-name"> Take practical test</span>
+          </a>
+        </td>
+        <td class="numeric" id="task-status">          
+          {% if data.get_insured=="complete" %}
+            {% include "includes/task_status_complete.html" %}
+          {% endif %}
+        </td>
+      </tr>
+      <!-- Retake practical test -->
+      <tr>
+        <td class="task">
+          <a href="/task_list/get_insured{{formQuery}}">
+            <span class="step-number" id="task-number"></span>
+            <span class="task-name"> Retake practical test</span>
+          </a>
+        </td>
+        <td class="numeric" id="task-status">          
+          {% if data.get_insured=="complete" %}
+            {% include "includes/task_status_complete.html" %}
+          {% endif %}
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+
+    </div>
+
+<div class="column-quarter">
+
+      <ul class="actions">
+        <li class="action"><a href="/save_and_return/email">Save and complete later</a></li>
+        <li class="action"><a href="#">Print list</a></li>
+        <li class="action"><a href="#">Delete list</a></li>
+      </ul>
+
+      <div class="meta-data">
+        <p class="last-edited font-xsmall">List number<br>
+          <span class="bold-xsmall">1280880</span>
+        </p>
+        <p class="last-edited font-xsmall">Created on<br>
+          <span class="bold-xsmall">25 July 2016</span>
+        </p>
+        <p class="last-edited font-xsmall">Last visited on<br>
+          <span class="bold-xsmall">23 August 2016</span>
+        </p>
+        <p class="last-edited font-xsmall">Status<br>
+          <span class="bold-xsmall"><span id="completed-steps"></span> of <span id="total-steps"></span> tasks completed</span>
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+    
+  </div>
+
+</main>
+{% endblock %}
+{% block extra_js_1 %}<!-- ticky list javascript one -->{% endblock %}
+{% block extra_js_2 %}<!-- ticky list javascript two -->{% endblock %}

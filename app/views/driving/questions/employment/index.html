@@ -1,0 +1,51 @@
+{% extends "layout.html" %} {% block page_title %} Example - Forms {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/questions/result" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          How will you be employed?
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            How will you be employed?
+          </legend>
+
+          <div class="form-group">
+            <label for="employment-1" class="block-label">
+              <input type="radio" id="employment-1" name="employment" value="self_employed">
+              Self employed
+            </label>
+
+            <label for="employment-2" class="block-label">
+              <input type="radio" id="employment-2" name="employment" value="limited_company">
+              Limited company you own
+            </label>
+
+            <label for="employment-3" class="block-label">
+              <input type="radio" id="employment-3" name="employment" value="employed_by_agency">
+              Employed by a existing company
+            </label>
+
+          </div>
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}
