@@ -46,7 +46,7 @@
       <!-- check eligibility -->
       <tr>
         <td class="task">
-          <a href="/start-page-check">
+          <a href="/driving/start-page">
             <span class="step-number" id="task-number"></span>
             <span class="task-name"> Check eligibility</span>
           </a>
@@ -57,12 +57,26 @@
           {% endif %}
         </td>
       </tr>
-      <!-- read rules -->
+      <!-- Read rules-->
       <tr>
         <td class="task">
-          <a href="/task_list/prove_identity{{formQuery}}">
+          <a href="/driving/task_list/read_rules{{formQuery}}">
             <span class="step-number" id="task-number"></span>
-            <span class="task-name"> Get provisional licence</span>
+            <span class="task-name"> Read rules</span>
+          </a>
+        </td>
+        <td class="numeric" id="task-status">          
+          {% if data.read_rules=="complete" %}
+            {% include "includes/task_status_complete.html" %}
+          {% endif %}
+        </td>
+      </tr>
+      <!-- Apply for provisional licence -->
+      <tr>
+        <td class="task">
+          <a href="https://www.gov.uk/apply-first-provisional-driving-licence{{formQuery}}">
+            <span class="step-number" id="task-number"></span>
+            <span class="task-name"> Apply for provisional licence</span>
           </a>
         </td>
         <td class="numeric" id="task-status">
@@ -71,12 +85,12 @@
           {% endif %}
         </td>
       </tr>
-      <!-- Get health check-->
+      <!-- Give medical information -->
         <tr>
           <td class="task">
-            <a href="/task_list/get_health_check{{formQuery}}">
+            <a href="/driving/task_list/give_medical_information{{formQuery}}">
               <span class="step-number" id="task-number"></span>
-              <span class="task-name"> Get health check</span>
+              <span class="task-name"> Give medical information</span>
             </a>
           </td>
           <td class="numeric" id="task-status">
@@ -88,13 +102,13 @@
       <!-- Get adapted car -->
         <tr>
           <td class="task">
-            <a href="/task_list/get_health_check{{formQuery}}">
+            <a href="/driving/task_list/get_adapted_car{{formQuery}}">
               <span class="step-number" id="task-number"></span>
               <span class="task-name"> Get adapted car</span>
             </a>
           </td>
           <td class="numeric" id="task-status">
-            {% if data.get_health_check=="complete" %}
+            {% if data.get_adapted_car=="complete" %}
               {% include "includes/task_status_complete.html" %}
             {% endif %}
           </td>
@@ -102,7 +116,7 @@
       <!-- Insure your car-->
       <tr>
         <td class="task">
-          <a href="/task_list/get_insured{{formQuery}}">
+          <a href="/driving/task_list/insure_car{{formQuery}}">
             <span class="step-number" id="task-number"></span>
             <span class="task-name"> Insure your car</span>
           </a>
@@ -113,10 +127,38 @@
           {% endif %}
         </td>
       </tr>
+      <!-- Find a driving instructor -->
+      <tr>
+        <td class="task">
+          <a href="/driving/task_list/find_instructor{{formQuery}}">
+            <span class="step-number" id="task-number"></span>
+            <span class="task-name"> Find a driving instructor</span>
+          </a>
+        </td>
+        <td class="numeric" id="task-status">          
+          {% if data.get_insured=="complete" %}
+            {% include "includes/task_status_complete.html" %}
+          {% endif %}
+        </td>
+      </tr>
+      <!-- Practice driving -->
+      <tr>
+        <td class="task">
+          <a href="/driving/task_list/practice_driving{{formQuery}}">
+            <span class="step-number" id="task-number"></span>
+            <span class="task-name"> Practice driving</span>
+          </a>
+        </td>
+        <td class="numeric" id="task-status">          
+          {% if data.practice_driving=="complete" %}
+            {% include "includes/task_status_complete.html" %}
+          {% endif %}
+        </td>
+      </tr>
       <!-- Book theory test -->
       <tr>
         <td class="task">
-          <a href="/task_list/get_insured{{formQuery}}">
+          <a href="/driving/task_list/get_insured{{formQuery}}">
             <span class="step-number" id="task-number"></span>
             <span class="task-name"> Book your theory test</span>
           </a>
@@ -130,7 +172,7 @@
       <!-- Revise for theory test -->
       <tr>
         <td class="task">
-          <a href="/task_list/get_insured{{formQuery}}">
+          <a href="/driving/task_list/get_insured{{formQuery}}">
             <span class="step-number" id="task-number"></span>
             <span class="task-name"> Revise for theory test</span>
           </a>
@@ -144,7 +186,7 @@
       <!-- Take theory test -->
       <tr>
         <td class="task">
-          <a href="/task_list/get_insured{{formQuery}}">
+          <a href="/driving/task_list/take_theory_test{{formQuery}}">
             <span class="step-number" id="task-number"></span>
             <span class="task-name"> Take theory test</span>
           </a>
@@ -155,12 +197,12 @@
           {% endif %}
         </td>
       </tr>
-      <!-- Practice driving -->
+      <!-- Retake theory test -->
       <tr>
         <td class="task">
-          <a href="/task_list/get_insured{{formQuery}}">
+          <a href="/driving/task_list/get_insured{{formQuery}}">
             <span class="step-number" id="task-number"></span>
-            <span class="task-name"> Practice driving</span>
+            <span class="task-name"> Retake theory test</span>
           </a>
         </td>
         <td class="numeric" id="task-status">          
@@ -172,7 +214,7 @@
       <!-- Book practical test -->
       <tr>
         <td class="task">
-          <a href="/task_list/get_insured{{formQuery}}">
+          <a href="/driving/task_list/get_insured{{formQuery}}">
             <span class="step-number" id="task-number"></span>
             <span class="task-name"> Book practical test</span>
           </a>
@@ -183,10 +225,10 @@
           {% endif %}
         </td>
       </tr>
-      <!-- Book practical test -->
+      <!-- Take practical test -->
       <tr>
         <td class="task">
-          <a href="/task_list/get_insured{{formQuery}}">
+          <a href="/driving/task_list/get_insured{{formQuery}}">
             <span class="step-number" id="task-number"></span>
             <span class="task-name"> Take practical test</span>
           </a>
@@ -200,9 +242,23 @@
       <!-- Retake practical test -->
       <tr>
         <td class="task">
-          <a href="/task_list/get_insured{{formQuery}}">
+          <a href="/driving/task_list/get_insured{{formQuery}}">
             <span class="step-number" id="task-number"></span>
             <span class="task-name"> Retake practical test</span>
+          </a>
+        </td>
+        <td class="numeric" id="task-status">          
+          {% if data.get_insured=="complete" %}
+            {% include "includes/task_status_complete.html" %}
+          {% endif %}
+        </td>
+      </tr>
+      <!-- Get licence -->
+      <tr>
+        <td class="task">
+          <a href="/driving/task_list/get_insured{{formQuery}}">
+            <span class="step-number" id="task-number"></span>
+            <span class="task-name"> Get licence</span>
           </a>
         </td>
         <td class="numeric" id="task-status">          
@@ -231,10 +287,10 @@
           <span class="bold-xsmall">1280880</span>
         </p>
         <p class="last-edited font-xsmall">Created on<br>
-          <span class="bold-xsmall">25 July 2016</span>
+          <span class="bold-xsmall">23 September 2016</span>
         </p>
         <p class="last-edited font-xsmall">Last visited on<br>
-          <span class="bold-xsmall">23 August 2016</span>
+          <span class="bold-xsmall">26 September 2016</span>
         </p>
         <p class="last-edited font-xsmall">Status<br>
           <span class="bold-xsmall"><span id="completed-steps"></span> of <span id="total-steps"></span> tasks completed</span>

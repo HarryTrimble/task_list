@@ -1,14 +1,14 @@
-{% extends "layout.html" %} {% block page_title %} Get health check {% endblock %} {% block content %}
+{% extends "driving/layout.html" %} {% block page_title %} Get adapted car {% endblock %} {% block content %}
 <main id="content" role="main">
   {% include "includes/phase_banner_beta.html" %}
 
   <div class="breadcrumbs">
     <ol>
       <li>
-        <a href="/task_list/ordered">Become a childminder</a>
+        <a href="/task_list/ordered">Learn to drive</a>
       </li>
       <li>
-        Get health check
+        Get adapted car
       </li> 
     </ol>
   </div>
@@ -16,33 +16,33 @@
   <div class="grid-row">
     <div class="column-two-thirds">
 
-      <form method="get" action="/task_list/" class="form">
+      <form method="get" action="/driving/task_list/" class="form">
 
       {{formData | safe}}
 
         <h1 class="heading-large">
-          Get health check
+          Get adapted car
         </h1>
 
         <fieldset>
           <legend class="visuallyhidden">
-            Get health check
+            Get adapted car
           </legend>
 
           <p id="reason_for_task">
-            Information is needed about any health condition that may affect your ability to safely care for children. 
+            More information about your disability or medical to understand how it affects your ability to drive.  
           </p>
 
-          <p>Tasks to get health check:</p>
+          <p>Tasks to get adapted car:</p>
 
           <ol class="list list-number">
-            <li><a href="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/381218/Health_20declaration_20booklet.pdf">print form</a></li>
+            <li><a href="#">print form</a></li>
             <li>fill in form</li>
             <li>pay your GP to fill in form</li>
             <li>give form to your GP to fill</li>
           </ol>
 
-          <input type="hidden" name="get_health_check" value="complete">
+          <input type="hidden" name="get_adapted_car" value="complete">
 
         </fieldset>
 
