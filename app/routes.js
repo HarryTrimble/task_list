@@ -56,6 +56,8 @@ router.get('/', function (req, res) {
 
 // Branching
 
+// Questions for childminders
+
 // Question for questions/country/index.html
 
 router.get('/questions/eligibility/age', function (req, res) {
@@ -239,6 +241,39 @@ router.get('/questions/number_of_children', function (req, res) {
 
     // if user is NOT related to child
     res.render('questions/number_of_children/index.html');
+
+  }
+
+});
+
+// Questions for childminders
+
+// Question for questions/country/index.html
+
+router.get('/driving/questions/eyes', function (req, res) {
+
+  console.log("over17");
+  console.log("over16");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var over16 = req.query.over16;
+  var over17 = req.query.over17;
+
+  if (over16 == "no" ){
+
+    // if user is NOT 17 or over
+    res.redirect("/driving/questions/result" + res.locals.formQuery);
+
+  } else if (over17 == "no" ){
+
+    // if user lives in WALES
+    res.redirect("/driving/questions/result" + res.locals.formQuery);
+
+
+  } else {
+
+    // if users IS 18 or over
+    res.render('driving/questions/eyes/index.html');
 
   }
 

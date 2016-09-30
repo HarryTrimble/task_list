@@ -1,0 +1,46 @@
+{% extends "driving/layout.html" %} {% block page_title %} Eyes {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/driving/questions/insurance" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          Do you need glasses or contact lenses to read a car number plate from 20 metres?
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            Do you need glasses or contact lenses to read a car number plate from 20 metres?
+          </legend>
+
+          <div class="form-group">
+            <label for="needs_glasses_or_contacts_1" class="block-label">
+              <input type="radio" id="needs_glasses_or_contacts_1" name="needs_glasses_or_contacts" value="yes">
+              Yes
+            </label>
+
+            <label for="needs_glasses_or_contacts_2" class="block-label">
+              <input type="radio" id="needs_glasses_or_contacts_2" name="needs_glasses_or_contacts" value="no">
+              No
+            </label>
+
+          </div>
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}
