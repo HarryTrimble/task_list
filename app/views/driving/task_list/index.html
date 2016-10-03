@@ -43,25 +43,27 @@
       </tr>
     </thead>
     <tbody>
+
       <!-- check eligibility -->
       <tr>
         <td class="task">
-          <a href="/driving/start-page">
+          <a href="/driving/task_list/check_before_you_start">
             <span class="step-number" id="task-number"></span>
-            <span class="task-name"> Check eligibility</span>
+            <span class="task-name"> Check before you start</span>
           </a>
         </td>
         <td class="numeric" id="task-status">
-          {% if data.shared_home=="yes" or data.shared_home=="no"  %}
+          {% if data.check_before_you_start=="yes" or data.shared_home=="no"  %}
             {% include "includes/task_status_complete.html" %}
           {% endif %}
         </td>
       </tr>
+
       <!-- Have eye test -->
       {% if data.read_from_20_meters=="no" %}
         <tr>
           <td class="task">
-            <a href="/driving/task_list/practice_driving{{formQuery}}">
+            <a href="/driving/task_list/have_eye_test{{formQuery}}">
               <span class="step-number" id="task-number"></span>
               <span class="task-name"> Have a eye test</span>
             </a>
@@ -73,36 +75,9 @@
           </td>
         </tr>
       {% endif %}
-      <!-- Apply for provisional licence -->
-      <tr>
-        <td class="task">
-          <a href="https://www.gov.uk/apply-first-provisional-driving-licence{{formQuery}}">
-            <span class="step-number" id="task-number"></span>
-            <span class="task-name"> Apply for provisional licence</span>
-          </a>
-        </td>
-        <td class="numeric" id="task-status">
-          {% if data.prove_identity=="complete" %}
-            {% include "includes/task_status_complete.html" %}
-          {% endif %}
-        </td>
-      </tr>
-      <!-- Read rules for practicing driving -->
-      <tr>
-        <td class="task">
-          <a href="/driving/task_list/practice_driving{{formQuery}}">
-            <span class="step-number" id="task-number"></span>
-            <span class="task-name"> Practice driving</span>
-          </a>
-        </td>
-        <td class="numeric" id="task-status">          
-          {% if data.practice_driving=="complete" %}
-            {% include "includes/task_status_complete.html" %}
-          {% endif %}
-        </td>
-      </tr>
-      {% if data.disability_medical %}
+
       <!-- Give medical information -->
+      {% if data.disability_medical %}
         <tr>
           <td class="task">
             <a href="/driving/task_list/give_medical_information{{formQuery}}">
@@ -111,12 +86,28 @@
             </a>
           </td>
           <td class="numeric" id="task-status">
-            {% if data.get_health_check=="complete" %}
+            {% if data.give_medical_information=="complete" %}
               {% include "includes/task_status_complete.html" %}
             {% endif %}
           </td>
         </tr>
       {% endif %}
+
+      <!-- Apply for provisional licence -->
+      <tr>
+        <td class="task">
+          <a href="/driving/task_list/apply_for_provisional{{formQuery}}">
+            <span class="step-number" id="task-number"></span>
+            <span class="task-name"> Apply for provisional licence</span>
+          </a>
+        </td>
+        <td class="numeric" id="task-status">
+          {% if data.apply_for_provisional=="complete" %}
+            {% include "includes/task_status_complete.html" %}
+          {% endif %}
+        </td>
+      </tr>
+      
       <!-- Get adapted car -->
       {% if data.disability_medical=="limb_problem" %}
         <tr>
@@ -133,6 +124,7 @@
           </td>
         </tr>
       {% endif %}
+      
       <!-- Insure your car-->
       {% if data.practing_in_own_car=="yes" %}
       <tr>
@@ -149,6 +141,22 @@
         </td>
       </tr>
       {% endif %}
+
+      <!-- Read rules for practicing driving -->
+      <tr>
+        <td class="task">
+          <a href="/driving/task_list/practice_driving{{formQuery}}">
+            <span class="step-number" id="task-number"></span>
+            <span class="task-name"> Practice driving</span>
+          </a>
+        </td>
+        <td class="numeric" id="task-status">          
+          {% if data.practice_driving=="complete" %}
+            {% include "includes/task_status_complete.html" %}
+          {% endif %}
+        </td>
+      </tr>
+
       <!-- Find a driving instructor -->
       {% if data.driving_lessons=="yes" %}
       <tr>
@@ -165,6 +173,7 @@
         </td>
       </tr>
       {% endif %}
+
       <!-- Book theory test -->
       <tr>
         <td class="task">
@@ -179,6 +188,7 @@
           {% endif %}
         </td>
       </tr>
+      
       <!-- Revise for theory test -->
       <tr>
         <td class="task">
@@ -193,6 +203,7 @@
           {% endif %}
         </td>
       </tr>
+      
       <!-- Take theory test -->
       <tr>
         <td class="task">
@@ -207,6 +218,7 @@
           {% endif %}
         </td>
       </tr>
+      
       <!-- Retake theory test
       <tr>
         <td class="task">
@@ -222,6 +234,7 @@
         </td>
       </tr>
       -->
+      
       <!-- Book practical test -->
       <tr>
         <td class="task">
@@ -236,6 +249,7 @@
           {% endif %}
         </td>
       </tr>
+      
       <!-- Take practical test -->
       <tr>
         <td class="task">
@@ -250,6 +264,7 @@
           {% endif %}
         </td>
       </tr>
+      
       <!-- Retake practical test
       <tr>
         <td class="task">
@@ -265,6 +280,7 @@
         </td>
       </tr>
       -->
+      
       <!-- Get licence -->
       <tr>
         <td class="task">

@@ -1,4 +1,4 @@
-{% extends "layout.html" %} {% block page_title %} Apply to Ofsted {% endblock %} {% block content %}
+{% extends "layout.html" %} {% block page_title %} Apply to for provisional licence {% endblock %} {% block content %}
 <main id="content" role="main">
   {% include "includes/phase_banner_beta.html" %}
 
@@ -8,7 +8,7 @@
         <a href="/driving/task_list">Become a childminder</a>
       </li>
       <li>
-        Apply to Ofsted
+        Apply for provisional licence
       </li> 
     </ol>
   </div>
@@ -16,12 +16,12 @@
   <div class="grid-row">
     <div class="column-two-thirds">
 
-      <form method="get" action="/task_list/" class="form">
+      <form method="get" action="/driving/task_list/" class="form">
 
       {{formData | safe}}
 
         <h1 class="heading-large">
-          Apply to Ofsted
+          Apply for provisional licence
         </h1>
 
         <fieldset>
@@ -29,18 +29,17 @@
             Apply to Ofsted
           </legend>
 
-          <p id="reason_for_task">To be a childmindee two people need to write references recommending you.</p>
+          <p id="reason_for_task">To learn to drive on UK roads you must first have a provisional driving licencde</p>
 
-          <p>Tasks to apply to Ofsted:</p>
+          <p>Tasks to apply for a apply for :</p>
 
           <ol class="list list-number">
-            <li><a href="http://www.gateway.gov.uk/">get Government Gateway account</a></li>
-            <li>have to hand DBS certificate, traing certificates and references</li>
-            <li><a href="https://online.ofsted.gov.uk/OnlineOfsted/default.aspx">apply online</a></li>
-            <li><a href="https://www.gov.uk/pay-ofsted-registration-annual-fee">pay registration fee</a></li>
+            <li>have <a href="https://www.gov.uk/id-for-driving-licence">identity documents</a></li>
+            <li><a href="https://www.gov.uk/apply-first-provisional-driving-licence">apply online</a></li>
+            <li>wait for licence to arrive in the post</li>
           </ol>
 
-          <input type="hidden" name="apply_to_ofsted" value="complete">
+          <input type="hidden" name="apply_for_provisional" value="complete">
 
         </fieldset>
 
