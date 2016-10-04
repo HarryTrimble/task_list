@@ -1,0 +1,198 @@
+{% extends "layout.html" %}
+{% block page_title %} Task list {% endblock %}
+
+{% block extra_css %}<link rel="stylesheet" href="/public/stylesheets/dm_list.css" />{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+   <div id="">
+      
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+      
+        <header class="page-heading page-heading-with-context page-heading-without-breadcrumb">
+
+          <p class="context">Overview</p>
+          <h1>Move bats</h1>
+
+        </header>
+
+        <p class="">Complete the tasks below:</p>
+
+        <br>
+      
+
+    {{formData | safe}}
+
+    </div>
+
+  </div>
+
+  <div class="grid-row">
+
+    <div class="column-three-quarters">  
+
+      <table>
+        <thead>
+          <tr>
+            <th scope="col" id="col-task"></th>
+            <th class="numeric" id="task-status" scope="col" id="col-status"></th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <!-- check eligibility -->
+          <tr>
+            <td class="task">
+              <a href="/driving/task_list/check_before_you_start">
+                <span class="step-number" id="task-number"></span>
+                <span class="task-name"> Check before you start</span>
+              </a>
+            </td>
+            <td class="numeric" id="task-status">
+              {% if data.check_before_you_start=="complete" or data.shared_home=="no"  %}
+                {% include "includes/task_status_complete.html" %}
+              {% endif %}
+            </td>
+          </tr>
+
+          <!-- Apply for provisional licence -->
+          <tr>
+            <td class="task">
+              <a href="/driving/task_list/apply_for_provisional{{formQuery}}">
+                <span class="step-number" id="task-number"></span>
+                <span class="task-name"> Inspect site where bats live</span>
+              </a>
+            </td>
+            <td class="numeric" id="task-status">
+              {% if data.apply_for_provisional=="complete" %}
+                {% include "includes/task_status_complete.html" %}
+              {% endif %}
+            </td>
+          </tr>
+
+          <!-- Apply for provisional licence -->
+          <tr>
+            <td class="task">
+              <a href="/driving/task_list/apply_for_provisional{{formQuery}}">
+                <span class="step-number" id="task-number"></span>
+                <span class="task-name"> Enter bat details</span>
+              </a>
+            </td>
+            <td class="numeric" id="task-status">
+              {% if data.apply_for_provisional=="complete" %}
+                {% include "includes/task_status_complete.html" %}
+              {% endif %}
+            </td>
+          </tr>
+
+          <!-- Apply for provisional licence -->
+          <tr>
+            <td class="task">
+              <a href="/driving/task_list/apply_for_provisional{{formQuery}}">
+                <span class="step-number" id="task-number"></span>
+                <span class="task-name"> Describe how bats will be moved</span>
+              </a>
+            </td>
+            <td class="numeric" id="task-status">
+              {% if data.apply_for_provisional=="complete" %}
+                {% include "includes/task_status_complete.html" %}
+              {% endif %}
+            </td>
+          </tr>
+
+          <!-- Apply for provisional licence -->
+          <tr>
+            <td class="task">
+              <a href="/driving/task_list/apply_for_provisional{{formQuery}}">
+                <span class="step-number" id="task-number"></span>
+                <span class="task-name"> Enter building details</span>
+              </a>
+            </td>
+            <td class="numeric" id="task-status">
+              {% if data.apply_for_provisional=="complete" %}
+                {% include "includes/task_status_complete.html" %}
+              {% endif %}
+            </td>
+          </tr>
+
+          <!-- Apply for provisional licence -->
+          <tr>
+            <td class="task">
+              <a href="/driving/task_list/apply_for_provisional{{formQuery}}">
+                <span class="step-number" id="task-number"></span>
+                <span class="task-name"> Enter contact details</span>
+              </a>
+            </td>
+            <td class="numeric" id="task-status">
+              {% if data.apply_for_provisional=="complete" %}
+                {% include "includes/task_status_complete.html" %}
+              {% endif %}
+            </td>
+          </tr>
+
+          <!-- Apply for provisional licence -->
+          <tr>
+            <td class="task">
+              <a href="/driving/task_list/apply_for_provisional{{formQuery}}">
+                <span class="step-number" id="task-number"></span>
+                <span class="task-name"> Get references</span>
+              </a>
+            </td>
+            <td class="numeric" id="task-status">
+              {% if data.apply_for_provisional=="complete" %}
+                {% include "includes/task_status_complete.html" %}
+              {% endif %}
+            </td>
+          </tr>
+
+          <!-- Apply for provisional licence -->
+          <tr>
+            <td class="task">
+              <a href="/driving/task_list/apply_for_provisional{{formQuery}}">
+                <span class="step-number" id="task-number"></span>
+                <span class="task-name"> Declare and submit</span>
+              </a>
+            </td>
+            <td class="numeric" id="task-status">
+              {% if data.apply_for_provisional=="complete" %}
+                {% include "includes/task_status_complete.html" %}
+              {% endif %}
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+
+    </div>
+
+    <div class="column-quarter">
+
+          <ul class="actions">
+            <li class="bold"><a href="#">Print list</a></li>
+          </ul>
+
+          <br>
+
+          <div class="meta-data">
+            <p class="last-edited font-xsmall">Application number:<br>
+              <span class="bold-xsmall">1280880</span>
+            </p>
+            <p class="last-edited font-xsmall">Status:<br>
+              <span class="bold-xsmall"><span id="completed-steps"></span> of <span id="total-steps"></span> tasks completed</span>
+            </p>
+          </div>
+
+    </div>
+
+  </div>
+    
+  </div>
+
+</main>
+{% endblock %}
+{% block extra_js_1 %}<!-- ticky list javascript one -->{% endblock %}
+{% block extra_js_2 %}<!-- ticky list javascript two -->{% endblock %}
