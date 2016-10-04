@@ -53,13 +53,13 @@
           </a>
         </td>
         <td class="numeric" id="task-status">
-          {% if data.check_before_you_start=="yes" or data.shared_home=="no"  %}
+          {% if data.check_before_you_start=="complete" or data.shared_home=="no"  %}
             {% include "includes/task_status_complete.html" %}
           {% endif %}
         </td>
       </tr>
 
-      <!-- Have eye test -->
+      <!-- Have eye test
       {% if data.read_from_20_meters=="no" %}
         <tr>
           <td class="task">
@@ -75,6 +75,7 @@
           </td>
         </tr>
       {% endif %}
+      -->
 
       <!-- Give medical information -->
       {% if data.disability_medical %}
@@ -135,7 +136,7 @@
           </a>
         </td>
         <td class="numeric" id="task-status">          
-          {% if data.get_insured=="complete" %}
+          {% if data.insure_car=="complete" %}
             {% include "includes/task_status_complete.html" %}
           {% endif %}
         </td>
