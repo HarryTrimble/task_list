@@ -307,4 +307,81 @@ router.get('/driving/questions/insurance', function (req, res) {
 
 });
 
+// BATS
+
+// Question for /bats/task_list/check_before_you_start/ecologist
+router.get('/bats/task_list', function (req, res) {
+
+  console.log("hired_ecologist");
+  console.log("impact_on_bats");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var hired_ecologist = req.query.hired_ecologist;
+  var impact_on_bats = req.query.impact_on_bats;
+
+  if (hired_ecologist == "no" ){
+
+    // if user IS related to child
+    res.redirect("/bats/task_list/check_before_you_start/result" + res.locals.formQuery);
+
+  } else if (impact_on_bats == "yes" ){
+
+    // if user lives in WALES
+    res.redirect("/bats/task_list/inspect_place_where_bats_live/result" + res.locals.formQuery);
+
+  } else {
+
+    // if user is NOT related to child
+    res.render('bats/task_list/index.html');
+
+  }
+
+});
+
+
+// question in /bats/task_list/inspect_place_where_bats_live/visit_bat_place
+router.get('/bats/task_list/inspect_place_where_bats_live/alternative', function (req, res) {
+
+  console.log("visit_bat_place");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var visit_bat_place = req.query.visit_bat_place;
+
+  if (visit_bat_place == "no"){
+
+    // if user IS related to child
+    res.redirect("/bats/task_list/inspect_place_where_bats_live/result" + res.locals.formQuery);
+
+  } else {
+
+    // if user is NOT related to child
+    res.render('bats/task_list/inspect_place_where_bats_live/alternative/index.html');
+
+  }
+
+});
+
+// question in /bats/task_list/inspect_place_where_bats_live/alternative
+router.get('/bats/task_list/inspect_place_where_bats_live/impact_on_bats', function (req, res) {
+
+  console.log("alternative");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var alternative = req.query.alternative;
+
+  if (alternative == "yes"){
+
+    // if user IS related to child
+    res.redirect("/bats/task_list/inspect_place_where_bats_live/result" + res.locals.formQuery);
+
+  } else {
+
+    // if user is NOT related to child
+    res.render('bats/task_list/inspect_place_where_bats_live/impact_on_bats/index.html');
+
+  }
+
+});
+
+
 module.exports = router;

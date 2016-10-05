@@ -1,0 +1,133 @@
+{% extends "bats/layout.html" %} {% block page_title %} Bat species {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/bats/task_list" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          What species of bat are you needing to move? 
+        </h1>
+
+          <fieldset>
+
+            <legend class="visuallyhidden">What species of bat are you needing to move?</legend>
+
+            <label class="block-label" for="bat-species-1">
+              <input id="bat-species-1" type="checkbox" name="bat-species" value="alcathoe">
+              Alcathoe bat
+            </label>
+
+            <label class="block-label" for="bat-species-2">
+              <input id="bat-species-2" type="checkbox" name="bat-species" value="barbastelle">
+              Barbastelle bat
+            </label>
+
+            <label class="block-label" for="bat-species-3">
+              <input id="bat-species-3" type="checkbox" name="bat-species" value="bechsteins">
+              Bechstein's bat
+            </label>
+
+            <label class="block-label" for="bat-species-4">
+              <input id="bat-species-4" type="checkbox" name="bat-species" value="brandts">
+              Brandt's bat
+            </label>
+
+            <label class="block-label" for="bat-species-5">
+              <input id="bat-species-5" type="checkbox" name="bat-species" value="brown-long-eared">
+              Brown long-eared bat
+            </label>
+
+            <label class="block-label" for="bat-species-6">
+              <input id="bat-species-6" type="checkbox" name="bat-species" value="common-pipistrelle">
+              Common pipistrelle bat
+            </label>
+
+            <label class="block-label" for="bat-species-7">
+              <input id="bat-species-7" type="checkbox" name="bat-species" value="daubentons-bat">
+              Daubenton's bat
+            </label>
+
+            <label class="block-label" for="bat-species-8">
+              <input id="bat-species-8" type="checkbox" name="bat-species" value="greater-horseshoe">
+              Greater horseshoe bat
+            </label>
+
+            <label class="block-label" for="bat-species-9">
+              <input id="bat-species-9" type="checkbox" name="bat-species" value="greater-mouse-eared">
+              Greater mouse-eared bat
+            </label>
+
+            <label class="block-label" for="bat-species-10">
+              <input id="bat-species-10" type="checkbox" name="bat-species" value="grey-long-eared">
+              Grey long-eared bat
+            </label>
+
+            <label class="block-label" for="bat-species-11">
+              <input id="bat-species-11" type="checkbox" name="bat-species" value="Leislers">
+              Leisler's bat
+            </label>
+
+            <label class="block-label" for="bat-species-12">
+              <input id="bat-species-12" type="checkbox" name="bat-species" value="lesser-horseshoe">
+              Lesser horseshoe bat
+            </label>
+
+            <label class="block-label" for="bat-species-13">
+              <input id="bat-species-13" type="checkbox" name="bat-species" value="nathusius">
+              Nathusius' pipistrelle bat
+            </label>
+
+            <label class="block-label" for="bat-species-14">
+              <input id="bat-species-14" type="checkbox" name="bat-species" value="natterers">
+              Natterer's bat
+            </label>
+
+            <label class="block-label" for="bat-species-15">
+              <input id="bat-species-15" type="checkbox" name="bat-species" value="noctule">
+              Noctule bat
+            </label>
+
+            <label class="block-label" for="bat-species-16">
+              <input id="bat-species-16" type="checkbox" name="bat-species" value="serotine">
+              serotine bat
+            </label>
+
+            <label class="block-label" for="bat-species-17">
+              <input id="bat-species-17" type="checkbox" name="bat-species" value="soprano-pipistrelle">
+              Soprano pipistrelle bat
+            </label>
+
+            <label class="block-label" for="bat-species-18">
+              <input id="bat-species-18" type="checkbox" name="bat-species" value="whiskered">
+              Whiskered bat
+            </label>
+
+            <label class="block-label" data-target="contact-by-text" for="example-contact-by-text">
+              <input id="example-contact-by-text" type="checkbox" name="radio-contact-group" value="No">
+              Bat species not on list
+            </label>
+            <div class="panel panel-border-narrow js-hidden" id="contact-by-text">
+              <label class="form-label" for="contact-text-message">Bat species name</label>
+              <input class="form-control" name="contact-text-message" type="text" id="contact-text-message">
+            </div>
+
+          </fieldset>
+
+          <br>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% block page_title %} Task list {% endblock %}
+{% block page_title %} Task list: move bats {% endblock %}
 
 {% block extra_css %}<link rel="stylesheet" href="/public/stylesheets/dm_list.css" />{% endblock %}
 
@@ -44,27 +44,42 @@
         </thead>
         <tbody>
 
-          <!-- check eligibility -->
+          <!-- Check before you start -->
           <tr>
             <td class="task">
-              <a href="/driving/task_list/check_before_you_start">
+              <a href="/bats/task_list/check_before_you_start/ecologist">
                 <span class="step-number" id="task-number"></span>
                 <span class="task-name"> Check before you start</span>
               </a>
             </td>
             <td class="numeric" id="task-status">
-              {% if data.check_before_you_start=="complete" or data.shared_home=="no"  %}
+              {% if data.hired_ecologist=="yes" %}
                 {% include "includes/task_status_complete.html" %}
               {% endif %}
             </td>
           </tr>
 
-          <!-- Apply for provisional licence -->
+          <!-- Inspect place where bats live -->
           <tr>
             <td class="task">
-              <a href="/driving/task_list/apply_for_provisional{{formQuery}}">
+              <a href="/bats/task_list/inspect_place_where_bats_live/visit_bat_place{{formQuery}}">
                 <span class="step-number" id="task-number"></span>
-                <span class="task-name"> Inspect site where bats live</span>
+                <span class="task-name"> Inspect place where bats live</span>
+              </a>
+            </td>
+            <td class="numeric" id="task-status">
+              {% if data.impact_on_bats=="no" %}
+                {% include "includes/task_status_complete.html" %}
+              {% endif %}
+            </td>
+          </tr>
+
+          <!-- Enter bat details -->
+          <tr>
+            <td class="task">
+              <a href="/bats/task_list/bat_details{{formQuery}}">
+                <span class="step-number" id="task-number"></span>
+                <span class="task-name"> Bat details</span>
               </a>
             </td>
             <td class="numeric" id="task-status">
@@ -74,25 +89,10 @@
             </td>
           </tr>
 
-          <!-- Apply for provisional licence -->
+          <!-- Describe how bats will be moved -->
           <tr>
             <td class="task">
-              <a href="/driving/task_list/apply_for_provisional{{formQuery}}">
-                <span class="step-number" id="task-number"></span>
-                <span class="task-name"> Enter bat details</span>
-              </a>
-            </td>
-            <td class="numeric" id="task-status">
-              {% if data.apply_for_provisional=="complete" %}
-                {% include "includes/task_status_complete.html" %}
-              {% endif %}
-            </td>
-          </tr>
-
-          <!-- Apply for provisional licence -->
-          <tr>
-            <td class="task">
-              <a href="/driving/task_list/apply_for_provisional{{formQuery}}">
+              <a href="/bats/task_list/describe_how_bats_will_be_moved{{formQuery}}">
                 <span class="step-number" id="task-number"></span>
                 <span class="task-name"> Describe how bats will be moved</span>
               </a>
@@ -104,12 +104,12 @@
             </td>
           </tr>
 
-          <!-- Apply for provisional licence -->
+          <!-- Enter building details -->
           <tr>
             <td class="task">
-              <a href="/driving/task_list/apply_for_provisional{{formQuery}}">
+              <a href="/bats/task_list/enter_building_details{{formQuery}}">
                 <span class="step-number" id="task-number"></span>
-                <span class="task-name"> Enter building details</span>
+                <span class="task-name"> Building details</span>
               </a>
             </td>
             <td class="numeric" id="task-status">
@@ -119,12 +119,12 @@
             </td>
           </tr>
 
-          <!-- Apply for provisional licence -->
+          <!-- Enter contact details -->
           <tr>
             <td class="task">
-              <a href="/driving/task_list/apply_for_provisional{{formQuery}}">
+              <a href="/bats/task_list/enter_contact_details{{formQuery}}">
                 <span class="step-number" id="task-number"></span>
-                <span class="task-name"> Enter contact details</span>
+                <span class="task-name"> Contact details</span>
               </a>
             </td>
             <td class="numeric" id="task-status">
@@ -134,10 +134,10 @@
             </td>
           </tr>
 
-          <!-- Apply for provisional licence -->
+          <!-- Get references -->
           <tr>
             <td class="task">
-              <a href="/driving/task_list/apply_for_provisional{{formQuery}}">
+              <a href="/bats/task_list/get_references{{formQuery}}">
                 <span class="step-number" id="task-number"></span>
                 <span class="task-name"> Get references</span>
               </a>
@@ -149,10 +149,10 @@
             </td>
           </tr>
 
-          <!-- Apply for provisional licence -->
+          <!-- Declare and submit -->
           <tr>
             <td class="task">
-              <a href="/driving/task_list/apply_for_provisional{{formQuery}}">
+              <a href="/bats/task_list/declare_and_submit{{formQuery}}">
                 <span class="step-number" id="task-number"></span>
                 <span class="task-name"> Declare and submit</span>
               </a>
