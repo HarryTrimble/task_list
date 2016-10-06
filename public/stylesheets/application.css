@@ -2060,3 +2060,8 @@ input[type=number] {
 .design-update {
   font-size: 14px;
 }
+
+.bold-date {
+  font-weight: 700;
+  color: #000000;
+}

@@ -1,0 +1,72 @@
+{% extends "bats/layout.html" %} {% block page_title %} Activity {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/bats/task_list/bat_details/method" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          What do you need to do? 
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            What do you need to do? 
+          </legend>
+
+          <div class="form-group">
+
+            <label for="activity_1" class="block-label">
+              <input type="checkbox" id="activity_1" name="activity" value="capture">
+              Capture bats
+            </label>
+
+            <label for="activity_2" class="block-label">
+              <input type="checkbox" id="activity_2" name="activity" value="disturb">
+              Disturb bats
+            </label>
+
+            <label for="activity_3" class="block-label">
+              <input type="checkbox" id="activity_3" name="activity" value="transport">
+              Transport bats
+            </label>
+
+            <label for="activity_4" class="block-label">
+              <input type="checkbox" id="activity_4" name="activity" value="damage_breeding_sites">
+              Damage bat breeding sites
+            </label>
+
+            <label for="activity_5" class="block-label">
+              <input type="checkbox" id="activity_5" name="activity" value="destroy_breeding_sites">
+              Destroy breeding sites
+            </label>
+
+            <label for="activity_6" class="block-label">
+              <input type="checkbox" id="activity_6" name="activity" value="damage_resting_sites">
+              Damage resting sites
+            </label>
+
+            <label for="activity_2" class="block-label">
+              <input type="checkbox" id="activity_2" name="activity" value="destroy_resting_sites">
+              Destroy resting sites
+            </label>
+
+          </div>
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

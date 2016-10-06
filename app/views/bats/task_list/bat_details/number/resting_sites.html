@@ -5,7 +5,7 @@
   <div class="grid-row">
     <div class="column-two-thirds">
 
-      <form method="get" action="/bats/task_list/" class="form">
+      <form method="get" action="/bats/task_list/bat_details/activity" class="form">
 
       {{formData | safe}}
 
@@ -171,8 +171,6 @@
           {% endif %}
 
         </fieldset>
-
-        <input type="hidden" name="bat_details" value="complete">
 
         <div class="form-group">
           <input type="submit" class="button" value="Continue" />

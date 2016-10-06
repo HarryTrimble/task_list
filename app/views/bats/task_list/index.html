@@ -47,7 +47,7 @@
           <!-- Check before you start -->
           <tr>
             <td class="task">
-              <a href="/bats/task_list/check_before_you_start/ecologist">
+              <a href="/bats/task_list/check_before_you_start/ecologist{{formQuery}}">
                 <span class="step-number" id="task-number"></span>
                 <span class="task-name"> Check before you start</span>
               </a>
@@ -77,7 +77,7 @@
           <!-- Enter bat details -->
           <tr>
             <td class="task">
-              <a href="/bats/task_list/bat_details{{formQuery}}">
+              <a href="/bats/task_list/bat_details/species{{formQuery}}">
                 <span class="step-number" id="task-number"></span>
                 <span class="task-name"> Bat details</span>
               </a>
@@ -89,31 +89,16 @@
             </td>
           </tr>
 
-          <!-- Describe how bats will be moved -->
-          <tr>
-            <td class="task">
-              <a href="/bats/task_list/describe_how_bats_will_be_moved{{formQuery}}">
-                <span class="step-number" id="task-number"></span>
-                <span class="task-name"> Describe how bats will be moved</span>
-              </a>
-            </td>
-            <td class="numeric" id="task-status">
-              {% if data.apply_for_provisional=="complete" %}
-                {% include "includes/task_status_complete.html" %}
-              {% endif %}
-            </td>
-          </tr>
-
           <!-- Enter building details -->
           <tr>
             <td class="task">
-              <a href="/bats/task_list/enter_building_details{{formQuery}}">
+              <a href="/bats/task_list/building_datails/address{{formQuery}}">
                 <span class="step-number" id="task-number"></span>
                 <span class="task-name"> Building details</span>
               </a>
             </td>
             <td class="numeric" id="task-status">
-              {% if data.apply_for_provisional=="complete" %}
+              {% if data.needs_others_licences %}
                 {% include "includes/task_status_complete.html" %}
               {% endif %}
             </td>
@@ -122,13 +107,13 @@
           <!-- Enter contact details -->
           <tr>
             <td class="task">
-              <a href="/bats/task_list/enter_contact_details{{formQuery}}">
+              <a href="/bats/task_list/contact_details{{formQuery}}">
                 <span class="step-number" id="task-number"></span>
                 <span class="task-name"> Contact details</span>
               </a>
             </td>
             <td class="numeric" id="task-status">
-              {% if data.apply_for_provisional=="complete" %}
+              {% if data.contact_by %}
                 {% include "includes/task_status_complete.html" %}
               {% endif %}
             </td>
@@ -181,7 +166,7 @@
             <p class="last-edited font-xsmall">Application number:<br>
               <span class="bold-xsmall">1280880</span>
             </p>
-            <p class="last-edited font-xsmall">Status:<br>
+            <p class="last-edited font-xsmall">Progress:<br>
               <span class="bold-xsmall"><span id="completed-steps"></span> of <span id="total-steps"></span> tasks completed</span>
             </p>
           </div>

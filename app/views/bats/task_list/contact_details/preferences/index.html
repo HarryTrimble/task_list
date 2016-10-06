@@ -1,0 +1,46 @@
+{% extends "bats/layout.html" %} {% block page_title %} Driving lessons {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/bats/task_list/contact_details/preferences/contact_by" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          Who should we contact about your application? 
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            Who should we contact about your application?  
+          </legend>
+
+          <div class="form-group">
+            <label for="who_should_be_contacted_1" class="block-label">
+              <input type="radio" id="who_should_be_contacted_1" name="who_should_be_contacted" value="licence_holder">
+              You
+            </label>
+
+            <label for="who_should_be_contacted_2" class="block-label">
+              <input type="radio" id="who_should_be_contacted_2" name="who_should_be_contacted" value="ecologist">
+              Your ecologist
+            </label>
+
+          </div>
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

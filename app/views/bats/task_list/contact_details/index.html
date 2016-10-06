@@ -1,0 +1,67 @@
+{% extends "bats/layout.html" %} {% block page_title %} Who is licence for {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/bats/task_list/contact_details/name_address" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          Who is this licence application for? 
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            Who is this licence for? 
+          </legend>
+
+          <div class="form-group">
+
+            <label for="user_type_1" class="block-label">
+              <input type="radio" id="user_type_1" name="user_type" value="private_individual">
+              Private individual
+            </label>
+
+            <label for="user_type_2" class="block-label">
+              <input type="radio" id="user_type_2" name="user_type" value="business">
+              Business 
+            </label>
+
+            <label for="user_type_3" class="block-label">
+              <input type="radio" id="user_type_3" name="user_type" value="charity">
+              Charity
+            </label>
+
+            <label for="user_type_4" class="block-label">
+              <input type="radio" id="user_type_4" name="user_type" value="volunteer">
+              Volunteer organisation
+            </label>
+
+            <label for="user_type_5" class="block-label">
+              <input type="radio" id="user_type_5" name="user_type" value="central_gov">
+              Government agency
+            </label>
+
+            <label for="user_type_6" class="block-label">
+              <input type="radio" id="user_type_6" name="user_type" value="local_gov">
+              Local Authority
+            </label>
+
+          </div>
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

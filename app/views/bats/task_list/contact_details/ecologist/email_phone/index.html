@@ -1,0 +1,50 @@
+{% extends "layout.html" %} {% block page_title %} Email and phone {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/bats/task_list/contact_details/preferences" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          Your ecologist's details 
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            Email and phone
+          </legend>
+
+          <h3 class="heading-medium">Email</h3>
+
+          <div class="form-group">
+            <label class="form-label" for="last-name-2">Email address</label>
+            <input class="form-control" id="last-name-2" name="last-name-2" type="text">
+          </div>
+
+          <h3 class="heading-medium">Phone</h3>
+
+          <div class="form-group">
+            <label class="form-label" for="last-name-2">Phone number</label>
+            <input class="form-control" id="last-name-2" name="last-name-2" type="text">
+          </div>
+
+          <br>
+          <br>
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

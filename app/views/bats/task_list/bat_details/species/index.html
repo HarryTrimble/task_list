@@ -5,17 +5,19 @@
   <div class="grid-row">
     <div class="column-two-thirds">
 
-      <form method="get" action="/bats/task_list/bat_details/number_bats_total" class="form">
+      <form method="get" action="/bats/task_list/bat_details/number/total_bats" class="form">
 
       {{formData | safe}}
 
         <h1 class="heading-large">
-          What species of bat are you needing to move? 
+          What types of bat does your work involve?
         </h1>
 
           <fieldset>
 
-            <legend class="visuallyhidden">What species of bat are you needing to move?</legend>
+            <legend class="visuallyhidden">
+              What types of bat does your work involve?
+            </legend>
 
             <label class="block-label" for="bat_species-1">
               <input id="bat_species-1" type="checkbox" name="bat_species" value="alcathoe">

@@ -5,17 +5,17 @@
   <div class="grid-row">
     <div class="column-two-thirds">
 
-      <form method="get" action="/bats/task_list/bat_details/number_breeding_sites" class="form">
+      <form method="get" action="/bats/task_list/bat_details/number/breeding_sites" class="form">
 
       {{formData | safe}}
 
         <h1 class="heading-large">
-          How many bats do you need to move?
+          How many bats are there in the place you're working?
         </h1>
 
         <fieldset>
           <legend class="visuallyhidden">
-            How many bats do you need to move? 
+            How many bats are there in the place you're working?
           </legend>
           
           {% if data.bat_species=="alcathoe" %}

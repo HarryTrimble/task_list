@@ -1,0 +1,46 @@
+{% extends "bats/layout.html" %} {% block page_title %} Building conservation {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/bats/task_list/building_datails/reason/much_need_housing" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          Are you doing conversation work on a listed building, scheduled monument or registered place of worship? 
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            Are you doing conversation work on a listed building, scheduled monument or registered place of worship?
+          </legend>
+
+          <div class="form-group">
+            <label for="building_conservation_1" class="block-label">
+              <input type="radio" id="building_conservation_1" name="building_conservation" value="yes">
+              Yes
+            </label>
+
+            <label for="building_conservation_2" class="block-label">
+              <input type="radio" id="building_conservation_2" name="building_conservation" value="no">
+              No
+            </label>
+
+          </div>
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

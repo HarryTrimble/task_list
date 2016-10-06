@@ -309,6 +309,28 @@ router.get('/driving/questions/insurance', function (req, res) {
 
 // BATS
 
+// question in /bats/task_list/inspect_place_where_bats_live/alternative
+router.get('/bats/task_list/check_before_you_start/land_ownership', function (req, res) {
+
+  console.log("hired_ecologist");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var hired_ecologist = req.query.hired_ecologist;
+
+  if (hired_ecologist == "no"){
+
+    // if user IS related to child
+    res.redirect("/bats/task_list/check_before_you_start/result" + res.locals.formQuery);
+
+  } else {
+
+    // if user is NOT related to child
+    res.render('bats/task_list/check_before_you_start/land_ownership/index.html');
+
+  }
+
+});
+
 // Question for /bats/task_list/check_before_you_start/ecologist
 router.get('/bats/task_list', function (req, res) {
 
@@ -316,18 +338,31 @@ router.get('/bats/task_list', function (req, res) {
   console.log("impact_on_bats");
 
   // get the answer from the query string (eg. ?over18="yes")
-  var hired_ecologist = req.query.hired_ecologist;
   var impact_on_bats = req.query.impact_on_bats;
+  var own_occupy = req.query.own_occupy;
+  var has_owners_permission = req.query.has_owners_permission;
+  var needs_others_licences = req.query.needs_others_licences;
+  var licence_types = req.query.licence_types;
 
-  if (hired_ecologist == "no" ){
+  if (own_occupy == "no" && has_owners_permission==undefined ){
 
     // if user IS related to child
+    res.redirect("/bats/task_list/check_before_you_start/land_ownership/has_owners_permission" + res.locals.formQuery);
+
+  } else if (own_occupy == "no" && has_owners_permission== "no" ){
+
+    // if user lives in WALES
     res.redirect("/bats/task_list/check_before_you_start/result" + res.locals.formQuery);
 
   } else if (impact_on_bats == "yes" ){
 
     // if user lives in WALES
     res.redirect("/bats/task_list/inspect_place_where_bats_live/result" + res.locals.formQuery);
+
+  } else if (needs_others_licences == "yes" && licence_types==undefined ){
+
+      // if user lives in WALES
+      res.redirect("/bats/task_list/building_datails/permissions/types" + res.locals.formQuery);
 
   } else {
 
@@ -383,5 +418,33 @@ router.get('/bats/task_list/inspect_place_where_bats_live/impact_on_bats', funct
 
 });
 
+// question in /bats/task_list/inspect_place_where_bats_live/alternative
+router.get('/bats/task_list/building_datails/category', function (req, res) {
+
+  console.log("repairs_maintenance");
+  console.log("roof_loft_extension");
+  console.log("building_conservation");
+  console.log("much_need_housing");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var repairs_maintenance = req.query.repairs_maintenance;
+  var roof_loft_extension = req.query.roof_loft_extension;
+  var building_conservation = req.query.building_conservation;
+  var much_need_housing = req.query.much_need_housing;
+  var give_reason = req.query.give_reason;
+
+  if (repairs_maintenance == "no" && roof_loft_extension == "no" && building_conservation == "no" && much_need_housing == "no" && give_reason==undefined){
+
+    // if user IS related to child
+    res.redirect("/bats/task_list/building_datails/reason/give" + res.locals.formQuery);
+
+  } else {
+
+    // if user is NOT related to child
+    res.render('bats/task_list/building_datails/category/index.html');
+
+  }
+
+});
 
 module.exports = router;
