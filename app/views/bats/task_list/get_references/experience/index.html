@@ -1,0 +1,57 @@
+{% extends "layout.html" %} {% block page_title %} Email and phone {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/bats/task_list/get_references/referee_1/relationship" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          Ecologist's experience
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            Email and phone
+          </legend>
+
+          <h3 class="heading-medium">Education</h3>
+
+          <div class="form-group">
+            <label class="form-label" for="ecologist_education-2">Qualifications</label>
+            <input class="form-control" id="ecologist_education-2" name="ecologist_education" type="text">
+          </div>
+
+          <h3 class="heading-medium">Licences</h3>
+
+          <p>This should be to someone we can talk about the application with</p>
+
+          <div class="form-group">
+            <label class="form-label" for="ecologist_licence_1">Licence one</label>
+            <input class="form-control" id="ecologist_licence_1" name="ecologist_licence_1" type="text">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="ecologist_licence_2">Licence two</label>
+            <input class="form-control" id="ecologist_licence_2" name="ecologist_licence_2" type="text">
+          </div>
+
+          <br>
+          <br>
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

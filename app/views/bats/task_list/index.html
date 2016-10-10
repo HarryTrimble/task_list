@@ -120,24 +120,26 @@
           </tr>
 
           <!-- Get references -->
-          <tr>
-            <td class="task">
-              <a href="/bats/task_list/get_references{{formQuery}}">
-                <span class="step-number" id="task-number"></span>
-                <span class="task-name"> Get references</span>
-              </a>
-            </td>
-            <td class="numeric" id="task-status">
-              {% if data.apply_for_provisional=="complete" %}
-                {% include "includes/task_status_complete.html" %}
-              {% endif %}
-            </td>
-          </tr>
+          {% if data.past_applications=="no" %}
+            <tr>
+              <td class="task">
+                <a href="/bats/task_list/get_references/experience{{formQuery}}">
+                  <span class="step-number" id="task-number"></span>
+                  <span class="task-name"> Get references</span>
+                </a>
+              </td>
+              <td class="numeric" id="task-status">
+                {% if data.get_references=="complete" %}
+                  {% include "includes/task_status_complete.html" %}
+                {% endif %}
+              </td>
+            </tr>
+          {% endif %}
 
           <!-- Declare and submit -->
           <tr>
             <td class="task">
-              <a href="/bats/task_list/declare_and_submit{{formQuery}}">
+              <a href="/bats/task_list/declare_submit{{formQuery}}">
                 <span class="step-number" id="task-number"></span>
                 <span class="task-name"> Declare and submit</span>
               </a>
@@ -163,8 +165,8 @@
           <br>
 
           <div class="meta-data">
-            <p class="last-edited font-xsmall">Application number:<br>
-              <span class="bold-xsmall">1280880</span>
+            <p class="last-edited font-xsmall">Reference number:<br>
+              <span class="bold-xsmall">HDJ2123F</span>
             </p>
             <p class="last-edited font-xsmall">Progress:<br>
               <span class="bold-xsmall"><span id="completed-steps"></span> of <span id="total-steps"></span> tasks completed</span>

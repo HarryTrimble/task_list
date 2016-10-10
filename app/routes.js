@@ -309,8 +309,8 @@ router.get('/driving/questions/insurance', function (req, res) {
 
 // BATS
 
-// question in /bats/task_list/inspect_place_where_bats_live/alternative
-router.get('/bats/task_list/check_before_you_start/land_ownership', function (req, res) {
+// question in /bats/task_list/inspect_place_where_bats_live/visit_bat_place
+router.get('/bats/task_list/check_before_you_start/ecologist/past_applications', function (req, res) {
 
   console.log("hired_ecologist");
 
@@ -325,7 +325,7 @@ router.get('/bats/task_list/check_before_you_start/land_ownership', function (re
   } else {
 
     // if user is NOT related to child
-    res.render('bats/task_list/check_before_you_start/land_ownership/index.html');
+    res.render('bats/task_list/check_before_you_start/ecologist/past_applications/index.html');
 
   }
 
@@ -442,6 +442,50 @@ router.get('/bats/task_list/building_datails/category', function (req, res) {
 
     // if user is NOT related to child
     res.render('bats/task_list/building_datails/category/index.html');
+
+  }
+
+});
+
+// question in /bats/task_list/get_references/referee_1/relationship
+router.get('/bats/task_list/get_references/referee_1/address', function (req, res) {
+
+  console.log("known_ref_one");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var known_ref_one = req.query.known_ref_one;
+
+  if (known_ref_one == "less_than_3_years"){
+
+    // if user IS related to child
+    res.redirect("/bats/task_list/get_references/result" + res.locals.formQuery);
+
+  } else {
+
+    // if user is NOT related to child
+    res.render('bats/task_list/get_references/referee_1/address/index.html');
+
+  }
+
+});
+
+// question in /bats/task_list/get_references/referee_2/relationship
+router.get('/bats/task_list/get_references/referee_2/address', function (req, res) {
+
+  console.log("known_ref_two");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var known_ref_two = req.query.known_ref_two;
+
+  if (known_ref_two == "less_than_3_years"){
+
+    // if user IS related to child
+    res.redirect("/bats/task_list/get_references/result" + res.locals.formQuery);
+
+  } else {
+
+    // if user is NOT related to child
+    res.render('bats/task_list/get_references/referee_2/address/index.html');
 
   }
 
