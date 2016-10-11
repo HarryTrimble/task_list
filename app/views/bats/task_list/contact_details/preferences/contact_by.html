@@ -10,7 +10,7 @@
       {{formData | safe}}
 
         <!-- Private individual -->
-        {% if data.who_should_be_contacted=="licence_holder" %}
+        {% if data.who_should_be_contacted=="applicant" %}
 
         <h1 class="heading-large">
           How should we contact you?
@@ -32,17 +32,17 @@
 
           <div class="form-group">
             <label for="contact_by_1" class="block-label">
-              <input type="radio" id="contact_by_1" name="contact_by" value="licence_holder">
+              <input type="radio" id="contact_by_1" name="contact_by" value="email">
               Email
             </label>
 
             <label for="contact_by_2" class="block-label">
-              <input type="radio" id="contact_by_2" name="contact_by" value="licence_holder">
-              Phone
+              <input type="radio" id="contact_by_2" name="contact_by" value="phone call">
+              Phone call
             </label>
 
             <label for="contact_by_3" class="block-label">
-              <input type="radio" id="contact_by_3" name="contact_by" value="ecologist">
+              <input type="radio" id="contact_by_3" name="contact_by" value="post">
               Post
             </label>
 

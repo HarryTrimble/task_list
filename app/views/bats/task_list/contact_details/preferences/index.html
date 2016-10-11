@@ -15,18 +15,18 @@
 
         <fieldset>
           <legend class="visuallyhidden">
-            Who should we contact to discuss this appplication?   
+            How should we contact them? 
           </legend>
 
           <div class="form-group">
             <label for="who_should_be_contacted_1" class="block-label">
-              <input type="radio" id="who_should_be_contacted_1" name="who_should_be_contacted" value="licence_holder">
-              You
+              <input type="radio" id="who_should_be_contacted_1" name="who_should_be_contacted" value="applicant">
+              {{ data.applicant_name }}
             </label>
 
             <label for="who_should_be_contacted_2" class="block-label">
               <input type="radio" id="who_should_be_contacted_2" name="who_should_be_contacted" value="ecologist">
-              Named ecologist
+              {{ data.ecologist_name }}
             </label>
 
           </div>

@@ -42,8 +42,6 @@ router.use(function (req, res, next) {
    res.locals.data[name] = value;
  }
 
- res.locals.formQuery = res.locals.formQuery.slice(0,-1);
-
  next();
  
 });
