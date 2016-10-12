@@ -453,7 +453,7 @@ router.get('/bats/task_list/get_references/referee_1/address', function (req, re
   // get the answer from the query string (eg. ?over18="yes")
   var known_ref_one = req.query.known_ref_one;
 
-  if (known_ref_one == "less_than_3_years"){
+  if (known_ref_one == "no"){
 
     // if user IS related to child
     res.redirect("/bats/task_list/get_references/result" + res.locals.formQuery);
@@ -475,7 +475,7 @@ router.get('/bats/task_list/get_references/referee_2/address', function (req, re
   // get the answer from the query string (eg. ?over18="yes")
   var known_ref_two = req.query.known_ref_two;
 
-  if (known_ref_two == "less_than_3_years"){
+  if (known_ref_two == "no"){
 
     // if user IS related to child
     res.redirect("/bats/task_list/get_references/result" + res.locals.formQuery);

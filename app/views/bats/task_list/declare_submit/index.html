@@ -27,6 +27,7 @@
     </thead>
 
     <tbody>
+      <!-- TASK INFORMATION: check before you start -->
       <tr>
         <td>
           Hired ecologist
@@ -55,9 +56,10 @@
           </a>
         </td>
       </tr>
+      <!-- TASK INFORMATION: inspect place where bats are -->
       <tr>
         <td>
-          Ecologist has visited place<br> bat are
+          Ecologist has visited place<br> bat are?
         </td>
         <td>
           {{ data.visit_bat_place }}
@@ -70,7 +72,7 @@
       </tr>
       <tr>
         <td>
-          Alternative to moving <br>or disturbing bats
+          Alternative to moving <br>or disturbing bats?
         </td>
         <td>
           {{ data.alternative }}
@@ -83,7 +85,7 @@
       </tr>
       <tr>
         <td>
-          Serious impact on bat species
+          Serious impact on bat species?
         </td>
         <td>
           {{ data.impact_on_bats }}
@@ -94,6 +96,7 @@
           </a>
         </td>
       </tr>
+      <!-- TASK INFORMATION: bat details -->
       <tr>
         <td>
           Bats
@@ -167,14 +170,11 @@
           When
         </td>
         <td>
-          April 2017 – 9 April 2017
-          <!-- 
-          {{ data.start-day }} {{ data.start-month }} {{ data.start-year }}
+          {{ data.start_day }} {{ data.start_month }} {{ data.start_year }}
 
           –
     
-          {{ data.end-day }} {{ data.end-month }} {{ data.end-year }} 
-          -->
+          {{ data.end_day }} {{ data.end_month }} {{ data.end_year }} 
         </td>
         <td class="change-answer">
           <a href="#">
@@ -198,6 +198,7 @@
           </a>
         </td>
       </tr>
+      <!-- TASK INFORMATION: building details -->
       <tr>
         <td>
           Why
@@ -257,6 +258,7 @@
           </td>
         </tr>
       {% endif %}
+      <!-- TASK INFORMATION: contact details -->
       <tr>
         <td>
           Name
@@ -276,7 +278,7 @@
             Companies House number
           </td>
           <td>
-            {{ data.company-number }}
+            {{ data.company_number }}
           </td>
           <td class="change-answer">
             <a href="#">
@@ -291,7 +293,7 @@
             Charity registration number
           </td>
           <td>
-            1047809
+            {{ data.charity_number }}
           </td>
           <td class="change-answer">
             <a href="#">
@@ -309,8 +311,8 @@
           {{ data.applicant_address_street }}<br>
           {{ data.applicant_address_town }}<br>
           {{ data.applicant_address_postcode }}<br>
-          Tel: {{ data.applicant_phone }}<br>
-          Email: {{ data.applicant_email }}
+          {{ data.applicant_phone }}<br>
+          {{ data.applicant_email }}
         </td>
         <td class="change-answer">
           <a href="#">
@@ -340,8 +342,8 @@
           {{ data.ecologist_address_street }}<br>
           {{ data.ecologist_address_town }}<br>
           {{ data.ecologist_address_postcode }}<br>
-          Tel: {{ data.ecologist_phone }}<br>
-          Email: {{ data.ecologist_email }}
+          {{ data.ecologist_phone }}<br>
+          {{ data.ecologist_email }}
         </td>
         <td class="change-answer">
           <a href="#">
@@ -380,14 +382,15 @@
           </a>
         </td>
       </tr>
-      <!-- get references -->
+      <!-- TASK INFORMATION: get references -->
       {% if data.past_applications=="no" %}
         <tr>
           <td>
             Ecologist experience
           </td>
           <td>
-            University of place
+            {{ data.ecologist_education }}<br>
+            {{ data.ecologist_licence }}
           </td>
           <td class="change-answer">
             <a href="#">
@@ -400,13 +403,14 @@
             Referee one
           </td>
           <td>
-            {{ data.ref_one_name }}
+            {{ data.ref_one_name }}<br>
+            Known for 3 or more years: {{ data.known_ref_one }}<br>
             {{ data.ref_one_building }}<br>
             {{ data.ref_one_street }}<br>
             {{ data.ref_one_town }}<br>
             {{ data.ref_one_postcode }}<br>
-            Tel: {{ data.ecologist_phone }}<br>
-            Email: {{ data.ecologist_email }}
+            {{ data.ref_one_phone }}<br>
+            {{ data.ref_one_email }}
           </td>
           <td class="change-answer">
             <a href="#">
@@ -419,13 +423,14 @@
             Referee two
           </td>
           <td>
-            {{ data.ref_one_name }}
-            {{ data.ref_one_building }}<br>
-            {{ data.ref_one_street }}<br>
-            {{ data.ref_one_town }}<br>
-            {{ data.ref_one_postcode }}<br>
-            Tel: {{ data.ecologist_phone }}<br>
-            Email: {{ data.ecologist_email }}
+            {{ data.ref_two_name }}<br>
+            Known for 3 or more years: {{ data.known_ref_two }}
+            {{ data.ref_two_building }}<br>
+            {{ data.ref_two_street }}<br>
+            {{ data.ref_two_town }}<br>
+            {{ data.ref_two_postcode }}<br>
+            {{ data.ref_two_phone }}<br>
+            {{ data.ref_two_email }}
           </td>
           <td class="change-answer">
             <a href="#">

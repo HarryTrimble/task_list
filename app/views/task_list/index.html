@@ -71,7 +71,21 @@
           {% endif %}
         </td>
       </tr>
-      <!-- read rules -->
+      <!-- Register with your local council -->
+      <tr>
+        <td class="task">
+          <a href="/task_list/register_with_local_council{formQuery}}">
+            <span class="step-number" id="task-number"></span>
+            <span class="task-name"> Register with your local council</span>
+          </a>
+        </td>
+        <td class="numeric" id="task-status">
+          {% if data.read_rules=="complete" %}
+            {% include "includes/task_status_complete.html" %}
+          {% endif %}
+        </td>
+      </tr>
+      <!-- prove identity -->
       <tr>
         <td class="task">
           <a href="/task_list/prove_identity{{formQuery}}">
