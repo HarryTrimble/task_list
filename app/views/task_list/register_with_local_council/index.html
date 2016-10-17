@@ -1,4 +1,4 @@
-{% extends "layout.html" %} {% block page_title %} Get health check {% endblock %} {% block content %}
+{% extends "layout.html" %} {% block page_title %} Register with local council {% endblock %} {% block content %}
 <main id="content" role="main">
   {% include "includes/phase_banner_beta.html" %}
 
@@ -8,7 +8,7 @@
         <a href="/task_list/ordered">Become a childminder</a>
       </li>
       <li>
-        Get health check
+        Register with local council
       </li> 
     </ol>
   </div>
@@ -21,28 +21,31 @@
       {{formData | safe}}
 
         <h1 class="heading-large">
-          Get health check
+          Register with local council
         </h1>
 
         <fieldset>
           <legend class="visuallyhidden">
-            Get health check
+            Register with local council
           </legend>
 
           <p id="reason_for_task">
-            Information is needed about any health condition that may affect your ability to safely care for children. 
+            Before you can start applying to be a childminder, you must register with you local council. 
+          </p>
+
+          <p>
+            It is free to register.
           </p>
 
           <p>Tasks to get health check:</p>
 
           <ol class="list list-number">
-            <li><a href="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/381218/Health_20declaration_20booklet.pdf">print form</a></li>
-            <li>fill in form</li>
-            <li>pay your GP to fill in form</li>
-            <li>give form to your GP to fill</li>
+            <li><a href="https://www.gov.uk/find-registered-childminder">find your local council</a></li>
+            <li>contact council</li>
+            <li>register</li>
           </ol>
 
-          <input type="hidden" name="get_health_check" value="complete">
+          <input type="hidden" name="register_with_local_council" value="complete">
 
         </fieldset>
 

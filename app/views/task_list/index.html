@@ -71,16 +71,16 @@
           {% endif %}
         </td>
       </tr>
-      <!-- Register with your local council -->
+      <!-- Register with local council -->
       <tr>
         <td class="task">
-          <a href="/task_list/register_with_local_council{formQuery}}">
+          <a href="/task_list/register_with_local_council{{formQuery}}">
             <span class="step-number" id="task-number"></span>
-            <span class="task-name"> Register with your local council</span>
+            <span class="task-name"> Register with local council</span>
           </a>
         </td>
         <td class="numeric" id="task-status">
-          {% if data.read_rules=="complete" %}
+          {% if data.register_with_local_council=="complete" %}
             {% include "includes/task_status_complete.html" %}
           {% endif %}
         </td>
