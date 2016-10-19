@@ -104,21 +104,6 @@
             </td>
           </tr>
 
-          <!-- Enter contact details -->
-          <tr>
-            <td class="task">
-              <a href="/bats/task_list/contact_details{{formQuery}}">
-                <span class="step-number" id="task-number"></span>
-                <span class="task-name"> Contact details for you and your ecologist</span>
-              </a>
-            </td>
-            <td class="numeric" id="task-status">
-              {% if data.contact_by %}
-                {% include "includes/task_status_complete.html" %}
-              {% endif %}
-            </td>
-          </tr>
-
           <!-- Get references -->
           {% if data.past_applications=="no" %}
             <tr>
@@ -135,6 +120,21 @@
               </td>
             </tr>
           {% endif %}
+
+          <!-- Enter contact details -->
+          <tr>
+            <td class="task">
+              <a href="/bats/task_list/contact_details{{formQuery}}">
+                <span class="step-number" id="task-number"></span>
+                <span class="task-name"> Contact details for you and your ecologist</span>
+              </a>
+            </td>
+            <td class="numeric" id="task-status">
+              {% if data.contact_by %}
+                {% include "includes/task_status_complete.html" %}
+              {% endif %}
+            </td>
+          </tr>
 
           <!-- Declare and submit -->
           <tr>

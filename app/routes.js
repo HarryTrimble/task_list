@@ -489,4 +489,151 @@ router.get('/bats/task_list/get_references/referee_2/address', function (req, re
 
 });
 
+// check your answers for 'Check before you start' section
+router.get('/bats/task_list/check_before_you_start/ecologist', function (req, res) {
+
+  console.log("known_ref_two");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var hired_ecologist = req.query.hired_ecologist;
+  var past_applications = req.query.past_applications;
+  var own_occupy = req.query.own_occupy;
+
+  if (hired_ecologist && past_applications && own_occupy ){
+
+    // if user IS related to child
+    res.redirect("/bats/task_list/check_before_you_start/check_your_answers" + res.locals.formQuery);
+
+  } else {
+
+    // if user is NOT related to child
+    res.render('bats/task_list/check_before_you_start/ecologist/index.html');
+
+  }
+
+});
+
+// check your answers for 'Inspect where the bats are' section
+router.get('/bats/task_list/inspect_place_where_bats_live/visit_bat_place', function (req, res) {
+
+  console.log("known_ref_two");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var visit_bat_place = req.query.visit_bat_place;
+  var alternative = req.query.alternative;
+  var impact_on_bats = req.query.impact_on_bats;
+
+  if (visit_bat_place && alternative && impact_on_bats ){
+
+    // if user IS related to child
+    res.redirect("/bats/task_list/inspect_place_where_bats_live/check_your_answers" + res.locals.formQuery);
+
+  } else {
+
+    // if user is NOT related to child
+    res.render('bats/task_list/inspect_place_where_bats_live/visit_bat_place/index.html');
+
+  }
+
+});
+
+// check your answers for 'Describe the bats' section
+router.get('/bats/task_list/bat_details/species', function (req, res) {
+
+  console.log("known_ref_two");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var bat_species = req.query.bat_species;
+  var number_bats = req.query.number_bats;
+  var number_breeding_sites = req.query.number_breeding_sites;
+  var number_resting_sites = req.query.number_resting_sites;
+  var activity = req.query.activity;
+  var method = req.query.method;
+  var method_statement = req.query.method_statement;
+
+  if (bat_species && number_bats && number_breeding_sites && number_resting_sites && activity && method && method_statement ){
+
+    // if user IS related to child
+    res.redirect("/bats/task_list/bat_details/check_your_answers" + res.locals.formQuery);
+
+  } else {
+
+    // if user is NOT related to child
+    res.render('bats/task_list/bat_details/species/index.html');
+
+  }
+
+});
+
+// check your answers for 'Describe your building project' section
+router.get('/bats/task_list/building_datails/address', function (req, res) {
+
+  console.log("known_ref_two");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var category = req.query.category;
+  var needs_others_licences = req.query.needs_others_licences;
+
+  if (category && needs_others_licences ){
+
+    // if user IS related to child
+    res.redirect("/bats/task_list/building_datails/check_your_answers" + res.locals.formQuery);
+
+  } else {
+
+    // if user is NOT related to child
+    res.render('bats/task_list/building_datails/address/index.html');
+
+  }
+
+});
+
+// check your answers for 'Describe your building project' section
+router.get('/bats/task_list/contact_details', function (req, res) {
+
+  console.log("known_ref_two");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var applicant_name = req.query.applicant_name;
+  var user_type = req.query.user_type;
+  var ecologist_name = req.query.ecologist_name;
+  var who_should_be_contacted = req.query.who_should_be_contacted;
+
+  if (applicant_name && user_type && ecologist_name && who_should_be_contacted ){
+
+    // if user IS related to child
+    res.redirect("/bats/task_list/contact_details/check_your_answers" + res.locals.formQuery);
+
+  } else {
+
+    // if user is NOT related to child
+    res.render('bats/task_list/contact_details/index.html');
+
+  }
+
+});
+
+// check your answers for 'Describe your building project' section
+router.get('/bats/task_list/get_references/experience', function (req, res) {
+
+  console.log("known_ref_two");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var ecologist_education = req.query.ecologist_education;
+  var ecologist_licence = req.query.ecologist_licence;
+
+  if (ecologist_education && ecologist_licence ){
+
+    // if user IS related to child
+    res.redirect("/bats/task_list/get_references/check_your_answers" + res.locals.formQuery);
+
+  } else {
+
+    // if user is NOT related to child
+    res.render('bats/task_list/get_references/experience/index.html');
+
+  }
+
+});
+
 module.exports = router;

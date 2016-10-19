@@ -1,0 +1,117 @@
+{% extends "bats/layout.html" %}
+
+{% block page_title %}
+  Check your answers
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <h1 class="heading-large">
+    Check your answers for this section
+  </h1>
+
+  <table class="check-your-answers">
+
+    <thead>
+      <tr>
+        <th colspan="2">
+          <h2 class="heading-medium">
+            
+          </h2>
+        </th>
+        <th>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>
+          Where
+        </td>
+        <td>
+          {{ data.building_address_building }}<br>
+          {{ data.building_address_street }}<br>
+          {{ data.building_address_town }}<br>
+          {{ data.building_address_postcode }}
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Exporter name</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Why
+        </td>
+        <td>
+          {% if data.repairs_maintenance=="yes" %}
+            repairs and maintenance work<br>
+          {% endif %}
+
+          {% if data.roof_loft_extension=="yes" %}
+            roof or loft extension<br>
+          {% endif %}
+
+          {% if data.building_conservation=="yes" %}
+            building onversation work<br>
+          {% endif %}
+
+          {% if data.much_need_housing=="yes" %}
+            build much needed housing<br>
+          {% endif %}
+
+          {% if data.give_reason %}
+            {{ data.give_reason }}
+          {% endif %}
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Exporter name</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Category
+        </td>
+        <td>
+          {{ data.category }}
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Exporter name</span>
+          </a>
+        </td>
+      </tr>
+      {% if data.needs_others_licences=="yes" %}
+        <tr>
+          <td>
+            Other licences needed
+          </td>
+          <td>
+            {{ data.licence_types }}
+          </td>
+          <td class="change-answer">
+            <a href="#">
+              Change <span class="visuallyhidden">Exporter name</span>
+            </a>
+          </td>
+        </tr>
+      {% endif %}
+    </tbody>
+  </table>
+
+  <br>
+  <br>
+
+  <div class="form-group">
+    <a href="/bats/task_list{{formQuery}}" class="button">Continue application</a>
+  </div>
+
+</main>
+
+{% endblock %}
