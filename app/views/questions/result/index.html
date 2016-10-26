@@ -97,7 +97,7 @@
 
           <!-- reason not eligibile: related to child -->
           {% if data.will_you_be_paid=="no" %}
-            <p class="lede">If you're not being paid, can't be a childminder.</p>
+            <p class="lede">If you're not being paid, you can't be a childminder.</p>
           {% endif %}
 
           <!-- reason not eligibile: less than two hours a day -->
@@ -134,16 +134,16 @@
             <br>
 
             <!--  Early Years Register AND Childcare Register (£35) + first add training (£216.00) + DBS Check fee (£44)  -->
-            {% if data.child_age=="5_or_under,6_to_7" %}
+            {% if data.child_age=="5_or_under,6_to_7" or data.child_age=="5_or_under,6_to_7,8_and_over" %}
 
               <p>The cost of applying is <span class="bold">£79</span> plus training and insurance. The cost of training and insurance depends on the providers you choose.</p>
 
             <!-- Early Years Register AND Childcare Register (£35) + DBS Check fee (£44) -->
-            {% elif data.child_age=="5_or_under" %}
+            {% elif data.child_age=="5_or_under" or data.child_age=="5_or_under,8_and_over" %}
 
               <p class="">The cost of applying is <span class="bold">£79</span> plus training and insurance. The cost of training and insurance depends on the providers you choose.</p>
 
-            {% elif data.child_age=="6_to_7" %}
+            {% elif data.child_age=="6_to_7" or data.child_age=="6_to_7,8_and_over" %}
               <!--  Childcare Register (£103) + DBS Check fee (£44) -->
               <p class="">The cost of applying is <span class="bold">£147</span> plus training and insurance. The cost of training and insurance depends on the providers you choose.</p>
 

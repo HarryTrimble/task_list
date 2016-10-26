@@ -18,13 +18,17 @@
           <p class="context">Overview</p>
           <h1>Become a childminder</h1>
 
+          <br>
+          <br>
+
+          <!-- 
+          <p style="font-size: 24px;">Childminders are registered professionals trained to care for children 7 years old or younger.</p>
+          -->
+
+          <p class="lede">Complete the task below:</p>
+
         </header>
-
-        <p class="">Complete the tasks below</p>
-
-        <br>
       
-
     {{formData | safe}}
 
     </div>
@@ -74,13 +78,13 @@
       <!-- Register with local council -->
       <tr>
         <td class="task">
-          <a href="/task_list/register_with_local_council{{formQuery}}">
+          <a href="/task_list/contact_local_council{{formQuery}}">
             <span class="step-number" id="task-number"></span>
-            <span class="task-name"> Register with local council</span>
+            <span class="task-name"> Contact your local council</span>
           </a>
         </td>
         <td class="numeric" id="task-status">
-          {% if data.register_with_local_council=="complete" %}
+          {% if data.contact_local_council=="complete" %}
             {% include "includes/task_status_complete.html" %}
           {% endif %}
         </td>
@@ -288,9 +292,7 @@
 <div class="column-quarter">
 
       <ul class="actions">
-        <!--
         <li class="action"><a href="/save_and_return/email">Save and complete later</a></li>
-        -->
         <li class="action"><a href="#">Print list</a></li>
         <!--
         <li class="action"><a href="#">Delete list</a></li>
