@@ -5,10 +5,10 @@
   <div class="breadcrumbs">
     <ol>
       <li>
-        <a href="/task_list/">Become a childminder</a>
+        <a href="/task_list/{{ formQuery | safe }}">Become a childminder</a>
       </li>
       <li>
-        Have food inspection
+        Preparing food
       </li> 
     </ol>
   </div>
@@ -26,18 +26,16 @@
 
         <fieldset>
           <legend class="visuallyhidden">
-            Have food inspection
+            Prepare for food inspection
           </legend>
 
-          <p id="reason_for_task">An inspector from your local council will inspect you premises to check food is being prepared and stored stored safely.</p>
+          <p id="reason_for_task">Your local council may inspect where you care for children, to check food is being prepared and stored safely.</p>
 
           <p>Tasks to have food inspection:</p>
 
           <ol class="list list-number">
-            <li><a href="https://www.food.gov.uk/business-industry/caterers/startingup/childminders">read how to prepare for food inspection</a></li>
-            <li>prepare your for inspection</li>
-            <li>get inspected</li>
-            <li>recieve food safety certificate</li>
+            <li><a href="https://www.food.gov.uk/business-industry/caterers/startingup/childminders">read how to prepare and store food safely</a></li>
+            <li>prepare for potential inspection</li>
           </ol>
 
           <input type="hidden" name="have_food_inspection" value="complete">
