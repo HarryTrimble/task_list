@@ -1,0 +1,46 @@
+{% extends "bats/layout.html" %} {% block page_title %} Land ownership {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/bats/task_list" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          Do you have the land owner or occupier's permission to do the work?  
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            Do you have the owner or occupier's permission to do the work?  
+          </legend>
+
+          <div class="form-group">
+            <label for="has_owners_permission_1" class="block-label">
+              <input type="radio" id="has_owners_permission_1" name="has_owners_permission" value="yes">
+              Yes
+            </label>
+
+            <label for="has_owners_permission_2" class="block-label">
+              <input type="radio" id="has_owners_permission_2" name="has_owners_permission" value="no">
+              No
+            </label>
+
+          </div>
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

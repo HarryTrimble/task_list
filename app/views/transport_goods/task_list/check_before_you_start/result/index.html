@@ -1,0 +1,39 @@
+{% extends "driving/layout.html" %} {% block page_title %} Example - Forms {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <!-- service not available in these countries -->
+      {% if data.hired_ecologist=="no" %}
+
+          <h1 class="heading-large">
+            You're not ready to make an application
+          </h1>
+
+          <br>
+
+          <p class="lede">
+            You must hire a ecologist to apply for a licence.
+          </p>
+
+      {% elif
+        data.has_owners_permission=="no" 
+      %}
+
+        <h1 class="heading-large">
+          You're not ready to make an application
+        </h1>
+
+        <br>
+
+        <p class="lede">You must have permission from either the landlord or occupier to move or disturb the bats on their land.</p>
+
+      {% endif %}
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "bats/layout.html" %} {% block page_title %} Driving lessons {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/bats/task_list/building_datails/category" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          Are you building housing in an area of housing need?  
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            Are you building housing in a area in much need of some?
+          </legend>
+
+          <div class="form-group">
+            <label for="much_need_housing_1" class="block-label">
+              <input type="radio" id="much_need_housing_1" name="much_need_housing" value="yes">
+              Yes
+            </label>
+
+            <label for="much_need_housing_2" class="block-label">
+              <input type="radio" id="much_need_housing_2" name="much_need_housing" value="no">
+              No
+            </label>
+
+          </div>
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

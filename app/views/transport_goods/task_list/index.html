@@ -1,0 +1,186 @@
+{% extends "layout.html" %}
+{% block page_title %} Task list: move bats {% endblock %}
+
+{% block extra_css %}<link rel="stylesheet" href="/public/stylesheets/dm_list.css" />{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+   <div id="">
+      
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+      
+        <header class="page-heading page-heading-with-context page-heading-without-breadcrumb">
+
+          <p class="context">Overview</p>
+          <h1>Move bats</h1>
+
+        </header>
+
+        <p class="">Complete the tasks below:</p>
+
+        <br>
+      
+
+    {{formData | safe}}
+
+    </div>
+
+  </div>
+
+  <div class="grid-row">
+
+    <div class="column-three-quarters">  
+
+      <table>
+        <thead>
+          <tr>
+            <th scope="col" id="col-task"></th>
+            <th class="numeric" id="task-status" scope="col" id="col-status"></th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <!-- Check before you start -->
+          <tr>
+            <td class="task">
+              <a href="/bats/task_list/check_before_you_start/ecologist{{formQuery}}">
+                <span class="step-number" id="task-number"></span>
+                <span class="task-name"> Check before you start</span>
+              </a>
+            </td>
+            <td class="numeric" id="task-status">
+              {% if data.hired_ecologist=="yes" %}
+                {% include "includes/task_status_complete.html" %}
+              {% endif %}
+            </td>
+          </tr>
+
+          <!-- Inspect place where bats live -->
+          <tr>
+            <td class="task">
+              <a href="/bats/task_list/inspect_place_where_bats_live/visit_bat_place{{formQuery}}">
+                <span class="step-number" id="task-number"></span>
+                <span class="task-name"> Inspect where the bats are</span>
+              </a>
+            </td>
+            <td class="numeric" id="task-status">
+              {% if data.impact_on_bats=="no" %}
+                {% include "includes/task_status_complete.html" %}
+              {% endif %}
+            </td>
+          </tr>
+
+          <!-- Enter bat details -->
+          <tr>
+            <td class="task">
+              <a href="/bats/task_list/bat_details/species{{formQuery}}">
+                <span class="step-number" id="task-number"></span>
+                <span class="task-name"> Describe the bats</span>
+              </a>
+            </td>
+            <td class="numeric" id="task-status">
+              {% if data.bat_details=="complete" %}
+                {% include "includes/task_status_complete.html" %}
+              {% endif %}
+            </td>
+          </tr>
+
+          <!-- Enter building details -->
+          <tr>
+            <td class="task">
+              <a href="/bats/task_list/building_datails/address{{formQuery}}">
+                <span class="step-number" id="task-number"></span>
+                <span class="task-name"> Describe your building project</span>
+              </a>
+            </td>
+            <td class="numeric" id="task-status">
+              {% if data.needs_others_licences %}
+                {% include "includes/task_status_complete.html" %}
+              {% endif %}
+            </td>
+          </tr>
+
+          <!-- Get references -->
+          {% if data.past_applications=="no" %}
+            <tr>
+              <td class="task">
+                <a href="/bats/task_list/get_references/experience{{formQuery}}">
+                  <span class="step-number" id="task-number"></span>
+                  <span class="task-name"> Get references for your ecologist</span>
+                </a>
+              </td>
+              <td class="numeric" id="task-status">
+                {% if data.get_references=="complete" %}
+                  {% include "includes/task_status_complete.html" %}
+                {% endif %}
+              </td>
+            </tr>
+          {% endif %}
+
+          <!-- Enter contact details -->
+          <tr>
+            <td class="task">
+              <a href="/bats/task_list/contact_details{{formQuery}}">
+                <span class="step-number" id="task-number"></span>
+                <span class="task-name"> Contact details for you and your ecologist</span>
+              </a>
+            </td>
+            <td class="numeric" id="task-status">
+              {% if data.contact_by %}
+                {% include "includes/task_status_complete.html" %}
+              {% endif %}
+            </td>
+          </tr>
+
+          <!-- Declare and submit -->
+          <tr>
+            <td class="task">
+              <a href="/bats/task_list/declare_submit{{formQuery}}">
+                <span class="step-number" id="task-number"></span>
+                <span class="task-name"> Check and send your application</span>
+              </a>
+            </td>
+            <td class="numeric" id="task-status">
+              {% if data.apply_for_provisional=="complete" %}
+                {% include "includes/task_status_complete.html" %}
+              {% endif %}
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+
+    </div>
+
+    <div class="column-quarter">
+
+          <ul class="actions">
+            <li class="bold"><a href="#">Print list</a></li>
+            <li class="bold"><a href="/save_and_return/email">Save link</a></li>
+          </ul>
+
+          <br>
+
+          <div class="meta-data">
+            <p class="last-edited font-xsmall">Reference number:<br>
+              <span class="bold-xsmall">HDJ2123F</span>
+            </p>
+            <p class="last-edited font-xsmall">Progress:<br>
+              <span class="bold-xsmall"><span id="completed-steps"></span> of <span id="total-steps"></span> tasks completed</span>
+            </p>
+          </div>
+
+    </div>
+
+  </div>
+    
+  </div>
+
+</main>
+{% endblock %}
+{% block extra_js_1 %}<!-- ticky list javascript one -->{% endblock %}
+{% block extra_js_2 %}<!-- ticky list javascript two -->{% endblock %}

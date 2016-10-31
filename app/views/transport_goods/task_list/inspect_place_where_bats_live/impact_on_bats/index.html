@@ -1,0 +1,46 @@
+{% extends "bats/layout.html" %} {% block page_title %} Alternaive to moving bats {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/bats/task_list" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          Does your ecologist think that moving the bats would have a harmful impact on the species?
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            Does your ecologist think there will be a serious impact on the species by moving them? 
+          </legend>
+
+          <div class="form-group">
+            <label for="impact_on_bats_1" class="block-label">
+              <input type="radio" id="impact_on_bats_1" name="impact_on_bats" value="yes">
+              Yes
+            </label>
+
+            <label for="impact_on_bats_2" class="block-label">
+              <input type="radio" id="impact_on_bats_2" name="impact_on_bats" value="no">
+              No
+            </label>
+
+          </div>
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

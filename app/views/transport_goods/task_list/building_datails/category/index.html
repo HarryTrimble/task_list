@@ -1,0 +1,146 @@
+{% extends "bats/layout.html" %} {% block page_title %} Category {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/bats/task_list/building_datails/permissions" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          What category best describes the work you're doing?
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            What do you need to do? 
+          </legend>
+
+          <div class="form-group">
+
+            <label for="category_1" class="block-label">
+              <input type="radio" id="category_1" name="category" value="agriculture, fishing and forestry">
+              Agriculture, fishing and forestry
+            </label>
+
+            <label for="category_4" class="block-label">
+              <input type="radio" id="category_4" name="category" value="bat exclusion from domestic dwellings">
+              Bat exclusion from domestic dwellings
+            </label>
+
+            <label for="category_5" class="block-label">
+              <input type="radio" id="category_5" name="category" value="barn conversion">
+              Barn conversion
+            </label>
+
+            <label for="category_6" class="block-label">
+              <input type="radio" id="category_6" name="category" value="commercial">
+              Commercial
+            </label>
+
+            <label for="category_7" class="block-label">
+              <input type="radio" id="category_7" name="category" value="communications">
+              Communications
+            </label>
+
+            <label for="category_8" class="block-label">
+              <input type="radio" id="category_8" name="category" value="energy generation">
+              Energy generation
+            </label>
+
+            <label for="category_9" class="block-label">
+              <input type="radio" id="category_9" name="category" value="energy supply">
+              Energy supply
+            </label>
+
+            <label for="category_10" class="block-label">
+              <input type="radio" id="category_10" name="category" value="flood and coastal defensess">
+              Flood and coastal defenses
+            </label>
+
+            <label for="category_11" class="block-label">
+              <input type="radio" id="category_11" name="category" value="health and safety">
+              Health and safety
+            </label>
+
+            <label for="category_12" class="block-label">
+              <input type="radio" id="category_12" name="category" value="heritage">
+              Heritage
+            </label>
+
+            <label for="category_13" class="block-label">
+              <input type="radio" id="category_13" name="category" value="housing">
+              Housing
+            </label>
+
+            <label for="category_14" class="block-label">
+              <input type="radio" id="category_14" name="category" value="industrial and manufacturing">
+              Industrial and manufacturing
+            </label>
+
+            <label for="category_15" class="block-label">
+              <input type="radio" id="category_15" name="category" value="mining">
+              Mining
+            </label>
+
+            <label for="category_16" class="block-label">
+              <input type="radio" id="category_16" name="category" value="National Significant Infrastructure Project">
+              National Significant Infrastructure Project
+            </label>
+
+            <label for="category_17" class="block-label">
+              <input type="radio" id="category_17" name="category" value="place of worship">
+              Place of worship
+            </label>
+
+            <label for="category_18" class="block-label">
+              <input type="radio" id="category_18" name="category" value="Public community project">
+              Public community project including schools, universities, hospitals, care facilities and other public buildings
+            </label>
+
+            <label for="category_19" class="block-label">
+              <input type="radio" id="category_19" name="category" value="small scale repair and mainenance works">
+              Small scale repair and mainenance works
+            </label>
+
+            <label for="category_20" class="block-label">
+              <input type="radio" id="category_20" name="category" value="transport">
+              Transport
+            </label>
+
+            <label for="category_21" class="block-label">
+              <input type="radio" id="category_21" name="category" value="waste management">
+              Waste management
+            </label>
+
+            <label for="category_22" class="block-label">
+              <input type="radio" id="category_22" name="category" value="water management">
+              Water management
+            </label>
+
+            <label class="block-label" data-target="not_on_list" for="category_23">
+              <input id="category_23" type="radio" name="bat_species" value="not_on_list">
+              Other
+            </label>
+            <div class="panel panel-border-narrow js-hidden" id="not_on_list">
+              <label class="form-label" for="contact-text-message">Category</label>
+              <input class="form-control" name="contact-text-message" type="text" id="contact-text-message">
+            </div>
+
+          </div>
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

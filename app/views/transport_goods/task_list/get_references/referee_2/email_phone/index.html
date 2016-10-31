@@ -1,0 +1,52 @@
+{% extends "layout.html" %} {% block page_title %} Email and phone {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/bats/task_list/" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          Referee two 
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            Referee two
+          </legend>
+
+          <h3 class="heading-medium">Email</h3>
+
+          <div class="form-group">
+            <label class="form-label" for="ref_two_email">Email address</label>
+            <input class="form-control" id="ref_two_email" name="ref_two_email" type="text">
+          </div>
+
+          <h3 class="heading-medium">Phone</h3>
+
+          <div class="form-group">
+            <label class="form-label" for="ref_two_phone">Phone number</label>
+            <input class="form-control" id="ref_twp_phone" name="ref_two_phone" type="text">
+          </div>
+
+          <br>
+          <br>
+
+        </fieldset>
+
+        <input type="hidden" name="get_references" value="complete">
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends "layout.html" %} {% block page_title %} Name and address {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/bats/task_list/contact_details/ecologist/email_phone" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          Your ecologist's details
+        </h1>
+
+        <br>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            Your ecologist's details
+          </legend>
+
+          <div class="form-group">
+            <label class="form-label" for="ecologist_name">Name</label>
+            <input class="form-control" id="ecologist_name" name="ecologist_name" type="text">
+          </div>
+
+          <h3 class="heading-medium">
+            Address
+          </h3>
+
+          <div class="form-group">
+            <label class="form-label" for="ecologist_address_building">Building and street</label>
+            <input class="form-control" id="ecologist_address_building" name="ecologist_address_building" type="text">
+            <br>
+            <br>
+            <input class="form-control"" id="ecologist_address_street" name="ecologist_address_street" type="text">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="ecologist_address_town">Town or city</label>
+            <input class="form-control" id="ecologist_address_town" name="ecologist_address_town" type="text">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="ecologist_address_country">Country (optional)</label>
+            <input class="form-control" id="ecologist_address_country" name="ecologist_address_country" type="text">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="ecologist_address_postcode">Postcode</label>
+            <input class="form-control form-control-1-4" id="ecologist_address_postcode" name="ecologist_address_postcode" type="text">
+          </div>
+
+          <br>
+          <br>
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

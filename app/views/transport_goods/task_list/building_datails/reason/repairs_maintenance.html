@@ -1,0 +1,46 @@
+{% extends "bats/layout.html" %} {% block page_title %} Driving lessons {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/bats/task_list/building_datails/reason/roof_loft_extension" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          Are you doing just repairs and maintenance work? 
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            Are you doing just repairs and maintenance work?  
+          </legend>
+
+          <div class="form-group">
+            <label for="repairs_maintenance_1" class="block-label">
+              <input type="radio" id="repairs_maintenance_1" name="repairs_maintenance" value="yes">
+              Yes
+            </label>
+
+            <label for="repairs_maintenance_2" class="block-label">
+              <input type="radio" id="repairs_maintenance_2" name="repairs_maintenance" value="no">
+              No
+            </label>
+
+          </div>
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

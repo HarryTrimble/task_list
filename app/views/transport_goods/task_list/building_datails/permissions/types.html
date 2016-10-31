@@ -1,0 +1,46 @@
+{% extends "bats/layout.html" %} {% block page_title %} Driving lessons {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/bats/task_list" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          What other licences do you need? 
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            What other licences do you need? 
+          </legend>
+
+          <div class="form-group">
+            <label for="licence_types_1" class="block-label">
+              <input type="radio" id="licence_types_1" name="licence_types" value="yes">
+              Yes
+            </label>
+
+            <label for="licence_types_2" class="block-label">
+              <input type="radio" id="licence_types_2" name="licence_types" value="no">
+              No
+            </label>
+
+          </div>
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

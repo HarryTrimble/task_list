@@ -1,0 +1,63 @@
+{% extends "bats/layout.html" %} {% block page_title %} Name and address {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/bats/task_list/get_references/referee_1/address" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          Referee one
+        </h1>
+
+        <br>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            Your ecologist's details
+          </legend>
+
+          <div class="form-group">
+            <label class="form-label" for="ref_one_name">Full name</label>
+            <input class="form-control" id="ref_one_name" name="ref_one_name" type="text">
+          </div>
+
+          <br>
+          <br>
+          <br>
+
+          <h3 class="heading-medium">
+            Have you known this person longer than 3 years?
+          </h3>
+
+          <div class="form-group">
+            <label for="known_ref_one_1" class="block-label">
+              <input type="radio" id="known_ref_one_1" name="known_ref_one" value="yes">
+              Yes
+            </label>
+
+            <label for="known_ref_one_2" class="block-label">
+              <input type="radio" id="known_ref_one_2" name="known_ref_one" value="no">
+              No
+            </label>
+          </div>
+
+          <br>
+          <br>
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

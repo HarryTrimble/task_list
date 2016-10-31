@@ -1,0 +1,50 @@
+{% extends "layout.html" %} {% block page_title %} Email and phone {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/bats/task_list/get_references/referee_2/relationship" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          Referee one 
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            Referee one
+          </legend>
+
+          <h3 class="heading-medium">Email</h3>
+
+          <div class="form-group">
+            <label class="form-label" for="ref_one_email">Email address</label>
+            <input class="form-control" id="ref_one_email" name="ref_one_email" type="text">
+          </div>
+
+          <h3 class="heading-medium">Phone</h3>
+
+          <div class="form-group">
+            <label class="form-label" for="ref_one_phone">Phone number</label>
+            <input class="form-control" id="ref_one_phone" name="ref_one_phone" type="text">
+          </div>
+
+          <br>
+          <br>
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

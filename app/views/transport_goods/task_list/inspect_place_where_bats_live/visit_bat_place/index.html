@@ -1,0 +1,48 @@
+{% extends "bats/layout.html" %} {% block page_title %} Driving lessons {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/bats/task_list/inspect_place_where_bats_live/alternative" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          Has your ecologist inspected the site where the bats are? 
+        </h1>
+
+        <p>Your ecologist must inspect the site to decide what impact moving the bats will have.</p>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            Has your ecologist inspected the place where the bats you want to move live? 
+          </legend>
+
+          <div class="form-group">
+            <label for="visit_bat_place_1" class="block-label">
+              <input type="radio" id="visit_bat_place_1" name="visit_bat_place" value="yes">
+              Yes
+            </label>
+
+            <label for="visit_bat_place_2" class="block-label">
+              <input type="radio" id="visit_bat_place_2" name="visit_bat_place" value="no">
+              No
+            </label>
+
+          </div>
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}
