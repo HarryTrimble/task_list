@@ -16,7 +16,7 @@
         <header class="page-heading page-heading-with-context page-heading-without-breadcrumb">
 
           <p class="context">Overview</p>
-          <h1>Move bats</h1>
+          <h1>Transport goods in the UK</h1>
 
         </header>
 
@@ -47,9 +47,15 @@
           <!-- Check before you start -->
           <tr>
             <td class="task">
-              <a href="/bats/task_list/check_before_you_start/ecologist{{formQuery}}">
+              <a href="/transport_goods/task_list/check_before_you_start/ecologist{{formQuery}}">
                 <span class="step-number" id="task-number"></span>
-                <span class="task-name"> Check before you start</span>
+                <span class="task-name"> Check before your start</span>
+                <!--
+                  <br>
+                  <span class="task-description">
+                    Check your eligibility, time and cost to apply
+                  </span>
+                -->
               </a>
             </td>
             <td class="numeric" id="task-status">
@@ -59,27 +65,12 @@
             </td>
           </tr>
 
-          <!-- Inspect place where bats live -->
-          <tr>
-            <td class="task">
-              <a href="/bats/task_list/inspect_place_where_bats_live/visit_bat_place{{formQuery}}">
-                <span class="step-number" id="task-number"></span>
-                <span class="task-name"> Inspect where the bats are</span>
-              </a>
-            </td>
-            <td class="numeric" id="task-status">
-              {% if data.impact_on_bats=="no" %}
-                {% include "includes/task_status_complete.html" %}
-              {% endif %}
-            </td>
-          </tr>
-
           <!-- Enter bat details -->
           <tr>
             <td class="task">
-              <a href="/bats/task_list/bat_details/species{{formQuery}}">
+              <a href="/transport_goods/task_list/checK_cost{formQuery}}">
                 <span class="step-number" id="task-number"></span>
-                <span class="task-name"> Describe the bats</span>
+                <span class="task-name"> Check cost to apply</span>
               </a>
             </td>
             <td class="numeric" id="task-status">
@@ -89,44 +80,132 @@
             </td>
           </tr>
 
-          <!-- Enter building details -->
+          <!-- Enter bat details -->
           <tr>
             <td class="task">
-              <a href="/bats/task_list/building_datails/address{{formQuery}}">
+              <a href="/transport_goods/task_list/check_time{{formQuery}}">
                 <span class="step-number" id="task-number"></span>
-                <span class="task-name"> Describe your building project</span>
+                <span class="task-name"> Check time to apply</span>
               </a>
             </td>
             <td class="numeric" id="task-status">
-              {% if data.needs_others_licences %}
+              {% if data.bat_details=="complete" %}
                 {% include "includes/task_status_complete.html" %}
               {% endif %}
             </td>
           </tr>
 
-          <!-- Get references -->
-          {% if data.past_applications=="no" %}
-            <tr>
-              <td class="task">
-                <a href="/bats/task_list/get_references/experience{{formQuery}}">
-                  <span class="step-number" id="task-number"></span>
-                  <span class="task-name"> Get references for your ecologist</span>
-                </a>
-              </td>
-              <td class="numeric" id="task-status">
-                {% if data.get_references=="complete" %}
-                  {% include "includes/task_status_complete.html" %}
-                {% endif %}
-              </td>
-            </tr>
-          {% endif %}
+          <!-- Check before you start -->
+          <tr>
+            <td class="task">
+              <a href="/transport_goods/task_list/read_rules{{formQuery}}">
+                <span class="step-number" id="task-number"></span>
+                <span class="task-name"> Read rules</span>
+              </a>
+            </td>
+            <td class="numeric" id="task-status">
+              {% if data.hired_ecologist=="yes" %}
+                {% include "includes/task_status_complete.html" %}
+              {% endif %}
+            </td>
+          </tr>
+
+          <!-- Enter bat details -->
+          <tr>
+            <td class="task">
+              <a href="/transport_goods/task_list/give_public_notice{{formQuery}}">
+                <span class="step-number" id="task-number"></span>
+                <span class="task-name"> Give public notice</span>
+              </a>
+            </td>
+            <td class="numeric" id="task-status">
+              {% if data.bat_details=="complete" %}
+                {% include "includes/task_status_complete.html" %}
+              {% endif %}
+            </td>
+          </tr>
+
+          <!-- Enter bat details -->
+          <tr>
+            <td class="task">
+              <a href="/transport_goods/task_list/describe_vehicles{{formQuery}}">
+                <span class="step-number" id="task-number"></span>
+                <span class="task-name"> Describe your vehicles</span>
+              </a>
+            </td>
+            <td class="numeric" id="task-status">
+              {% if data.bat_details=="complete" %}
+                {% include "includes/task_status_complete.html" %}
+              {% endif %}
+            </td>
+          </tr>
+
+          <!-- Enter bat details -->
+          <tr>
+            <td class="task">
+              <a href="/transport_goods/task_list/maintain_vehicles{{formQuery}}">
+                <span class="step-number" id="task-number"></span>
+                <span class="task-name"> Maintain your vehicles</span>
+              </a>
+            </td>
+            <td class="numeric" id="task-status">
+              {% if data.bat_details=="complete" %}
+                {% include "includes/task_status_complete.html" %}
+              {% endif %}
+            </td>
+          </tr>
 
           <!-- Enter contact details -->
           <tr>
             <td class="task">
-              <a href="/bats/task_list/contact_details{{formQuery}}">
+              <a href="/transport_goods/task_list/prove_money{{formQuery}}">
                 <span class="step-number" id="task-number"></span>
-                <span class="task-name"> Contact details for you and your ecologist</span>
+                <span class="task-name"> Prove you have enough money</span>
+              </a>
+            </td>
+            <td class="numeric" id="task-status">
+              {% if data.contact_by %}
+                {% include "includes/task_status_complete.html" %}
+              {% endif %}
+            </td>
+          </tr>
+
+          <!-- Enter contact details -->
+          <tr>
+            <td class="task">
+              <a href="/transport_goods/task_list/criminal{{formQuery}}">
+                <span class="step-number" id="task-number"></span>
+                <span class="task-name"> Declare convictions and penalties</span>
+              </a>
+            </td>
+            <td class="numeric" id="task-status">
+              {% if data.contact_by %}
+                {% include "includes/task_status_complete.html" %}
+              {% endif %}
+            </td>
+          </tr>
+
+          <!-- Enter contact details -->
+          <tr>
+            <td class="task">
+              <a href="/transport_goods/task_list/contact_details{{formQuery}}">
+                <span class="step-number" id="task-number"></span>
+                <span class="task-name"> Your contact details</span>
+              </a>
+            </td>
+            <td class="numeric" id="task-status">
+              {% if data.contact_by %}
+                {% include "includes/task_status_complete.html" %}
+              {% endif %}
+            </td>
+          </tr>
+
+          <!-- Enter contact details -->
+          <tr>
+            <td class="task">
+              <a href="/transport_goods/task_list/pay_fee{{formQuery}}">
+                <span class="step-number" id="task-number"></span>
+                <span class="task-name"> Pay application fee</span>
               </a>
             </td>
             <td class="numeric" id="task-status">
@@ -139,7 +218,7 @@
           <!-- Declare and submit -->
           <tr>
             <td class="task">
-              <a href="/bats/task_list/declare_submit{{formQuery}}">
+              <a href="/transport_goods/task_list/check_and_send{{formQuery}}">
                 <span class="step-number" id="task-number"></span>
                 <span class="task-name"> Check and send your application</span>
               </a>
