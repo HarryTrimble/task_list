@@ -154,7 +154,12 @@
         </td>
       </tr>
       <!-- Do first aid training -->
-      {% if data.child_age=="5_or_under" %}
+      {% 
+        if 
+        data.child_age=="5_or_under" or 
+        data.child_age=="5_or_under,6_to_7" or data.child_age=="5_or_under,6_to_7,8_and_over" or
+        data.child_age=="5_or_under,8_and_over"  
+      %}
         <tr id="do_first_aid_training">
           <td class="task">
             <a href="/task_list/do_first_aid_training{{formQuery}}">

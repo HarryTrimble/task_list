@@ -1,0 +1,68 @@
+{% extends "transport_goods/layout.html" %} {% block page_title %} Become a transport manager {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="breadcrumbs">
+    <ol>
+      <li>
+        <a href="/task_list/{{ formQuery | safe }}">Transport goods in the UK</a>
+      </li>
+      <li>
+        Become a transport manager
+      </li> 
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/task_list#become" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          Become a transport manager
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            Become a transport manager
+          </legend>
+
+          <!--
+          <p class="cost-and-time">
+            Cost: <span class="bold">varies by GP</span><br>
+            Waiting: <span class="bold">varies by GP</span>
+          </p>
+          -->
+
+          <p id="reason_for_task">
+            To transport goods in the UK, you need someone to be your transport manager. 
+          </p>
+
+          <p>Tasks to become a transport manager:</p>
+
+          <ol class="list list-number">
+            <li>do Road Haulage Operations training</li>
+            <li><a href="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/555495/tm1g-guidance-on-adding-a-transport-manager-to-a-licence.pdf">read guidance to apply to DVSA</a></li>
+            <li><a href="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/558718/tm1-form-application-to-add-a-transport-manager-to-a-licence.pdf"> print application form</a></li>
+            <li>fill in form</li>
+            <li>send to DVSA</li>
+            <li>get transport manager certificate</li>
+          </ol>
+
+          <input type="hidden" name="become_transport_manager" value="complete">
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Task complete" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% block page_title %} Task list: move bats {% endblock %}
+{% block page_title %} Transport goods in the UK {% endblock %}
 
 {% block extra_css %}<link rel="stylesheet" href="/public/stylesheets/dm_list.css" />{% endblock %}
 
@@ -47,7 +47,7 @@
           <!-- Check before you start -->
           <tr>
             <td class="task">
-              <a href="/transport_goods/task_list/check_before_you_start/ecologist{{formQuery}}">
+              <a href="/transport_goods/task_list/check_before_you_start/transport_manager{{formQuery}}">
                 <span class="step-number" id="task-number"></span>
                 <span class="task-name"> Check before your start</span>
                 <!--
@@ -109,6 +109,23 @@
               {% endif %}
             </td>
           </tr>
+
+          <!-- Enter bat details -->
+          {% if data.transport_manager=="no" %}
+            <tr>
+              <td class="task">
+                <a href="/transport_goods/task_list/become_transport_manager{{formQuery}}">
+                  <span class="step-number" id="task-number"></span>
+                  <span class="task-name"> Become a transport manager</span>
+                </a>
+              </td>
+              <td class="numeric" id="task-status">
+                {% if data.bat_details=="complete" %}
+                  {% include "includes/task_status_complete.html" %}
+                {% endif %}
+              </td>
+            </tr>
+          {% endif %}
 
           <!-- Enter bat details -->
           <tr>

@@ -1,33 +1,33 @@
-{% extends "bats/layout.html" %} {% block page_title %} Driving lessons {% endblock %} {% block content %}
+{% extends "transport_goods/layout.html" %} {% block page_title %} Driving lessons {% endblock %} {% block content %}
 <main id="content" role="main">
   {% include "includes/phase_banner_beta.html" %}
 
   <div class="grid-row">
     <div class="column-two-thirds">
 
-      <form method="get" action="/bats/task_list/check_before_you_start/ecologist/past_applications" class="form">
+      <form method="get" action="/transport_goods/task_list" class="form">
 
       {{formData | safe}}
 
         <h1 class="heading-large">
-          Have you hired a ecologist? 
+          Have you hired a transport manager?
         </h1>
 
         <p>You must hire a ecologist to inspect the place where the bats are and to help you prepare your application.</p>
 
         <fieldset>
           <legend class="visuallyhidden">
-            Have you hired a ecologist to inspect and move the bats for you? 
+            Have you hired a transport manager?
           </legend>
 
           <div class="form-group">
-            <label for="hired_ecologist_1" class="block-label">
-              <input type="radio" id="hired_ecologist_1" name="hired_ecologist" value="yes">
+            <label for="transport_manager_1" class="block-label">
+              <input type="radio" id="transport_manager_1" name="transport_manager" value="yes">
               Yes
             </label>
 
-            <label for="hired_ecologist_2" class="block-label">
-              <input type="radio" id="hired_ecologist_2" name="hired_ecologist" value="no">
+            <label for="transport_manager_2" class="block-label">
+              <input type="radio" id="transport_manager_2" name="transport_manager" value="no">
               No
             </label>
 
