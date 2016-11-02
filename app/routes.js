@@ -636,4 +636,28 @@ router.get('/bats/task_list/get_references/experience', function (req, res) {
 
 });
 
+// TRANSPORT GOODS IN THE UK
+
+// question in /bats/task_list/inspect_place_where_bats_live/visit_bat_place
+router.get('/bats/task_list/check_before_you_start/ecologist/past_applications', function (req, res) {
+
+  console.log("hired_ecologist");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var hired_ecologist = req.query.hired_ecologist;
+
+  if (hired_ecologist == "no"){
+
+    // if user IS related to child
+    res.redirect("/bats/task_list/check_before_you_start/result" + res.locals.formQuery);
+
+  } else {
+
+    // if user is NOT related to child
+    res.render('bats/task_list/check_before_you_start/ecologist/past_applications/index.html');
+
+  }
+
+});
+
 module.exports = router;

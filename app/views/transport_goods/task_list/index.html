@@ -65,37 +65,7 @@
             </td>
           </tr>
 
-          <!-- Enter bat details -->
-          <tr>
-            <td class="task">
-              <a href="/transport_goods/task_list/checK_cost{formQuery}}">
-                <span class="step-number" id="task-number"></span>
-                <span class="task-name"> Check cost to apply</span>
-              </a>
-            </td>
-            <td class="numeric" id="task-status">
-              {% if data.bat_details=="complete" %}
-                {% include "includes/task_status_complete.html" %}
-              {% endif %}
-            </td>
-          </tr>
-
-          <!-- Enter bat details -->
-          <tr>
-            <td class="task">
-              <a href="/transport_goods/task_list/check_time{{formQuery}}">
-                <span class="step-number" id="task-number"></span>
-                <span class="task-name"> Check time to apply</span>
-              </a>
-            </td>
-            <td class="numeric" id="task-status">
-              {% if data.bat_details=="complete" %}
-                {% include "includes/task_status_complete.html" %}
-              {% endif %}
-            </td>
-          </tr>
-
-          <!-- Check before you start -->
+          <!-- Read rules -->
           <tr>
             <td class="task">
               <a href="/transport_goods/task_list/read_rules{{formQuery}}">
@@ -110,7 +80,7 @@
             </td>
           </tr>
 
-          <!-- Enter bat details -->
+          <!-- Become a transport manager -->
           {% if data.transport_manager=="no" %}
             <tr>
               <td class="task">
@@ -127,7 +97,7 @@
             </tr>
           {% endif %}
 
-          <!-- Enter bat details -->
+          <!-- Give public notice -->
           <tr>
             <td class="task">
               <a href="/transport_goods/task_list/give_public_notice{{formQuery}}">
@@ -157,7 +127,7 @@
             </td>
           </tr>
 
-          <!-- Enter bat details -->
+          <!-- Maintain your vehicles -->
           <tr>
             <td class="task">
               <a href="/transport_goods/task_list/maintain_vehicles{{formQuery}}">
@@ -172,7 +142,7 @@
             </td>
           </tr>
 
-          <!-- Enter contact details -->
+          <!-- Prove you have enough money -->
           <tr>
             <td class="task">
               <a href="/transport_goods/task_list/prove_money{{formQuery}}">
@@ -187,7 +157,7 @@
             </td>
           </tr>
 
-          <!-- Enter contact details -->
+          <!-- Declare convictions and penalties -->
           <tr>
             <td class="task">
               <a href="/transport_goods/task_list/criminal{{formQuery}}">
@@ -202,7 +172,7 @@
             </td>
           </tr>
 
-          <!-- Enter contact details -->
+          <!-- Your contact details -->
           <tr>
             <td class="task">
               <a href="/transport_goods/task_list/contact_details{{formQuery}}">
@@ -217,7 +187,7 @@
             </td>
           </tr>
 
-          <!-- Enter contact details -->
+          <!-- Pay application fee -->
           <tr>
             <td class="task">
               <a href="/transport_goods/task_list/pay_fee{{formQuery}}">
@@ -232,7 +202,7 @@
             </td>
           </tr>
 
-          <!-- Declare and submit -->
+          <!-- Check and send your application -->
           <tr>
             <td class="task">
               <a href="/transport_goods/task_list/check_and_send{{formQuery}}">
@@ -255,8 +225,8 @@
     <div class="column-quarter">
 
           <ul class="actions">
+            <li class="bold"><a href="/save_and_return/email">Save and complete later</a></li>
             <li class="bold"><a href="#">Print list</a></li>
-            <li class="bold"><a href="/save_and_return/email">Save link</a></li>
           </ul>
 
           <br>
