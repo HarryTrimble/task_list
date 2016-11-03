@@ -1,14 +1,14 @@
-{% extends "layout.html" %} {% block page_title %} Get adapted car {% endblock %} {% block content %}
+{% extends "layout.html" %} {% block page_title %} Apply to for provisional licence {% endblock %} {% block content %}
 <main id="content" role="main">
   {% include "includes/phase_banner_beta.html" %}
 
   <div class="breadcrumbs">
     <ol>
       <li>
-        <a href="/driving/task_list">Learn to drive</a>
+        <a href="/driving/task_list">Become a childminder</a>
       </li>
       <li>
-        Revise for theory test
+        Apply for provisional licence
       </li> 
     </ol>
   </div>
@@ -21,24 +21,24 @@
       {{formData | safe}}
 
         <h1 class="heading-large">
-          Learn The Highway Code
+          Book theory test
         </h1>
 
         <fieldset>
           <legend class="visuallyhidden">
-            Learn The Highway Code
+            Book theory test
           </legend>
 
-          <p id="reason_for_task">To pass your theory test, learn <a href="https://www.gov.uk/guidance/the-highway-code">The Highway Code</a></p>
+          <p id="reason_for_task">Before you take your driving test, you must show you know <a href="https://www.gov.uk/guidance/the-highway-code">The Highway Code</a></p>
 
-          <p>Tasks to learn The Highway Code:</p>
+          <p>Tasks to book theory test:</p>
 
           <ol class="list list-number">
-            <li>learn <a href="https://www.gov.uk/guidance/the-highway-code">The Highway Code</a></li>
-            <li><a href="https://www.gov.uk/take-practice-theory-test">practice theory test</a></li>
+            <li>have provisional licence number to hand</li>
+            <li><a href="https://www.gov.uk/apply-first-provisional-driving-licence">apply online</a></li>
           </ol>
 
-          <input type="hidden" name="revise_for_theory_test" value="complete">
+          <input type="hidden" name="book_theory_test" value="complete">
 
         </fieldset>
 

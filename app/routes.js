@@ -639,7 +639,7 @@ router.get('/bats/task_list/get_references/experience', function (req, res) {
 // TRANSPORT GOODS IN THE UK
 
 // question in /transport_goods/task_list/check_before_you_start/weight/empty
-router.get('/transport_goods/task_list/check_before_you_start/exempt_vehicles', function (req, res) {
+router.get('/transport_goods/task_list/check_before_you_start/how_many_vehicles', function (req, res) {
 
   console.log("hired_ecologist");
 
@@ -660,7 +660,7 @@ router.get('/transport_goods/task_list/check_before_you_start/exempt_vehicles', 
   } else {
 
     // if user is NOT related to child
-    res.render('transport_goods/task_list/check_before_you_start/exempt_vehicles/index.html');
+    res.render('transport_goods/task_list/check_before_you_start/how_many_vehicles/index.html');
 
   }
 
@@ -668,6 +668,72 @@ router.get('/transport_goods/task_list/check_before_you_start/exempt_vehicles', 
 
 // check your answers for 'Describe your building project' section
 router.get('/transport_goods/task_list/check_before_you_start/name', function (req, res) {
+
+  console.log("known_ref_two");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var exempt_vehicles = req.query.exempt_vehicles;
+
+  if (exempt_vehicles == "" ){
+
+    // if user IS related to child
+    res.redirect("/transport_goods/task_list/check_before_you_start/result" + res.locals.formQuery);
+
+  } else {
+
+    // if user is NOT related to child
+    res.render('transport_goods/task_list/check_before_you_start/name/index.html');
+
+  }
+
+});
+
+// check your answers for 'Describe your building project' section
+router.get('/transport_goods/task_list/check_before_you_start/trade_plates', function (req, res) {
+
+  console.log("known_ref_two");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var carrying_passengers = req.query.carrying_passengers;
+
+  if (carrying_passengers == "yes" ){
+
+    // if user IS related to child
+    res.redirect("/transport_goods/task_list/check_before_you_start/result" + res.locals.formQuery);
+
+  } else {
+
+    // if user is NOT related to child
+    res.render('transport_goods/task_list/check_before_you_start/trade_plates/index.html');
+
+  }
+
+});
+
+// check your answers for 'Describe your building project' section
+router.get('/transport_goods/task_list/check_before_you_start/short_distance/less_than_6_miles_a_week', function (req, res) {
+
+  console.log("known_ref_two");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var trade_plates = req.query.trade_plates;
+
+  if (trade_plates == "yes" ){
+
+    // if user IS related to child
+    res.redirect("/transport_goods/task_list/check_before_you_start/result" + res.locals.formQuery);
+
+  } else {
+
+    // if user is NOT related to child
+    res.render('transport_goods/task_list/check_before_you_start/short_distance/less_than_6_miles_a_week/index.html');
+
+  }
+
+});
+
+// check your answers for 'Describe your building project' section
+router.get('/transport_goods/task_list/check_before_you_start/transport_manager', function (req, res) {
 
   console.log("known_ref_two");
 
@@ -683,7 +749,7 @@ router.get('/transport_goods/task_list/check_before_you_start/name', function (r
   } else {
 
     // if user is NOT related to child
-    res.render('transport_goods/task_list/check_before_you_start/name/index.html');
+    res.render('transport_goods/task_list/check_before_you_start/transport_manager/index.html');
 
   }
 

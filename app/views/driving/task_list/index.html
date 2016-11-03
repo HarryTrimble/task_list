@@ -168,7 +168,7 @@
           </a>
         </td>
         <td class="numeric" id="task-status">          
-          {% if data.get_insured=="complete" %}
+          {% if data.find_instructor=="complete" %}
             {% include "includes/task_status_complete.html" %}
           {% endif %}
         </td>
@@ -178,13 +178,13 @@
       <!-- Book theory test -->
       <tr>
         <td class="task">
-          <a href="https://www.gov.uk/book-theory-test">
+          <a href="/driving/task_list/book_theory_test{{formQuery}}">
             <span class="step-number" id="task-number"></span>
             <span class="task-name"> Book your theory test</span>
           </a>
         </td>
         <td class="numeric" id="task-status">          
-          {% if data.get_insured=="complete" %}
+          {% if data.book_theory_test=="complete" %}
             {% include "includes/task_status_complete.html" %}
           {% endif %}
         </td>
@@ -199,7 +199,7 @@
           </a>
         </td>
         <td class="numeric" id="task-status">          
-          {% if data.get_insured=="complete" %}
+          {% if data.revise_for_theory_test=="complete" %}
             {% include "includes/task_status_complete.html" %}
           {% endif %}
         </td>
@@ -208,13 +208,13 @@
       <!-- Take theory test -->
       <tr>
         <td class="task">
-          <a href="/driving/task_list/take_theory_test/search{{formQuery}}">
+          <a href="/driving/task_list/check_theory_test_details{{formQuery}}">
             <span class="step-number" id="task-number"></span>
-            <span class="task-name"> Check when your theory test is</span>
+            <span class="task-name"> Check your theory test details</span>
           </a>
         </td>
         <td class="numeric" id="task-status">          
-          {% if data.get_insured=="complete" %}
+          {% if data.check_theory_test_details=="complete" %}
             {% include "includes/task_status_complete.html" %}
           {% endif %}
         </td>
@@ -223,13 +223,13 @@
       <!-- Take practical test -->
       <tr>
         <td class="task">
-          <a href="https://www.gov.uk/theory-test{{formQuery}}">
+          <a href="/driving/task_list/take_theory_test{{formQuery}}">
             <span class="step-number" id="task-number"></span>
             <span class="task-name"> Take your theory test</span>
           </a>
         </td>
         <td class="numeric" id="task-status">          
-          {% if data.take_practical_test=="complete" %}
+          {% if data.take_theory_test=="complete" %}
             {% include "includes/task_status_complete.html" %}
           {% endif %}
         </td>
@@ -254,43 +254,44 @@
       <!-- Book practical test -->
       <tr>
         <td class="task">
-          <a href="https://www.gov.uk/book-driving-test">
+          <a href="/driving/task_list/book_driving_test{{formQuery}}">
             <span class="step-number" id="task-number"></span>
             <span class="task-name"> Book your driving test</span>
           </a>
         </td>
         <td class="numeric" id="task-status">          
-          {% if data.get_insured=="complete" %}
+          {% if data.book_driving_test=="complete" %}
             {% include "includes/task_status_complete.html" %}
           {% endif %}
         </td>
       </tr>
       
-      <!-- Take practical test -->
+      <!-- Check your driving test details -->
       <tr>
         <td class="task">
-          <a href="/driving/task_list/take_practical_test/search{{formQuery}}">
+          <a href="/driving/task_list/check_driving_test_details{{formQuery}}">
             <span class="step-number" id="task-number"></span>
-            <span class="task-name"> Check when your driving test is</span>
+            <span class="task-name"> Check your driving test details
+            </span>
           </a>
         </td>
         <td class="numeric" id="task-status">          
-          {% if data.take_practical_test=="complete" %}
+          {% if data.check_driving_test_details=="complete" %}
             {% include "includes/task_status_complete.html" %}
           {% endif %}
         </td>
       </tr>
 
-      <!-- Take practical test -->
+      <!-- Take your driving test -->
       <tr>
         <td class="task">
-          <a href="https://www.gov.uk/driving-test/book-test{{formQuery}}">
+          <a href="/driving/task_list/take_driving_test{{formQuery}}">
             <span class="step-number" id="task-number"></span>
             <span class="task-name"> Take your driving test</span>
           </a>
         </td>
         <td class="numeric" id="task-status">          
-          {% if data.take_practical_test=="complete" %}
+          {% if data.take_driving_test=="complete" %}
             {% include "includes/task_status_complete.html" %}
           {% endif %}
         </td>
@@ -321,7 +322,7 @@
           </a>
         </td>
         <td class="numeric" id="task-status">          
-          {% if data.get_insured=="complete" %}
+          {% if data.get_full_licence=="complete" %}
             {% include "includes/task_status_complete.html" %}
           {% endif %}
         </td>

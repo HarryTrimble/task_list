@@ -16,7 +16,7 @@
   <div class="grid-row">
     <div class="column-two-thirds">
 
-      <form method="get" action="http://finddrivinginstructor.direct.gov.uk/DSAFindNearestWebApp/findNearest.form?lang=en&_ga=1.187661928.1538768602.1459515770" class="form">
+      <form method="get" action="/driving/task_list/" class="form">
 
       {{formData | safe}}
 
@@ -37,16 +37,19 @@
             </p>
           </div>
 
-          <p>Find your nearest driving instructors who are approved and registered with the Driver and Vehicle Standards Agency (DVSA).</p>
+          <p>Tasks to find at driving instructor:</p>
 
-          <p>Not all approved driving instructors in your area will be listed.</p>
+          <ol class="list list-number">
+            <li><a href="https://www.gov.uk/find-driving-schools-and-lessons">find a driving instructor</a></li>
+            <li>start lessons</li>
+          </ol>
 
-          <input type="hidden" name="get_insured" value="complete">
+          <input type="hidden" name="find_instructor" value="complete">
 
         </fieldset>
 
         <div class="form-group">
-          <input type="submit" class="button button-start" value="Start now" />
+          <input type="submit" class="button" value="Task complete" />
         </div>
 
       </form>

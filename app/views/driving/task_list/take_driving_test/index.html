@@ -1,4 +1,4 @@
-{% extends "layout.html" %} {% block page_title %} Get full licence {% endblock %} {% block content %}
+{% extends "layout.html" %} {% block page_title %} Find driving instructor {% endblock %} {% block content %}
 <main id="content" role="main">
   {% include "includes/phase_banner_beta.html" %}
 
@@ -8,7 +8,7 @@
         <a href="/driving/task_list">Learn to drive</a>
       </li>
       <li>
-        Get full licence
+        Find a driving instructor
       </li> 
     </ol>
   </div>
@@ -21,30 +21,27 @@
       {{formData | safe}}
 
         <h1 class="heading-large">
-          Get full licence
+          Take your driving test
         </h1>
 
         <fieldset>
           <legend class="visuallyhidden">
-            Get full licence
+            Take your driving test
           </legend>
 
-          <p id="reason_for_task">
-            Your full licence will arrive 3 weeks after passing your test.
-          </p>
+          <p id="reason_for_task">Passing your driving test shows you understand the principles of safe driving</p>
 
-          <div class="panel panel-border-wide">
-            <p>
-              You are fully licenced to drive the moment you pass your test.<br>
-            </p>
-          </div>
+          <p>To take your driving test:</p>
 
-          <p>The pass certificate from your test examiner is proof you've passed your test until your full licence arrives.</p>
+          <ol class="list list-number">
+            <li>have UK driving licence number</li>
+            <li><a href="https://www.gov.uk/driving-test/what-happens-during-test">read how driving tests work</a></li>
+            <li>take test</li>
+          </ol>
 
-          <input type="hidden" name="get_full_licence" value="complete">
+          <input type="hidden" name="take_driving_test" value="complete">
 
         </fieldset>
-      
 
         <div class="form-group">
           <input type="submit" class="button" value="Task complete" />
