@@ -638,23 +638,52 @@ router.get('/bats/task_list/get_references/experience', function (req, res) {
 
 // TRANSPORT GOODS IN THE UK
 
-// question in /bats/task_list/inspect_place_where_bats_live/visit_bat_place
-router.get('/bats/task_list/check_before_you_start/ecologist/past_applications', function (req, res) {
+// question in /transport_goods/task_list/check_before_you_start/weight/empty
+router.get('/transport_goods/task_list/check_before_you_start/exempt_vehicles', function (req, res) {
 
   console.log("hired_ecologist");
 
   // get the answer from the query string (eg. ?over18="yes")
-  var hired_ecologist = req.query.hired_ecologist;
+  var weight_empty = req.query.weight_empty;
+  var weight_loaded = req.query.weight_loaded;
 
-  if (hired_ecologist == "no"){
+  if (weight_empty == "less than 1,525 kg" && weight_loaded==undefined ){
 
     // if user IS related to child
-    res.redirect("/bats/task_list/check_before_you_start/result" + res.locals.formQuery);
+    res.redirect("/transport_goods/task_list/check_before_you_start/weight/loaded" + res.locals.formQuery);
+
+  } else if (weight_empty == "less than 1,525 kg" && weight_loaded== "less than 3,5000 kg" ){
+
+    // if user lives in WALES
+    res.redirect("/transport_goods/task_list/check_before_you_start/result" + res.locals.formQuery);
 
   } else {
 
     // if user is NOT related to child
-    res.render('bats/task_list/check_before_you_start/ecologist/past_applications/index.html');
+    res.render('transport_goods/task_list/check_before_you_start/exempt_vehicles/index.html');
+
+  }
+
+});
+
+// check your answers for 'Describe your building project' section
+router.get('/transport_goods/task_list/check_before_you_start/name', function (req, res) {
+
+  console.log("known_ref_two");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var just_your_goods = req.query.just_your_goods;
+  var outside_uk = req.query.outside_uk;
+
+  if (just_your_goods == "no" && outside_uk ==undefined ){
+
+    // if user IS related to child
+    res.redirect("/transport_goods/task_list/check_before_you_start/licence_type/outside_uk" + res.locals.formQuery);
+
+  } else {
+
+    // if user is NOT related to child
+    res.render('transport_goods/task_list/check_before_you_start/name/index.html');
 
   }
 

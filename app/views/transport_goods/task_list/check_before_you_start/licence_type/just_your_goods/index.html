@@ -5,27 +5,27 @@
   <div class="grid-row">
     <div class="column-two-thirds">
 
-      <form method="get" action="/transport_goods/task_list" class="form">
+      <form method="get" action="/transport_goods/task_list/check_before_you_start/exempt_vehicles" class="form">
 
       {{formData | safe}}
 
         <h1 class="heading-large">
-          Will you operate just recovery vehicles?
+          Will you be transporting just your own goods?
         </h1>
 
         <fieldset>
           <legend class="visuallyhidden">
-            Will you operate just recovery vehicles?
+            Will you be transporting just your own goods?
           </legend>
 
           <div class="form-group">
-            <label for="recovery_vehicles_1" class="block-label">
-              <input type="radio" id="recovery_vehicles_1" name="recovery_vehicles" value="yes">
+            <label for="just_your_goods_1" class="block-label">
+              <input type="radio" id="just_your_goods_1" name="just_your_goods" value="yes">
               Yes
             </label>
 
-            <label for="recovery_vehicles_2" class="block-label">
-              <input type="radio" id="recovery_vehicles_2" name="recovery_vehicles" value="no">
+            <label for="just_your_goods_2" class="block-label">
+              <input type="radio" id="just_your_goods_2" name="just_your_goods" value="no">
               No
             </label>
 

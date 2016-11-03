@@ -1,0 +1,73 @@
+{% extends "transport_goods/layout.html" %} {% block page_title %} Driving lessons {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/transport_goods/task_list/check_before_you_start/carrying_passengers" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          Will you operate only the these vehicles?
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            Will you operate only these vehicles?
+          </legend>
+
+          <div class="form-group">
+
+            <label for="exmept_vehicles_2" class="block-label">
+              <input type="checkbox" id="exmept_vehicles_2" name="exmept_vehicles" value="no">
+              tractors or agricultural vehicles
+            </label>
+
+            <label for="exmept_vehicles_2" class="block-label">
+              <input type="checkbox" id="exmept_vehicles_2" name="exmept_vehicles" value="no">
+              recovery vehicles
+            </label>
+
+            <label for="exmept_vehicles_1" class="block-label">
+              <input type="checkbox" id="exmept_vehicles_1" name="exmept_vehicles" value="yes">
+              emergency vehicles including utility companies
+            </label>
+
+            <label for="exmept_vehicles_1" class="block-label">
+              <input type="checkbox" id="exmept_vehicles_1" name="exmept_vehicles" value="yes">
+              snowploughs or road gritting vehicles
+            </label>
+
+            <label for="exmept_vehicles_2" class="block-label">
+              <input type="checkbox" id="exmept_vehicles_2" name="exmept_vehicles" value="no">
+              military vehicles
+            </label>
+
+            <label for="exmept_vehicles_1" class="block-label">
+              <input type="checkbox" id="exmept_vehicles_1" name="exmept_vehicles" value="yes">
+              electric or stream vehicles
+            </label>
+
+            <label for="exmept_vehicles_2" class="block-label">
+              <input type="checkbox" id="exmept_vehicles_2" name="exmept_vehicles" value="no">
+              hearses
+            </label>
+
+
+          </div>
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

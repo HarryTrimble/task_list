@@ -5,27 +5,27 @@
   <div class="grid-row">
     <div class="column-two-thirds">
 
-      <form method="get" action="/transport_goods/task_list" class="form">
+      <form method="get" action="/transport_goods/task_list/check_before_you_start/exempt_vehicles" class="form">
 
       {{formData | safe}}
 
         <h1 class="heading-large">
-          Will you operate just military vehicles?
+          Will you be transporting outside the UK?
         </h1>
 
         <fieldset>
           <legend class="visuallyhidden">
-            Will you operate just military vehicles?
+            Will you be transporting outside the UK?
           </legend>
 
           <div class="form-group">
-            <label for="military_vehicles_1" class="block-label">
-              <input type="radio" id="military_vehicles_1" name="military_vehicles" value="yes">
+            <label for="outside_uk_1" class="block-label">
+              <input type="radio" id="outside_uk_1" name="outside_uk" value="less">
               Yes
             </label>
 
-            <label for="military_vehicles_2" class="block-label">
-              <input type="radio" id="military_vehicles_2" name="military_vehicles" value="no">
+            <label for="outside_uk_2" class="block-label">
+              <input type="radio" id="outside_uk_2" name="outside_uk" value="more">
               No
             </label>
 
