@@ -20,7 +20,7 @@
 
         </header>
 
-        <p class="">Complete the tasks below</p>
+        <p class="">Complete these tasks:</p>
 
         <br>
       
@@ -53,7 +53,7 @@
           </a>
         </td>
         <td class="numeric" id="task-status">
-          {% if data.check_before_you_start=="complete" or data.shared_home=="no"  %}
+          {% if data.driving_lessons %}
             {% include "includes/task_status_complete.html" %}
           {% endif %}
         </td>
@@ -337,15 +337,20 @@
 <div class="column-quarter">
 
       <ul class="actions">
+        <!--
+        <li class="bold"><a href="#">Save and complete later</a></li>
+        -->
         <li class="bold"><a href="#">Print list</a></li>
       </ul>
 
       <br>
 
       <div class="meta-data">
+        <!--
         <p class="last-edited font-xsmall">Reference number:<br>
           <span class="bold-xsmall">HDJ2123F</span>
         </p>
+        -->
         <p class="last-edited font-xsmall">Progress:<br>
           <span class="bold-xsmall"><span id="completed-steps"></span> of <span id="total-steps"></span> tasks completed</span>
         </p>
