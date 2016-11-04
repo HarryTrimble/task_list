@@ -328,6 +328,21 @@
         </td>
       </tr>
 
+      <!-- Get licence -->
+      <tr>
+        <td class="task">
+          <a href="/driving/task_list/after_you_pass{{formQuery}}">
+            <span class="step-number" id="task-number"></span>
+            <span class="task-name"> Read driving rules</span>
+          </a>
+        </td>
+        <td class="numeric" id="task-status">          
+          {% if data.after_you_pass=="complete" %}
+            {% include "includes/task_status_complete.html" %}
+          {% endif %}
+        </td>
+      </tr>
+
     </tbody>
   </table>
 
