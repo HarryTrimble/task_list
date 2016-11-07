@@ -755,4 +755,26 @@ router.get('/transport_goods/task_list/check_before_you_start/transport_manager'
 
 });
 
+// check your answers for 'Describe your building project' section
+router.get('/transport_goods/task_list/give_public_notice/result', function (req, res) {
+
+  console.log("known_ref_two");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var given_public_notice = req.query.given_public_notice;
+
+  if (given_public_notice == "yes" ){
+
+    // if user IS related to child
+    res.redirect("/transport_goods/task_list/" + res.locals.formQuery);
+
+  } else {
+
+    // if user is NOT related to child
+    res.render('transport_goods/task_list/give_public_notice/result/index.html');
+
+  }
+
+});
+
 module.exports = router;

@@ -1,0 +1,54 @@
+{% extends "transport_goods/layout.html" %} {% block page_title %} Give public notice {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="breadcrumbs">
+    <ol>
+      <li>
+        <a href="/transport_goods/task_list/{{ formQuery | safe }}">Transport goods</a>
+      </li>
+      <li>
+        Give public notice
+      </li> 
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/transport_goods/task_list/give_public_notice/given{{formQuery}}" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          Give public notice
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            Give public notice
+          </legend>
+
+          <p class="lede">People have the right to contest you having a licence to transport goods in their local area.</p>
+
+          <p class="lede">Before applying, you must first give people the opportunity to contest, you must advertise in your local newspaper you're planning to transport goods.</p>
+
+          <p class="lede"><a href="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/555421/gv79-annex-a-advert.pdf" target="_blank">Public notice template</a> (opens new tab)</p>
+
+          <input type="hidden" name="why_give_public_notice" value="complete">
+
+        </fieldset>
+
+        <br>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}
