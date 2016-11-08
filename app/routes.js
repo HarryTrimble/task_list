@@ -667,22 +667,22 @@ router.get('/transport_goods/task_list/check_before_you_start/how_many_vehicles'
 });
 
 // check your answers for 'Describe your building project' section
-router.get('/transport_goods/task_list/check_before_you_start/name', function (req, res) {
+router.get('/transport_goods/task_list/check_before_you_start/carrying_passengers', function (req, res) {
 
   console.log("known_ref_two");
 
   // get the answer from the query string (eg. ?over18="yes")
   var exempt_vehicles = req.query.exempt_vehicles;
 
-  if (exempt_vehicles == "" ){
+  if (exempt_vehicles == "yes" ){
 
     // if user IS related to child
-    res.redirect("/transport_goods/task_list/check_before_you_start/result" + res.locals.formQuery);
+    res.redirect("/transport_goods/task_list/check_before_you_start/result/" + res.locals.formQuery);
 
   } else {
 
     // if user is NOT related to child
-    res.render('transport_goods/task_list/check_before_you_start/name/index.html');
+    res.render('transport_goods/task_list/check_before_you_start/carrying_passengers/index.html');
 
   }
 
@@ -755,7 +755,29 @@ router.get('/transport_goods/task_list/check_before_you_start/transport_manager'
 
 });
 
-// check your answers for 'Describe your building project' section
+// check your answers for 'Check before you start' section
+router.get('/transport_goods/task_list/check_before_you_start/weight/empty', function (req, res) {
+
+  console.log("known_ref_two");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var transport_manager = req.query.transport_manager;
+
+  if (transport_manager){
+
+    // if user IS related to child
+    res.redirect("/transport_goods/task_list/check_before_you_start/check_your_answers" + res.locals.formQuery);
+
+  } else {
+
+    // if user is NOT related to child
+    res.render('transport_goods/task_list/check_before_you_start/weight/empty/index.html');
+
+  }
+
+});
+
+// check your answers for 'Give public notice' section
 router.get('/transport_goods/task_list/give_public_notice/result', function (req, res) {
 
   console.log("known_ref_two");
@@ -772,6 +794,138 @@ router.get('/transport_goods/task_list/give_public_notice/result', function (req
 
     // if user is NOT related to child
     res.render('transport_goods/task_list/give_public_notice/result/index.html');
+
+  }
+
+});
+
+// check your answers for 'Describe your vehicles' section
+router.get('/transport_goods/task_list/give_public_notice/reason', function (req, res) {
+
+  console.log("known_ref_two");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var given_public_notice = req.query.given_public_notice;
+
+  if (given_public_notice){
+
+    // if user IS related to child
+    res.redirect("/transport_goods/task_list/give_public_notice/check_your_answers" + res.locals.formQuery);
+
+  } else {
+
+    // if user is NOT related to child
+    res.render('transport_goods/task_list/give_public_notice/reason/index.html');
+
+  }
+
+});
+
+// questions for /transport_goods/task_list/describe_vehicles/has_vehicles_already
+router.get('/transport_goods/task_list/describe_vehicles/reg_number_weight', function (req, res) {
+
+  console.log("known_ref_two");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var has_vehicles_already = req.query.has_vehicles_already;
+
+  if (has_vehicles_already == "no" ){
+
+    // if user IS related to child
+    res.redirect("/transport_goods/task_list/describe_vehicles/has_vehicles_when" + res.locals.formQuery);
+
+  } else {
+
+    // if user is NOT related to child
+    res.render('transport_goods/task_list/describe_vehicles/reg_number_weight/index.html');
+
+  }
+
+});
+
+// check your answers for 'Describe your vehicles' section
+router.get('/transport_goods/task_list/describe_vehicles/has_vehicles_already', function (req, res) {
+
+  console.log("known_ref_two");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var has_vehicles_already = req.query.has_vehicles_already;
+
+  if (has_vehicles_already){
+
+    // if user IS related to child
+    res.redirect("/transport_goods/task_list/describe_vehicles/check_your_answers" + res.locals.formQuery);
+
+  } else {
+
+    // if user is NOT related to child
+    res.render('transport_goods/task_list/describe_vehicles/has_vehicles_already/index.html');
+
+  }
+
+});
+
+// questions for /transport_goods/task_list/describe_vehicles/has_vehicles_already
+router.get('/transport_goods/task_list/maintain_vehicles/name_address', function (req, res) {
+
+  console.log("known_ref_two");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var has_mechanic = req.query.has_mechanic;
+
+  if (has_mechanic == "no" ){
+
+    // if user IS related to child
+    res.redirect("/transport_goods/task_list/maintain_vehicles/result" + res.locals.formQuery);
+
+  } else {
+
+    // if user is NOT related to child
+    res.render('transport_goods/task_list/maintain_vehicles/name_address/index.html');
+
+  }
+
+});
+
+// check your answers for 'Maintain vehicles' section
+router.get('/transport_goods/task_list/maintain_vehicles/reason', function (req, res) {
+
+  console.log("known_ref_two");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var has_mechanic = req.query.has_mechanic;
+
+  if (has_mechanic){
+
+    // if user IS related to child
+    res.redirect("/transport_goods/task_list/maintain_vehicles/check_your_answers" + res.locals.formQuery);
+
+  } else {
+
+    // if user is NOT related to child
+    res.render('transport_goods/task_list/maintain_vehicles/reason/index.html');
+
+  }
+
+});
+
+// check your answers for 'Maintain vehicles' section
+router.get('/transport_goods/task_list/prove_money/reason', function (req, res) {
+
+  console.log("known_ref_two");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var uploaded_document = req.query.uploaded_document;
+
+  if (uploaded_document){
+
+    // if user IS related to child
+    res.redirect("/transport_goods/task_list/prove_money/check_your_answers" + res.locals.formQuery);
+
+  } else {
+
+    // if user is NOT related to child
+    res.render('transport_goods/task_list/prove_money/reason/index.html');
 
   }
 

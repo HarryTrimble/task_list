@@ -1,0 +1,45 @@
+{% extends "transport_goods/layout.html" %} {% block page_title %} Upload financial evidence  {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/transport_goods/task_list/{{ formQuery | safe }}" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          Upload financial evidence
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            Upload financial evidence
+          </legend>
+
+          <div class="form-group">
+            <label class="form-label" for="file-input">
+              Upload a file
+            </label>
+            <input type="file" id="file-input" name="uploaded_document">
+            <br>
+            <br>
+            <label class="form-label" for="file-input">
+              <a href="#">Upload another document</a>
+            </label>
+          </div>
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue" name="" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

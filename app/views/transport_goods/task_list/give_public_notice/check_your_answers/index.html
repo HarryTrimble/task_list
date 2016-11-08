@@ -1,4 +1,4 @@
-{% extends "bats/layout.html" %}
+{% extends "transport_goods/layout.html" %}
 
 {% block page_title %}
   Check your answers
@@ -29,38 +29,10 @@
     <tbody>
       <tr>
         <td>
-          Hired ecologist
+          Advertise you plans to transport goods
         </td>
         <td>
-          {{ data.hired_ecologist }}
-        </td>
-        <td class="change-answer">
-          <a href="#">
-            Change <span class="visuallyhidden">Name</span>
-          </a>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Submitted past applications
-        </td>
-        <td>
-          {{ data.past_applications }}
-        </td>
-        <td class="change-answer">
-          <a href="#">
-            Change <span class="visuallyhidden">Name</span>
-          </a>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Permission to use land
-        </td>
-        <td>
-          {% if data.own_occupy=="yes" or data.has_owners_permission=="yes" %}
-          yes
-          {% endif %}
+          {{ data.given_public_notice }}
         </td>
         <td class="change-answer">
           <a href="#">
@@ -75,7 +47,7 @@
   <br>
 
   <div class="form-group">
-    <a href="/bats/task_list{{formQuery}}" class="button">Continue application</a>
+    <a href="/transport_goods/task_list{{formQuery}}" class="button">Continue application</a>
   </div>
 
 </main>

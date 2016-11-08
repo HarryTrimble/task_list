@@ -1,0 +1,97 @@
+{% extends "transport_goods/layout.html" %}
+
+{% block page_title %}
+  Check your answers
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <h1 class="heading-large">
+    Check your answers for this section
+  </h1>
+
+  <table class="check-your-answers">
+
+    <thead>
+      <tr>
+        <th colspan="2">
+          <h2 class="heading-medium">
+            
+          </h2>
+        </th>
+        <th>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>
+          Hired mechanic:
+        </td>
+        <td>
+          {{ data.has_mechanic }}
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Mechanic details:
+        </td>
+        <td>
+          {{ data.mechanic_name }}<br>
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Mechanic address:
+        </td>
+        <td>
+          {{ data.mechanic_address_building }}<br>
+          {{ data.mechanic_address_street}}<br>
+          {{ data.mechanic_address_town }}<br>
+          {{ data.mechanic_address_postcode }}
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          How regular is maintenance:
+        </td>
+        <td>
+          Every {{ data.how_regularly_inspected }}
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+  <br>
+
+  <div class="form-group">
+    <a href="/transport_goods/task_list{{formQuery}}" class="button">Continue application</a>
+  </div>
+
+</main>
+
+{% endblock %}

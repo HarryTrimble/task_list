@@ -1,0 +1,64 @@
+{% extends "layout.html" %} {% block page_title %} Name and address {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/transport_goods/task_list/describe_vehicles/address" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          When should you have your vehicles' details by?
+        </h1>
+
+        <br>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            When should you have your vehicles' details by?
+          </legend>
+
+          <div class="form-date">
+
+            <p class="form-hint">
+              <span class="bold-date">
+                Date
+              </span><br> 
+              For example, 31 3 2017
+            </p>
+
+            <div class="form-group form-group-day">
+              <label for="vehicle_day">Day</label>
+              <input class="form-control" id="vehicle_day" name="vehicle_day" type="number" pattern="[0-9]*" min="0" max="31">
+            </div>
+
+            <div class="form-group form-group-month">
+              <label for="vehicle_month">Month</label>
+              <input class="form-control" id="vehicle_month" name="vehicle_month" type="number" pattern="[0-9]*" min="0" max="12">
+            </div>
+
+            <div class="form-group form-group-year">
+              <label for="vehicle_year">Year</label>
+              <input class="form-control" id="vehicle_year" name="vehicle_year" type="number" pattern="[0-9]*" min="0" max="2018">
+            </div>
+
+          </div>
+
+        </fieldset>
+
+        <br>
+        <br>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

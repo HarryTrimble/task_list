@@ -1,0 +1,102 @@
+{% extends "transport_goods/layout.html" %}
+
+{% block page_title %}
+  Check your answers
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <h1 class="heading-large">
+    Check your answers for this section
+  </h1>
+
+  <table class="check-your-answers">
+
+    <thead>
+      <tr>
+        <th colspan="2">
+          <h2 class="heading-medium">
+            
+          </h2>
+        </th>
+        <th>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>
+          Has vehicle details
+        </td>
+        <td>
+          {{ data.has_vehicles_already }}
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+      {% if data.has_vehicles_already=="no" %}
+        </tr> 
+          <td>
+            When you'll have details:
+          </td>
+          <td>
+            {{ data.vehicle_day }} {{ data.vehicle_month }} {{ data.vehicle_year }}
+          </td>
+          <td class="change-answer">
+            <a href="#">
+              Change <span class="visuallyhidden">Name</span>
+            </a>
+          </td>
+        </tr>
+      {% endif %}
+      {% if data.has_vehicles_already=="yes" %}
+        </tr> 
+          <td>
+            Vehicle 1:
+          </td>
+          <td>
+            {{ data.reg_number }}
+            {{ data.loaded_weight }}
+          </td>
+          <td class="change-answer">
+            <a href="#">
+              Change <span class="visuallyhidden">Name</span>
+            </a>
+          </td>
+        </tr>
+      {% endif %}
+      <tr>
+        <td>
+          Address:
+        </td>
+        <td>
+          {{ data.address_building }}<br>
+          {{ data.address_street }}<br>
+          {{ data.address_town }}<br>
+          {{ data.address_postcode }}
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+  <br>
+
+  <div class="form-group">
+    <a href="/transport_goods/task_list{{formQuery}}" class="button">Continue application</a>
+  </div>
+
+</main>
+
+{% endblock %}

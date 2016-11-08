@@ -1,0 +1,46 @@
+{% extends "transport_goods/layout.html" %} {% block page_title %} Land ownership {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/transport_goods/task_list/describe_vehicles/address/has_owners_permission" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          Do you own this place?  
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            Do you own this place?  
+          </legend>
+
+          <div class="form-group">
+            <label for="owns_land_1" class="block-label">
+              <input type="radio" id="owns_land_1" name="owns_land" value="yes">
+              Yes
+            </label>
+
+            <label for="owns_land_2" class="block-label">
+              <input type="radio" id="owns_land_2" name="owns_land" value="no">
+              No
+            </label>
+
+          </div>
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

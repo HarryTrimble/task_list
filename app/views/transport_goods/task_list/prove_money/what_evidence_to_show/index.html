@@ -1,0 +1,63 @@
+{% extends "transport_goods/layout.html" %} {% block page_title %} Prove you have enough money {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="breadcrumbs">
+    <ol>
+      <li>
+        <a href="/transport_goods/task_list/{{ formQuery | safe }}">Transport goods</a>
+      </li>
+      <li>
+        Prove you have enough money
+      </li> 
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/transport_goods/task_list/prove_money/upload_evidence{{formQuery}}" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          What evidence to show
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            What evidence to provide
+          </legend>
+
+          <p class="lede">The evidence you show needs to show:</p>
+
+          <ul class="list list-bullet" style="font-size: 24px;">  
+            <li>how much money you can find if the need arises?</li>
+            <li>how quickly you can find it?</li>
+            <li>where will the money will come from?</li>
+          </ul> 
+
+          <p class="lede">You should be able to show this in some or all these:</p>
+
+          <ul class="list list-bullet" style="font-size: 24px;">
+            <li>banks statements</li>
+            <li>overdraft limits</li>
+            <li>Invoice Finance Agreement</li>
+            <li>audited accounts</li>
+          </ul>
+
+        </fieldset>
+
+        <br>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

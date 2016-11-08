@@ -1,0 +1,50 @@
+{% extends "transport_goods/layout.html" %} {% block page_title %} Declare convictions and penalties {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="breadcrumbs">
+    <ol>
+      <li>
+        <a href="/transport_goods/task_list/{{ formQuery | safe }}">Transport goods</a>
+      </li>
+      <li>
+        Declare convictions and penalties
+      </li> 
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/transport_goods/task_list/prove_money/what_evidence_to_show{{formQuery}}" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          Declare convictions and penalties
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            Declare convictions and penalties
+          </legend>
+
+          <p class="lede">You need to declare convictions and penalties, as these will be considered when deciding to grant you a licence.</p>
+
+          <p class="lede">Even if you have pass convictions and penalties, you may still be able to apply to transport goods.</p>
+
+        </fieldset>
+
+        <br>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

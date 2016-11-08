@@ -59,7 +59,7 @@
               </a>
             </td>
             <td class="numeric" id="task-status">
-              {% if data.hired_ecologist=="yes" %}
+              {% if data.transport_manager %}
                 {% include "includes/task_status_complete.html" %}
               {% endif %}
             </td>
@@ -74,7 +74,7 @@
               </a>
             </td>
             <td class="numeric" id="task-status">
-              {% if data.hired_ecologist=="yes" %}
+              {% if data.read_rules=="complete" %}
                 {% include "includes/task_status_complete.html" %}
               {% endif %}
             </td>
@@ -84,13 +84,13 @@
           {% if data.transport_manager=="no" %}
             <tr>
               <td class="task">
-                <a href="/transport_goods/task_list/become_transport_manager{{formQuery}}">
+                <a href="/transport_goods/task_list/transport_manager{{formQuery}}">
                   <span class="step-number" id="task-number"></span>
                   <span class="task-name"> Become a transport manager</span>
                 </a>
               </td>
               <td class="numeric" id="task-status">
-                {% if data.bat_details=="complete" %}
+                {% if data.become_transport_manager=="complete" %}
                   {% include "includes/task_status_complete.html" %}
                 {% endif %}
               </td>
@@ -106,7 +106,7 @@
               </a>
             </td>
             <td class="numeric" id="task-status">
-              {% if data.bat_details=="complete" %}
+              {% if data.given_public_notice=="yes" %}
                 {% include "includes/task_status_complete.html" %}
               {% endif %}
             </td>
@@ -115,13 +115,13 @@
           <!-- Enter bat details -->
           <tr>
             <td class="task">
-              <a href="/transport_goods/task_list/describe_vehicles{{formQuery}}">
+              <a href="/transport_goods/task_list/describe_vehicles/has_vehicles_already{{formQuery}}">
                 <span class="step-number" id="task-number"></span>
                 <span class="task-name"> Describe your vehicles</span>
               </a>
             </td>
             <td class="numeric" id="task-status">
-              {% if data.bat_details=="complete" %}
+              {% if data.has_vehicles_already %}
                 {% include "includes/task_status_complete.html" %}
               {% endif %}
             </td>
@@ -130,13 +130,13 @@
           <!-- Maintain your vehicles -->
           <tr>
             <td class="task">
-              <a href="/transport_goods/task_list/maintain_vehicles{{formQuery}}">
+              <a href="/transport_goods/task_list/maintain_vehicles/reason{{formQuery}}">
                 <span class="step-number" id="task-number"></span>
                 <span class="task-name"> Maintain your vehicles</span>
               </a>
             </td>
             <td class="numeric" id="task-status">
-              {% if data.bat_details=="complete" %}
+              {% if data.has_mechanic=="yes" %}
                 {% include "includes/task_status_complete.html" %}
               {% endif %}
             </td>
@@ -145,13 +145,13 @@
           <!-- Prove you have enough money -->
           <tr>
             <td class="task">
-              <a href="/transport_goods/task_list/prove_money{{formQuery}}">
+              <a href="/transport_goods/task_list/prove_money/reason{{formQuery}}">
                 <span class="step-number" id="task-number"></span>
                 <span class="task-name"> Prove you have enough money</span>
               </a>
             </td>
             <td class="numeric" id="task-status">
-              {% if data.contact_by %}
+              {% if data.uploaded_document %}
                 {% include "includes/task_status_complete.html" %}
               {% endif %}
             </td>
@@ -160,7 +160,7 @@
           <!-- Declare convictions and penalties -->
           <tr>
             <td class="task">
-              <a href="/transport_goods/task_list/criminal{{formQuery}}">
+              <a href="/transport_goods/task_list/convictions_penalties/reason{{formQuery}}">
                 <span class="step-number" id="task-number"></span>
                 <span class="task-name"> Declare convictions and penalties</span>
               </a>
