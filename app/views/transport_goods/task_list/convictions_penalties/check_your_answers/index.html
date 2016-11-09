@@ -18,7 +18,7 @@
       <tr>
         <th colspan="2">
           <h2 class="heading-medium">
-            Prove you have enough money
+            Declare convictions and penalties
           </h2>
         </th>
         <th>
@@ -29,10 +29,10 @@
     <tbody>
       <tr>
         <td>
-          Financial evidence
+          Any convictions:
         </td>
         <td>
-          {{ data.uploaded_document }}
+          {{ data.crime }}
         </td>
         <td class="change-answer">
           <a href="#">
@@ -40,6 +40,53 @@
           </a>
         </td>
       </tr>
+      {% if data.crime=="yes" %}
+        <tr>
+          <td>
+            Crime details:
+          </td>
+          <td>
+            {{ data.crime_name }}<br>
+            Offence: {{ data.crime_offence }}<br>
+            Penalty: {{ data.crime_penalty }}<br>
+            Court: {{ data.crime_court }}<br>
+            Date of conviction: {{ data.crime_day }} {{ data.crime_month }} {{ data.crime_year }}
+          </td>
+          <td class="change-answer">
+            <a href="#">
+              Change <span class="visuallyhidden">Name</span>
+            </a>
+          </td>
+        </tr>
+      {% endif %}
+      <tr>
+        <td>
+          Court order to pay money:
+        </td>
+        <td>
+          {{ data.compensation_order }}
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+      {% if data.compensation_order=="yes" %}
+        <tr>
+          <td>
+            Court order details:
+          </td>
+          <td>
+            {{ data.more_information_compensation_order }}
+          </td>
+          <td class="change-answer">
+            <a href="#">
+              Change <span class="visuallyhidden">Name</span>
+            </a>
+          </td>
+        </tr>
+      {% endif %}
     </tbody>
   </table>
 

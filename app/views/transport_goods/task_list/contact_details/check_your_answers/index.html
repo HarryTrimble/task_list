@@ -1,4 +1,4 @@
-{% extends "transport_goods/layout.html" %}
+{% extends "bats/layout.html" %}
 
 {% block page_title %}
   Check your answers
@@ -18,7 +18,7 @@
       <tr>
         <th colspan="2">
           <h2 class="heading-medium">
-            Describe your vehicles
+            Your contact details
           </h2>
         </th>
         <th>
@@ -29,10 +29,10 @@
     <tbody>
       <tr>
         <td>
-          Has vehicle details
+          Name:
         </td>
         <td>
-          {{ data.has_vehicles_already }}
+          {{ data.applicant_name }}
         </td>
         <td class="change-answer">
           <a href="#">
@@ -40,29 +40,13 @@
           </a>
         </td>
       </tr>
-      {% if data.has_vehicles_already=="no" %}
-        </tr> 
+      {% if data.user_type=="limited company" or data.user_type=="partnership" or data.user_type=="Limited Liability Partnership (LLP)" %}
+        <tr>
           <td>
-            When you'll have details:
+            Companies House number:
           </td>
           <td>
-            {{ data.vehicle_day }} {{ data.vehicle_month }} {{ data.vehicle_year }}
-          </td>
-          <td class="change-answer">
-            <a href="#">
-              Change <span class="visuallyhidden">Name</span>
-            </a>
-          </td>
-        </tr>
-      {% endif %}
-      {% if data.has_vehicles_already=="yes" %}
-        </tr> 
-          <td>
-            Vehicle 1:
-          </td>
-          <td>
-            {{ data.reg_number }}
-            {{ data.loaded_weight }}
+            {{ data.company_number }}
           </td>
           <td class="change-answer">
             <a href="#">
@@ -73,17 +57,32 @@
       {% endif %}
       <tr>
         <td>
-          Address:
+          Contact details:
         </td>
         <td>
-          {{ data.address_building }}<br>
-          {{ data.address_street }}<br>
-          {{ data.address_town }}<br>
-          {{ data.address_postcode }}
+          {{ data.applicant_address_building }}<br>
+          {{ data.applicant_address_street }}<br>
+          {{ data.applicant_address_town }}<br>
+          {{ data.applicant_address_postcode }}<br>
+          {{ data.applicant_phone }}<br>
+          {{ data.applicant_email }}
         </td>
         <td class="change-answer">
           <a href="#">
-            Change <span class="visuallyhidden">Name</span>
+            Change <span class="visuallyhidden">Contact details</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          How to contact:
+        </td>
+        <td>
+          {{ data.contact_by }}
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">How to be contacted</span>
           </a>
         </td>
       </tr>

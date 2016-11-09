@@ -1,0 +1,178 @@
+{% extends "transport_goods/layout.html" %} {% block page_title %} Name and address {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/transport_goods/task_list/contact_details/email_phone" class="form">
+
+      {{formData | safe}}
+        
+        <!-- Private individual -->
+        {% if data.user_type=="sole trader" %}
+
+        <h1 class="heading-large">
+          Contact details
+        </h1>
+
+        <br>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            Name and address
+          </legend>
+
+          <div class="form-group">
+            <label class="form-label" for="applicant_name">Full name</label>
+            <input class="form-control" id="applicant_name" name="applicant_name" type="text">
+          </div>
+
+          <h3 class="heading-medium">
+            Home address
+          </h3>
+
+          <div class="form-group">
+            <label class="form-label" for="applicant_address_building">Building and street</label>
+            <input class="form-control" id="applicant_address_building" name="applicant_address_building" type="text">
+            <br>
+            <br>
+            <input class="form-control"" id="applicant_address_street" name="applicant_address_street" type="text">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="applicant_address_town">Town or city</label>
+            <input class="form-control" id="applicant_address_town" name="applicant_address_town" type="text">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="applicant_address_county">County (optional)</label>
+            <input class="form-control" id="applicant_address_county" name="applicant_address_county" type="text">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="applicant_address_postcode">Postcode</label>
+            <input class="form-control form-control-1-4" id="applicant_address_postcode" name="applicant_address_postcode" type="text">
+          </div>
+
+          <br>
+          <br>
+
+        </fieldset>
+
+        {% endif %}
+        
+        <!-- Business -->
+        {% if data.user_type=="limited company" or data.user_type=="partnership" or data.user_type=="Limited Liability Partnership (LLP)" %}
+
+        <h1 class="heading-large">
+          Company details
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            Company details
+          </legend>
+
+          <br>
+
+          <div class="form-group">
+            <label class="form-label" for="applicant_name">Company name</label>
+            <input class="form-control" id="applicant_name" name="applicant_name" type="text">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="company_number">Companies House number</label>
+            <input class="form-control" id="company_number" name="company_number" type="text">
+          </div>
+
+          <h3 class="heading-medium">
+            Address
+          </h3>
+
+          <div class="form-group">
+            <label class="form-label" for="applicant_address_building">Building and street</label>
+            <input class="form-control" id="applicant_address_building" name="applicant_address_building" type="text">
+            <br>
+            <br>
+            <input class="form-control"" id="applicant_address_street" name="applicant_address_street" type="text">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="applicant_address_town">Town or city</label>
+            <input class="form-control" id="applicant_address_town" name="applicant_address_town" type="text">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="applicant_address_county">County (optional)</label>
+            <input class="form-control" id="applicant_address_county" name="applicant_address_county" type="text">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="applicant_address_postcode">Postcode</label>
+            <input class="form-control form-control-1-4" id="applicant_address_postcode" name="applicant_address_postcode" type="text">
+          </div>
+
+          <br>
+          <br>
+
+        </fieldset>
+
+        {% endif %}
+
+        <!-- Charity -->
+        {% if data.user_type=="other, for example public body, charity, university" %}
+
+        <h1 class="heading-large">
+          Organisation details
+        </h1>
+
+        <br>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            Organisation details
+          </legend>
+
+          <div class="form-group">
+            <label class="form-label" for="applicant_name">Organisation name</label>
+            <input class="form-control" id="applicant_name" name="applicant_name" type="text">
+          </div>
+
+          <h3 class="heading-medium">
+            Address
+          </h3>
+
+          <div class="form-group">
+            <label class="form-label" for="applicant_address_building">Building and street</label>
+            <input class="form-control" id="applicant_address_building" name="applicant_address_building" type="text">
+            <br>
+            <br>
+            <input class="form-control"" id="applicant_address_street" name="applicant_address_street" type="text">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="applicant_address_town">Town or city</label>
+            <input class="form-control" id="applicant_address_town" name="applicant_address_town" type="text">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="applicant_address_county">County (optional)</label>
+            <input class="form-control" id="applicant_address_county" name="applicant_address_county" type="text">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="applicant_address_postcode">Postcode</label>
+            <input class="form-control form-control-1-4" id="applicant_address_postcode" name="applicant_address_postcode" type="text">
+          </div>
+
+          <br>
+          <br>
+
+        </fieldset>
+
+        {% endif %}
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

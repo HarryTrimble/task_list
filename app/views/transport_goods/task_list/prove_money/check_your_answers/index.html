@@ -29,7 +29,7 @@
     <tbody>
       <tr>
         <td>
-          Financial evidence
+          Financial evidence:
         </td>
         <td>
           {{ data.uploaded_document }}
@@ -40,6 +40,90 @@
           </a>
         </td>
       </tr>
+      <tr>
+        <td>
+          Bankrupt ever:
+        </td>
+        <td>
+          {{ data.bankrupt }}
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+      {% if data.bankrupt=="yes" %}
+        <tr>
+          <td>
+            Information on bankruptcy
+          </td>
+          <td>
+            {{ data.more_information_bankrupt }}
+          </td>
+          <td class="change-answer">
+            <a href="#">
+              Change <span class="visuallyhidden">Name</span>
+            </a>
+          </td>
+        </tr>
+      {% endif %}
+      <tr>
+        <td>
+          Filed for insolvency:
+        </td>
+        <td>
+          {{ data.insolvency }}
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+      {% if data.insolvency=="yes" %}
+        <tr>
+          <td>
+            Information on insolvency
+          </td>
+          <td>
+            {{ data.more_information_bankrupt }}
+          </td>
+          <td class="change-answer">
+            <a href="#">
+              Change <span class="visuallyhidden">Name</span>
+            </a>
+          </td>
+        </tr>
+      {% endif %}
+      <tr>
+        <td>
+          Banned company director:
+        </td>
+        <td>
+          {{ data.banned_director }}
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+      {% if data.banned_director=="yes" %}
+        <tr>
+          <td>
+            Information on banned director
+          </td>
+          <td>
+            {{ data.more_information_bankrupt }}
+          </td>
+          <td class="change-answer">
+            <a href="#">
+              Change <span class="visuallyhidden">Name</span>
+            </a>
+          </td>
+        </tr>
+      {% endif %}
     </tbody>
   </table>
 

@@ -777,6 +777,32 @@ router.get('/transport_goods/task_list/check_before_you_start/weight/empty', fun
 
 });
 
+// check your answers for 'Check before you start' section
+router.get('/transport_goods/task_list/check_before_you_start/result', function (req, res) {
+
+  console.log("known_ref_two");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var transport_manager = req.query.transport_manager;
+
+  if (transport_manager == "have to have it"){
+
+    // if user IS related to child
+    res.redirect("/transport_goods/task_list/check_before_you_start/check_your_answers" + res.locals.formQuery);
+
+  } else {
+
+    var application_cost = 257 + 6650 + (req.query.how_many_vehicles - 1) * 3700
+
+    application_cost = application_cost.toString().replace(/,/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+    // if user is NOT related to child
+    res.render('transport_goods/task_list/check_before_you_start/result/index.html', {application_cost : application_cost});
+
+  }
+
+});
+
 // check your answers for 'Give public notice' section
 router.get('/transport_goods/task_list/give_public_notice/result', function (req, res) {
 
@@ -924,8 +950,80 @@ router.get('/transport_goods/task_list/prove_money/reason', function (req, res) 
 
   } else {
 
+    var maintenance_costs = 6650 + (req.query.how_many_vehicles - 1) * 3700
+
+    maintenance_costs = maintenance_costs.toString().replace(/,/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
     // if user is NOT related to child
-    res.render('transport_goods/task_list/prove_money/reason/index.html');
+    res.render('transport_goods/task_list/prove_money/reason/index.html', {maintenance_costs : maintenance_costs});
+
+  }
+
+});
+
+
+// check your answers for 'Your contact details' section
+router.get('/transport_goods/task_list/contact_details', function (req, res) {
+
+  console.log("known_ref_two");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var contact_by = req.query.contact_by;
+
+  if (contact_by){
+
+    // if user IS related to child
+    res.redirect("/transport_goods/task_list/contact_details/check_your_answers" + res.locals.formQuery);
+
+  } else {
+
+    // if user is NOT related to child
+    res.render('transport_goods/task_list/contact_details/index.html');
+
+  }
+
+});
+
+// questions for /transport_goods/task_list/convictions_penalties/convictions
+router.get('/transport_goods/task_list/convictions_penalties/compensation_order', function (req, res) {
+
+  console.log("known_ref_two");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var crime = req.query.crime;
+  var about_crime = req.query.about_crime;
+
+  if (crime == "yes" && about_crime==undefined ){
+
+    // if user IS related to child
+    res.redirect("/transport_goods/task_list/convictions_penalties/crime/about_crime" + res.locals.formQuery);
+
+  } else {
+
+    // if user is NOT related to child
+    res.render('transport_goods/task_list/convictions_penalties/compensation_order/index.html');
+
+  }
+
+});
+
+// questions for /transport_goods/task_list/convictions_penalties/convictions
+router.get('/transport_goods/task_list/convictions_penalties/reason', function (req, res) {
+
+  console.log("known_ref_two");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var compensation_order = req.query.compensation_order;
+
+  if (compensation_order ){
+
+    // if user IS related to child
+    res.redirect("/transport_goods/task_list/convictions_penalties/check_your_answers" + res.locals.formQuery);
+
+  } else {
+
+    // if user is NOT related to child
+    res.render('transport_goods/task_list/convictions_penalties/reason/index.html');
 
   }
 

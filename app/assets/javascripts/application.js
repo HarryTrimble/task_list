@@ -222,3 +222,7 @@ $(document).ready(function() {
         $('.remove-list-item').remove();
       }
     }
+
+// prove money calculator
+
+
