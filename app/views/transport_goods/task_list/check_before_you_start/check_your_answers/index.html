@@ -40,19 +40,21 @@
           </a>
         </td>
       </tr>
-      <tr>
-        <td>
-          Weight when loaded:
-        </td>
-        <td>
-          {{ data.weight_loaded }}
-        </td>
-        <td class="change-answer">
-          <a href="#">
-            Change <span class="visuallyhidden">Name</span>
-          </a>
-        </td>
-      </tr>
+      {% if data.weight_empty=="less than 1,525 kg" %}
+        <tr>
+          <td>
+            Weight when loaded:
+          </td>
+          <td>
+            {{ data.weight_loaded }}
+          </td>
+          <td class="change-answer">
+            <a href="#">
+              Change <span class="visuallyhidden">Name</span>
+            </a>
+          </td>
+        </tr>
+      {% endif %}
       <tr>
         <td>
           Operating exempt vehicles:
@@ -120,10 +122,10 @@
       </tr>
       <tr>
         <td>
-          6 miles a week:
+          Less than 6 miles a week:
         </td>
         <td>
-          {{ data.6_miles_a_week }}
+          {{ data.six_miles_a_week }}
         </td>
         <td class="change-answer">
           <a href="#">
@@ -131,6 +133,36 @@
           </a>
         </td>
       </tr>
+      {% if data.six_miles_a_week=="yes" %}
+        <tr>
+          <td>
+            Digging and demolition vehicles:
+          </td>
+          <td>
+            {{ data.digging_demolition }}
+          </td>
+          <td class="change-answer">
+            <a href="#">
+              Change <span class="visuallyhidden">Name</span>
+            </a>
+          </td>
+        </tr>
+      {% endif %}
+      {% if data.digging_demolition=="no" %}
+        <tr>
+          <td>
+            Own private parking:
+          </td>
+          <td>
+            {{ data.same_owner }}
+          </td>
+          <td class="change-answer">
+            <a href="#">
+              Change <span class="visuallyhidden">Name</span>
+            </a>
+          </td>
+        </tr>
+      {% endif %}
       </tr> 
         <td>
           Transporting just your goods:

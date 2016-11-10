@@ -636,12 +636,12 @@ router.get('/bats/task_list/get_references/experience', function (req, res) {
 
 });
 
-// TRANSPORT GOODS IN THE UK
+// TRANSPORT GOODS
 
 // question in /transport_goods/task_list/check_before_you_start/weight/empty
 router.get('/transport_goods/task_list/check_before_you_start/how_many_vehicles', function (req, res) {
 
-  console.log("hired_ecologist");
+  console.log("weight");
 
   // get the answer from the query string (eg. ?over18="yes")
   var weight_empty = req.query.weight_empty;
@@ -669,7 +669,7 @@ router.get('/transport_goods/task_list/check_before_you_start/how_many_vehicles'
 // check your answers for 'Describe your building project' section
 router.get('/transport_goods/task_list/check_before_you_start/carrying_passengers', function (req, res) {
 
-  console.log("known_ref_two");
+  console.log("exempt_vehicles");
 
   // get the answer from the query string (eg. ?over18="yes")
   var exempt_vehicles = req.query.exempt_vehicles;
@@ -691,7 +691,7 @@ router.get('/transport_goods/task_list/check_before_you_start/carrying_passenger
 // check your answers for 'Describe your building project' section
 router.get('/transport_goods/task_list/check_before_you_start/trade_plates', function (req, res) {
 
-  console.log("known_ref_two");
+  console.log("carrying_passengers");
 
   // get the answer from the query string (eg. ?over18="yes")
   var carrying_passengers = req.query.carrying_passengers;
@@ -713,7 +713,7 @@ router.get('/transport_goods/task_list/check_before_you_start/trade_plates', fun
 // check your answers for 'Describe your building project' section
 router.get('/transport_goods/task_list/check_before_you_start/short_distance/less_than_6_miles_a_week', function (req, res) {
 
-  console.log("known_ref_two");
+  console.log("trade_plates");
 
   // get the answer from the query string (eg. ?over18="yes")
   var trade_plates = req.query.trade_plates;
@@ -733,9 +733,48 @@ router.get('/transport_goods/task_list/check_before_you_start/short_distance/les
 });
 
 // check your answers for 'Describe your building project' section
+router.get('/transport_goods/task_list/check_before_you_start/licence_type/just_your_goods', function (req, res) {
+
+  console.log("short_distance");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var six_miles_a_week = req.query.six_miles_a_week;
+  var digging_demolition = req.query.digging_demolition;
+  var same_owner = req.query.same_owner;
+
+  if (six_miles_a_week == "yes" && digging_demolition==undefined && same_owner==undefined ){
+
+    // if user IS related to child
+    res.redirect("/transport_goods/task_list/check_before_you_start/short_distance/digging_demolition" + res.locals.formQuery);
+
+  } else if (six_miles_a_week == "yes" && digging_demolition == "yes" && same_owner==undefined ){
+
+    // if user lives in WALES
+    res.redirect("/transport_goods/task_list/check_before_you_start/result" + res.locals.formQuery);
+
+  } else if (six_miles_a_week == "yes" && digging_demolition == "no" && same_owner==undefined ){
+
+    // if user lives in WALES
+    res.redirect("/transport_goods/task_list/check_before_you_start/short_distance/same_owner" + res.locals.formQuery);
+
+  } else if (six_miles_a_week == "yes" && digging_demolition == "no" && same_owner == "yes" ){
+
+    // if user lives in WALES
+    res.redirect("/transport_goods/task_list/check_before_you_start/result" + res.locals.formQuery);
+
+  } else {
+
+    // if user is NOT related to child
+    res.render('transport_goods/task_list/check_before_you_start/licence_type/just_your_goods/index.html');
+
+  }
+
+});
+
+// check your answers for 'Describe your building project' section
 router.get('/transport_goods/task_list/check_before_you_start/transport_manager', function (req, res) {
 
-  console.log("known_ref_two");
+  console.log("just_your_goods");
 
   // get the answer from the query string (eg. ?over18="yes")
   var just_your_goods = req.query.just_your_goods;
@@ -758,7 +797,7 @@ router.get('/transport_goods/task_list/check_before_you_start/transport_manager'
 // check your answers for 'Check before you start' section
 router.get('/transport_goods/task_list/check_before_you_start/weight/empty', function (req, res) {
 
-  console.log("known_ref_two");
+  console.log("check_your_answers");
 
   // get the answer from the query string (eg. ?over18="yes")
   var transport_manager = req.query.transport_manager;
@@ -780,7 +819,7 @@ router.get('/transport_goods/task_list/check_before_you_start/weight/empty', fun
 // check your answers for 'Check before you start' section
 router.get('/transport_goods/task_list/check_before_you_start/result', function (req, res) {
 
-  console.log("known_ref_two");
+  console.log("application_cost");
 
   // get the answer from the query string (eg. ?over18="yes")
   var transport_manager = req.query.transport_manager;
@@ -806,7 +845,7 @@ router.get('/transport_goods/task_list/check_before_you_start/result', function 
 // check your answers for 'Give public notice' section
 router.get('/transport_goods/task_list/give_public_notice/result', function (req, res) {
 
-  console.log("known_ref_two");
+  console.log("given_public_notice");
 
   // get the answer from the query string (eg. ?over18="yes")
   var given_public_notice = req.query.given_public_notice;
@@ -828,7 +867,7 @@ router.get('/transport_goods/task_list/give_public_notice/result', function (req
 // check your answers for 'Describe your vehicles' section
 router.get('/transport_goods/task_list/give_public_notice/reason', function (req, res) {
 
-  console.log("known_ref_two");
+  console.log("check_your_answers_give_public_notice");
 
   // get the answer from the query string (eg. ?over18="yes")
   var given_public_notice = req.query.given_public_notice;
@@ -850,7 +889,7 @@ router.get('/transport_goods/task_list/give_public_notice/reason', function (req
 // questions for /transport_goods/task_list/describe_vehicles/has_vehicles_already
 router.get('/transport_goods/task_list/describe_vehicles/reg_number_weight', function (req, res) {
 
-  console.log("known_ref_two");
+  console.log("has_vehicles_already");
 
   // get the answer from the query string (eg. ?over18="yes")
   var has_vehicles_already = req.query.has_vehicles_already;
@@ -872,7 +911,7 @@ router.get('/transport_goods/task_list/describe_vehicles/reg_number_weight', fun
 // check your answers for 'Describe your vehicles' section
 router.get('/transport_goods/task_list/describe_vehicles/has_vehicles_already', function (req, res) {
 
-  console.log("known_ref_two");
+  console.log("check_your_answers_vehicles");
 
   // get the answer from the query string (eg. ?over18="yes")
   var has_vehicles_already = req.query.has_vehicles_already;
@@ -894,7 +933,7 @@ router.get('/transport_goods/task_list/describe_vehicles/has_vehicles_already', 
 // questions for /transport_goods/task_list/describe_vehicles/has_vehicles_already
 router.get('/transport_goods/task_list/maintain_vehicles/name_address', function (req, res) {
 
-  console.log("known_ref_two");
+  console.log("has_mechanic");
 
   // get the answer from the query string (eg. ?over18="yes")
   var has_mechanic = req.query.has_mechanic;
@@ -916,7 +955,7 @@ router.get('/transport_goods/task_list/maintain_vehicles/name_address', function
 // check your answers for 'Maintain vehicles' section
 router.get('/transport_goods/task_list/maintain_vehicles/reason', function (req, res) {
 
-  console.log("known_ref_two");
+  console.log("check_your_answers_maintain_vehicles");
 
   // get the answer from the query string (eg. ?over18="yes")
   var has_mechanic = req.query.has_mechanic;
@@ -938,7 +977,7 @@ router.get('/transport_goods/task_list/maintain_vehicles/reason', function (req,
 // check your answers for 'Maintain vehicles' section
 router.get('/transport_goods/task_list/prove_money/reason', function (req, res) {
 
-  console.log("known_ref_two");
+  console.log("uploaded_document");
 
   // get the answer from the query string (eg. ?over18="yes")
   var uploaded_document = req.query.uploaded_document;
@@ -965,7 +1004,7 @@ router.get('/transport_goods/task_list/prove_money/reason', function (req, res) 
 // check your answers for 'Your contact details' section
 router.get('/transport_goods/task_list/contact_details', function (req, res) {
 
-  console.log("known_ref_two");
+  console.log("contact_by");
 
   // get the answer from the query string (eg. ?over18="yes")
   var contact_by = req.query.contact_by;
@@ -987,7 +1026,7 @@ router.get('/transport_goods/task_list/contact_details', function (req, res) {
 // questions for /transport_goods/task_list/convictions_penalties/convictions
 router.get('/transport_goods/task_list/convictions_penalties/compensation_order', function (req, res) {
 
-  console.log("known_ref_two");
+  console.log("convictions");
 
   // get the answer from the query string (eg. ?over18="yes")
   var crime = req.query.crime;
@@ -1010,7 +1049,7 @@ router.get('/transport_goods/task_list/convictions_penalties/compensation_order'
 // questions for /transport_goods/task_list/convictions_penalties/convictions
 router.get('/transport_goods/task_list/convictions_penalties/reason', function (req, res) {
 
-  console.log("known_ref_two");
+  console.log("compensation_order");
 
   // get the answer from the query string (eg. ?over18="yes")
   var compensation_order = req.query.compensation_order;
