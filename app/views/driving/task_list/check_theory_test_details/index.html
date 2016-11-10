@@ -1,14 +1,14 @@
-{% extends "layout.html" %} {% block page_title %} Apply to for provisional licence {% endblock %} {% block content %}
+{% extends "layout.html" %} {% block page_title %} Check your theory test details {% endblock %} {% block content %}
 <main id="content" role="main">
   {% include "includes/phase_banner_beta.html" %}
 
   <div class="breadcrumbs">
     <ol>
       <li>
-        <a href="/driving/task_list">Become a childminder</a>
+        <a href="/driving/task_list{{formQuery}}">Learn to drive</a>
       </li>
       <li>
-        Apply for provisional licence
+        Check your theory test details
       </li> 
     </ol>
   </div>
@@ -29,7 +29,7 @@
             Check your theory test details
           </legend>
 
-          <p>To check your theory test details:</p>
+          <p>To check your theory test appointment details:</p>
 
           <ol class="list list-number">
             <li>have your UK driving licence number</li>

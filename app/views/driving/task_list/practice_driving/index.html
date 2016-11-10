@@ -1,14 +1,14 @@
-{% extends "layout.html" %} {% block page_title %} Read rules for practicing driving {% endblock %} {% block content %}
+{% extends "layout.html" %} {% block page_title %} Rules for practicing driving {% endblock %} {% block content %}
 <main id="content" role="main">
   {% include "includes/phase_banner_beta.html" %}
 
   <div class="breadcrumbs">
     <ol>
       <li>
-        <a href="/driving/task_list">Learn to drive</a>
+        <a href="/driving/task_list{{formQuery}}">Learn to drive</a>
       </li>
       <li>
-        Practive driving
+        Rules for practicing driving
       </li> 
     </ol>
   </div>
