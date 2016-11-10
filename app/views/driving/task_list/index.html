@@ -78,7 +78,7 @@
       -->
 
       <!-- Give medical information -->
-      {% if data.disability_medical %}
+      {% if data.disability_medical or data.mobility_need==yes %}
         <tr>
           <td class="task">
             <a href="/driving/task_list/give_medical_information{{formQuery}}">
@@ -333,7 +333,7 @@
         <td class="task">
           <a href="/driving/task_list/after_you_pass{{formQuery}}">
             <span class="step-number" id="task-number"></span>
-            <span class="task-name"> Read driving rules</span>
+            <span class="task-name"> Learn driving rules</span>
           </a>
         </td>
         <td class="numeric" id="task-status">          

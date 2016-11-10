@@ -80,6 +80,24 @@
             </td>
           </tr>
 
+          <!-- Apply for interim licence -->
+          {% if data.need_interim_licence=="no" %}
+            <tr>
+              <td class="task">
+                <a href="/transport_goods/task_list/transport_manager{{formQuery}}">
+                  <span class="step-number" id="task-number"></span>
+                  <span class="task-name"> Apply for interim licence</span>
+                </a>
+              </td>
+              <td class="numeric" id="task-status">
+                {% if data.interim_licence=="complete" %}
+                  {% include "includes/task_status_complete.html" %}
+                {% endif %}
+              </td>
+            </tr>
+          {% endif %}
+
+
           <!-- Become a transport manager -->
           {% if data.transport_manager=="no" %}
             <tr>

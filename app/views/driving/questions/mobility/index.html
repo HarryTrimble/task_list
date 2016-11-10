@@ -5,14 +5,14 @@
   <div class="grid-row">
     <div class="column-two-thirds">
 
-      <form method="get" action="/driving/questions/driving_lessons" class="form">
+      <form method="get" action="/driving/questions/age" class="form">
 
       {{formData | safe}}
 
         <!-- if has disabililty ask are they 16 -->
 
         <h1 class="heading-large">
-          Do you have any upper or lower body disabilities that which needs driving to be restricted to certain types of vehicles or those with adapted controls?
+          Do you have any upper or lower body disabilities which mean you can only drive adapted vehicles? 
         </h1>
 
         <fieldset>
@@ -22,13 +22,13 @@
 
           <div class="form-group">
 
-            <label for="practing_in_own_car-1" class="block-label">
-              <input type="radio" id="practing_in_own_car-1" name="practing_in_own_car" value="yes">
+            <label for="mobility_need-1" class="block-label">
+              <input type="radio" id="mobility_need-1" name="mobility_need" value="yes">
               Yes
             </label>
 
-            <label for="practing_in_own_car-2" class="block-label">
-              <input type="radio" id="practing_in_own_car-2" name="practing_in_own_car" value="no">
+            <label for="mobility_need-2" class="block-label">
+              <input type="radio" id="mobility_need-2" name="mobility_need" value="no">
               No
             </label>
 
