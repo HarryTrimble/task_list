@@ -128,19 +128,19 @@
       
       <!-- Insure your car-->
       {% if data.practing_in_own_car=="yes" %}
-      <tr>
-        <td class="task">
-          <a href="/driving/task_list/insure_car{{formQuery}}">
-            <span class="step-number" id="task-number"></span>
-            <span class="task-name"> Insure your car</span>
-          </a>
-        </td>
-        <td class="numeric" id="task-status">          
-          {% if data.insure_car=="complete" %}
-            {% include "includes/task_status_complete.html" %}
-          {% endif %}
-        </td>
-      </tr>
+        <tr>
+          <td class="task">
+            <a href="/driving/task_list/insure_car{{formQuery}}">
+              <span class="step-number" id="task-number"></span>
+              <span class="task-name"> Insure your car</span>
+            </a>
+          </td>
+          <td class="numeric" id="task-status">          
+            {% if data.insure_car=="complete" %}
+              {% include "includes/task_status_complete.html" %}
+            {% endif %}
+          </td>
+        </tr>
       {% endif %}
 
       <!-- Read rules for practicing driving -->
