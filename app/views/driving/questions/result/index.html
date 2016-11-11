@@ -58,7 +58,7 @@
 
             <!-- 1// Cost WITH eye test WITH insurance WITH driving lessons -->
             {% if 
-              data.read_from_20_meters=="yes" and
+              data.needs_glasses_or_contacts=="yes" and
               data.practing_in_own_car=="yes" and
               data.driving_lessons=="yes"
             %}
@@ -69,7 +69,7 @@
 
             <!-- 2// Cost WITH eye test WITH insurance WITHOUT driving lessons -->
             {% if 
-              data.read_from_20_meters=="yes" and
+              data.needs_glasses_or_contacts=="yes" and
               data.practing_in_own_car=="yes" and
               data.driving_lessons=="no"
             %}
@@ -80,7 +80,7 @@
 
             <!-- 3// Cost WITH eye test WITHOUT insurance WITH driving lessons -->
             {% if 
-              data.read_from_20_meters=="yes" and
+              data.needs_glasses_or_contacts=="yes" and
               data.practing_in_own_car=="no" and
               data.driving_lessons=="yes"
             %}
@@ -91,7 +91,7 @@
             
             <!-- 4// Cost WITHOUT eye test WITH insurance WITH driving lessons -->
             {% if 
-              data.read_from_20_meters=="no" and
+              data.needs_glasses_or_contacts=="no" and
               data.practing_in_own_car=="yes" and
               data.driving_lessons=="yes"
             %}
@@ -102,7 +102,7 @@
 
             <!-- 5// Cost WITHOUT eye test WITHOUT insurance WITH driving lessons -->
             {% if 
-              data.read_from_20_meters=="no" and
+              data.needs_glasses_or_contacts=="no" and
               data.practing_in_own_car=="no" and
               data.driving_lessons=="yes"
             %}
@@ -113,7 +113,7 @@
 
             <!-- 6// Cost WITH eye test WITHOUT insurance WITHOUT driving lessons -->
             {% if 
-              data.read_from_20_meters=="yes" and
+              data.needs_glasses_or_contacts=="yes" and
               data.practing_in_own_car=="no" and
               data.driving_lessons=="no"
             %}
@@ -124,7 +124,7 @@
 
             <!-- 7// Cost WITHOUT eye test WITHOUT insurance WITHOUT driving lessons -->
             {% if 
-              data.read_from_20_meters=="no" and
+              data.needs_glasses_or_contacts=="no" and
               data.practing_in_own_car=="no" and
               data.driving_lessons=="no"
             %}

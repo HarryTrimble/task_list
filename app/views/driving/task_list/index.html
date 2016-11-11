@@ -59,23 +59,22 @@
         </td>
       </tr>
 
-      <!-- Have eye test
-      {% if data.read_from_20_meters=="no" %}
+      <!-- Have eye test -->
+      {% if data.needs_glasses_or_contacts=="yes" %}
         <tr>
           <td class="task">
-            <a href="/driving/task_list/have_eye_test{{formQuery}}">
+            <a href="/driving/task_list/eye_test{{formQuery}}">
               <span class="step-number" id="task-number"></span>
-              <span class="task-name"> Have a eye test</span>
+              <span class="task-name"> Have an eye test</span>
             </a>
           </td>
           <td class="numeric" id="task-status">          
-            {% if data.have_eye_test=="complete" %}
+            {% if data.eye_test=="complete" %}
               {% include "includes/task_status_complete.html" %}
             {% endif %}
           </td>
         </tr>
       {% endif %}
-      -->
 
       <!-- Give medical information -->
       {% if data.disability_medical or data.mobility_need==yes %}
