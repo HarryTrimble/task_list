@@ -157,17 +157,32 @@
               </p>
             </div>
 
-            <p class="">Check what <a href="/driving/task_list{{ formQuery | safe }}">tasks</a> are involved to learn to drive.</p>
+            {% if start_page=="yes" %}
+              
+              <p class="">Check what <a href="/driving/task_list{{ formQuery | safe }}">tasks</a> are involved to learn to drive.</p>
 
-            <br>
+              <br>
 
-            <input type="hidden" name="check_before_you_start" value="complete">
+              <input type="hidden" name="check_before_you_start" value="complete">
 
-            <div class="form-group">
-              <input type="submit" class="button button-start" value="Start now"/>
-            </div>
+              <div class="form-group">
+                <input type="submit" class="button button-start" value="Start now"/>
+              </div>
+              
+            {% else %}
+
+              <br>
+
+              <div class="form-group">
+                <input type="submit" class="button" value="Task complete" />
+              </div>
+
+            {% endif %}
 
         {% endif %}
+
+
+
 
 
       </form>
