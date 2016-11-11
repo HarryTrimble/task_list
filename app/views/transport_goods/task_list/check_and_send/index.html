@@ -1,4 +1,4 @@
-{% extends "bats/layout.html" %}
+{% extends "transport_goods/layout.html" %}
 
 {% block page_title %}
   Check your answers
@@ -227,7 +227,7 @@
           Read rules:
         </td>
         <td>
-          {{ data.given_public_notice }}
+          {{ data.read_rules }}
         </td>
         <td class="change-answer">
           <a href="#">
@@ -238,7 +238,11 @@
     </tbody>
   </table>
 
-<table class="check-your-answers">
+
+<!-- Become a transport manager -->
+{% if data.transport_manager=="no" %}
+
+  <table class="check-your-answers">
 
     <thead>
       <tr>
@@ -255,10 +259,10 @@
     <tbody>
       <tr>
         <td>
-          Hired a transport manager
+          Hired a transport manager:
         </td>
         <td>
-          {{ data.given_public_notice }}
+          {{ data.become_transport_manager }}
         </td>
         <td class="change-answer">
           <a href="#">
@@ -268,6 +272,8 @@
       </tr>
     </tbody>
   </table>
+
+{% endif %}
 
 <table class="check-your-answers">
 
@@ -286,7 +292,7 @@
     <tbody>
       <tr>
         <td>
-          Advertise you plans to transport goods
+          Advertise you plans to transport goods:
         </td>
         <td>
           {{ data.given_public_notice }}
@@ -317,7 +323,7 @@
     <tbody>
       <tr>
         <td>
-          Has vehicle details
+          Has vehicle details:
         </td>
         <td>
           {{ data.has_vehicles_already }}
