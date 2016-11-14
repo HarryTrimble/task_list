@@ -71,8 +71,13 @@
 
 // task list styling
 
+.task-group {
+  font-size: 30px;
+  font-weight: 700;
+}
+
 .task {
-  font-size: 24px;
+  font-size: 19px;
   font-weight: 700;
   color: $link-colour;
 }
@@ -82,8 +87,9 @@
 }
 
 .task-name {  
-  font-size: 24px;
-  font-weight: 700;
+  font-size: 19px;
+  font-weight: 400;
+  margin-left: 5%;
 }
 
 .task-name:hover {
@@ -116,6 +122,19 @@
     text-decoration: none;
     color: #fff;
     background-color: $black;
+}
+
+
+// cost and time
+
+.total-cost {
+  font-size: 80px;
+  font-weight: 700;
+}
+
+.varying-cost {
+  font-size: 16px;
+  font-weight: 700;
 }
 
 // status overview

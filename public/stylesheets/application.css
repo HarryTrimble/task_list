@@ -1980,8 +1980,13 @@ input[type=number] {
   color: #6f777b;
 }
 
+.task-group {
+  font-size: 30px;
+  font-weight: 700;
+}
+
 .task {
-  font-size: 24px;
+  font-size: 19px;
   font-weight: 700;
   color: #005ea5;
 }
@@ -1991,8 +1996,9 @@ input[type=number] {
 }
 
 .task-name {
-  font-size: 24px;
-  font-weight: 700;
+  font-size: 19px;
+  font-weight: 400;
+  margin-left: 5%;
 }
 
 .task-name:hover {
@@ -2025,6 +2031,16 @@ input[type=number] {
   text-decoration: none;
   color: #fff;
   background-color: #0b0c0c;
+}
+
+.total-cost {
+  font-size: 80px;
+  font-weight: 700;
+}
+
+.varying-cost {
+  font-size: 16px;
+  font-weight: 700;
 }
 
 .actions {

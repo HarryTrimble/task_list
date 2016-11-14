@@ -126,6 +126,15 @@ $(document).ready(function() {
 
 
   //orders task list numbers 
+  var $groupNumbers = $( ".group-number" );
+
+  $groupNumbers.each(function(index) {
+
+    $( this ).append(index+1+".");
+
+  });
+
+  //orders task list numbers 
   var $stepNumbers = $( ".step-number" );
 
   $stepNumbers.each(function(index) {

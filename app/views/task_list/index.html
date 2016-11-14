@@ -40,9 +40,15 @@
     <div class="column-three-quarters">  
 
   <table>
+
     <thead>
       <tr>
-        <th scope="col" id="col-task"></th>
+        <th scope="col" id="col-task">
+          <span class="task-group">  
+            <span class="group-number" id="task-number"></span>
+              Check before you start
+          </span>
+        </th>
         <th class="numeric" id="task-status" scope="col" id="col-status"></th>
       </tr>
     </thead>
@@ -50,9 +56,8 @@
       <!-- check eligibility -->
       <tr>
         <td class="task">
-          <a href="/start-page-check">
-            <span class="step-number" id="task-number"></span>
-            <span class="task-name"> Check before you start</span>
+          <a href="/questions/country">
+            <span class="task-name">Check eligibility, cost and time to wait</span>
             <!--
               <br>
               <span class="task-description">
@@ -71,7 +76,6 @@
       <tr id="read_rules">
         <td class="task">
           <a href="/task_list/read_rules{{formQuery}}">
-            <span class="step-number" id="task-number"></span>
             <span class="task-name"> Read rules</span>
           </a>
         </td>
@@ -85,7 +89,6 @@
       <tr id="contact_local_council">
         <td class="task">
           <a href="/task_list/contact_local_council{{formQuery}}">
-            <span class="step-number" id="task-number"></span>
             <span class="task-name"> Contact your local council</span>
           </a>
         </td>
@@ -95,11 +98,30 @@
           {% endif %}
         </td>
       </tr>
+    </tbody>
+  </table>
+
+  <br>
+  <br>
+
+<table>
+
+    <thead>
+      <tr>
+        <th scope="col" id="col-task">
+          <span class="task-group">  
+            <span class="group-number" id="task-number"></span>
+              Prepare to apply
+          </span>
+        </th>
+        <th class="numeric" id="task-status" scope="col" id="col-status"></th>
+      </tr>
+    </thead>
+    <tbody>
       <!-- prove identity -->
       <tr id="prove_identity">
         <td class="task">
           <a href="/task_list/prove_identity{{formQuery}}">
-            <span class="step-number" id="task-number"></span>
             <span class="task-name"> Prove identity</span>
           </a>
         </td>
@@ -113,7 +135,6 @@
       <tr id="check_criminal_history">
         <td class="task">
           <a href="/task_list/check_criminal_history{{formQuery}}">
-            <span class="step-number" id="task-number"></span>
             <span class="task-name"> Check criminal history</span>
           </a>
         </td>
@@ -128,7 +149,7 @@
         <tr id="check_other_criminal_history">
           <td class="task">
             <a href="/task_list/check_others_criminal_history{{formQuery}}">
-              <span class="step-number" id="task-number"></span>
+
               <span class="task-name"> Check others criminal history</span>
             </a>
           </td>
@@ -143,7 +164,6 @@
       <tr id="get_health_check">
         <td class="task">
           <a href="/task_list/get_health_check{{formQuery}}">
-            <span class="step-number" id="task-number"></span>
             <span class="task-name"> Get health check</span>
           </a>
         </td>
@@ -163,7 +183,7 @@
         <tr id="do_first_aid_training">
           <td class="task">
             <a href="/task_list/do_first_aid_training{{formQuery}}">
-              <span class="step-number" id="task-number"></span>
+
               <span class="task-name"> Do first aid training</span>
             </a>
           </td>
@@ -178,7 +198,6 @@
       <tr id="do_childminder_training">
         <td class="task">
           <a href="/task_list/do_childminder_training{{formQuery}}">
-            <span class="step-number" id="task-number"></span>
             <span class="task-name"> Do childminder training</span>
           </a>
         </td>
@@ -192,7 +211,6 @@
       <tr id="get_references">
         <td class="task">
           <a href="/task_list/get_references{{formQuery}}">
-            <span class="step-number" id="task-number"></span>
             <span class="task-name"> Get references</span>
           </a>
         </td>
@@ -202,11 +220,29 @@
           {% endif %}
         </td>
       </tr>
+    </tbody>
+  </table>
+
+  <br>
+  <br>
+
+  <table>
+    <thead>
+      <tr>
+        <th scope="col" id="col-task">
+          <span class="task-group">  
+            <span class="group-number" id="task-number"></span>
+              Apply
+          </span>
+        </th>
+        <th class="numeric" id="task-status" scope="col" id="col-status"></th>
+      </tr>
+    </thead>
+    <tbody>
       <!-- Apply to Ofsted -->
       <tr id="apply_to_ofsted">
         <td class="task">
           <a href="/task_list/apply_to_ofsted{{formQuery}}">
-            <span class="step-number" id="task-number"></span>
             <span class="task-name"> Apply to Ofsted</span>
           </a>
         </td>
@@ -216,11 +252,30 @@
           {% endif %}
         </td>
       </tr>
+    </tbody>
+  </table>
+
+<br>
+  <br>
+
+  <table>
+    <thead>
+      <tr>
+        <th scope="col" id="col-task">
+          <span class="task-group">  
+            <span class="group-number" id="task-number"></span>
+              After you apply
+          </span>
+        </th>
+        <th class="numeric" id="task-status" scope="col" id="col-status"></th>
+      </tr>
+    </thead>
+    <tbody>
       <!-- Get premises inspected -->
         <tr id="get_premises_inspected">
           <td class="task">
             <a href="/task_list/get_premises_inspected{{formQuery}}">
-              <span class="step-number" id="task-number"></span>
+
               <span class="task-name"> Get premises inspected</span>
             </a>
           </td>
@@ -235,7 +290,7 @@
         <tr id="have_food_inspection">
           <td class="task">
             <a href="/task_list/have_food_inspection{{formQuery}}">
-              <span class="step-number" id="task-number"></span>
+
               <span class="task-name"> Prepare for food inspection</span>
             </a>
           </td>
@@ -250,7 +305,6 @@
       <tr id="get_insured">
         <td class="task">
           <a href="/task_list/get_insured{{formQuery}}">
-            <span class="step-number" id="task-number"></span>
             <span class="task-name"> Get insured</span>
           </a>
         </td>
@@ -265,7 +319,7 @@
         <tr id="register_self_employed">
           <td class="task">
             <a href="/task_list/register_self_employed{{formQuery}}">
-              <span class="step-number" id="task-number"></span>
+
               <span class="task-name"> Register as self employed</span>
             </a>
           </td>
@@ -281,7 +335,7 @@
         <tr id="set_up_limited_company">
           <td class="task">
             <a href="/task_list/set_up_limited_company{{formQuery}}">
-              <span class="step-number" id="task-number"></span>
+
               <span class="task-name"> Set up a limited company</span>
             </a>
           </td>
@@ -295,21 +349,19 @@
     </tbody>
   </table>
 
-
     </div>
 
-<div class="column-quarter">
+<!--
+
+  <div class="column-quarter">
 
       <ul class="actions">
         <li class="action"><a href="/save_and_return/email">Save and complete later</a></li>
         <li class="action"><a href="#">Print list</a></li>
-        <!--
         <li class="action"><a href="#">Delete list</a></li>
-        -->
       </ul>
 
       <div class="meta-data">
-        <!--
         <p class="last-edited font-xsmall">List number<br>
           <span class="bold-xsmall">1280880</span>
         </p>
@@ -319,7 +371,6 @@
         <p class="last-edited font-xsmall">Last visited on<br>
           <span class="bold-xsmall">23 August 2016</span>
         </p>
-        -->
 
         <p class="last-edited font-xsmall">Status<br>
           <span class="bold-xsmall"><span id="completed-steps"></span> of <span id="total-steps"></span> tasks completed</span>
@@ -329,6 +380,8 @@
     </div>
 
   </div>
+
+        -->
     
   </div>
 
