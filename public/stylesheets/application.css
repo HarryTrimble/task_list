@@ -1980,6 +1980,10 @@ input[type=number] {
   color: #6f777b;
 }
 
+#table-of-tasks td {
+  border-bottom: 1px solid #bfc1c3;
+}
+
 .task-group {
   font-size: 30px;
   font-weight: 700;
@@ -2041,6 +2045,10 @@ input[type=number] {
 .varying-cost {
   font-size: 16px;
   font-weight: 700;
+}
+
+#type-of-thing {
+  background: #6f777b;
 }
 
 .actions {

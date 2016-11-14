@@ -71,6 +71,10 @@
 
 // task list styling
 
+#table-of-tasks td {
+  border-bottom: 1px solid #bfc1c3;
+}
+
 .task-group {
   font-size: 30px;
   font-weight: 700;
@@ -135,6 +139,12 @@
 .varying-cost {
   font-size: 16px;
   font-weight: 700;
+}
+
+// insurance training
+
+#type-of-thing {
+  background: $secondary-text-colour;
 }
 
 // status overview
