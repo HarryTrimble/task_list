@@ -31,25 +31,32 @@
 
   </div>
 
+
   <div class="grid-row">
 
     <div class="column-three-quarters">  
 
-  <table>
+
+  <table id="table-of-tasks">
+
     <thead>
       <tr>
-        <th scope="col" id="col-task"></th>
+        <th scope="col" id="col-task">
+          <span class="task-group">  
+            <span class="group-number" id="task-number"></span>
+              Before you start
+          </span>
+        </th>
         <th class="numeric" id="task-status" scope="col" id="col-status"></th>
       </tr>
     </thead>
     <tbody>
-
+    
       <!-- check eligibility -->
       <tr>
         <td class="task">
           <a href="/driving/questions/disability_medical">
-            <span class="step-number" id="task-number"></span>
-            <span class="task-name"> Check before you start</span>
+            <span class="task-name"> Check eligibility, cost and time</span>
           </a>
         </td>
         <td class="numeric" id="task-status">
@@ -64,7 +71,7 @@
         <tr>
           <td class="task">
             <a href="/driving/task_list/eye_test{{formQuery}}">
-              <span class="step-number" id="task-number"></span>
+
               <span class="task-name"> Have an eye test</span>
             </a>
           </td>
@@ -81,7 +88,7 @@
         <tr>
           <td class="task">
             <a href="/driving/task_list/give_medical_information{{formQuery}}">
-              <span class="step-number" id="task-number"></span>
+
               <span class="task-name"> Give your medical information</span>
             </a>
           </td>
@@ -97,7 +104,6 @@
       <tr>
         <td class="task">
           <a href="/driving/task_list/apply_for_provisional{{formQuery}}">
-            <span class="step-number" id="task-number"></span>
             <span class="task-name"> Apply for your provisional licence</span>
           </a>
         </td>
@@ -113,7 +119,7 @@
         <tr>
           <td class="task">
             <a href="/driving/task_list/get_adapted_car{{formQuery}}">
-              <span class="step-number" id="task-number"></span>
+
               <span class="task-name"> Get an adapted car</span>
             </a>
           </td>
@@ -130,7 +136,7 @@
         <tr>
           <td class="task">
             <a href="/driving/task_list/insure_car{{formQuery}}">
-              <span class="step-number" id="task-number"></span>
+
               <span class="task-name"> Insure your car</span>
             </a>
           </td>
@@ -142,11 +148,31 @@
         </tr>
       {% endif %}
 
+    </tbody>
+  </table>
+
+  <br>
+  <br>
+
+  <table id="table-of-tasks">
+
+    <thead>
+      <tr>
+        <th scope="col" id="col-task">
+          <span class="task-group">  
+            <span class="group-number" id="task-number"></span>
+              Practice driving
+          </span>
+        </th>
+        <th class="numeric" id="task-status" scope="col" id="col-status"></th>
+      </tr>
+    </thead>
+    <tbody>
+      
       <!-- Read rules for practicing driving -->
       <tr>
         <td class="task">
           <a href="/driving/task_list/practice_driving{{formQuery}}">
-            <span class="step-number" id="task-number"></span>
             <span class="task-name"> Practise driving</span>
           </a>
         </td>
@@ -162,7 +188,6 @@
       <tr>
         <td class="task">
           <a href="/driving/task_list/find_instructor{{formQuery}}">
-            <span class="step-number" id="task-number"></span>
             <span class="task-name"> Find a driving instructor</span>
           </a>
         </td>
@@ -174,11 +199,31 @@
       </tr>
       {% endif %}
 
+    </tbody>
+  </table>
+
+  <br>
+  <br>
+
+  <table id="table-of-tasks">
+
+    <thead>
+      <tr>
+        <th scope="col" id="col-task">
+          <span class="task-group">  
+            <span class="group-number" id="task-number"></span>
+              Take your theory test
+          </span>
+        </th>
+        <th class="numeric" id="task-status" scope="col" id="col-status"></th>
+      </tr>
+    </thead>
+    <tbody>
+          
       <!-- Book theory test -->
       <tr>
         <td class="task">
           <a href="/driving/task_list/book_theory_test{{formQuery}}">
-            <span class="step-number" id="task-number"></span>
             <span class="task-name"> Book your theory test</span>
           </a>
         </td>
@@ -193,7 +238,6 @@
       <tr>
         <td class="task">
           <a href="/driving/task_list/revise_for_theory_test{{formQuery}}">
-            <span class="step-number" id="task-number"></span>
             <span class="task-name"> Revise for your theory test</span>
           </a>
         </td>
@@ -208,7 +252,6 @@
       <tr>
         <td class="task">
           <a href="/driving/task_list/check_theory_test_details{{formQuery}}">
-            <span class="step-number" id="task-number"></span>
             <span class="task-name"> Check your theory test details</span>
           </a>
         </td>
@@ -223,7 +266,6 @@
       <tr>
         <td class="task">
           <a href="/driving/task_list/take_theory_test{{formQuery}}">
-            <span class="step-number" id="task-number"></span>
             <span class="task-name"> Take your theory test</span>
           </a>
         </td>
@@ -233,28 +275,32 @@
           {% endif %}
         </td>
       </tr>
-      
-      <!-- Retake theory test
+
+    </tbody>
+  </table>
+
+  <br>
+  <br>
+
+  <table id="table-of-tasks">
+
+    <thead>
       <tr>
-        <td class="task">
-          <a href="/driving/task_list/get_insured{{formQuery}}">
-            <span class="step-number" id="task-number"></span>
-            <span class="task-name"> Retake theory test</span>
-          </a>
-        </td>
-        <td class="numeric" id="task-status">          
-          {% if data.get_insured=="complete" %}
-            {% include "includes/task_status_complete.html" %}
-          {% endif %}
-        </td>
+        <th scope="col" id="col-task">
+          <span class="task-group">  
+            <span class="group-number" id="task-number"></span>
+              Take your driving test
+          </span>
+        </th>
+        <th class="numeric" id="task-status" scope="col" id="col-status"></th>
       </tr>
-      -->
-      
+    </thead>
+    <tbody>
+          
       <!-- Book practical test -->
       <tr>
         <td class="task">
           <a href="/driving/task_list/book_driving_test{{formQuery}}">
-            <span class="step-number" id="task-number"></span>
             <span class="task-name"> Book your driving test</span>
           </a>
         </td>
@@ -269,7 +315,6 @@
       <tr>
         <td class="task">
           <a href="/driving/task_list/check_driving_test_details{{formQuery}}">
-            <span class="step-number" id="task-number"></span>
             <span class="task-name"> Check your driving test details
             </span>
           </a>
@@ -285,7 +330,6 @@
       <tr>
         <td class="task">
           <a href="/driving/task_list/take_driving_test{{formQuery}}">
-            <span class="step-number" id="task-number"></span>
             <span class="task-name"> Take your driving test</span>
           </a>
         </td>
@@ -295,28 +339,32 @@
           {% endif %}
         </td>
       </tr>
-      
-      <!-- Retake practical test
+
+    </tbody>
+  </table>
+
+  <br>
+  <br>
+
+  <table id="table-of-tasks">
+
+    <thead>
       <tr>
-        <td class="task">
-          <a href="/driving/task_list/get_insured{{formQuery}}">
-            <span class="step-number" id="task-number"></span>
-            <span class="task-name"> Retake practical test</span>
-          </a>
-        </td>
-        <td class="numeric" id="task-status">          
-          {% if data.get_insured=="complete" %}
-            {% include "includes/task_status_complete.html" %}
-          {% endif %}
-        </td>
+        <th scope="col" id="col-task">
+          <span class="task-group">  
+            <span class="group-number" id="task-number"></span>
+              After you pass
+          </span>
+        </th>
+        <th class="numeric" id="task-status" scope="col" id="col-status"></th>
       </tr>
-      -->
-      
+    </thead>
+    <tbody>
+          
       <!-- Get licence -->
       <tr>
         <td class="task">
           <a href="/driving/task_list/get_full_licence{{formQuery}}">
-            <span class="step-number" id="task-number"></span>
             <span class="task-name"> Get full licence</span>
           </a>
         </td>
@@ -327,11 +375,10 @@
         </td>
       </tr>
 
-      <!-- Get licence -->
+      <!-- Learn driving rules -->
       <tr>
         <td class="task">
           <a href="/driving/task_list/after_you_pass{{formQuery}}">
-            <span class="step-number" id="task-number"></span>
             <span class="task-name"> Learn driving rules</span>
           </a>
         </td>
@@ -344,29 +391,6 @@
 
     </tbody>
   </table>
-
-
-    </div>
-
-<div class="column-quarter">
-
-      <ul class="actions">
-        <li class="bold"><a href="/save_and_return">Save and complete later</a></li>
-        <li class="bold"><a href="#">Print list</a></li>
-      </ul>
-
-      <br>
-
-      <div class="meta-data">
-        <!--
-        <p class="last-edited font-xsmall">Reference number:<br>
-          <span class="bold-xsmall">HDJ2123F</span>
-        </p>
-        -->
-        <p class="last-edited font-xsmall">Progress:<br>
-          <span class="bold-xsmall"><span id="completed-steps"></span> of <span id="total-steps"></span> tasks completed</span>
-        </p>
-      </div>
 
     </div>
 
