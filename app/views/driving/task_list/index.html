@@ -51,7 +51,7 @@
       </tr>
     </thead>
     <tbody>
-    
+
       <!-- check eligibility -->
       <tr>
         <td class="task">
@@ -66,6 +66,23 @@
         </td>
       </tr>
 
+      <!-- Give medical information -->
+      {% if data.disability_medical %}
+        <tr>
+          <td class="task">
+            <a href="/driving/task_list/give_medical_information{{formQuery}}">
+
+              <span class="task-name"> Give medical information</span>
+            </a>
+          </td>
+          <td class="numeric" id="task-status">          
+            {% if data.give_medical_information=="complete" %}
+              {% include "includes/task_status_complete.html" %}
+            {% endif %}
+          </td>
+        </tr>
+      {% endif %}
+
       <!-- Have eye test -->
       {% if data.needs_glasses_or_contacts=="yes" %}
         <tr>
@@ -77,23 +94,6 @@
           </td>
           <td class="numeric" id="task-status">          
             {% if data.eye_test=="complete" %}
-              {% include "includes/task_status_complete.html" %}
-            {% endif %}
-          </td>
-        </tr>
-      {% endif %}
-
-      <!-- Give medical information -->
-      {% if data.disability_medical or data.mobility_need==yes %}
-        <tr>
-          <td class="task">
-            <a href="/driving/task_list/give_medical_information{{formQuery}}">
-
-              <span class="task-name"> Give your medical information</span>
-            </a>
-          </td>
-          <td class="numeric" id="task-status">
-            {% if data.give_medical_information=="complete" %}
               {% include "includes/task_status_complete.html" %}
             {% endif %}
           </td>
@@ -115,7 +115,7 @@
       </tr>
       
       <!-- Get adapted car -->
-      {% if data.disability_medical=="limb_problem" %}
+      {% if data.mobility_need=="yes" %}
         <tr>
           <td class="task">
             <a href="/driving/task_list/get_adapted_car{{formQuery}}">
