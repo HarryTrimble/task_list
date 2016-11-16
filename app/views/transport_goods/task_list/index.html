@@ -208,13 +208,13 @@
           <!-- Pay application fee -->
           <tr>
             <td class="task">
-              <a href="/transport_goods/task_list/pay_fee{{formQuery}}">
+              <a href="https://payment-prototype.herokuapp.com/tgl/tgl-choose-payment">
                 <span class="step-number" id="task-number"></span>
                 <span class="task-name"> Pay application fee</span>
               </a>
             </td>
             <td class="numeric" id="task-status">
-              {% if data.fee_paid %}
+              {% if data.pay_application_fee=="complete" %}
                 {% include "includes/task_status_complete.html" %}
               {% endif %}
             </td>
