@@ -1,4 +1,4 @@
-{% extends "driving/layout.html" %} {% block page_title %} Disability and medical conditions {% endblock %} {% block content %}
+{% extends "layout.html" %} {% block page_title %} Disability and medical conditions {% endblock %} {% block content %}
 <main id="content" role="main">
   {% include "includes/phase_banner_beta.html" %}
 
@@ -18,112 +18,89 @@
             Do you have any of the following disabilities or health conditions?
           </legend>
 
+          <ul class="list list-bullet">
+            <li>severe learning disability</li>
+            <li>diabetes controlled by insulin</li>
+            <li>epilepsy</li>
+            <li>any condition affecting your eyes</li>
+            <li>any condition affecting your field of vision, other than needing to wear glasses or contact lenses</li>
+            <li>total loss of sight in one eye</li>
+            <li>any stroke symptoms lasting longer than one month</li>
+            <li>fits or blackouts</li>
+            <li>any type of brain surgery or severe head injury involving in-patient treatment</li>
+            <li>brain tumour</li>
+            <li>an implanted cardiac pacemaker</li>
+            <li>an implanted cardiac defibrilator (ICD)</li>
+            <li>brain tumour</li>
+            <li>an implanted cardiac pacemaker</li>
+            <li>an implanted cardiac defibrilator (ICD)</li>
+            <li>repeated attacks of sudden disabling giddiness</li>
+            <li>any chronic neurological condition including Multiple Sclerosis, Motor Neurone and Huntington's Disease</li>
+            <li>a serious problem with memory or periods of confusion</li>
+            <li>persistent alcohol problem or dependence</li>
+            <li>persistent drug problem or dependence</li>
+            <li>serious psychiatric illness or mental ill health</li>
+            <li>Parkinson's disease</li>
+            <li>narcolepsy</li>
+            <li>Obstructive Sleep apnoea syndrome</li>
+          </ul>
+
           <div class="form-group">
 
+            <label for="disability_medical_1" class="block-label">
+              <input type="radio" id="disability_medical_1" name="disability_medical" value="yes">
+              yes
+            </label>
+
             <label for="disability_medical_2" class="block-label">
-              <input type="checkbox" id="disability_medical_2" name="disability_medical" value="severe_learning_disability">
-              Severe learning disability
+              <input type="radio" id="disability_medical_2" name="disability_medical" value="no">
+              no
             </label>
 
-            <label for="disability_medical_3" class="block-label">
-              <input type="checkbox" id="disability_medical_3" name="disability_medical" value="disabetes">
-              Diabetes controlled by insulin
+          <!-- 
+            <label for="exmept_vehicles_1" class="block-label">
+              <input type="checkbox" id="exmept_vehicles_1" name="exmept_vehicles" value="farm">
+              tractors or agricultural vehicles
             </label>
 
-            <label for="disability_medical_4" class="block-label">
-              <input type="checkbox" id="disability_medical_4" name="disability_medical" value="epilepsy">
-              Epilepsy
+            <label for="exmept_vehicles_2" class="block-label">
+              <input type="checkbox" id="exmept_vehicles_2" name="exmept_vehicles" value="recovery">
+              recovery vehicles
             </label>
 
-            <label for="disability_medical_5" class="block-label">
-              <input type="checkbox" id="disability_medical_5" name="disability_medical" value="eye_condition">
-              Any condition affecting your eyes
+            <label for="exmept_vehicles_3" class="block-label">
+              <input type="checkbox" id="exmept_vehicles_3" name="exmept_vehicles" value="emergency">
+              emergency vehicles including utility companies
             </label>
 
-            <label for="disability_medical_6" class="block-label">
-              <input type="checkbox" id="disability_medical_6" name="disability_medical" value="field_of_vision">
-              Any condition affecting your field of vision, other than needing to wear glasses or contact lenses
+            <label for="exmept_vehicles_4" class="block-label">
+              <input type="checkbox" id="exmept_vehicles_4" name="exmept_vehicles" value="snow">
+              snowploughs or road gritting vehicles
             </label>
 
-            <label for="disability_medical_7" class="block-label">
-              <input type="checkbox" id="disability_medical_7" name="disability_medical" value="loss_of_sight">
-              Total loss of sight in one eye
+            <label for="exmept_vehicles_5" class="block-label">
+              <input type="checkbox" id="exmept_vehicles_5" name="exmept_vehicles" value="military">
+              military vehicles
             </label>
 
-            <label for="disability_medical_8" class="block-label">
-              <input type="checkbox" id="disability_medical_8" name="disability_medical" value="stroke_symptoms">
-              Any stroke symptoms lasting longer than one month
+            <label for="exmept_vehicles_6" class="block-label">
+              <input type="checkbox" id="exmept_vehicles_6" name="exmept_vehicles" value="electric">
+              electric or steam vehicles
             </label>
 
-            <label for="disability_medical_9" class="block-label">
-              <input type="checkbox" id="disability_medical_9" name="disability_medical" value="blackouts_or_fits">
-              Fits or blackouts
+            <label for="exmept_vehicles_7" class="block-label">
+              <input type="checkbox" id="exmept_vehicles_7" name="exmept_vehicles" value="hearses">
+              hearses
             </label>
 
-            <label for="disability_medical_10" class="block-label">
-              <input type="checkbox" id="disability_medical_10" name="disability_medical" value="brain_surgery_head_injury">
-              Any type of brain surgery or severe head injury involving in-patient treatment
+            <p class="form-block">or</p>
+
+            <label for="exmept_vehicles_8" class="block-label">
+              <input type="checkbox" id="exmept_vehicles_8" name="exmept_vehicles" value="no">
+              none of these vehicles
             </label>
 
-            <label for="disability_medical_11" class="block-label">
-              <input type="checkbox" id="disability_medical_11" name="disability_medical" value="brain_tumour">
-              Brain tumour
-            </label>
-
-            <label for="disability_medical_12" class="block-label">
-              <input type="checkbox" id="disability_medical_12" name="disability_medical" value="pacemaker">
-              An implanted cardiac pacemaker
-            </label>
-
-            <label for="disability_medical_13" class="block-label">
-              <input type="checkbox" id="disability_medical_13" name="disability_medical" value="implanted_defibrilator">
-              An implanted cardiac defibrilator (ICD)
-            </label>
-
-            <label for="disability_medical_14" class="block-label">
-              <input type="checkbox" id="disability_medical_14" name="disability_medical" value="sudden_giddiness">
-              Repeated attacks of sudden disabling giddiness
-            </label>
-
-            <label for="disability_medical_15" class="block-label">
-              <input type="checkbox" id="disability_medical_15" name="disability_medical" value="chronic_neurological_condition">
-              Any chronic neurological condition including Multiple Sclerosis, Motor Neurone and Huntington's Disease
-            </label>
-
-            <label for="disability_medical_16" class="block-label">
-              <input type="checkbox" id="disability_medical_16" name="disability_medical" value="memory_loss">
-              A serious problem with memory or periods of confusion
-            </label>
-
-            <label for="disability_medical_17" class="block-label">
-              <input type="checkbox" id="disability_medical_17" name="disability_medical" value="alcohol_problem">
-              Persistent alcohol problem or dependence
-            </label>
-
-            <label for="disability_medical_18" class="block-label">
-              <input type="checkbox" id="disability_medical_18" name="disability_medical" value="drug_problem">
-              Persistent drug problem or dependence
-            </label>
-
-            <label for="disability_medical_19" class="block-label">
-              <input type="checkbox" id="disability_medical_19" name="disability_medical" value="serious_psychiatric_illness">
-              Serious psychiatric illness or mental ill health
-            </label>
-
-            <label for="disability_medical_20" class="block-label">
-              <input type="checkbox" id="disability_medical_20" name="disability_medical" value="parkinsons">
-              Parkinson's disease
-            </label>
-
-            <label for="disability_medical_21" class="block-label">
-              <input type="checkbox" id="disability_medical_21" name="disability_medical" value="narcolepsy">
-              Narcolepsy
-            </label>
-
-            <label for="disability_medical_22" class="block-label">
-              <input type="checkbox" id="disability_medical_22" name="disability_medical" value="obstructive_sleep_apnoea">
-              Obstructive Sleep apnoea syndrome
-            </label>
+          -->
 
           </div>
 
