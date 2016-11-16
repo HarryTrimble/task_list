@@ -1,0 +1,98 @@
+{% extends "layout.html" %} {% block page_title %} Register with Ofsted {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="breadcrumbs">
+    <ol>
+      <li>
+        <a href="/task_list/{{ formQuery | safe }}">Become a childminder</a>
+      </li>
+      <li>
+        Register with Ofsted
+      </li> 
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/task_list#apply_to_ofsted" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          Register with Ofsted
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            Register with Ofsted
+          </legend>
+
+            <p class="cost-and-time">
+
+            <!--  Early Years Register AND Childcare Register (£35) + first add training (£216.00) + DBS Check fee (£44)  -->
+            {% if data.child_age=="5_or_under,6_to_7" or data.child_age=="5_or_under,6_to_7,8_and_over" %}
+
+              Cost: <span class="bold">£35</span><br>
+
+            <!-- Early Years Register AND Childcare Register (£35) + DBS Check fee (£44) -->
+            {% elif data.child_age=="5_or_under" or data.child_age=="5_or_under,8_and_over" %}
+
+              Cost: <span class="bold">£35</span><br>
+            
+            <!--  Childcare Register (£103) + DBS Check fee (£44) -->
+            {% elif data.child_age=="6_to_7" or data.child_age=="6_to_7,8_and_over" %}
+              
+              Cost: <span class="bold">£103</span><br>
+
+            {% endif %}
+
+
+           <!-- Waiting time if in child's or carers home -->
+            {% if data.place_type=="childs_home" or
+                  data.place_type=="carers_home"
+            %}
+
+                Time: <span class="bold">12 weeks</span>
+
+            <!-- Waiting time in nurseries, after school clubs or holiday playscheme -->
+            {% elif 
+              data.place_type=="other" or
+              data.place_type=="carers_home,other" or
+              data.place_type=="childs_home,other" or
+              data.place_type=="carers_home,childs_home,other"
+            %}
+
+              Time: <span class="bold">25 weeks</span>
+
+            {% endif %}
+
+            </p>
+
+          <p id="reason_for_task">To be a childmindee two people need to write references recommending you.</p>
+
+          <p>Tasks to apply to Ofsted:</p>
+
+          <ol class="list list-number">
+            <li><a href="http://www.gateway.gov.uk/">get Government Gateway account</a></li>
+            <li>have to hand DBS certificate, traing certificates and references</li>
+            <li><a href="https://online.ofsted.gov.uk/OnlineOfsted/default.aspx">apply online</a></li>
+            <li><a href="https://www.gov.uk/pay-ofsted-registration-annual-fee">pay registration fee</a></li>
+          </ol>
+
+          <input type="hidden" name="apply_to_ofsted" value="complete">
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Task complete" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

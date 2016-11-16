@@ -727,6 +727,39 @@
     </tbody>
   </table>
 
+  <table class="check-your-answers">
+
+    <thead>
+      <tr>
+        <th colspan="2">
+          <h2 class="heading-medium">
+            Paid application fee 
+          </h2>
+        </th>
+        <th>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>
+          Paid £257.00:
+        </td>
+        <td>
+          {% if data.pay_application_fee %}
+            yes
+          {% endif %} 
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
   <h2 class="heading-medium">Now send your application</h2>
 
   <p class="text">
@@ -734,7 +767,7 @@
   </p>
 
   <div class="form-group">
-    <a href="/bats/task_list/declare_submit/confirmation-page" class="button">Accept and send application</a>
+    <a href="/transport_goods/task_list/check_and_send/confirmation_page" class="button">Accept and send application</a>
   </div>
 
 </main>

@@ -20,7 +20,7 @@
 
               <div class="data">
                 <h2 class="bold-xxlarge">£79</h2>
-                <p class="bold-xsmall">plus training and insurance</p>
+                <p class="bold-xsmall">plus a health check, training, insurance</p>
               </div>
 
               <br>
@@ -44,9 +44,28 @@
                         <td class="numeric">£44</td>
                       </tr>
                       <tr>
+                        <td>Health check</td>
+                        <td class="numeric">varies by GP</td>
+                      </tr>
+                      <tr>
                         <td>Childminder training</td>
                         <td class="numeric">varies by provider</td>
                       </tr>
+
+                      {% 
+                        if 
+                        data.child_age=="5_or_under" or 
+                        data.child_age=="5_or_under,6_to_7" or data.child_age=="5_or_under,6_to_7,8_and_over" or
+                        data.child_age=="5_or_under,8_and_over"  
+                      %}
+
+                      <tr>
+                        <td>Paediatric first aid training</td>
+                        <td class="numeric">varies by GP</td>
+                      </tr>
+
+                      {% endif %}
+
                       <tr>
                        <td>Register with Ofsted</td>
                         <td class="numeric">£35</td>
@@ -69,7 +88,7 @@
 
               <div class="data">
                 <h2 class="bold-xxlarge">£79</h2>
-                <p class="bold-xsmall">plus training and insurance</p>
+                <p class="bold-xsmall">plus a health check, training, insurance</p>
               </div>
 
               <br>
@@ -93,9 +112,28 @@
                         <td class="numeric">£44</td>
                       </tr>
                       <tr>
+                        <td>Health check</td>
+                        <td class="numeric">varies by GP</td>
+                      </tr>
+                      <tr>
                         <td>Childminder training</td>
                         <td class="numeric">varies by provider</td>
                       </tr>
+
+                      {% 
+                        if 
+                        data.child_age=="5_or_under" or 
+                        data.child_age=="5_or_under,6_to_7" or data.child_age=="5_or_under,6_to_7,8_and_over" or
+                        data.child_age=="5_or_under,8_and_over"  
+                      %}
+
+                      <tr>
+                        <td>Paediatric first aid training</td>
+                        <td class="numeric">varies by GP</td>
+                      </tr>
+
+                      {% endif %}
+
                       <tr>
                        <td>Register with Ofsted</td>
                         <td class="numeric">£35</td>
@@ -118,7 +156,7 @@
 
               <div class="data">
                 <h2 class="bold-xxlarge">£147</h2>
-                <p class="bold-xsmall">plus training and insurance</p>
+                <p class="bold-xsmall">plus a health check, training, insurance</p>
               </div>
 
               <br>
@@ -142,9 +180,28 @@
                         <td class="numeric">£44</td>
                       </tr>
                       <tr>
+                        <td>Health check</td>
+                        <td class="numeric">varies by GP</td>
+                      </tr>
+                      <tr>
                         <td>Childminder training</td>
                         <td class="numeric">varies by provider</td>
                       </tr>
+
+                      {% 
+                        if 
+                        data.child_age=="5_or_under" or 
+                        data.child_age=="5_or_under,6_to_7" or data.child_age=="5_or_under,6_to_7,8_and_over" or
+                        data.child_age=="5_or_under,8_and_over"  
+                      %}
+
+                      <tr>
+                        <td>Paediatric first aid training</td>
+                        <td class="numeric">varies by GP</td>
+                      </tr>
+
+                      {% endif %}
+
                       <tr>
                        <td>Register with Ofsted</td>
                         <td class="numeric">£103</td>
