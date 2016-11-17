@@ -81,7 +81,7 @@
         {% elif
           data.will_you_be_paid=="no" or
           data.care_time_per_day=="less_than_two_hours" or
-          data.related_to_child=="yes" or
+          data.related_to_child=="no" or
           data.child_age=="8_and_over"
         %}
 
@@ -106,7 +106,7 @@
           {% endif %}
 
           <!-- reason not eligibile: related to child -->
-          {% if data.related_to_child=="yes" %}
+          {% if data.related_to_child=="no" %}
             <p class="lede">Being related to a child means you don't need to be a childminder.</p>
           {% endif %}
 

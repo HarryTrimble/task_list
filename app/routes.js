@@ -282,7 +282,7 @@ router.get('/questions/food', function (req, res) {
 // check your answers for 'Maintain vehicles' section
 router.get('/questions/result/cost', function (req, res) {
 
-  console.log("uploaded_document");
+  console.log("calculate application costs");
 
   // get the answer from the query string (eg. ?over18="yes")
   var uploaded_document = req.query.uploaded_document;
@@ -300,8 +300,6 @@ router.get('/questions/result/cost', function (req, res) {
 
     var how_many_others = (req.query.how_many_others);
 
-
-
     if (req.query.how_many_others) { 
 
         var total_cost_1 = 44 + (req.query.how_many_others) * 44 + 35 
@@ -315,6 +313,32 @@ router.get('/questions/result/cost', function (req, res) {
 
     // if user is NOT related to child
     res.render('questions/result/cost/index.html', {cost_of_other_criminal_checks : cost_of_other_criminal_checks, total_cost_1 : total_cost_1, total_cost_2 : total_cost_2, total_cost_3 : total_cost_3});
+
+  }
+
+});
+
+// check your answers for 'Maintain vehicles' section
+router.get('/task_list/check_others_criminal_history', function (req, res) {
+
+  console.log("state cost for check_others_criminal_history");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var uploaded_document = req.query.uploaded_document;
+
+  if (uploaded_document){
+
+    // if user IS related to child
+    res.redirect("/transport_goods/task_list/prove_money/check_your_answers" + res.locals.formQuery);
+
+  } else {
+
+    var cost_of_other_criminal_checks = (req.query.how_many_others) * 44
+
+    cost_of_other_criminal_checks = cost_of_other_criminal_checks.toString().replace(/,/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+    // if user is NOT related to child
+    res.render('task_list/check_others_criminal_history/index.html', {cost_of_other_criminal_checks : cost_of_other_criminal_checks});
 
   }
 

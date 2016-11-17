@@ -1980,6 +1980,11 @@ input[type=number] {
   color: #6f777b;
 }
 
+#between-big-number {
+  font-size: 48px;
+  font-weight: 400;
+}
+
 #table-of-tasks td {
   border-bottom: 1px solid #bfc1c3;
 }
