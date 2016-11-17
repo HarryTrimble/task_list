@@ -145,7 +145,11 @@
         </td>
       </tr>
       <!-- Check others criminal history -->
-      {% if data.shared_home=="yes" %}
+      {% 
+        if 
+        data.shared_home=="yes" and
+        data.others_have_dbs=="no" or data.others_have_dbs=="not_sure"  
+      %}
         <tr id="check_other_criminal_history">
           <td class="task">
             <a href="/task_list/check_others_criminal_history{{formQuery}}">

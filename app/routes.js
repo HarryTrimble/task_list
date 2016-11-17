@@ -208,7 +208,7 @@ router.get('/questions/child_age', function (req, res) {
   // get the answer from the query string (eg. ?over18="yes")
   var related_to_child = req.query.related_to_child;
 
-  if (related_to_child == "yes" ){
+  if (related_to_child == "no" ){
 
     // if user IS related to child
     res.redirect("/questions/result" + res.locals.formQuery);
@@ -244,7 +244,83 @@ router.get('/questions/number_of_children', function (req, res) {
 
 });
 
-// Questions for childminders
+
+// Question for questions/eligibility/criminal_history/index.html
+router.get('/questions/food', function (req, res) {
+
+  console.log("criminal_history");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var shared_home = req.query.shared_home;
+  var others_have_dbs = req.query.others_have_dbs;
+  var how_many_others = req.query.how_many_others;
+
+  if (shared_home == "yes" && others_have_dbs==undefined ){
+
+    // if user DOES have a criminal history
+    res.redirect("/questions/shared_place/others_have_dbs" + res.locals.formQuery);
+
+  } else if (shared_home == "yes" && others_have_dbs== "no" && how_many_others==undefined ){
+
+    // if user lives in WALES
+    res.redirect("/questions/shared_place/how_many_others" + res.locals.formQuery);
+
+  } else if (shared_home == "yes" && others_have_dbs== "not_sure" && how_many_others==undefined ){
+
+    // if user lives in WALES
+    res.redirect("/questions/shared_place/how_many_others" + res.locals.formQuery);
+
+  } else {
+
+    // if user does NOT have criminal history
+    res.render('questions/food/index.html');
+
+  }
+
+});
+
+// check your answers for 'Maintain vehicles' section
+router.get('/questions/result/cost', function (req, res) {
+
+  console.log("uploaded_document");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var uploaded_document = req.query.uploaded_document;
+
+  if (uploaded_document){
+
+    // if user IS related to child
+    res.redirect("/transport_goods/task_list/prove_money/check_your_answers" + res.locals.formQuery);
+
+  } else {
+
+    var cost_of_other_criminal_checks = (req.query.how_many_others) * 44
+
+    cost_of_other_criminal_checks = cost_of_other_criminal_checks.toString().replace(/,/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+    var how_many_others = (req.query.how_many_others);
+
+
+
+    if (req.query.how_many_others) { 
+
+        var total_cost_1 = 44 + (req.query.how_many_others) * 44 + 35 
+        var total_cost_2 = 44 + (req.query.how_many_others) * 44 + 35 
+        var total_cost_3 = 44 + (req.query.how_many_others) * 44 + 103 
+
+
+    } else { var total_cost_1 = 44 + 35
+             var total_cost_2 = 44 + 35
+             var total_cost_3 = 44 + 103 }
+
+    // if user is NOT related to child
+    res.render('questions/result/cost/index.html', {cost_of_other_criminal_checks : cost_of_other_criminal_checks, total_cost_1 : total_cost_1, total_cost_2 : total_cost_2, total_cost_3 : total_cost_3});
+
+  }
+
+});
+
+// Questions for 'Learn to drive'
 
 // Question for questions/country/index.html
 

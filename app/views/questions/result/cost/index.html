@@ -13,13 +13,18 @@
             <br>
 
             <!--  Early Years Register AND Childcare Register (£35) + first add training (£216.00) + DBS Check fee (£44)  -->
-            {% if data.child_age=="5_or_under,6_to_7" or data.child_age=="5_or_under,6_to_7,8_and_over" %}
+            {% if data.child_age=="5_or_under,6_to_7" or 
+                  data.child_age=="5_or_under,6_to_7,8_and_over" or 
+                  data.child_age=="not_sure" 
+            %}
 
 
               <p class="lede">Total cost to apply:</p>
 
               <div class="data">
-                <h2 class="bold-xxlarge">£79</h2>
+                <h2 class="bold-xxlarge">
+                  £{{total_cost_1}}
+                </h2>
                 <p class="bold-xsmall">plus a health check, training, insurance</p>
               </div>
 
@@ -43,6 +48,20 @@
                         <td>Criminal check</td>
                         <td class="numeric">£44</td>
                       </tr>
+
+                      {% 
+                        if 
+                        data.shared_home=="yes" and
+                        data.others_have_dbs=="no" or data.others_have_dbs=="not_sure"  
+                      %}
+
+                        <tr>
+                          <td>Others' criminal checks <span class="bold">X {{ data.how_many_others }}</span></td>
+                          <td class="numeric">£{{cost_of_other_criminal_checks}}</td>
+                        </tr>
+
+                      {% endif %}
+
                       <tr>
                         <td>Health check</td>
                         <td class="numeric">varies by GP</td>
@@ -87,7 +106,9 @@
               <p class="lede">Total cost to apply:</p>
 
               <div class="data">
-                <h2 class="bold-xxlarge">£79</h2>
+                <h2 class="bold-xxlarge">
+                  £{{total_cost_2}}
+                </h2>
                 <p class="bold-xsmall">plus a health check, training, insurance</p>
               </div>
 
@@ -111,6 +132,20 @@
                         <td>Criminal check</td>
                         <td class="numeric">£44</td>
                       </tr>
+
+                      {% 
+                        if 
+                        data.shared_home=="yes" and
+                        data.others_have_dbs=="no" or data.others_have_dbs=="not_sure"  
+                      %}
+
+                        <tr>
+                          <td>Others' criminal checks <span class="bold">X {{ data.how_many_others }}</span></td>
+                          <td class="numeric">£{{cost_of_other_criminal_checks}}</td>
+                        </tr>
+
+                      {% endif %}
+
                       <tr>
                         <td>Health check</td>
                         <td class="numeric">varies by GP</td>
@@ -155,7 +190,9 @@
               <p class="lede">Total cost to apply:</p>
 
               <div class="data">
-                <h2 class="bold-xxlarge">£147</h2>
+                <h2 class="bold-xxlarge">
+                  £{{total_cost_3}}
+                </h2>
                 <p class="bold-xsmall">plus a health check, training, insurance</p>
               </div>
 
@@ -179,6 +216,20 @@
                         <td>Criminal check</td>
                         <td class="numeric">£44</td>
                       </tr>
+
+                      {% 
+                        if 
+                        data.shared_home=="yes" and
+                        data.others_have_dbs=="no" or data.others_have_dbs=="not_sure"  
+                      %}
+
+                        <tr>
+                          <td>Others' criminal checks <span class="bold">X {{ data.how_many_others }}</span></td>
+                          <td class="numeric"></td>
+                        </tr>
+
+                      {% endif %}
+
                       <tr>
                         <td>Health check</td>
                         <td class="numeric">varies by GP</td>

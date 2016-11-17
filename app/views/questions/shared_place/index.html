@@ -10,13 +10,24 @@
       {{formData | safe}}
 
         <h1 class="heading-large">
-          Is the place where you'll look after children shared with other adults?
+          Does anyone else 16 or older have access to the place where you'll look after children?
         </h1>
 
         <fieldset>
           <legend class="visuallyhidden">
-            Is the place where you'll look after children shared with other adults?
+            Does anyone else 16 or older have access to the place where you'll look after children?
           </legend>
+
+            <!-- Waiting time if in child's or carers home -->
+          {% if data.place_type=="carers_home" or
+                data.place_type=="carers_home,childs_home" or
+                data.place_type=="carers_home,childs_home,other" or 
+                data.place_type=="carers_home,other"
+          %}
+
+            <p>This includes partners and children 16 or older you live with.</p>
+
+          {% endif %}
 
           <div class="form-group">
             <label for="shared_home-1" class="block-label">
