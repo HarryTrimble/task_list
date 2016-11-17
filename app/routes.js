@@ -223,7 +223,7 @@ router.get('/questions/child_age', function (req, res) {
 });
 
 // Question for questions/child_age/index.html
-router.get('/questions/number_of_children', function (req, res) {
+router.get('/questions/place_type', function (req, res) {
 
   console.log("child_age");
 
@@ -238,7 +238,7 @@ router.get('/questions/number_of_children', function (req, res) {
   } else {
 
     // if user is NOT related to child
-    res.render('questions/number_of_children/index.html');
+    res.render('questions/place_type/index.html');
 
   }
 
