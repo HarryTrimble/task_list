@@ -253,7 +253,7 @@
       <tr id="apply_to_ofsted">
         <td class="task">
           <a href="/task_list/register_with_ofsted{{formQuery}}">
-            <span class="task-name"> Register with Ofsted</span>
+            <span class="task-name"> Apply to Ofsted</span>
           </a>
         </td>
         <td class="numeric" id="task-status">          
@@ -275,7 +275,7 @@
         <th scope="col" id="col-task">
           <span class="task-group">  
             <span class="group-number" id="task-number"></span>
-              After you apply
+              After you qualify
           </span>
         </th>
         <th class="numeric" id="task-status" scope="col" id="col-status"></th>
@@ -284,16 +284,17 @@
 
     <tbody>
 
+
       <!-- Get premises inspected -->
       <tr id="get_premises_inspected">
         <td class="task">
-          <a href="/task_list/get_premises_inspected{{formQuery}}">
+          <a href="/task_list/get_certificate{{formQuery}}">
 
-            <span class="task-name"> Get premises inspected</span>
+            <span class="task-name"> Get Ofsted certificate</span>
           </a>
         </td>
         <td class="numeric" id="task-status">          
-          {% if data.get_premises_inspected=="complete" %}
+          {% if data.get_certificate=="complete" %}
             {% include "includes/task_status_complete.html" %}
           {% endif %}
         </td>
