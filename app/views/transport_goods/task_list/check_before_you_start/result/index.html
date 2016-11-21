@@ -6,8 +6,39 @@
     <div class="column-two-thirds">
 
 
-        <!-- weight -->
         {% if
+          data.just_your_goods and
+          data.transport_manager
+        %}
+
+            <form method="get" action="/transport_goods/task_list" class="form">
+
+            {{formData | safe}}
+
+            <h1 class="heading-large">
+              You need to use this service
+            </h1>
+
+            <br>
+
+            <!-- Cost -->
+
+            <p class="lede">The cost to apply is <span class="bold">£{{application_cost}}</span>, which includes application fee and amount to maintain vehicle safety.</p>
+
+            <!-- Time -->
+
+            <p class="lede">The time to wait after you appy is <span class="bold">9 weeks</span>.</p>
+
+            <br>
+
+            <input type="hidden" name="check_before_you_start" value="complete">
+
+            <div class="form-group">
+              <input type="submit" class="button" value="Return to overview" />
+            </div>
+
+        <!-- weight -->
+        {% elif
           data.weight_empty=="less than 1,525 kg" and data.weight_loaded=="less than 3,5000 kg"
         %}
 
@@ -71,37 +102,6 @@
             <br>
 
             <p class="lede">You don't need this licence to operate vehicles this short distance.</p>
-
-        {% elif
-          data.just_your_goods and
-          data.transport_manager
-        %}
-
-            <form method="get" action="/transport_goods/task_list" class="form">
-
-            {{formData | safe}}
-
-            <h1 class="heading-large">
-              You need to use this service
-            </h1>
-
-            <br>
-
-            <!-- Cost -->
-
-            <p class="lede">The cost to apply is <span class="bold">£{{application_cost}}</span>, which includes application fee and amount to maintain vehicle safety.</p>
-
-            <!-- Time -->
-
-            <p class="lede">The time to wait after you appy is <span class="bold">9 weeks</span>.</p>
-
-            <br>
-
-            <input type="hidden" name="check_before_you_start" value="complete">
-
-            <div class="form-group">
-              <input type="submit" class="button" value="Return to overview" />
-            </div>
 
         {% endif %}
 
