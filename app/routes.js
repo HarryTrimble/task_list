@@ -65,17 +65,17 @@ router.get('/questions/eligibility/age', function (req, res) {
   // get the answer from the query string (eg. ?over18="yes")
   var country = req.query.country;
 
-  if (country == "northern_ireland" ){
+  if (country == "Northern Ireland" ){
 
     // if user lives in NORTHERN IRELAND
     res.redirect("/questions/result" + res.locals.formQuery);
 
-  } else if (country == "scotland" ){
+  } else if (country == "Scotland" ){
 
     // if user lives in SCOTLAND
     res.redirect("/questions/result" + res.locals.formQuery);
 
-  } else if (country == "wales" ){
+  } else if (country == "Wales" ){
 
     // if user lives in WALES
     res.redirect("/questions/result" + res.locals.formQuery);
@@ -186,7 +186,7 @@ router.get('/questions/related_to_child', function (req, res) {
   // get the answer from the query string (eg. ?over18="yes")
   var care_time_per_day = req.query.care_time_per_day;
 
-  if (care_time_per_day == "less_than_two_hours" ){
+  if (care_time_per_day == "less than two hours" ){
 
     // if user will work LESS than two hours
     res.redirect("/questions/result" + res.locals.formQuery);
@@ -265,7 +265,7 @@ router.get('/questions/food', function (req, res) {
     // if user lives in WALES
     res.redirect("/questions/shared_place/how_many_others" + res.locals.formQuery);
 
-  } else if (shared_home == "yes" && others_have_dbs== "not_sure" && how_many_others==undefined ){
+  } else if (shared_home == "yes" && others_have_dbs== "not sure" && how_many_others==undefined ){
 
     // if user lives in WALES
     res.redirect("/questions/shared_place/how_many_others" + res.locals.formQuery);
@@ -339,6 +339,29 @@ router.get('/task_list/check_others_criminal_history', function (req, res) {
 
     // if user is NOT related to child
     res.render('task_list/check_others_criminal_history/index.html', {cost_of_other_criminal_checks : cost_of_other_criminal_checks});
+
+  }
+
+});
+
+// Check your answers for 'Check eligibility, cost and time'
+router.get('/questions/country', function (req, res) {
+
+  console.log("check your answers");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var check_before_you_start = req.query.check_before_you_start;
+
+  if (check_before_you_start == "completed" ){
+
+
+    // if user IS related to child
+    res.redirect("/questions/check_your_answers" + res.locals.formQuery);
+
+  } else {
+
+    // if user is NOT related to child
+    res.render('questions/country/index.html');
 
   }
 

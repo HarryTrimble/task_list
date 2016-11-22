@@ -13,9 +13,10 @@
             <br>
 
             <!--  Early Years Register AND Childcare Register (£35) + first add training (£216.00) + DBS Check fee (£44)  -->
-            {% if data.child_age=="5_or_under,6_to_7" or 
-                  data.child_age=="5_or_under,6_to_7,8_and_over" or 
-                  data.child_age=="not_sure" 
+            {% if data.child_age=="5 and younger" or 
+                  data.child_age=="5 and younger,6 to 7" or 
+                  data.child_age=="5 and younger,6 to 7,8 and older" or 
+                  data.child_age=="not sure" 
             %}
 
 
@@ -75,9 +76,9 @@
 
                       {% 
                         if 
-                        data.child_age=="5_or_under" or 
-                        data.child_age=="5_or_under,6_to_7" or data.child_age=="5_or_under,6_to_7,8_and_over" or
-                        data.child_age=="5_or_under,8_and_over"  
+                        data.child_age=="5 and younger" or 
+                        data.child_age=="5 and younger,6 to 7" or data.child_age=="5 and younger,6 to 7,8 and older" or
+                        data.child_age=="5 and younger,8 and older"  
                       %}
 
                       <tr>
@@ -104,7 +105,7 @@
 
 
             <!-- Early Years Register AND Childcare Register (£35) + DBS Check fee (£44) -->
-            {% elif data.child_age=="5_or_under" or data.child_age=="5_or_under,8_and_over" %}
+            {% elif data.child_age=="5 and younger" or data.child_age=="5 and younger,8 and older" %}
 
               <p class="lede">Total cost to apply:</p>
 
@@ -160,9 +161,9 @@
 
                       {% 
                         if 
-                        data.child_age=="5_or_under" or 
-                        data.child_age=="5_or_under,6_to_7" or data.child_age=="5_or_under,6_to_7,8_and_over" or
-                        data.child_age=="5_or_under,8_and_over"  
+                        data.child_age=="5 and younger" or 
+                        data.child_age=="5 and younger,6 to 7" or data.child_age=="5 and younger,6 to 7,8 and older" or
+                        data.child_age=="5 and younger,8 and older"  
                       %}
 
                       <tr>
@@ -188,7 +189,7 @@
               </details>
             
             <!--  Childcare Register (£103) + DBS Check fee (£44) -->
-            {% elif data.child_age=="6_to_7" or data.child_age=="6_to_7,8_and_over" %}
+            {% elif data.child_age=="6 to 7" or data.child_age=="6 to 7,8 and older" %}
 
               <p class="lede">Total cost to apply:</p>
 
@@ -244,9 +245,9 @@
 
                       {% 
                         if 
-                        data.child_age=="5_or_under" or 
-                        data.child_age=="5_or_under,6_to_7" or data.child_age=="5_or_under,6_to_7,8_and_over" or
-                        data.child_age=="5_or_under,8_and_over"  
+                        data.child_age=="5 and younger" or 
+                        data.child_age=="5 and younger,6 to 7" or data.child_age=="5 and younger,6 to 7,8 and older" or
+                        data.child_age=="5 and younger,8 and older"  
                       %}
 
                       <tr>
@@ -275,11 +276,83 @@
 
             <details>
 
-              <summary><span class="summary">See how this cost is calculated</span></summary>
+              <summary><span class="summary">See calculation</span></summary>
 
               <div class="panel panel-border-narrow">
 
-                <p>blank</p>
+                 <table class="check-your-answers">
+
+                  <thead>
+                    <tr>
+                      <th colspan="2">
+                        <h2 class="heading-medium">
+                          Answers calculating cost
+                        </h2>
+                      </th>
+                      <th>
+                      </th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr>
+                      <td>
+                        Age of children:
+                      </td>
+                      <td>
+                        {{ data.child_age }}
+                      </td>
+                      <td class="change-answer">
+                        <a href="/questions/child_age">
+                          Change <span class="visuallyhidden">Name</span>
+                        </a>
+                      </td>
+                    </tr>
+                    </tr> 
+                      <td>
+                        Place accessible to other adult:
+                      </td>
+                      <td>
+                        {{ data.shared_home }}
+                      </td>
+                      <td class="change-answer">
+                        <a href="/questions/shared_place">
+                          Change <span class="visuallyhidden">Name</span>
+                        </a>
+                      </td>
+                    </tr>
+                    {% if data.shared_home=="yes" %}
+                      <tr>
+                        <td>
+                          Already have DBS checks:
+                        </td>
+                        <td>
+                          {{ data.others_have_dbs }}
+                        </td>
+                        <td class="change-answer">
+                          <a href="#">
+                            Change <span class="visuallyhidden">Name</span>
+                          </a>
+                        </td>
+                      </tr>
+                    {% endif %}
+                    {% if data.others_have_dbs=="no" or data.others_have_dbs=="not_sure"  %}
+                      <tr>
+                        <td>
+                          How many others need DBS checks:
+                        </td>
+                        <td>
+                          {{ data.how_many_others }}
+                        </td>
+                        <td class="change-answer">
+                          <a href="#">
+                            Change <span class="visuallyhidden">Name</span>
+                          </a>
+                        </td>
+                      </tr>
+                    {% endif %}
+                  </tbody>
+                </table>
 
               </div>
 

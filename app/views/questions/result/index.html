@@ -7,13 +7,13 @@
 
         <!-- service not available in these countries -->
         {% if
-          data.country=="northern_ireland" or
-          data.country=="scotland" or
-          data.country=="wales"
+          data.country=="Northern Ireland" or
+          data.country=="Scotland" or
+          data.country=="Wales"
         %}
 
           <!-- Northern Ireland -->
-          {% if data.country=="northern_ireland" %}
+          {% if data.country=="Northern Ireland" %}
             <h1 class="heading-large">
               Apply to be a childminder in Northern Ireland
             </h1>
@@ -24,7 +24,7 @@
           {% endif %}
 
           <!-- Scotland -->
-          {% if data.country=="scotland" %}
+          {% if data.country=="Scotland" %}
             <h1 class="heading-large">
               Apply to be a childminder in Scotland
             </h1>
@@ -35,9 +35,9 @@
           {% endif %}
 
           <!-- Wales -->
-          {% if data.country=="wales" %}
+          {% if data.country=="Wales" %}
             <h1 class="heading-large">
-              Apply to be a childminder in Northern Ireland
+              Apply to be a childminder in Wales
             </h1>
 
             <br>
@@ -80,9 +80,9 @@
         <!-- no licence needed -->
         {% elif
           data.will_you_be_paid=="no" or
-          data.care_time_per_day=="less_than_two_hours" or
+          data.care_time_per_day=="less than two hours" or
           data.related_to_child=="no" or
-          data.child_age=="8_and_over"
+          data.child_age=="8 and older"
         %}
 
           <form method="get" action="#" class="form">
@@ -101,7 +101,7 @@
           {% endif %}
 
           <!-- reason not eligibile: less than two hours a day -->
-          {% if data.care_time_per_day=="less_than_two_hours" %}
+          {% if data.care_time_per_day=="less than two hours" %}
             <p class="lede">You have look after children for 2 or more hours a day to be a childminder.</p>
           {% endif %}
 
@@ -110,7 +110,7 @@
             <p class="lede">Being related to a child means you don't need to be a childminder.</p>
           {% endif %}
 
-          {% if data.child_age=="8_and_over" %}
+          {% if data.child_age=="8 and older" %}
             <p class="lede">To look after children 8 and older, you don't need to be a childminder.</p>
           {% endif %}
 

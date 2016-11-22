@@ -13,10 +13,10 @@
             <br>
             <br>
 
-            <!-- Waiting time if in child's or carers home -->
-            {% if data.place_type=="childs_home" or
-                  data.place_type=="carers_home" or 
-                  data.place_type=="carers_home,childs_home"
+            <!-- Waiting time if in child's or your home -->
+            {% if data.place_type=="childs home" or
+                  data.place_type=="your home" or 
+                  data.place_type=="your home,childs home"
             %}
 
               <p class="lede">Total time to register:</p>
@@ -67,9 +67,9 @@
             <!-- Waiting time in nurseries, after school clubs or holiday playscheme -->
             {% elif 
                     data.place_type=="other" or
-                    data.place_type=="carers_home,other" or
-                    data.place_type=="carers_home,childs_home,other" or
-                    data.place_type=="childs_home,other"
+                    data.place_type=="your home,other" or
+                    data.place_type=="your home,childs home,other" or
+                    data.place_type=="childs home,other"
             %}
 
               <p class="lede">Total time to register:</p>
@@ -121,15 +121,46 @@
 
             <details>
 
-              <summary><span class="summary">See how this time is calculated</span></summary>
+              <summary><span class="summary">See calculation</span></summary>
 
               <div class="panel panel-border-narrow">
 
-                <p>blank</p>
+                 <table class="check-your-answers">
+
+                  <thead>
+                    <tr>
+                      <th colspan="2">
+                        <h2 class="heading-medium">
+                          Answers calculating time
+                        </h2>
+                      </th>
+                      <th>
+                      </th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr>
+                      <td>
+                        Place of care:
+                      </td>
+                      <td>
+                        {{ data.place_type }}
+                      </td>
+                      <td class="change-answer">
+                        <a href="/questions/place_type">
+                          Change <span class="visuallyhidden">Name</span>
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
 
               </div>
 
             </details>
+
+            <input type="hidden" name="check_before_you_start" value="completed">
 
             <br>
 

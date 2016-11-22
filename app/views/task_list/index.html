@@ -56,7 +56,7 @@
       <!-- check eligibility -->
       <tr>
         <td class="task" id="check_before_you_start">
-          <a href="/questions/country">
+          <a href="/questions/country{{formQuery}}">
             <span class="task-name">Check eligibility, cost and time</span>
             <!--
               <br>
@@ -194,12 +194,10 @@
       </tr>
 
       <!-- Do first aid training -->
-      {% 
-        if 
-        data.child_age=="5_or_under" or 
-        data.child_age=="5_or_under,6_to_7" or data.child_age=="5_or_under,6_to_7,8_and_over" or
-        data.child_age=="5_or_under,8_and_over" or
-        data.child_age=="not_sure"  
+      {% if data.child_age=="5 and younger" or
+            data.child_age=="5 and younger,6 to 7" or 
+            data.child_age=="5 and younger,6 to 7,8 and older" or 
+            data.child_age=="not sure" 
       %}
         <tr id="do_first_aid_training">
           <td class="task">
@@ -301,7 +299,7 @@
       </tr>
 
       <!-- have food inspection -->
-      {% if data.food=="yes" or data.food=="not_sure"  %}
+      {% if data.food=="yes" or data.food=="not sure"  %}
         <tr id="have_food_inspection">
           <td class="task">
             <a href="/task_list/have_food_inspection{{formQuery}}">
@@ -332,7 +330,7 @@
       </tr>
 
       <!-- Register as self employed -->
-      {% if data.employment=="self_employed" %}
+      {% if data.employment=="self employed" %}
         <tr id="register_self_employed">
           <td class="task">
             <a href="/task_list/register_self_employed{{formQuery}}">
@@ -348,7 +346,7 @@
       {% endif %}
 
       <!-- Set up a private limited company -->
-      {% if data.employment=="limited_company" %}
+      {% if data.employment=="limited company" %}
         <tr id="set_up_limited_company">
           <td class="task">
             <a href="/task_list/set_up_limited_company{{formQuery}}">

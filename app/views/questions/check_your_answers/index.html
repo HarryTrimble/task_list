@@ -1,0 +1,217 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Check your answers
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+{% include "includes/phase_banner_beta.html" %}
+
+  <h1 class="heading-large">
+    Check your answers:
+  </h1>
+
+  <table class="check-your-answers">
+
+    <thead>
+      <tr>
+        <th colspan="2">
+          <h2 class="heading-medium">
+            Check eligibility, cost and time
+          </h2>
+        </th>
+        <th>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>
+          Country:
+        </td>
+        <td>
+          {{ data.country }}
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          18 or older:
+        </td>
+        <td>
+          {{ data.over18 }}
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Right to work in UK:
+        </td>
+        <td>
+          {{ data.right_to_work }}
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Criminal history:
+        </td>
+        <td>
+          {{ data.criminal_history }}
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Will you be paid:
+        </td>
+        <td>
+          {{ data.will_you_be_paid }}
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Related to children:
+        </td>
+        <td>
+          {{ data.related_to_child }}
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Age of children:
+        </td>
+        <td>
+          {{ data.child_age }}
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Place of care:
+        </td>
+        <td>
+          {{ data.place_type }}
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+      </tr> 
+        <td>
+          Place accessible to other adult:
+        </td>
+        <td>
+          {{ data.shared_home }}
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+      {% if data.shared_home=="yes" %}
+        <tr>
+          <td>
+            Already have DBS checks:
+          </td>
+          <td>
+            {{ data.others_have_dbs }}
+          </td>
+          <td class="change-answer">
+            <a href="#">
+              Change <span class="visuallyhidden">Name</span>
+            </a>
+          </td>
+        </tr>
+      {% endif %}
+      {% if data.others_have_dbs=="no" or data.others_have_dbs=="not_sure"  %}
+        <tr>
+          <td>
+            How many others need DBS checks:
+          </td>
+          <td>
+            {{ data.how_many_others }}
+          </td>
+          <td class="change-answer">
+            <a href="#">
+              Change <span class="visuallyhidden">Name</span>
+            </a>
+          </td>
+        </tr>
+      {% endif %}
+      </tr> 
+        <td>
+          Preparing goods:
+        </td>
+        <td>
+          {{ data.food }}
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+      </tr> 
+        <td>
+          Employment:
+        </td>
+        <td>
+          {{ data.employment }}
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+  <br>
+
+  <div class="form-group">
+    <a href="/task_list{{formQuery}}" class="button">Return to your list</a>
+  </div>
+
+</main>
+
+{% endblock %}
