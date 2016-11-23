@@ -345,7 +345,7 @@ router.get('/task_list/check_others_criminal_history', function (req, res) {
 });
 
 // Check your answers for 'Check eligibility, cost and time'
-router.get('/questions/country', function (req, res) {
+router.get('/questions/reason', function (req, res) {
 
   console.log("check your answers");
 
@@ -361,7 +361,7 @@ router.get('/questions/country', function (req, res) {
   } else {
 
     // if user is NOT related to child
-    res.render('questions/country/index.html');
+    res.render('questions/reason/index.html');
 
   }
 

@@ -1,0 +1,56 @@
+{% extends "layout.html" %} {% block page_title %} Prove you have enough money {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="breadcrumbs">
+    <ol>
+      <li>
+        <a href="/task_list/{{ formQuery | safe }}">Become a childminder</a>
+      </li>
+      <li>
+        Check eligibility, time and cost
+      </li> 
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/questions/country" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          Check eligibility, time and cost
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            Check eligibility, time and cost
+          </legend>
+
+          <p class="lede">The answers you give in this section calculate:</p>
+
+          <ul class="list list-bullet" style="font-size: 24px;">  
+            <li>your eligibility to be a childminder</li>
+            <li>the cost for you to apply</li>
+            <li>how long it will take for you to qualify</li>
+          </ul> 
+
+          <p class="lede">This information is different depending on your situation.</p>
+
+        </fieldset>
+
+        <br>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue to questions" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}
