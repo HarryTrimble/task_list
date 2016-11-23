@@ -1,0 +1,22 @@
+{% extends "transport_goods/layout.html" %} {% block page_title %} Driving lessons {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h2 class="heading-medium">Company address</h2>
+      
+      <p>
+      {{ message.address_line_1 }}<br>  
+      {{ message.address_line_2 }}<br>
+      {{ message.locality }}<br>
+      {{ message.postal_code }}<br>
+      {{ message.country }}
+      <p>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}
