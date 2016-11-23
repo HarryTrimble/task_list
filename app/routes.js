@@ -1191,4 +1191,30 @@ router.get('/transport_goods/task_list/convictions_penalties/reason', function (
 
 });
 
+// Save and return
+
+// Transport goods
+
+// questions for /transport_goods/task_list/convictions_penalties/convictions
+router.get('/transport_goods/save_and_return/email', function (req, res) {
+
+  console.log("save and return");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var wants_save_and_return = req.query.wants_save_and_return;
+
+  if (wants_save_and_return == "no" ){
+
+    // if user IS related to child
+    res.redirect("/transport_goods/task_list" + res.locals.formQuery);
+
+  } else {
+
+    // if user is NOT related to child
+    res.render('transport_goods/save_and_return/email/index.html');
+
+  }
+
+});
+
 module.exports = router;
