@@ -893,7 +893,7 @@ router.get('/transport_goods/task_list/check_before_you_start/licence_type/just_
 
 });
 
-// check your answers for 'Describe your building project' section
+// type of licence: standard or international
 router.get('/transport_goods/task_list/check_before_you_start/transport_manager', function (req, res) {
 
   console.log("just_your_goods");
@@ -911,6 +911,36 @@ router.get('/transport_goods/task_list/check_before_you_start/transport_manager'
 
     // if user is NOT related to child
     res.render('transport_goods/task_list/check_before_you_start/transport_manager/index.html');
+
+  }
+
+});
+
+// check your answers for 'Check before you start' section
+router.get('/transport_goods/task_list/check_before_you_start/result/cost', function (req, res) {
+
+  console.log("application_cost");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var transport_manager = req.query.transport_manager;
+
+  if (transport_manager == "have to have it"){
+
+    // if user IS related to child
+    res.redirect("/transport_goods/task_list/check_before_you_start/check_your_answers" + res.locals.formQuery);
+
+  } else {
+
+    var application_cost = 257 + 6650 + (req.query.how_many_vehicles - 1) * 3700
+
+    application_cost = application_cost.toString().replace(/,/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+    var maintenance_costs = 6650 + (req.query.how_many_vehicles - 1) * 3700
+
+    maintenance_costs = maintenance_costs.toString().replace(/,/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+    // if user is NOT related to child
+    res.render('transport_goods/task_list/check_before_you_start/result/cost/index.html', {application_cost : application_cost, maintenance_costs : maintenance_costs});
 
   }
 
@@ -938,33 +968,73 @@ router.get('/transport_goods/task_list/check_before_you_start/weight/empty', fun
 
 });
 
-// check your answers for 'Check before you start' section
-router.get('/transport_goods/task_list/check_before_you_start/result', function (req, res) {
+// check your answers for 'Read rules' section
+router.get('/transport_goods/task_list/read_rules', function (req, res) {
 
-  console.log("application_cost");
+  console.log("check_your_answers");
 
   // get the answer from the query string (eg. ?over18="yes")
-  var transport_manager = req.query.transport_manager;
+  var read_rules = req.query.read_rules;
 
-  if (transport_manager == "have to have it"){
+  if (read_rules == "yes" ){
 
     // if user IS related to child
-    res.redirect("/transport_goods/task_list/check_before_you_start/check_your_answers" + res.locals.formQuery);
+    res.redirect("/transport_goods/task_list/read_rules/check_your_answers" + res.locals.formQuery);
 
   } else {
 
-    var application_cost = 257 + 6650 + (req.query.how_many_vehicles - 1) * 3700
-
-    application_cost = application_cost.toString().replace(/,/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-
     // if user is NOT related to child
-    res.render('transport_goods/task_list/check_before_you_start/result/index.html', {application_cost : application_cost});
+    res.render('transport_goods/task_list/read_rules/index.html');
 
   }
 
 });
 
-// check your answers for 'Give public notice' section
+// check your answers for 'Read rules' section
+router.get('/transport_goods/task_list/transport_manager/check_your_answers', function (req, res) {
+
+  console.log("check_your_answers");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var now_transport_manager = req.query.now_transport_manager;
+
+  if (now_transport_manager == "no" ){
+
+    // if user IS related to child
+    res.redirect("/transport_goods/task_list/transport_manager/result" + res.locals.formQuery);
+
+  } else {
+
+    // if user is NOT related to child
+    res.render('transport_goods/task_list/transport_manager/check_your_answers/index.html');
+
+  }
+
+});
+
+// check your answers for 'Read rules' section
+router.get('/transport_goods/task_list/transport_manager', function (req, res) {
+
+  console.log("check_your_answers");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var now_transport_manager = req.query.now_transport_manager;
+
+  if (now_transport_manager == "yes" ){
+
+    // if user IS related to child
+    res.redirect("/transport_goods/task_list/transport_manager/check_your_answers" + res.locals.formQuery);
+
+  } else {
+
+    // if user is NOT related to child
+    res.render('transport_goods/task_list/transport_manager/index.html');
+
+  }
+
+});
+
+// users who haven't given public notice yet
 router.get('/transport_goods/task_list/give_public_notice/result', function (req, res) {
 
   console.log("given_public_notice");
@@ -986,17 +1056,24 @@ router.get('/transport_goods/task_list/give_public_notice/result', function (req
 
 });
 
-// check your answers for 'Describe your vehicles' section
+// link to 'Become transport manager' from 'Read rules'
+// check your answers for 'Give public notice' section
 router.get('/transport_goods/task_list/give_public_notice/reason', function (req, res) {
 
-  console.log("check_your_answers_give_public_notice");
+  console.log("given_public_notice");
 
   // get the answer from the query string (eg. ?over18="yes")
-  var given_public_notice = req.query.given_public_notice;
+  var transport_manager = req.query.transport_manager;
+  var now_transport_manager = req.query.now_transport_manager;
 
-  if (given_public_notice){
+  if (transport_manager == "no" && now_transport_manager==undefined ){
 
     // if user IS related to child
+    res.redirect("/transport_goods/task_list/transport_manager" + res.locals.formQuery);
+
+  } else if (transport_manager == "no" && now_transport_manager == "yes" ){
+
+    // if user lives in WALES
     res.redirect("/transport_goods/task_list/give_public_notice/check_your_answers" + res.locals.formQuery);
 
   } else {
@@ -1007,6 +1084,8 @@ router.get('/transport_goods/task_list/give_public_notice/reason', function (req
   }
 
 });
+
+// fix Check your answers for 'Give public notice' for when 'become transport manager'
 
 // questions for /transport_goods/task_list/describe_vehicles/has_vehicles_already
 router.get('/transport_goods/task_list/describe_vehicles/reg_number_weight', function (req, res) {
@@ -1195,22 +1274,22 @@ router.get('/transport_goods/task_list/convictions_penalties/reason', function (
 // Transport goods
 
 // questions for /transport_goods/save_and_return/want_to
-router.get('/transport_goods/save_and_return/want_to', function (req, res) {
+router.get('/transport_goods/save_and_return/already_started/check_your_email', function (req, res) {
 
   console.log("returning to application");
 
   // get the answer from the query string (eg. ?over18="yes")
   var already_started = req.query.already_started;
 
-  if (already_started == "yes" ){
+  if (already_started == "no" ){
 
     // if user IS related to child
-    res.redirect("/transport_goods/save_and_return/already_started/check_your_email" + res.locals.formQuery);
+    res.redirect("/transport_goods/task_list" + res.locals.formQuery);
 
   } else {
 
     // if user is NOT related to child
-    res.render('transport_goods/save_and_return/want_to/index.html');
+    res.render('transport_goods/save_and_return/already_started/check_your_email/index.html');
 
   }
 
@@ -1227,7 +1306,7 @@ router.get('/transport_goods/save_and_return/email', function (req, res) {
   if (wants_save_and_return == "no" ){
 
     // if user IS related to child
-    res.redirect("/transport_goods/task_list" + res.locals.formQuery);
+    res.redirect("/transport_goods/task_list/check_before_you_start/check_your_answers" + res.locals.formQuery);
 
   } else {
 

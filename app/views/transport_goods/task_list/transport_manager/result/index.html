@@ -1,0 +1,22 @@
+{% extends "transport_goods/layout.html" %} {% block page_title %} Driving lessons {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          You're not ready to apply
+        </h1>
+
+        <p class="lede">You must hired qualify as a transport manager or hired one before submitting your application.</p>
+
+        <a href="/transport_goods/task_list{{formQuery}}">Return to task list</a>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

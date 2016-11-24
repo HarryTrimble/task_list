@@ -5,29 +5,28 @@
   <div class="grid-row">
     <div class="column-two-thirds">
 
-      <form method="get" action="/transport_goods/task_list/check_before_you_start/result/eligible" class="form">
+      <form method="get" action="/transport_goods/task_list/transport_manager/check_your_answers{{formQuery}}" class="form">
 
       {{formData | safe}}
 
         <h1 class="heading-large">
-          Have you hired a transport manager?
+          Have you become a qualified transport manager or hired one?
         </h1>
-
-        <p>A transport manager is qualified person, who ensure that its vehicles are roadworthy and drivers comply with traffic and drivers’ hours rules.</p>
 
         <fieldset>
           <legend class="visuallyhidden">
-            Have you hired a transport manager?
+            Have you become a qualified transport manager or hired one?
           </legend>
 
           <div class="form-group">
-            <label for="transport_manager_1" class="block-label">
-              <input type="radio" id="transport_manager_1" name="transport_manager" value="yes">
+
+            <label for="now_transport_manager_1" class="block-label">
+              <input type="radio" id="now_transport_manager_1" name="now_transport_manager" value="yes">
               Yes
             </label>
 
-            <label for="transport_manager_2" class="block-label">
-              <input type="radio" id="transport_manager_2" name="transport_manager" value="no">
+            <label for="now_transport_manager_2" class="block-label">
+              <input type="radio" id="now_transport_manager_2" name="now_transport_manager" value="no">
               No
             </label>
 

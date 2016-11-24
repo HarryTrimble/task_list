@@ -72,7 +72,7 @@
               </a>
             </td>
             <td class="numeric" id="task-status">
-              {% if data.read_rules=="done" %}
+              {% if data.read_rules=="yes" %}
                 {% include "includes/task_status_complete.html" %}
               {% endif %}
             </td>
@@ -95,7 +95,6 @@
             </tr>
           {% endif %}
 
-
           <!-- Become a transport manager -->
           {% if data.transport_manager=="no" %}
             <tr>
@@ -106,7 +105,7 @@
                 </a>
               </td>
               <td class="numeric" id="task-status">
-                {% if data.become_transport_manager=="complete" %}
+                {% if data.now_transport_manager=="yes" %}
                   {% include "includes/task_status_complete.html" %}
                 {% endif %}
               </td>

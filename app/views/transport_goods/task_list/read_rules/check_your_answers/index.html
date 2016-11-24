@@ -7,6 +7,7 @@
 {% block content %}
 
 <main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
 
   <h1 class="heading-large">
     Check your answers for this section
@@ -18,7 +19,7 @@
       <tr>
         <th colspan="2">
           <h2 class="heading-medium">
-            Give public notice
+            Read rules
           </h2>
         </th>
         <th>
@@ -29,10 +30,10 @@
     <tbody>
       <tr>
         <td>
-          Advertise you plans to transport goods
+          Read and understood rules:
         </td>
         <td>
-          {{ data.given_public_notice }}
+          {{ data.read_rules }}
         </td>
         <td class="change-answer">
           <a href="#">
@@ -47,7 +48,7 @@
   <br>
 
   <div class="form-group">
-    <a href="/transport_goods/task_list/describe_vehicles/has_vehicles_already{{formQuery}}" class="button">Continue to next section</a>
+    <a href="/transport_goods/task_list/give_public_notice/reason{{formQuery}}" class="button">Continue to next section</a>
   </div>
 
   <a href="/transport_goods/task_list{{formQuery}}">Return to task list</a>
