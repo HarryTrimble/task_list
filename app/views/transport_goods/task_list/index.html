@@ -20,7 +20,7 @@
 
         </header>
 
-        <p class="">Complete the tasks below:</p>
+        <p class="">Do the tasks below:</p>
 
         <br>
       
@@ -45,7 +45,7 @@
         <tbody>
 
           <!-- Check before you start -->
-          <tr>
+          <tr id="check_before_you_start">
             <td class="task">
               <a href="/transport_goods/task_list/check_before_you_start/weight/empty{{formQuery}}">
                 <span class="task-name-no-margin"> Check before your start</span>
@@ -60,12 +60,14 @@
             <td class="numeric" id="task-status">
               {% if data.transport_manager %}
                 {% include "includes/task_status_complete.html" %}
+              {% else %}
+                {% include "includes/task_status_not_started.html" %}
               {% endif %}
             </td>
           </tr>
 
           <!-- Read rules -->
-          <tr>
+          <tr id="read_rules">
             <td class="task">
               <a href="/transport_goods/task_list/read_rules{{formQuery}}">
                 <span class="task-name-no-margin"> Read rules</span>
@@ -74,6 +76,8 @@
             <td class="numeric" id="task-status">
               {% if data.read_rules=="yes" %}
                 {% include "includes/task_status_complete.html" %}
+              {% else %}
+                {% include "includes/task_status_not_started.html" %}
               {% endif %}
             </td>
           </tr>
@@ -90,6 +94,8 @@
               <td class="numeric" id="task-status">
                 {% if data.interim_licence=="complete" %}
                   {% include "includes/task_status_complete.html" %}
+                {% else %}
+                  {% include "includes/task_status_not_started.html" %}
                 {% endif %}
               </td>
             </tr>
@@ -107,6 +113,8 @@
               <td class="numeric" id="task-status">
                 {% if data.now_transport_manager=="yes" %}
                   {% include "includes/task_status_complete.html" %}
+                {% else %}
+                  {% include "includes/task_status_not_started.html" %}
                 {% endif %}
               </td>
             </tr>
@@ -122,6 +130,8 @@
             <td class="numeric" id="task-status">
               {% if data.given_public_notice=="yes" %}
                 {% include "includes/task_status_complete.html" %}
+              {% else %}
+                {% include "includes/task_status_not_started.html" %}
               {% endif %}
             </td>
           </tr>
@@ -136,6 +146,8 @@
             <td class="numeric" id="task-status">
               {% if data.has_vehicles_already %}
                 {% include "includes/task_status_complete.html" %}
+              {% else %}
+                {% include "includes/task_status_not_started.html" %}
               {% endif %}
             </td>
           </tr>
@@ -150,6 +162,8 @@
             <td class="numeric" id="task-status">
               {% if data.has_mechanic=="yes" %}
                 {% include "includes/task_status_complete.html" %}
+              {% else %}
+                {% include "includes/task_status_not_started.html" %}              
               {% endif %}
             </td>
           </tr>
@@ -164,6 +178,8 @@
             <td class="numeric" id="task-status">
               {% if data.uploaded_document %}
                 {% include "includes/task_status_complete.html" %}
+              {% else %}
+                {% include "includes/task_status_not_started.html" %}
               {% endif %}
             </td>
           </tr>
@@ -178,6 +194,8 @@
             <td class="numeric" id="task-status">
               {% if data.compensation_order %}
                 {% include "includes/task_status_complete.html" %}
+              {% else %}
+                {% include "includes/task_status_not_started.html" %}
               {% endif %}
             </td>
           </tr>
@@ -192,6 +210,8 @@
             <td class="numeric" id="task-status">
               {% if data.contact_by %}
                 {% include "includes/task_status_complete.html" %}
+              {% else %}
+                {% include "includes/task_status_not_started.html" %}
               {% endif %}
             </td>
           </tr>
@@ -206,6 +226,8 @@
             <td class="numeric" id="task-status">
               {% if data.pay_application_fee=="complete" %}
                 {% include "includes/task_status_complete.html" %}
+              {% else %}
+                {% include "includes/task_status_not_started.html" %}
               {% endif %}
             </td>
           </tr>
@@ -220,6 +242,8 @@
             <td class="numeric" id="task-status">
               {% if data.apply_for_provisional=="complete" %}
                 {% include "includes/task_status_complete.html" %}
+              {% else %}
+                {% include "includes/task_status_not_started.html" %}
               {% endif %}
             </td>
           </tr>
@@ -244,9 +268,11 @@
             <p class="last-edited font-xsmall">Reference number:<br>
               <span class="bold-xsmall">HDJ2123F</span>
             </p>
+            <!--
             <p class="last-edited font-xsmall">Progress:<br>
               <span class="bold-xsmall"><span id="completed-steps"></span> of <span id="total-steps"></span> tasks completed</span>
             </p>
+            -->
           </div>
 
     </div>
