@@ -1035,22 +1035,22 @@ router.get('/transport_goods/task_list/transport_manager', function (req, res) {
 });
 
 // users who haven't given public notice yet
-router.get('/transport_goods/task_list/give_public_notice/result', function (req, res) {
+router.get('/transport_goods/task_list/give_public_notice/check_your_answers', function (req, res) {
 
   console.log("given_public_notice");
 
   // get the answer from the query string (eg. ?over18="yes")
   var given_public_notice = req.query.given_public_notice;
 
-  if (given_public_notice == "yes" ){
+  if (given_public_notice == "no" ){
 
     // if user IS related to child
-    res.redirect("/transport_goods/task_list/" + res.locals.formQuery);
+    res.redirect("/transport_goods/task_list/give_public_notice/result" + res.locals.formQuery);
 
   } else {
 
     // if user is NOT related to child
-    res.render('transport_goods/task_list/give_public_notice/result/index.html');
+    res.render('transport_goods/task_list/give_public_notice/check_your_answers/index.html');
 
   }
 
@@ -1065,13 +1065,19 @@ router.get('/transport_goods/task_list/give_public_notice/reason', function (req
   // get the answer from the query string (eg. ?over18="yes")
   var transport_manager = req.query.transport_manager;
   var now_transport_manager = req.query.now_transport_manager;
+  var given_public_notice = req.query.given_public_notice;
 
   if (transport_manager == "no" && now_transport_manager==undefined ){
 
     // if user IS related to child
     res.redirect("/transport_goods/task_list/transport_manager" + res.locals.formQuery);
 
-  } else if (transport_manager == "no" && now_transport_manager == "yes" ){
+  } else if (transport_manager == "no" && now_transport_manager == "yes" && given_public_notice == "yes" ){
+
+    // if user lives in WALES
+    res.redirect("/transport_goods/task_list/give_public_notice/check_your_answers" + res.locals.formQuery);
+
+  } else if (given_public_notice == "yes" ){
 
     // if user lives in WALES
     res.redirect("/transport_goods/task_list/give_public_notice/check_your_answers" + res.locals.formQuery);
