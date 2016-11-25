@@ -1,4 +1,4 @@
-{% extends "transport_goods/layout.html" %} {% block page_title %} Declare convictions and penalties {% endblock %} {% block content %}
+{% extends "transport_goods/layout.html" %} {% block page_title %} List convictions {% endblock %} {% block content %}
 <main id="content" role="main">
   {% include "includes/phase_banner_beta.html" %}
 
@@ -8,7 +8,7 @@
         <a href="/transport_goods/task_list/{{ formQuery | safe }}">Transport goods</a>
       </li>
       <li>
-        Declare convictions and penalties
+        List convictions
       </li> 
     </ol>
   </div>
@@ -21,12 +21,12 @@
       {{formData | safe}}
 
         <h1 class="heading-large">
-          Declare convictions and penalties
+          List convictions
         </h1>
 
         <fieldset>
           <legend class="visuallyhidden">
-            Declare convictions and penalties
+            List convictions
           </legend>
 
           <p class="lede">You need to declare convictions and penalties, as these will be considered when deciding to grant you a licence.</p>
