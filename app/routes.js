@@ -1360,7 +1360,7 @@ router.get('/transport_goods/save_and_return/already_started/check_your_email', 
   if (already_started == "no" ){
 
     // if user IS related to child
-    res.redirect("/transport_goods/save_and_return/want_to" + res.locals.formQuery);
+    res.redirect("/transport_goods/task_list" + res.locals.formQuery);
 
   } else {
 
