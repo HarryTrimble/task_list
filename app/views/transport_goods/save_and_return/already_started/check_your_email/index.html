@@ -1,15 +1,47 @@
-{% extends "transport_goods/layout.html" %} {% block page_title %} Search you email {% endblock %} {% block content %}
+{% extends "transport_goods/layout.html" %} {% block page_title %} Save and return {% endblock %} {% block content %}
 <main id="content" role="main">
   {% include "includes/phase_banner_beta.html" %}
 
   <div class="grid-row">
     <div class="column-two-thirds">
 
-        <h1 class="heading-large">Search 'Transport goods' in your email</h1>
+      {{formData | safe}}
 
-        <p class="lede">You should have an email that allows you to return your application from when you last worked on it.</p>
+        <h1 class="heading-large">
+          Search 'Transport goods' in your email
+        </h1>
 
-        <p><a href="#">Resend this email</a></p>
+          <p class="lede">You should have an email that allows you to return your application from when you last worked on it.</p>
+
+        <details>
+
+          <summary><span class="summary">Resend email with link</span></summary>
+
+          <div class="panel panel-border-narrow">
+
+		    	<form method="get" action="/transport_goods/save_and_return/already_started/link_sent" class="form">
+
+	            <fieldset>
+
+	                <div class="form-group">
+	                  <label class="form-label" for="user_email">Email address</label>
+	                  <input class="form-control form-control-3-4" id="user_email" name="user_email" type="text">
+	                </div>
+
+	            </fieldset>
+
+				<br>
+
+	            <div class="form-group">
+	              <input type="submit" class="button" value="Resend email" />
+	            </div>
+          
+          </div>
+
+        </details>
+
+
+      </form>
 
     </div>
   </div>

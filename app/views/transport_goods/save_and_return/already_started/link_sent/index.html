@@ -1,0 +1,18 @@
+{% extends "transport_goods/layout.html" %} {% block page_title %} Email and phone {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">Check your email</h1>
+
+        <p class="lede">If a application has been saved with this email address you should have a email that allows you to return to it.</p>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}
