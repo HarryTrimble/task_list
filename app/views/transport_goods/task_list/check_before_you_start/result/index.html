@@ -16,18 +16,18 @@
             {{formData | safe}}
 
             <h1 class="heading-large">
-              You need to use this service
+              You need to apply for a permit.
             </h1>
 
             <br>
 
             <!-- Cost -->
 
-            <p class="lede">The cost to apply is <span class="bold">£{{application_cost}}</span>, which includes application fee and amount to maintain vehicle safety.</p>
+            <p class="lede">The cost to apply is <span class="bold">£{{application_cost}}</span>. This includes the application fee and the amount you need to maintain your vehicles.</p>
 
             <!-- Time -->
 
-            <p class="lede">The time to wait after you appy is <span class="bold">9 weeks</span>.</p>
+            <p class="lede">The time to wait after you apply is <span class="bold">9 weeks</span>.</p>
 
             <br>
 
@@ -43,12 +43,17 @@
         %}
 
             <h1 class="heading-large">
-              You don't need to use this service
+              You don't need to apply for a permit.
             </h1>
 
             <br>
 
-            <p class="lede">You don't need this licence when your vehicles weigh less than 1,525 kg when empty or 3,500 kg when loaded.</p>
+            <p class="lede">You don't need to apply for a permit if your vehicles weigh less than: </p>
+              <ul>
+                <li>1,525 kg when empty</li> 
+                <li>3,500 kg when loaded</li>
+              </ul>
+            
 
         <!-- exempt vehicles -->
         {% elif
@@ -56,13 +61,13 @@
         %}
 
             <h1 class="heading-large">
-              You don't need to use this service
+              You don't need to apply for a permit.
             </h1>
 
             <br>
             
 
-            <p class="lede">You don't need this licence to operate these vehicles</p>
+            <p class="lede">You don't need this permit to use your vehicles.</p>
 
         <!-- carry passengers -->
         {% elif
@@ -70,12 +75,12 @@
         %}
 
             <h1 class="heading-large">
-              You don't need to use this service
+              You don't need to apply for a permit.
             </h1>
 
             <br>
 
-            <p class="lede">You don't need this licence to operate vehicles to carry passengers.</p>
+            <p class="lede">You don't need this permit if you're only carrying passengers. Apply for a <a href="https://www.gov.uk/psv-operator-licences">public service vehicle licence</a> instead.</p>
 
         <!-- trade plates -->
         {% elif
@@ -83,12 +88,12 @@
         %}
 
             <h1 class="heading-large">
-              You don't need to use this service
+              You don't need to apply for a permit.
             </h1>
 
             <br>
 
-            <p class="lede">You don't need this licence to operate vehicles with trade plates.</p>
+            <p class="lede">You don't need this permit if you're using trade plates.</p>
 
         <!-- short distance -->
         {% elif
@@ -96,12 +101,12 @@
         %}
 
             <h1 class="heading-large">
-              You don't need to use this service
+              You don't need to apply for a permit.
             </h1>
 
             <br>
 
-            <p class="lede">You don't need this licence to operate vehicles this short distance.</p>
+            <p class="lede">You don't need to apply if your vehicles are travelling such a short distance.</p>
 
         {% endif %}
 
