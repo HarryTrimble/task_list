@@ -427,6 +427,28 @@ router.get('/driving/questions/insurance', function (req, res) {
 
 });
 
+// Check your ansers for 'Check eligibility, cost and time'
+router.get('/driving/questions/reason', function (req, res) {
+
+  console.log("check your answers");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var driving_lessons = req.query.driving_lessons;
+
+  if ( driving_lessons ){
+
+    // if user is NOT 17 or over
+    res.redirect("/driving/questions/check_your_answers" + res.locals.formQuery);
+
+  } else {
+
+    // if users IS 18 or over
+    res.render('driving/questions/reason/index.html');
+
+  }
+
+});
+
 // BATS
 
 // question in /bats/task_list/inspect_place_where_bats_live/visit_bat_place
@@ -1276,6 +1298,30 @@ router.get('/transport_goods/task_list/convictions_penalties/reason', function (
 });
 
 // Save and return
+
+// Learn to drive
+
+// questions for /transport_goods/save_and_return/want_to
+router.get('/driving/save_and_return/email', function (req, res) {
+
+  console.log("save and return");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var wants_save_and_return = req.query.wants_save_and_return;
+
+  if (wants_save_and_return == "no" ){
+
+    // if user IS related to child
+    res.redirect("/driving/task_list/" + res.locals.formQuery);
+
+  } else {
+
+    // if user is NOT related to child
+    res.render('driving/save_and_return/email/index.html');
+
+  }
+
+});
 
 // Transport goods
 

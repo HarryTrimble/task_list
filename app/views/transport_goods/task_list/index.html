@@ -47,8 +47,8 @@
           <!-- Check before you start -->
           <tr id="check_before_you_start">
             <td class="task">
-              <a href="/transport_goods/task_list/check_before_you_start/weight/empty{{formQuery}}">
-                <span class="task-name-no-margin"> Check before your start</span>
+              <a href="/transport_goods/task_list/check_before_you_start/reason{{formQuery}}">
+                <span class="task-name-no-margin"> Check eligibility, cost and time</span>
                 <!--
                   <br>
                   <span class="task-description">
@@ -233,20 +233,33 @@
           </tr>
 
           <!-- Check and send your application -->
-          <tr>
-            <td class="task">
-              <a href="/transport_goods/task_list/check_and_send{{formQuery}}">
-                <span class="task-name-no-margin"> Check and send your application</span>
-              </a>
-            </td>
-            <td class="numeric" id="task-status">
-              {% if data.apply_for_provisional=="complete" %}
-                {% include "includes/task_status_complete.html" %}
-              {% else %}
-                {% include "includes/task_status_not_started.html" %}
-              {% endif %}
-            </td>
-          </tr>
+          {% if 
+                data.transport_manager and 
+                data.read_rules=="yes" and
+                data.given_public_notice=="yes" and
+                data.has_vehicles_already and
+                data.has_mechanic=="yes" and
+                data.uploaded_document and
+                data.compensation_order and
+                data.contact_by
+          %}
+
+            <tr>
+              <td class="task">
+                <a href="/transport_goods/task_list/check_and_send{{formQuery}}">
+                  <span class="task-name-no-margin"> Check and send your application</span>
+                </a>
+              </td>
+              <td class="numeric" id="task-status">
+                {% if data.apply_for_provisional=="complete" %}
+                  {% include "includes/task_status_complete.html" %}
+                {% else %}
+                  {% include "includes/task_status_not_started.html" %}
+                {% endif %}
+              </td>
+            </tr>
+
+          {% endif %}
 
         </tbody>
       </table>

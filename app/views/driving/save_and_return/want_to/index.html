@@ -1,0 +1,48 @@
+{% extends "driving/layout.html" %} {% block page_title %} Save and return {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/driving/save_and_return/email" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          Do you want to save your information to return to it later at any time?
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            Do you want to save your information to return to it later at any time?
+          </legend>
+
+          <p>We can send you an email that allows you to save your progress and return your information at any time.</p></p>
+
+          <div class="form-group">
+            <label for="wants_save_and_return_1" class="block-label">
+              <input type="radio" id="wants_save_and_return_1" name="wants_save_and_return" value="yes">
+              Yes
+            </label>
+
+            <label for="wants_save_and_return_2" class="block-label">
+              <input type="radio" id="wants_save_and_return_2" name="wants_save_and_return" value="no">
+              No
+            </label>
+
+          </div>
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

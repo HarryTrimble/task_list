@@ -1,0 +1,157 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Check your answers
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+{% include "includes/phase_banner_beta.html" %}
+
+  <h1 class="heading-large">
+    Check your answers:
+  </h1>
+
+  <table class="check-your-answers">
+
+    <thead>
+      <tr>
+        <th colspan="2">
+          <h2 class="heading-medium">
+            Check eligibility, cost and time
+          </h2>
+        </th>
+        <th>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr>
+        <td>
+          Disability or health condition:
+        </td>
+        <td>
+          {{ data.disability_medical }}
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Mobility need:
+        </td>
+        <td>
+          {{ data.mobility_need }}
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+
+      {% if data.mobility_need=="yes" %}
+        <tr>
+          <td>
+            16 or older:
+          </td>
+          <td>
+            {{ data.over16 }}
+          </td>
+          <td class="change-answer">
+            <a href="#">
+              Change <span class="visuallyhidden">Name</span>
+            </a>
+          </td>
+        </tr>
+      {% else %}
+        <tr>
+          <td>
+            17 or older:
+          </td>
+          <td>
+            {{ data.over17 }}
+          </td>
+          <td class="change-answer">
+            <a href="#">
+              Change <span class="visuallyhidden">Name</span>
+            </a>
+          </td>
+        </tr>
+      {% endif %}
+
+      <tr>
+        <td>
+          Read number plate from 20 meters:
+        </td>
+        <td>
+          {{ data.read_from_20_meters }}
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Need glasses or contact lenses to drive:
+        </td>
+        <td>
+          {{ data.needs_glasses_or_contacts }}
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Practice driving in own car:
+        </td>
+        <td>
+          {{ data.practing_in_own_car }}
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+
+        <td>
+          Paying for driving lessons:
+        </td>
+        <td>
+          {{ data.driving_lessons }}
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+
+  </table>
+
+  <br>
+  <br>
+
+  <div class="form-group">
+    <a href="/driving/task_list{{formQuery}}" class="button">Return to your task list</a>
+  </div>
+
+</main>
+
+{% endblock %}

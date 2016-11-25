@@ -1,0 +1,296 @@
+{% extends "layout.html" %} {% block page_title %} Example - Forms {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+            <form method="get" action="/driving/questions/result/time" class="form">
+
+            {{formData | safe}}
+
+            <br>
+            <br>
+
+              <p class="lede">Total cost to learn:</p>
+
+              <div class="data">
+                <h2 class="bold-xxlarge">
+                  £119
+                </h2>
+
+                <!-- 1// Cost WITH eye test WITH car insurance WITH driving lessons -->
+                {% if 
+                  data.needs_glasses_or_contacts=="yes" and
+                  data.practing_in_own_car=="yes" and
+                  data.driving_lessons=="yes"
+                %}
+                  
+                  <p class="bold-xsmall">plus an eye test, car insurance and driving lessons</p>
+
+                {% endif %}
+
+                <!-- 2// Cost WITH eye test WITH car insurance WITHOUT driving lessons -->
+                {% if 
+                  data.needs_glasses_or_contacts=="yes" and
+                  data.practing_in_own_car=="yes" and
+                  data.driving_lessons=="no"
+                %}
+                  
+                  <p class="bold-xsmall">plus an eye test and car insurance</p>  
+
+                {% endif %}
+
+                <!-- 3// Cost WITH eye test WITHOUT car insurance WITH driving lessons -->
+                {% if 
+                  data.needs_glasses_or_contacts=="yes" and
+                  data.practing_in_own_car=="no" and
+                  data.driving_lessons=="yes"
+                %}
+
+                  <p class="bold-xsmall">plus an eye test and driving lessons</p>  
+
+                {% endif %}
+                
+                <!-- 4// Cost WITHOUT eye test WITH car insurance WITH driving lessons -->
+                {% if 
+                  data.needs_glasses_or_contacts=="no" and
+                  data.practing_in_own_car=="yes" and
+                  data.driving_lessons=="yes"
+                %}
+
+                  <p class="bold-xsmall">plus car insurance and driving lessons</p>  
+
+                {% endif %}
+
+                <!-- 5// Cost WITHOUT eye test WITHOUT car insurance WITH driving lessons -->
+                {% if 
+                  data.needs_glasses_or_contacts=="no" and
+                  data.practing_in_own_car=="no" and
+                  data.driving_lessons=="yes"
+                %}
+
+                  <p class="bold-xsmall">plus driving lessons</p>  
+
+                {% endif %}
+
+                <!-- 6// Cost WITH eye test WITHOUT car insurance WITHOUT driving lessons -->
+                {% if 
+                  data.needs_glasses_or_contacts=="yes" and
+                  data.practing_in_own_car=="no" and
+                  data.driving_lessons=="no"
+                %}
+                  
+                  <p class="bold-xsmall">plus an eye test</p>  
+
+                {% endif %}
+
+                <!-- 7// Cost WITHOUT eye test WITHOUT car insurance WITHOUT driving lessons -->
+                {% if 
+                  data.needs_glasses_or_contacts=="no" and
+                  data.practing_in_own_car=="no" and
+                  data.driving_lessons=="no"
+                %}
+
+                  <!-- no variable costs -->
+
+                {% endif %}
+
+              </div>
+
+              <br>
+
+              <details>
+
+                <summary><span class="summary">See each cost</span></summary>
+
+                <div class="panel panel-border-narrow">
+
+                  <table>
+                    <thead>
+                      <tr>
+                        <th scope="col">Task</th>
+                        <th class="numeric" scope="col">Cost</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+
+                      <!-- eye test -->
+                      {% if data.needs_glasses_or_contacts=="yes" %}
+                        <td>Eye test</td>
+                          <td class="numeric">varies by provider</td>
+                        </tr>
+                      {% endif %}
+
+                      <tr>
+                        <td>Provisional licence</td>
+                        <td class="numeric">£34</td>
+                      </tr>
+
+                      <tr>
+                        <td>Theory test</td>
+                        <td class="numeric">£23</td>
+                      </tr>
+
+                      <!-- driving lessons -->
+                      {% if data.driving_lessons=="yes" %}
+                        <td>Driving lessions</td>
+                          <td class="numeric">varies by instructor</td>
+                        </tr>
+                      {% endif %}
+
+                      <!-- car insurance -->
+                      {% if data.practing_in_own_car=="yes" %}
+                        <td>Car insurance</td>
+                          <td class="numeric">varies by provider</td>
+                        </tr>
+                      {% endif %}
+
+                      <tr>
+                        <td>Driving test</td>
+                        <td class="numeric">£62</td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+
+                </div>
+
+              </details>
+            
+            <!--
+            <details>
+
+              <summary><span class="summary">See calculation</span></summary>
+
+              <div class="panel panel-border-narrow">
+
+                 <table class="check-your-answers">
+
+                  <thead>
+                    <tr>
+                      <th colspan="2">
+                        <h2 class="heading-medium">
+                          Answers calculating cost
+                        </h2>
+                      </th>
+                      <th>
+                      </th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr>
+                      <td>
+                        Age of children:
+                      </td>
+                      <td>
+                        {{ data.child_age }}
+                      </td>
+                      <td class="change-answer">
+                        <a href="/questions/child_age">
+                          Change <span class="visuallyhidden">Name</span>
+                        </a>
+                      </td>
+                    </tr>
+                    </tr> 
+                      <td>
+                        Place accessible to other adult:
+                      </td>
+                      <td>
+                        {{ data.shared_home }}
+                      </td>
+                      <td class="change-answer">
+                        <a href="/questions/shared_home">
+                          Change <span class="visuallyhidden">Name</span>
+                        </a>
+                      </td>
+                    </tr>
+                    {% if data.shared_home=="yes" %}
+                      <tr>
+                        <td>
+                          Already have DBS checks:
+                        </td>
+                        <td>
+                          {{ data.others_have_dbs }}
+                        </td>
+                        <td class="change-answer">
+                          <a href="#">
+                            Change <span class="visuallyhidden">Name</span>
+                          </a>
+                        </td>
+                      </tr>
+                    {% endif %}
+                    {% if data.others_have_dbs=="no" or data.others_have_dbs=="not sure"  %}
+                      <tr>
+                        <td>
+                          How many others need DBS checks:
+                        </td>
+                        <td>
+                          {{ data.how_many_others }}
+                        </td>
+                        <td class="change-answer">
+                          <a href="#">
+                            Change <span class="visuallyhidden">Name</span>
+                          </a>
+                        </td>
+                      </tr>
+                    {% endif %}
+                  </tbody>
+                </table>
+
+              </div>
+
+            </details>
+            -->
+
+            <br>
+
+            <div class="form-group">
+              <input type="submit" class="button" value="Continue"/>
+            </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}
+
+            <!-- application fee calculator
+            <p class="lede">The cost of applying is <span class="bold">£<span id="cost"></span></span></p>
+
+            <script>
+
+              var query = location.search.substr(1);
+              var result = {};
+              query.split("&").forEach(function(part) {
+                var item = part.split("=");
+                result[item[0]] = decodeURIComponent(item[1]);
+              });
+              data = result;
+              console.log(data)
+
+              var costToPay = 0;
+              if(data.shotguns = 'yes'){
+                costToPay += 79.5
+              }
+              if(data.rifles = 'yes'){
+                costToPay += 88
+              }
+
+              {{data.child_age}}
+
+              if(typeof data.number_of_visitors !== 'undefined'){
+                number_of_visitors = parseInt(data.number_of_visitors)
+                var visitorCost = number_of_visitors*20
+                costToPay += visitorCost
+              }
+
+              costToPay = costToPay.toFixed(2)
+
+              document.getElementById('cost').innerHTML = costToPay
+
+            </script>
+            -->

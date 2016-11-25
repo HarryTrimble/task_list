@@ -1,11 +1,11 @@
-{% extends "transport_goods/layout.html" %} {% block page_title %} Email and phone {% endblock %} {% block content %}
+{% extends "driving/layout.html" %} {% block page_title %} Email and phone {% endblock %} {% block content %}
 <main id="content" role="main">
   {% include "includes/phase_banner_beta.html" %}
 
   <div class="grid-row">
     <div class="column-two-thirds">
 
-      <form method="get" action="/transport_goods/task_list" class="form">
+      <form method="get" action="/driving/task_list" class="form">
 
       {{formData | safe}}
 
@@ -16,7 +16,7 @@
             <strong class="heading-medium">1280880</strong>
           </p>
         </div>
-        <p>We have sent a link to <span class="bold">{{ data.user_email }}</span> that allows you to return your application at any time.</p>
+        <p>We have sent a link to <span class="bold">{{ data.user_email }}</span> that allows you to return your information at any time.</p>
 
         <fieldset>
           <legend class="visuallyhidden">
@@ -26,7 +26,7 @@
         </fieldset>
 
         <div class="form-group">
-          <input type="submit" class="button" value="Continue to application" />
+          <input type="submit" class="button" value="Return to your task list" />
         </div>
 
       </form>

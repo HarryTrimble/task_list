@@ -1,0 +1,57 @@
+{% extends "layout.html" %} {% block page_title %} Check eligibility, cost and time {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="breadcrumbs">
+    <ol>
+      <li>
+        <a href="/task_list/{{ formQuery | safe }}">Become a childminder</a>
+      </li>
+      <li>
+        Check eligibility, time and cost
+      </li> 
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/driving/questions/disability_medical" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          Check eligibility, cost and time
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            Check eligibility, cost and time
+          </legend>
+
+          <p class="lede">The answers you give in this section will show:</p>
+
+          <ul class="list list-bullet" style="font-size: 24px;">  
+            <li>if you're eligible to learn to drive</li>
+            <li>how much it will cost for you to learn</li>
+            <li>how long the learning process will take</li>
+            <li>what tasks are involved for you to learn</li>
+          </ul> 
+
+          <p class="lede">This information will change depending on your situation.</p>
+
+        </fieldset>
+
+        <br>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue to questions" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}
