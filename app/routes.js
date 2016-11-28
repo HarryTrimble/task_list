@@ -366,6 +366,31 @@ router.get('/questions/reason', function (req, res) {
 
 });
 
+// Add cost for 
+router.get('/task_list/check_others_criminal_history', function (req, res) {
+
+  console.log("check your answers");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var check_before_you_start = req.query.check_before_you_start;
+
+  if (check_before_you_start == "rock this party" ){
+
+
+    // if user IS related to child
+    res.redirect("/questions/check_your_answers" + res.locals.formQuery);
+
+  } else {
+
+  var cost_of_other_criminal_checks = (req.query.how_many_others) * 44
+
+    // if user is NOT related to child
+    res.render('task_list/check_others_criminal_history/index.html', {cost_of_other_criminal_checks : cost_of_other_criminal_checks});
+
+  }
+
+});
+
 // Questions for 'Learn to drive'
 
 // Question for questions/country/index.html
