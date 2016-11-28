@@ -67,7 +67,7 @@
           </a>
         </td>
         <td class="numeric" id="task-status">
-          {% if data.shared_home=="yes" or data.shared_home=="no"  %}
+          {% if data.check_eligibility_cost_time=="done" %}
             {% include "includes/task_status_complete.html" %}
           {% else %}
             {% include "includes/task_status_not_started.html" %}

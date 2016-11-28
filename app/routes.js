@@ -349,9 +349,9 @@ router.get('/questions/reason', function (req, res) {
   console.log("check your answers");
 
   // get the answer from the query string (eg. ?over18="yes")
-  var check_before_you_start = req.query.check_before_you_start;
+  var check_eligibility_cost_time = req.query.check_eligibility_cost_time;
 
-  if (check_before_you_start == "completed" ){
+  if (check_eligibility_cost_time == "done" ){
 
 
     // if user IS related to child

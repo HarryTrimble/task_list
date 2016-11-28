@@ -1,4 +1,4 @@
-{% extends "driving/layout.html" %} {% block page_title %} Email and phone {% endblock %} {% block content %}
+{% extends "layout.html" %} {% block page_title %} Email and phone {% endblock %} {% block content %}
 <main id="content" role="main">
   {% include "includes/phase_banner_beta.html" %}
 
@@ -9,14 +9,9 @@
 
       {{formData | safe}}
 
-        <div class="govuk-box-highlight" style="background: #005EA5;">
-          <h1 class="bold-large">We've sent you a link</h1>
-          <p>
-            Your reference number is <br>
-            <strong class="heading-medium">1280880</strong>
-          </p>
-        </div>
-        <p>We have sent a link to <span class="bold">{{ data.user_email }}</span> that allows you to return your information at any time.</p>
+        <h1 class="heading-large">Check your email</h1>
+
+        <p>We have sent a link to <span class="bold">{{ data.user_email }}</span> that allows you to return your application at any time.</p>
 
         <fieldset>
           <legend class="visuallyhidden">
