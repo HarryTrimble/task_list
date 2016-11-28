@@ -69,6 +69,8 @@
         <td class="numeric" id="task-status">
           {% if data.shared_home=="yes" or data.shared_home=="no"  %}
             {% include "includes/task_status_complete.html" %}
+          {% else %}
+            {% include "includes/task_status_not_started.html" %}
           {% endif %}
         </td>
       </tr>
@@ -82,6 +84,8 @@
         <td class="numeric" id="task-status">
           {% if data.read_rules=="complete" %}
             {% include "includes/task_status_complete.html" %}
+          {% else %}
+            {% include "includes/task_status_not_started.html" %}
           {% endif %}
         </td>
       </tr>
@@ -95,6 +99,8 @@
         <td class="numeric" id="task-status">
           {% if data.contact_local_council=="complete" %}
             {% include "includes/task_status_complete.html" %}
+          {% else %}
+            {% include "includes/task_status_not_started.html" %}
           {% endif %}
         </td>
       </tr>
@@ -128,6 +134,8 @@
         <td class="numeric" id="task-status">
           {% if data.prove_identity=="complete" %}
             {% include "includes/task_status_complete.html" %}
+          {% else %}
+            {% include "includes/task_status_not_started.html" %}
           {% endif %}
         </td>
       </tr>
@@ -141,6 +149,8 @@
         <td class="numeric" id="task-status">
           {% if data.check_criminal_history=="complete" %}
             {% include "includes/task_status_complete.html" %}
+          {% else %}
+            {% include "includes/task_status_not_started.html" %}
           {% endif %}
         </td>
       </tr>
@@ -161,6 +171,8 @@
           <td class="numeric" id="task-status">
             {% if data.check_other_criminal_history=="complete" %}
               {% include "includes/task_status_complete.html" %}
+            {% else %}
+              {% include "includes/task_status_not_started.html" %}
             {% endif %}
           </td>
         </tr>
@@ -176,6 +188,8 @@
         <td class="numeric" id="task-status">
           {% if data.get_health_check=="complete" %}
             {% include "includes/task_status_complete.html" %}
+          {% else %}
+            {% include "includes/task_status_not_started.html" %}
           {% endif %}
         </td>
       </tr>
@@ -190,6 +204,8 @@
         <td class="numeric" id="task-status">
           {% if data.do_childminder_training=="complete" %}
             {% include "includes/task_status_complete.html" %}
+          {% else %}
+            {% include "includes/task_status_not_started.html" %}
           {% endif %}
         </td>
       </tr>
@@ -210,6 +226,8 @@
           <td class="numeric" id="task-status">
             {% if data.do_first_aid_training=="complete" %}
               {% include "includes/task_status_complete.html" %}
+            {% else %}
+              {% include "includes/task_status_not_started.html" %}
             {% endif %}
           </td>
         </tr>
@@ -225,6 +243,8 @@
         <td class="numeric" id="task-status">
           {% if data.get_references=="complete" %}
             {% include "includes/task_status_complete.html" %}
+          {% else %}
+            {% include "includes/task_status_not_started.html" %}
           {% endif %}
         </td>
       </tr>
@@ -258,6 +278,8 @@
         <td class="numeric" id="task-status">          
           {% if data.apply_to_ofsted=="complete" %}
             {% include "includes/task_status_complete.html" %}
+          {% else %}
+            {% include "includes/task_status_not_started.html" %}
           {% endif %}
         </td>
       </tr>
@@ -295,6 +317,24 @@
         <td class="numeric" id="task-status">          
           {% if data.get_certificate=="complete" %}
             {% include "includes/task_status_complete.html" %}
+          {% else %}
+            {% include "includes/task_status_not_started.html" %}
+          {% endif %}
+        </td>
+      </tr>
+
+      <!-- Get insured -->
+      <tr id="get_insured">
+        <td class="task">
+          <a href="/task_list/get_premises_inspected{{formQuery}}">
+            <span class="task-name"> Prepare for home inspection</span>
+          </a>
+        </td>
+        <td class="numeric" id="task-status">          
+          {% if data.get_insured=="complete" %}
+            {% include "includes/task_status_complete.html" %}
+          {% else %}
+            {% include "includes/task_status_not_started.html" %}
           {% endif %}
         </td>
       </tr>
@@ -311,6 +351,8 @@
           <td class="numeric" id="task-status">          
             {% if data.have_food_inspection=="complete" %}
               {% include "includes/task_status_complete.html" %}
+            {% else %}
+              {% include "includes/task_status_not_started.html" %}
             {% endif %}
           </td>
         </tr>
@@ -326,6 +368,8 @@
         <td class="numeric" id="task-status">          
           {% if data.get_insured=="complete" %}
             {% include "includes/task_status_complete.html" %}
+          {% else %}
+            {% include "includes/task_status_not_started.html" %}
           {% endif %}
         </td>
       </tr>
@@ -341,6 +385,8 @@
           <td class="numeric" id="task-status">          
             {% if data.register_self_employed=="complete" %}
               {% include "includes/task_status_complete.html" %}
+            {% else %}
+              {% include "includes/task_status_not_started.html" %}
             {% endif %}
           </td>
         </tr>
@@ -357,6 +403,8 @@
           <td class="numeric" id="task-status">          
             {% if data.set_up_limited_company=="complete" %}
               {% include "includes/task_status_complete.html" %}
+            {% else %}
+              {% include "includes/task_status_not_started.html" %}
             {% endif %}
           </td>
         </tr>
