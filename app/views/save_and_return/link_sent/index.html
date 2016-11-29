@@ -9,13 +9,23 @@
 
       {{formData | safe}}
 
-        <h1 class="heading-large">Check your email</h1>
+        {% if data.user_phone %}
 
-        <p>We have sent a link to <span class="bold">{{ data.user_email }}</span> that allows you to return your application at any time.</p>
+          <h1 class="heading-large">Check your phone</h1>
+
+          <p>We have sent a code to <span class="bold">{{ data.user_phone }}</span> that allows you to return your information at any time.</p>
+
+        {% else %}
+
+          <h1 class="heading-large">Check your email</h1>
+
+          <p>We have sent a link to <span class="bold">{{ data.user_email }}</span> that allows you to return your information at any time.</p>
+
+        {% endif %}
 
         <fieldset>
           <legend class="visuallyhidden">
-            Email and phone
+            Email or phone
           </legend>
 
         </fieldset>
