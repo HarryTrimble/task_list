@@ -10,6 +10,8 @@ var path = require('path'),
     port = (process.env.PORT || config.port),
     utils = require(__dirname + '/lib/utils.js'),
     packageJson = require(__dirname + '/package.json'),
+    // routes_childminding = require(__dirname + '/app/routes_childminding.js'),
+    // routes_driving = require(__dirname + '/app/routes_driving.js'),
 
 // Grab environment variables specified in Procfile or as Heroku config vars
     releaseVersion = packageJson.version,
@@ -28,6 +30,10 @@ var path = require('path'),
 if (env === 'production' && useAuth === 'true'){
     app.use(utils.basicAuth(username, password));
 }
+
+
+// routes_childminding.bind(app)
+// routes_driving.bind(app)
 
 // Application settings
 app.set('view engine', 'html');
@@ -137,6 +143,7 @@ app.get(/^\/([^.]+)$/, function (req, res) {
   });
 
 });
+
 
 console.log("\nGOV.UK Prototype kit v" + releaseVersion);
 // Display warning not to use kit for production services.
