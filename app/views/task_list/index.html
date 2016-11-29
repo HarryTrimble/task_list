@@ -323,15 +323,16 @@
         </td>
       </tr>
 
-      <!-- Get insured -->
-      <tr id="get_insured">
+      <!-- Get premises inspected -->
+      <tr id="prepare_home">
         <td class="task">
-          <a href="/task_list/get_premises_inspected{{formQuery}}">
-            <span class="task-name"> Prepare for home inspection</span>
+          <a href="/task_list/prepare_home{{formQuery}}">
+
+            <span class="task-name"> Prepare home</span>
           </a>
         </td>
         <td class="numeric" id="task-status">          
-          {% if data.get_insured=="complete" %}
+          {% if data.prepare_home=="complete" %}
             {% include "includes/task_status_complete.html" %}
           {% else %}
             {% include "includes/task_status_not_started.html" %}
