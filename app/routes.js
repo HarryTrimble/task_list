@@ -229,7 +229,7 @@ router.get('/questions/place_type', function (req, res) {
   // get the answer from the query string (eg. ?over18="yes")
   var child_age = req.query.child_age;
 
-  if (child_age == "8_and_over" ){
+  if (child_age == "8 and older" ){
 
     // if user IS related to child
     res.redirect("/questions/result" + res.locals.formQuery);
