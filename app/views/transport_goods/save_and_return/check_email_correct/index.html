@@ -13,25 +13,51 @@
           Make sure this is right
         </h1>
 
-        <fieldset>
-          <legend class="visuallyhidden">
-            Email and phone
-          </legend>
+        {% if data.user_phone %}
+
+          <fieldset>
+            <legend class="visuallyhidden">
+              Phone
+            </legend>
+
+            <div class="form-group">
+              <input class="form-control" id="send_email_here" name="send_email_here" type="text" value="{{ data.user_phone }}">
+            </div>
+
+            <br>
+            <br>
+
+          </fieldset>
 
           <div class="form-group">
-            <input class="form-control form-control-3-4" id="send_email_here" name="send_email_here" type="text" value="{{ data.user_email }}">
+            <input type="submit" class="button" value="Yes - this is my mobile phone number" />
           </div>
 
-          <br>
-          <br>
+          <p>If your mobile phone number is wrong, just change it above.</p>
 
-        </fieldset>
+        {% else %}
 
-        <div class="form-group">
-          <input type="submit" class="button" value="Yes - this is my email" />
-        </div>
+          <fieldset>
+            <legend class="visuallyhidden">
+              Email
+            </legend>
 
-        <p>If your email address is wrong, just change it above.</p>
+            <div class="form-group">
+              <input class="form-control form-control-3-4" id="send_email_here" name="send_email_here" type="text" value="{{ data.user_email }}">
+            </div>
+
+            <br>
+            <br>
+
+          </fieldset>
+
+          <div class="form-group">
+            <input type="submit" class="button" value="Yes - this is my email" />
+          </div>
+
+          <p>If your email address is wrong, just change it above.</p>
+
+        {% endif %}
 
 
       </form>

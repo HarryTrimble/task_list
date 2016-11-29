@@ -9,18 +9,23 @@
 
       {{formData | safe}}
 
-        <div class="govuk-box-highlight" style="background: #005EA5;">
-          <h1 class="bold-large">We've sent you a link</h1>
-          <p>
-            Your reference number is <br>
-            <strong class="heading-medium">1280880</strong>
-          </p>
-        </div>
-        <p>We have sent a link to <span class="bold">{{ data.user_email }}</span> that allows you to return your information at any time.</p>
+        {% if data.user_phone %}
+
+          <h1 class="heading-large">Check your phone</h1>
+
+          <p>We have sent a code to <span class="bold">{{ data.user_phone }}</span> that allows you to return your information at any time.</p>
+
+        {% else %}
+
+          <h1 class="heading-large">Check your email</h1>
+
+          <p>We have sent a link to <span class="bold">{{ data.user_email }}</span> that allows you to return your information at any time.</p>
+
+        {% endif %}
 
         <fieldset>
           <legend class="visuallyhidden">
-            Email and phone
+            Email or phone
           </legend>
 
         </fieldset>
