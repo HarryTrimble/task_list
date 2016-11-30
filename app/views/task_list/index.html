@@ -376,7 +376,7 @@
       </tr>
 
       <!-- Register as self employed -->
-      {% if data.employment=="self employed" %}
+      {% if data.employment=="self employed" or data.employment=="not sure" %}
         <tr id="register_self_employed">
           <td class="task">
             <a href="/task_list/register_self_employed{{formQuery}}">

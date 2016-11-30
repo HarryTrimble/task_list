@@ -81,8 +81,7 @@
         {% elif
           data.will_you_be_paid=="no" or
           data.care_time_per_day=="less than two hours" or
-          data.related_to_child=="no" or
-          data.child_age=="8 and older"
+          data.related_to_child=="no"
         %}
 
           <form method="get" action="#" class="form">
@@ -110,64 +109,33 @@
             <p class="lede">Being related to a child means you don't need to be a childminder.</p>
           {% endif %}
 
-          {% if data.child_age=="8 and older" %}
-            <p class="lede">To look after children 8 and older, you don't need to be a childminder.</p>
-          {% endif %}
-
         <!-- eligible -->
-        {% elif
-          data.over18=="yes" or
-          data.right_to_work=="yes" or
-          data.criminal_history=="you" or
-          data.child_age=="5_or_under" or
-          data.child_age=="6_to_7"
-        %}
+        {% elif data.child_age=="8 and older" %}
 
-            <form method="get" action="/task_list" class="form">
+            <form method="get" action="/questions/place_type" class="form">
 
             {{formData | safe}}
 
             <h1 class="heading-large">
-              You are eligible to be a childminder
+              You don't have to register
             </h1>
 
             <br>
 
-            <!--  Early Years Register AND Childcare Register (£35) + first add training (£216.00) + DBS Check fee (£44)  -->
-            {% if data.child_age=="5_or_under,6_to_7" or data.child_age=="5_or_under,6_to_7,8_and_over" %}
+            <p class="lede">You don't have to be registered childminder to look after children 8 or older.</p>
 
-              <p>The cost of applying is <span class="bold">£79</span> plus training and insurance. The cost of training and insurance depends on the providers you choose.</p>
-
-            <!-- Early Years Register AND Childcare Register (£35) + DBS Check fee (£44) -->
-            {% elif data.child_age=="5_or_under" or data.child_age=="5_or_under,8_and_over" %}
-
-              <p class="">The cost of applying is <span class="bold">£79</span> plus training and insurance. The cost of training and insurance depends on the providers you choose.</p>
-
-            {% elif data.child_age=="6_to_7" or data.child_age=="6_to_7,8_and_over" %}
-              <!--  Childcare Register (£103) + DBS Check fee (£44) -->
-              <p class="">The cost of applying is <span class="bold">£147</span> plus training and insurance. The cost of training and insurance depends on the providers you choose.</p>
-
-            {% endif %}
-
-            <!-- Waiting time if in child's or carers home -->
-            {% if data.place_type=="childs_home" or
-                  data.place_type=="carers_home"
-            %}
-                <p>The time to become a childminder is <span class="bold">16-20 weeks</span> plus training. The time to train depends on the providers you choose.</p>
-            <!-- Waiting time in nurseries, after school clubs or holiday playscheme -->
-            {% elif data.place_type=="other" %}
-                <p>The time to become a childminder is <span class="bold">28-32 weeks</span> plus training. The time to train depends on the providers you choose.</p>
-            {% endif %}
-
-            <p class="">Check what <a href="/task_list{{ formQuery | safe }}">tasks</a> are involved to apply.</p>
+            <p class="lede">You can voluntarily apply to be on the childminder register.</p>
 
             <br>
 
+            <input type="hidden" name="voluntarily_register" value="yes">
+
             <div class="form-group">
-              <input type="submit" class="button button-start" value="Start now"/>
+              <input type="submit" class="button" value="Yes – I want to voluntarily register"/>
             </div>
 
         {% endif %}
+
 
 
       </form>

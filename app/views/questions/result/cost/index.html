@@ -187,9 +187,18 @@
                 </div>
 
               </details>
+
+            {% if data.child_age=="8 and older" %}
+
+            <p>TEST</p>
+
+            {% endif %}
             
             <!--  Childcare Register (£103) + DBS Check fee (£44) -->
-            {% elif data.child_age=="6 to 7" or data.child_age=="6 to 7,8 and older" %}
+            {% elif data.child_age=="6 to 7" or 
+                    data.child_age=="6 to 7,8 and older" or
+                    data.child_age=="8 and older" 
+            %}
 
               <p class="lede">Total cost to apply:</p>
 
