@@ -2,7 +2,7 @@
 
 When users ask this question to government, the answer now is...it depends. 
 
-These patterns and guidance will change that:
+Our team's hypothesis is these patterns and guidance will that:
 
 ## Naming your service (published)
 
@@ -34,14 +34,11 @@ Prototypes:
 
 ## Past versions
 
-Prototypes for each round of research with users
+Prototypes for each round of research with users. 
 
 Prototypes:
 
-- [Round 0](https://check-before-you-start.herokuapp.com/start-page)(versioned on 12 7 2016)
-- [Round 1](https://task-list-govuk-v1.herokuapp.com) (versioned on 14 11 2016)
-- [Round 2](https://task-list-govuk-v2.herokuapp.com) (versioned on 21 11 2016)
-- [Round 3](https://task-list-govuk-v3.herokuapp.com) (versioned on 2 12 2016)
-
-
-## Security
+- [Round 0](https://check-before-you-start.herokuapp.com/start-page)(versioned on 12 7 2016) tested with 12 users
+- [Round 1](https://task-list-govuk-v1.herokuapp.com) (versioned on 14 11 2016) tested with 9 users
+- [Round 2](https://task-list-govuk-v2.herokuapp.com) (versioned on 21 11 2016) tested with 6 users
+- [Round 3](https://task-list-govuk-v3.herokuapp.com) (versioned on 2 12 2016) tested with 9 users
