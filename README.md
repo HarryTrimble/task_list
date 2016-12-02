@@ -2,11 +2,11 @@
 
 When users ask this question to government, the answer now is...it depends. 
 
-Our team's hypothesis is these patterns and guidance will that:
+Our team's hypothesis is these patterns and guidance can change that:
 
 ## Naming your service (published)
 
-Help users find and understand your service
+Help users find and understand your service.
 
 Published guidance:
 
@@ -14,7 +14,7 @@ Published guidance:
 
 ## Check before you start (alpha)
 
-Help users understand whether they can and should use a service
+Help users understand whether they can and should use a service.
 
 Prototypes:
 
