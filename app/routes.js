@@ -29,7 +29,7 @@ router.post('/save_and_return/email', function (req, res) {
 
 router.use(function (req, res, next) {
 
- // Store common vars
+ // Store common vars in string
 
  res.locals.formData = "";
  res.locals.formQuery = "?";
@@ -56,12 +56,11 @@ router.get('/', function (req, res) {
 // Questions for childminders
 
 // Question for questions/country/index.html
-
 router.get('/questions/eligibility/age', function (req, res) {
 
   console.log("country");
 
-  // get the answer from the query string (eg. ?over18="yes")
+  // get the answer from the query string (eg. ?country="Scotland")
   var country = req.query.country;
 
   if (country == "Northern Ireland" ){
@@ -120,7 +119,7 @@ router.get('/questions/eligibility/criminal_history', function (req, res) {
 
   if (right_to_work == "no" ){
 
-    // if users does NOT have right to work in the UK
+    // if users is does NOT have rights to work in UK
     res.redirect("/questions/result" + res.locals.formQuery);
 
   } else {
@@ -138,7 +137,7 @@ router.get('/questions/will_you_be_paid', function (req, res) {
 
   console.log("criminal_history");
 
-  // get the answer from the query string (eg. ?over18="yes")
+  // get the answer from the query string (eg. ?criminal_history="yes")
   var criminal_history = req.query.criminal_history;
 
   if (criminal_history == "yes" ){
@@ -160,7 +159,7 @@ router.get('/questions/care_time_per_day', function (req, res) {
 
   console.log("will_you_be_paid");
 
-  // get the answer from the query string (eg. ?over18="yes")
+  // get the answer from the query string (eg. ?will_you_be_paid="no")
   var will_you_be_paid = req.query.will_you_be_paid;
 
   if (will_you_be_paid == "no" ){
@@ -182,7 +181,7 @@ router.get('/questions/related_to_child', function (req, res) {
 
   console.log("care_time_per_day");
 
-  // get the answer from the query string (eg. ?over18="yes")
+  // get the answer from the query string (eg. ?care_time_per_day="yes")
   var care_time_per_day = req.query.care_time_per_day;
 
   if (care_time_per_day == "less than two hours" ){
@@ -232,12 +231,11 @@ router.get('/questions/place_type', function (req, res) {
 
   if (child_age == "8 and older" && voluntarily_register==undefined ){
 
-    // if user IS related to child
+    // if user is will care for ONLY children aged 8 AND OVER
     res.redirect("/questions/result" + res.locals.formQuery);
 
   } else {
 
-    // if user is NOT related to child
     res.render('questions/place_type/index.html');
 
   }
@@ -250,46 +248,46 @@ router.get('/questions/food', function (req, res) {
 
   console.log("criminal_history");
 
-  // get the answer from the query string (eg. ?over18="yes")
+  // get the answer from the query string (eg. ?shared_home="yes")
   var shared_home = req.query.shared_home;
   var others_have_dbs = req.query.others_have_dbs;
   var how_many_others = req.query.how_many_others;
 
   if (shared_home == "yes" && others_have_dbs==undefined ){
 
-    // if user DOES have a criminal history
+    // if OTHERS have access to place of care
     res.redirect("/questions/shared_place/others_have_dbs" + res.locals.formQuery);
 
   } else if (shared_home == "yes" && others_have_dbs== "no" && how_many_others==undefined ){
 
-    // if user lives in WALES
+    // if others DON'T have dbs checks 
     res.redirect("/questions/shared_place/how_many_others" + res.locals.formQuery);
 
   } else if (shared_home == "yes" && others_have_dbs== "not sure" && how_many_others==undefined ){
 
-    // if user lives in WALES
+    // if others MIGHT NOT have dbs checks 
     res.redirect("/questions/shared_place/how_many_others" + res.locals.formQuery);
 
   } else {
 
-    // if user does NOT have criminal history
+    // if NO others have access to place of care
     res.render('questions/food/index.html');
 
   }
 
 });
 
-// check your answers for 'Maintain vehicles' section
+// Calculate total cost to pay
 router.get('/questions/result/cost', function (req, res) {
 
   console.log("calculate application costs");
 
   // get the answer from the query string (eg. ?over18="yes")
-  var uploaded_document = req.query.uploaded_document;
+  var calculate_cost = req.query.calculate_cost;
 
-  if (uploaded_document){
+  if (calculate_cost){
 
-    // if user IS related to child
+    // Not sure how to get rid of this
     res.redirect("/transport_goods/task_list/prove_money/check_your_answers" + res.locals.formQuery);
 
   } else {
@@ -318,7 +316,7 @@ router.get('/questions/result/cost', function (req, res) {
 
 });
 
-// check your answers for 'Maintain vehicles' section
+// calculate cost for others dbs checks if 
 router.get('/task_list/check_others_criminal_history', function (req, res) {
 
   console.log("state cost for check_others_criminal_history");
@@ -367,7 +365,7 @@ router.get('/questions/reason', function (req, res) {
 
 });
 
-// Add cost for 
+// Add cost for OTHERS criminal checks
 router.get('/task_list/check_others_criminal_history', function (req, res) {
 
   console.log("check your answers");
@@ -407,18 +405,18 @@ router.get('/driving/questions/eyes', function (req, res) {
 
   if (over16 == "no" ){
 
-    // if user is NOT 17 or over
+    // if user is NOT 16 or older
     res.redirect("/driving/questions/result" + res.locals.formQuery);
 
   } else if (over17 == "no" ){
 
-    // if user lives in WALES
+    // if user is NOT 17 or older
     res.redirect("/driving/questions/result" + res.locals.formQuery);
 
 
   } else {
 
-    // if users IS 18 or over
+    // if users IS 17 or older
     res.render('driving/questions/eyes/index.html');
 
   }
@@ -436,17 +434,17 @@ router.get('/driving/questions/insurance', function (req, res) {
 
   if (read_from_20_meters == "yes" && needs_glasses_or_contacts==undefined ){
 
-    // if user IS related to child
+    // if user CAN read number plate from 20 meets
     res.redirect("/driving/questions/eyes/glasses_contact_lenses" + res.locals.formQuery);
 
   } else if (read_from_20_meters == "no" ){
 
-    // if user lives in WALES
+    // if user CANNOT read number plate from 20 meets
     res.redirect("/driving/questions/result" + res.locals.formQuery);
 
   } else {
 
-    // if user is NOT related to child
+    // if user CAN read number plate from 20 meets
     res.render('driving/questions/insurance/index.html');
 
   }
@@ -463,12 +461,12 @@ router.get('/driving/questions/reason', function (req, res) {
 
   if ( driving_lessons ){
 
-    // if user is NOT 17 or over
+    // if user HAS checked eligibility, cost and time
     res.redirect("/driving/questions/check_your_answers" + res.locals.formQuery);
 
   } else {
 
-    // if users IS 18 or over
+    // if user HASN'T yet checked eligibility, cost and time
     res.render('driving/questions/reason/index.html');
 
   }
@@ -487,12 +485,12 @@ router.get('/bats/task_list/check_before_you_start/ecologist/past_applications',
 
   if (hired_ecologist == "no"){
 
-    // if user IS related to child
+    // if user HAS hired ecologist
     res.redirect("/bats/task_list/check_before_you_start/result" + res.locals.formQuery);
 
   } else {
 
-    // if user is NOT related to child
+    // if user has NOT hired ecologist
     res.render('bats/task_list/check_before_you_start/ecologist/past_applications/index.html');
 
   }
@@ -514,27 +512,27 @@ router.get('/bats/task_list', function (req, res) {
 
   if (own_occupy == "no" && has_owners_permission==undefined ){
 
-    // if user IS related to child
+    // if user does NOT own land
     res.redirect("/bats/task_list/check_before_you_start/land_ownership/has_owners_permission" + res.locals.formQuery);
 
   } else if (own_occupy == "no" && has_owners_permission== "no" ){
 
-    // if user lives in WALES
+    // if user does NOT own land and does NOT have permission from owner
     res.redirect("/bats/task_list/check_before_you_start/result" + res.locals.formQuery);
 
   } else if (impact_on_bats == "yes" ){
 
-    // if user lives in WALES
+    // if there WILL be impact on bats
     res.redirect("/bats/task_list/inspect_place_where_bats_live/result" + res.locals.formQuery);
 
   } else if (needs_others_licences == "yes" && licence_types==undefined ){
 
-      // if user lives in WALES
-      res.redirect("/bats/task_list/building_datails/permissions/types" + res.locals.formQuery);
+    // if user DOES need other licences. For example planning permission
+    res.redirect("/bats/task_list/building_datails/permissions/types" + res.locals.formQuery);
 
   } else {
 
-    // if user is NOT related to child
+    // return user to task list
     res.render('bats/task_list/index.html');
 
   }
@@ -552,12 +550,12 @@ router.get('/bats/task_list/inspect_place_where_bats_live/alternative', function
 
   if (visit_bat_place == "no"){
 
-    // if user IS related to child
+    // if ecologist has NOT visited place where bats are
     res.redirect("/bats/task_list/inspect_place_where_bats_live/result" + res.locals.formQuery);
 
   } else {
 
-    // if user is NOT related to child
+    // if ecologist HAS visited place where bats are
     res.render('bats/task_list/inspect_place_where_bats_live/alternative/index.html');
 
   }
@@ -574,12 +572,12 @@ router.get('/bats/task_list/inspect_place_where_bats_live/impact_on_bats', funct
 
   if (alternative == "yes"){
 
-    // if user IS related to child
+    // if there IS alternative to moving bats
     res.redirect("/bats/task_list/inspect_place_where_bats_live/result" + res.locals.formQuery);
 
   } else {
 
-    // if user is NOT related to child
+    // if there is NOT alternative to moving bats
     res.render('bats/task_list/inspect_place_where_bats_live/impact_on_bats/index.html');
 
   }
@@ -603,12 +601,12 @@ router.get('/bats/task_list/building_datails/category', function (req, res) {
 
   if (repairs_maintenance == "no" && roof_loft_extension == "no" && building_conservation == "no" && much_need_housing == "no" && give_reason==undefined){
 
-    // if user IS related to child
+    // if user has does NOT have common reason for doing the work
     res.redirect("/bats/task_list/building_datails/reason/give" + res.locals.formQuery);
 
   } else {
 
-    // if user is NOT related to child
+    // else
     res.render('bats/task_list/building_datails/category/index.html');
 
   }
@@ -625,12 +623,12 @@ router.get('/bats/task_list/get_references/referee_1/address', function (req, re
 
   if (known_ref_one == "no"){
 
-    // if user IS related to child
+    // if ecologist has NOT known referee one more than 3 years
     res.redirect("/bats/task_list/get_references/result" + res.locals.formQuery);
 
   } else {
 
-    // if user is NOT related to child
+    // if ecologist HAS known referee one more than 3 years
     res.render('bats/task_list/get_references/referee_1/address/index.html');
 
   }
@@ -647,12 +645,12 @@ router.get('/bats/task_list/get_references/referee_2/address', function (req, re
 
   if (known_ref_two == "no"){
 
-    // if user IS related to child
+    // if ecologist has NOT known referee two more than 3 years
     res.redirect("/bats/task_list/get_references/result" + res.locals.formQuery);
 
   } else {
 
-    // if user is NOT related to child
+    // if ecologist HAS known referee two more than 3 years
     res.render('bats/task_list/get_references/referee_2/address/index.html');
 
   }
@@ -671,12 +669,12 @@ router.get('/bats/task_list/check_before_you_start/ecologist', function (req, re
 
   if (hired_ecologist && past_applications && own_occupy ){
 
-    // if user IS related to child
+    // if user HAS done this section
     res.redirect("/bats/task_list/check_before_you_start/check_your_answers" + res.locals.formQuery);
 
   } else {
 
-    // if user is NOT related to child
+    // if user has NOT yet done this section
     res.render('bats/task_list/check_before_you_start/ecologist/index.html');
 
   }
@@ -695,12 +693,12 @@ router.get('/bats/task_list/inspect_place_where_bats_live/visit_bat_place', func
 
   if (visit_bat_place && alternative && impact_on_bats ){
 
-    // if user IS related to child
+    // if user HAS done this section
     res.redirect("/bats/task_list/inspect_place_where_bats_live/check_your_answers" + res.locals.formQuery);
 
   } else {
 
-    // if user is NOT related to child
+    // if user has NOT yet done this section
     res.render('bats/task_list/inspect_place_where_bats_live/visit_bat_place/index.html');
 
   }
@@ -723,12 +721,12 @@ router.get('/bats/task_list/bat_details/species', function (req, res) {
 
   if (bat_species && number_bats && number_breeding_sites && number_resting_sites && activity && method && method_statement ){
 
-    // if user IS related to child
+    // if user HAS done this section
     res.redirect("/bats/task_list/bat_details/check_your_answers" + res.locals.formQuery);
 
   } else {
 
-    // if user is NOT related to child
+    // if user has NOT yet done this section
     res.render('bats/task_list/bat_details/species/index.html');
 
   }
@@ -746,19 +744,19 @@ router.get('/bats/task_list/building_datails/address', function (req, res) {
 
   if (category && needs_others_licences ){
 
-    // if user IS related to child
+    // if user HAS done this section
     res.redirect("/bats/task_list/building_datails/check_your_answers" + res.locals.formQuery);
 
   } else {
 
-    // if user is NOT related to child
+    // if user has NOT yet done this section
     res.render('bats/task_list/building_datails/address/index.html');
 
   }
 
 });
 
-// check your answers for 'Describe your building project' section
+// check your answers for 'Contact details' section
 router.get('/bats/task_list/contact_details', function (req, res) {
 
   console.log("known_ref_two");
@@ -771,19 +769,19 @@ router.get('/bats/task_list/contact_details', function (req, res) {
 
   if (applicant_name && user_type && ecologist_name && who_should_be_contacted ){
 
-    // if user IS related to child
+    // if user HAS done this section
     res.redirect("/bats/task_list/contact_details/check_your_answers" + res.locals.formQuery);
 
   } else {
 
-    // if user is NOT related to child
+    // if user has NOT yet done this section
     res.render('bats/task_list/contact_details/index.html');
 
   }
 
 });
 
-// check your answers for 'Describe your building project' section
+// check your answers for 'Get refences' section
 router.get('/bats/task_list/get_references/experience', function (req, res) {
 
   console.log("known_ref_two");
@@ -794,12 +792,12 @@ router.get('/bats/task_list/get_references/experience', function (req, res) {
 
   if (ecologist_education && ecologist_licence ){
 
-    // if user IS related to child
+    // if user HAS done this section
     res.redirect("/bats/task_list/get_references/check_your_answers" + res.locals.formQuery);
 
   } else {
 
-    // if user is NOT related to child
+    // if user has NOT yet done this section
     res.render('bats/task_list/get_references/experience/index.html');
 
   }
@@ -819,24 +817,24 @@ router.get('/transport_goods/task_list/check_before_you_start/how_many_vehicles'
 
   if (weight_empty == "less than 1,525 kg" && weight_loaded==undefined ){
 
-    // if user IS related to child
+    // if vehicles are TOO LIGHT when empty for licence
     res.redirect("/transport_goods/task_list/check_before_you_start/weight/loaded" + res.locals.formQuery);
 
   } else if (weight_empty == "less than 1,525 kg" && weight_loaded== "less than 3,5000 kg" ){
 
-    // if user lives in WALES
+    // if vehicles are TOO LIGHT when empty and loaded for licence
     res.redirect("/transport_goods/task_list/check_before_you_start/result" + res.locals.formQuery);
 
   } else {
 
-    // if user is NOT related to child
+    // if vehicles are HEAVY ENOUGH when empty or loaded for licence
     res.render('transport_goods/task_list/check_before_you_start/how_many_vehicles/index.html');
 
   }
 
 });
 
-// check your answers for 'Describe your building project' section
+// question in /transport_goods/task_list/check_before_you_start/exempt_vehicles
 router.get('/transport_goods/task_list/check_before_you_start/carrying_passengers', function (req, res) {
 
   console.log("exempt_vehicles");
@@ -846,19 +844,19 @@ router.get('/transport_goods/task_list/check_before_you_start/carrying_passenger
 
   if (exempt_vehicles == "yes" ){
 
-    // if user IS related to child
+    // if user WILL be operating vehicles exempt from this licence. For example a snowplough
     res.redirect("/transport_goods/task_list/check_before_you_start/result/" + res.locals.formQuery);
 
   } else {
 
-    // if user is NOT related to child
+    // if user will NOT be operating vehicles exempt from this licence
     res.render('transport_goods/task_list/check_before_you_start/carrying_passengers/index.html');
 
   }
 
 });
 
-// check your answers for 'Describe your building project' section
+// question in /transport_goods/task_list/check_before_you_start/carrying_passengers
 router.get('/transport_goods/task_list/check_before_you_start/trade_plates', function (req, res) {
 
   console.log("carrying_passengers");
@@ -868,19 +866,19 @@ router.get('/transport_goods/task_list/check_before_you_start/trade_plates', fun
 
   if (carrying_passengers == "yes" ){
 
-    // if user IS related to child
+    // if vehicles WILL be carrying passengers
     res.redirect("/transport_goods/task_list/check_before_you_start/result" + res.locals.formQuery);
 
   } else {
 
-    // if user is NOT related to child
+    // if vehicles will NOT be carrying passengers
     res.render('transport_goods/task_list/check_before_you_start/trade_plates/index.html');
 
   }
 
 });
 
-// check your answers for 'Describe your building project' section
+// question in /transport_goods/task_list/check_before_you_start/trade_plates
 router.get('/transport_goods/task_list/check_before_you_start/short_distance/less_than_6_miles_a_week', function (req, res) {
 
   console.log("trade_plates");
@@ -890,19 +888,19 @@ router.get('/transport_goods/task_list/check_before_you_start/short_distance/les
 
   if (trade_plates == "yes" ){
 
-    // if user IS related to child
+    // if vehicle WILL have trade plates
     res.redirect("/transport_goods/task_list/check_before_you_start/result" + res.locals.formQuery);
 
   } else {
 
-    // if user is NOT related to child
+    // if vehicle will NOT have trade plates
     res.render('transport_goods/task_list/check_before_you_start/short_distance/less_than_6_miles_a_week/index.html');
 
   }
 
 });
 
-// check your answers for 'Describe your building project' section
+// questions (3) in /transport_goods/task_list/check_before_you_start/short_distance
 router.get('/transport_goods/task_list/check_before_you_start/licence_type/just_your_goods', function (req, res) {
 
   console.log("short_distance");
@@ -914,34 +912,34 @@ router.get('/transport_goods/task_list/check_before_you_start/licence_type/just_
 
   if (six_miles_a_week == "yes" && digging_demolition==undefined && same_owner==undefined ){
 
-    // if user IS related to child
+    // if vehicles ARE only for digging
     res.redirect("/transport_goods/task_list/check_before_you_start/short_distance/digging_demolition" + res.locals.formQuery);
 
   } else if (six_miles_a_week == "yes" && digging_demolition == "yes" && same_owner==undefined ){
 
-    // if user lives in WALES
+    // Then user does NOT need licence
     res.redirect("/transport_goods/task_list/check_before_you_start/result" + res.locals.formQuery);
 
   } else if (six_miles_a_week == "yes" && digging_demolition == "no" && same_owner==undefined ){
 
-    // if user lives in WALES
+    // if vehicles will driven LESS than 6 miles a week
     res.redirect("/transport_goods/task_list/check_before_you_start/short_distance/same_owner" + res.locals.formQuery);
 
   } else if (six_miles_a_week == "yes" && digging_demolition == "no" && same_owner == "yes" ){
 
-    // if user lives in WALES
+    // Then user does NOT need licence
     res.redirect("/transport_goods/task_list/check_before_you_start/result" + res.locals.formQuery);
 
   } else {
 
-    // if user is NOT related to child
+    // Then user DOES need licence
     res.render('transport_goods/task_list/check_before_you_start/licence_type/just_your_goods/index.html');
 
   }
 
 });
 
-// type of licence: standard or international
+// qustions (2) for /transport_goods/task_list/check_before_you_start/licence
 router.get('/transport_goods/task_list/check_before_you_start/transport_manager', function (req, res) {
 
   console.log("just_your_goods");
@@ -952,19 +950,19 @@ router.get('/transport_goods/task_list/check_before_you_start/transport_manager'
 
   if (just_your_goods == "no" && outside_uk ==undefined ){
 
-    // if user IS related to child
+    // user needs INTERNATIONAL licence
     res.redirect("/transport_goods/task_list/check_before_you_start/licence_type/outside_uk" + res.locals.formQuery);
 
   } else {
 
-    // if user is NOT related to child
+    // user needs STANDARD licence
     res.render('transport_goods/task_list/check_before_you_start/transport_manager/index.html');
 
   }
 
 });
 
-// check your answers for 'Check before you start' section
+// calculate licence cost in /transport_goods/task_list/check_before_you_start/result/cost
 router.get('/transport_goods/task_list/check_before_you_start/result/cost', function (req, res) {
 
   console.log("application_cost");
@@ -994,22 +992,22 @@ router.get('/transport_goods/task_list/check_before_you_start/result/cost', func
 
 });
 
-// check your answers for 'Check before you start' section
+// check your answers for 'Check eligibility, cost and time' section
 router.get('/transport_goods/task_list/check_before_you_start/weight/empty', function (req, res) {
 
   console.log("check_your_answers");
 
-  // get the answer from the query string (eg. ?over18="yes")
+  // get the answer from the query string (eg. ?transport_manager="yes")
   var transport_manager = req.query.transport_manager;
 
   if (transport_manager){
 
-    // if user IS related to child
+    // if user HAS done this section
     res.redirect("/transport_goods/task_list/check_before_you_start/check_your_answers" + res.locals.formQuery);
 
   } else {
 
-    // if user is NOT related to child
+    // if user has NOT yet done this section
     res.render('transport_goods/task_list/check_before_you_start/weight/empty/index.html');
 
   }
@@ -1026,19 +1024,19 @@ router.get('/transport_goods/task_list/read_rules', function (req, res) {
 
   if (read_rules == "yes" ){
 
-    // if user IS related to child
-    res.redirect("/transport_goods/task_list/read_rules/check_your_answers" + res.locals.formQuery);
+  // if user HAS done this section
+  res.redirect("/transport_goods/task_list/read_rules/check_your_answers" + res.locals.formQuery);
 
   } else {
 
-    // if user is NOT related to child
+    // if user has NOT yet done this section
     res.render('transport_goods/task_list/read_rules/index.html');
 
   }
 
 });
 
-// check your answers for 'Read rules' section
+// check your answers for 'Become a transport manager' section
 router.get('/transport_goods/task_list/transport_manager/check_your_answers', function (req, res) {
 
   console.log("check_your_answers");
@@ -1138,8 +1136,6 @@ router.get('/transport_goods/task_list/give_public_notice/reason', function (req
   }
 
 });
-
-// fix Check your answers for 'Give public notice' for when 'become transport manager'
 
 // questions for /transport_goods/task_list/describe_vehicles/has_vehicles_already
 router.get('/transport_goods/task_list/describe_vehicles/reg_number_weight', function (req, res) {
