@@ -283,6 +283,22 @@
           {% endif %}
         </td>
       </tr>
+      <!-- Get premises inspected -->
+      <tr id="prepare_home">
+        <td class="task">
+          <a href="/task_list/prepare_home{{formQuery}}">
+
+            <span class="task-name"> Prepare home</span>
+          </a>
+        </td>
+        <td class="numeric" id="task-status">          
+          {% if data.prepare_home=="complete" %}
+            {% include "includes/task_status_complete.html" %}
+          {% else %}
+            {% include "includes/task_status_not_started.html" %}
+          {% endif %}
+        </td>
+      </tr>
     </tbody>
   </table>
 
@@ -316,23 +332,6 @@
         </td>
         <td class="numeric" id="task-status">          
           {% if data.get_certificate=="complete" %}
-            {% include "includes/task_status_complete.html" %}
-          {% else %}
-            {% include "includes/task_status_not_started.html" %}
-          {% endif %}
-        </td>
-      </tr>
-
-      <!-- Get premises inspected -->
-      <tr id="prepare_home">
-        <td class="task">
-          <a href="/task_list/prepare_home{{formQuery}}">
-
-            <span class="task-name"> Prepare home</span>
-          </a>
-        </td>
-        <td class="numeric" id="task-status">          
-          {% if data.prepare_home=="complete" %}
             {% include "includes/task_status_complete.html" %}
           {% else %}
             {% include "includes/task_status_not_started.html" %}
