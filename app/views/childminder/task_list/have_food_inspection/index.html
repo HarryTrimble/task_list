@@ -1,0 +1,55 @@
+{% extends "layout.html" %} {% block page_title %} Get premises inspected {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="breadcrumbs">
+    <ol>
+      <li>
+        <a href="/childminder/task_list/{{ formQuery | safe }}">Become a childminder</a>
+      </li>
+      <li>
+        Preparing food
+      </li> 
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/childminder/task_list#have_food_inspection" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          Have food inspection
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            Prepare for food inspection
+          </legend>
+
+          <p id="reason_for_task">Your local council may inspect where you care for children, to check food is being prepared and stored safely.</p>
+
+          <p>Tasks to have food inspection:</p>
+
+          <ol class="list list-number">
+            <li><a href="https://www.food.gov.uk/business-industry/caterers/startingup/childminders">read how to prepare and store food safely</a></li>
+            <li>prepare for potential inspection</li>
+          </ol>
+
+          <input type="hidden" name="have_food_inspection" value="complete">
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Yes – my home is ready for food inspection" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

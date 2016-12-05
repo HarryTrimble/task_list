@@ -1,0 +1,65 @@
+{% extends "layout.html" %} {% block page_title %} Check others criminal history {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="breadcrumbs">
+    <ol>
+      <li>
+        <a href="/childminder/task_list/{{ formQuery | safe }}">Become a childminder</a>
+      </li>
+      <li>
+        Check others criminal history
+      </li> 
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/childminder/task_list#check_other_criminal_history" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          Check others criminal history
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            Check criminal history
+          </legend>
+
+          <p class="cost-and-time">
+            Cost: <span class="bold">£{{cost_of_other_criminal_checks}}</span><br>
+            Time: <span class="bold">2–3 months</span>
+          </p>
+
+          <p id="reason_for_task">Other adults who have access to where you will look after children, they will need criminal history check.</p>
+
+          <p>For example if you plan to care for children in your home and you have a partner, they will also need a DBS check.</p>
+
+          <p>Tasks to check others criminal history:</p>
+
+          <ol class="list list-number">
+            <li><a href="https://www.gov.uk/disclosure-barring-service-check/overview">read DBS guidance</a></li>
+            <li><a href="https://www.gov.uk/disclosure-barring-service-check/documents-the-applicant-must-provide-">find identity documents</a></li>
+            <li><a href="http://ofsteddbsapplication.co.uk/Step-One.aspx">get DBS check through Ofsted</a></li>
+            <li>pay for DBS check (£44)</li>
+            <li>recieve DBS certificate</li>
+          </ol>
+
+          <input type="hidden" name="check_other_criminal_history" value="complete">
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Yes – I have got others' criminal check" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

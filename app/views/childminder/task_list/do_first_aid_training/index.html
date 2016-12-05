@@ -1,0 +1,63 @@
+{% extends "layout.html" %} {% block page_title %} Do first aid training {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="breadcrumbs">
+    <ol>
+      <li>
+        <a href="/childminder/task_list/{{ formQuery | safe }}">Become a childminder</a>
+      </li>
+      <li>
+        Do paediatric first aid training
+      </li> 
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/childminder/task_list#do_first_aid_training" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          Do paediatric first aid training
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            Do paediatric first aid training
+          </legend>
+
+          <p class="cost-and-time">
+            Cost: <span class="bold">varies by provider</span><br>
+            Time: <span class="bold">varies by provider</span>
+          </p>
+
+
+          <p id="reason_for_task">Looking after children 5 and younger, means you need to do a 12-hour first aid training course.</p>
+
+          <p>Tasks to do first aid training:</p>
+
+          <ol class="list list-number">
+            <li>find acredited training provider</li>
+            <li>book and pay for training</li>
+            <li>do training</li>
+            <li>recieve first aid certificate</li>
+          </ol>
+
+          <input type="hidden" name="do_first_aid_training" value="complete">
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Yes – I have done fist aid training" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

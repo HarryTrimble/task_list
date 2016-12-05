@@ -1,0 +1,67 @@
+{% extends "layout.html" %} {% block page_title %} Get insured {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="breadcrumbs">
+    <ol>
+      <li>
+        <a href="/childminder/task_list/{{ formQuery | safe }}">Become a childminder</a>
+      </li>
+      <li>
+        Get insured
+      </li> 
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/childminder/task_list#get_insured" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          Get insured
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            Get insured
+          </legend>
+
+          <p id="reason_for_task">Being a childminder requires you to be insured.</p>
+
+          <div class="govuk-box-highlight" id="type-of-thing">
+            <p>
+              The type of insurance you need is: <br>
+            <h1 class="bold-large">public liability insurance</h1>
+            <p>
+          </div>
+
+          <p class="cost-and-time">
+            Cost: <span class="bold">varies by provider</span>
+          </p>
+
+          <p>To get insured:</p>
+
+          <ol class="list list-number">
+            <li>choose insurance provider</li>
+            <li>pay for insurance</li>
+            <li>get proof of insurance</li>
+          </ol>
+
+          <input type="hidden" name="get_insured" value="complete">
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Yes – I am insured" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends "layout.html" %} {% block page_title %} Register as self employed {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="breadcrumbs">
+    <ol>
+      <li>
+        <a href="/childminder/task_list/{{ formQuery | safe }}">Become a childminder</a>
+      </li>
+      <li>
+        Register as self employed
+      </li> 
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/childminder/task_list#register_self_employed" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          Register as self employed
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            Register as self employed
+          </legend>
+
+          <p id="reason_for_task">As you'll be working for yourself, you will need to pay on the money you earn.</p>
+
+          <p>Tasks to register as self employed:</p>
+
+          <ol class="list list-number">
+<li><a href="https://www.gov.uk/new-business-register-for-tax">register as self-employed</a></li>
+<li>keep records of your business income and outgoings</li>
+<li><a href="https://www.gov.uk/self-assessment-tax-returns/who-must-send-a-tax-return">pay your tax each year</a></li>
+          </ol>
+
+          <input type="hidden" name="register_self_employed" value="complete">
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Yes – I am registered for tax" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

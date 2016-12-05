@@ -1,0 +1,59 @@
+{% extends "layout.html" %} {% block page_title %} Prepare home {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="breadcrumbs">
+    <ol>
+      <li>
+        <a href="/childminder/task_list/{{ formQuery | safe }}">Become a childminder</a>
+      </li>
+      <li>
+        Register as self employed
+      </li> 
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/childminder/task_list#prepare_home" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          Prepare home
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            Prepare home
+          </legend>
+
+          <p id="reason_for_task">An inspector from Ofsted will come to the place you work, to check they are suitable to care for children in.</p>
+
+          <p>The inspection will include an interview.</p>
+
+          <p>Tasks to get premises inspected:</p>
+
+          <ol class="list list-number">
+            <li><a href="https://www.gov.uk/government/publications/become-a-registered-early-years-or-childcare-provider-in-england">read how to prepare your premise for inspection</a></li>
+            <li>prepare your premises for inspection</li>
+            <li>get inspected</li>
+            <li>recieve certificate of registration</li>
+          </ol>
+
+          <input type="hidden" name="prepare_home" value="complete">
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Yes – I have prepared my home" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends "layout.html" %} {% block page_title %} Prove identity {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="breadcrumbs">
+    <ol>
+      <li>
+        <a href="/childminder/task_list/{{ formQuery | safe }}">Become a childminder</a>
+      </li>
+      <li>
+        Prove identity
+      </li> 
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/childminder/task_list#prove_identity" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          Prove identity
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            Prove identity
+          </legend>
+
+          <p class="cost-and-time">
+            Cost: <span class="bold">free</span><br>
+            Time: <span class="bold">1-3 days</span>
+          </p>
+
+          <p id="reason_for_task">
+            We need to verify your identity to apply to become a childminder
+          </p>
+
+          <p id="reason_for_task">
+            You can prove your identity using GOV.UK Verify. 
+          </p>
+
+          <p>1. have someting to prove you identity:</p>
+
+          <ol class="list list-bullet">
+            <li>UK passport</li>
+            <li>photocard driving licence</li>
+            <li>bank statement</li>
+          </ol>
+
+          <p>2. <a href="https://www.gov.uk/government/publications/introducing-govuk-verify/introducing-govuk-verify">create an GOV.UK Verify account</a></p>
+
+          <input type="hidden" name="prove_identity" value="complete">
+
+        </fieldset>
+
+        <br>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Yes – I have proven my identity" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

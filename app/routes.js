@@ -56,7 +56,7 @@ router.get('/', function (req, res) {
 // Questions for childminders
 
 // Question for questions/country/index.html
-router.get('/questions/eligibility/age', function (req, res) {
+router.get('/childminder/questions/eligibility/age', function (req, res) {
 
   console.log("country");
 
@@ -66,29 +66,29 @@ router.get('/questions/eligibility/age', function (req, res) {
   if (country == "Northern Ireland" ){
 
     // if user lives in NORTHERN IRELAND
-    res.redirect("/questions/result" + res.locals.formQuery);
+    res.redirect("/childminder/questions/result" + res.locals.formQuery);
 
   } else if (country == "Scotland" ){
 
     // if user lives in SCOTLAND
-    res.redirect("/questions/result" + res.locals.formQuery);
+    res.redirect("/childminder/questions/result" + res.locals.formQuery);
 
   } else if (country == "Wales" ){
 
     // if user lives in WALES
-    res.redirect("/questions/result" + res.locals.formQuery);
+    res.redirect("/childminder/questions/result" + res.locals.formQuery);
 
   } else {
 
     // if users lives in ENGLAND
-    res.render('questions/eligibility/age/index.html');
+    res.render('childminder/questions/eligibility/age/index.html');
 
   }
 
 });
 
 // Question for questions/eligibility/index.html
-router.get('/questions/eligibility/right_to_work_in_uk', function (req, res) {
+router.get('/childminder/questions/eligibility/right_to_work_in_uk', function (req, res) {
 
   console.log("over18");
 
@@ -98,19 +98,19 @@ router.get('/questions/eligibility/right_to_work_in_uk', function (req, res) {
   if (over18 == "no" ){
 
     // if users is NOT 18 or over
-    res.redirect("/questions/result" + res.locals.formQuery);
+    res.redirect("/childminder/questions/result" + res.locals.formQuery);
 
   } else {
 
     // if users IS 18 or over
-    res.render('questions/eligibility/right_to_work_in_uk/index.html');
+    res.render('childminder/questions/eligibility/right_to_work_in_uk/index.html');
 
   }
 
 });
 
 // Question for questions/eligibility/right_to_work_in_uk/index.html
-router.get('/questions/eligibility/criminal_history', function (req, res) {
+router.get('/childminder/questions/eligibility/criminal_history', function (req, res) {
 
   console.log("right_to_work");
 
@@ -120,12 +120,12 @@ router.get('/questions/eligibility/criminal_history', function (req, res) {
   if (right_to_work == "no" ){
 
     // if users is does NOT have rights to work in UK
-    res.redirect("/questions/result" + res.locals.formQuery);
+    res.redirect("/childminder/questions/result" + res.locals.formQuery);
 
   } else {
 
     // if users is DOES have right to work in the UK
-    res.render('questions/eligibility/criminal_history/index.html');
+    res.render('childminder/questions/eligibility/criminal_history/index.html');
 
   }
 
@@ -133,7 +133,7 @@ router.get('/questions/eligibility/criminal_history', function (req, res) {
 
 
 // Question for questions/eligibility/criminal_history/index.html
-router.get('/questions/will_you_be_paid', function (req, res) {
+router.get('/childminder/questions/will_you_be_paid', function (req, res) {
 
   console.log("criminal_history");
 
@@ -143,19 +143,19 @@ router.get('/questions/will_you_be_paid', function (req, res) {
   if (criminal_history == "yes" ){
 
     // if user DOES have a criminal history
-    res.redirect("/questions/result" + res.locals.formQuery);
+    res.redirect("/childminder/questions/result" + res.locals.formQuery);
 
   } else {
 
     // if user does NOT have criminal history
-    res.render('questions/will_you_be_paid/index.html');
+    res.render('childminder/questions/will_you_be_paid/index.html');
 
   }
 
 });
 
 // Question for questions/will_you_be_paid/index.html
-router.get('/questions/care_time_per_day', function (req, res) {
+router.get('/childminder/questions/care_time_per_day', function (req, res) {
 
   console.log("will_you_be_paid");
 
@@ -165,19 +165,19 @@ router.get('/questions/care_time_per_day', function (req, res) {
   if (will_you_be_paid == "no" ){
 
     // if user will NOT be paid
-    res.redirect("/questions/result" + res.locals.formQuery);
+    res.redirect("/childminder/questions/result" + res.locals.formQuery);
 
   } else {
 
     // if user WILL be paid
-    res.render('questions/care_time_per_day/index.html');
+    res.render('childminder/questions/care_time_per_day/index.html');
 
   }
 
 });
 
 // Question for questions/care_time_per_day/index.html
-router.get('/questions/related_to_child', function (req, res) {
+router.get('/childminder/questions/related_to_child', function (req, res) {
 
   console.log("care_time_per_day");
 
@@ -187,19 +187,19 @@ router.get('/questions/related_to_child', function (req, res) {
   if (care_time_per_day == "less than two hours" ){
 
     // if user will work LESS than two hours
-    res.redirect("/questions/result" + res.locals.formQuery);
+    res.redirect("/childminder/questions/result" + res.locals.formQuery);
 
   } else {
 
     // if user will work MORE than two hours
-    res.render('questions/related_to_child/index.html');
+    res.render('childminder/questions/related_to_child/index.html');
 
   }
 
 });
 
 // Question for questions/related_to_child/index.html
-router.get('/questions/child_age', function (req, res) {
+router.get('/childminder/questions/child_age', function (req, res) {
 
   console.log("related_to_child");
 
@@ -209,19 +209,19 @@ router.get('/questions/child_age', function (req, res) {
   if (related_to_child == "no" ){
 
     // if user IS related to child
-    res.redirect("/questions/result" + res.locals.formQuery);
+    res.redirect("/childminder/questions/result" + res.locals.formQuery);
 
   } else {
 
     // if user is NOT related to child
-    res.render('questions/child_age/index.html');
+    res.render('childminder/questions/child_age/index.html');
 
   }
 
 });
 
 // Question for questions/child_age/index.html
-router.get('/questions/place_type', function (req, res) {
+router.get('/childminder/questions/place_type', function (req, res) {
 
   console.log("child_age");
 
@@ -232,11 +232,11 @@ router.get('/questions/place_type', function (req, res) {
   if (child_age == "8 and older" && voluntarily_register==undefined ){
 
     // if user is will care for ONLY children aged 8 AND OVER
-    res.redirect("/questions/result" + res.locals.formQuery);
+    res.redirect("/childminder/questions/result" + res.locals.formQuery);
 
   } else {
 
-    res.render('questions/place_type/index.html');
+    res.render('childminder/questions/place_type/index.html');
 
   }
 
@@ -244,7 +244,7 @@ router.get('/questions/place_type', function (req, res) {
 
 
 // Question for questions/eligibility/criminal_history/index.html
-router.get('/questions/food', function (req, res) {
+router.get('/childminder/questions/food', function (req, res) {
 
   console.log("criminal_history");
 
@@ -256,29 +256,29 @@ router.get('/questions/food', function (req, res) {
   if (shared_home == "yes" && others_have_dbs==undefined ){
 
     // if OTHERS have access to place of care
-    res.redirect("/questions/shared_place/others_have_dbs" + res.locals.formQuery);
+    res.redirect("/childminder/questions/shared_place/others_have_dbs" + res.locals.formQuery);
 
   } else if (shared_home == "yes" && others_have_dbs== "no" && how_many_others==undefined ){
 
     // if others DON'T have dbs checks 
-    res.redirect("/questions/shared_place/how_many_others" + res.locals.formQuery);
+    res.redirect("/childminder/questions/shared_place/how_many_others" + res.locals.formQuery);
 
   } else if (shared_home == "yes" && others_have_dbs== "not sure" && how_many_others==undefined ){
 
     // if others MIGHT NOT have dbs checks 
-    res.redirect("/questions/shared_place/how_many_others" + res.locals.formQuery);
+    res.redirect("/childminder/questions/shared_place/how_many_others" + res.locals.formQuery);
 
   } else {
 
     // if NO others have access to place of care
-    res.render('questions/food/index.html');
+    res.render('childminder/questions/food/index.html');
 
   }
 
 });
 
 // Calculate total cost to pay
-router.get('/questions/result/cost', function (req, res) {
+router.get('/childminder/questions/result/cost', function (req, res) {
 
   console.log("calculate application costs");
 
@@ -288,7 +288,7 @@ router.get('/questions/result/cost', function (req, res) {
   if (calculate_cost){
 
     // Not sure how to get rid of this
-    res.redirect("/transport_goods/task_list/prove_money/check_your_answers" + res.locals.formQuery);
+    res.redirect("/childminder/transport_goods/task_list/prove_money/check_your_answers" + res.locals.formQuery);
 
   } else {
 
@@ -310,14 +310,14 @@ router.get('/questions/result/cost', function (req, res) {
              var total_cost_3 = 44 + 103 }
 
     // if user is NOT related to child
-    res.render('questions/result/cost/index.html', {cost_of_other_criminal_checks : cost_of_other_criminal_checks, total_cost_1 : total_cost_1, total_cost_2 : total_cost_2, total_cost_3 : total_cost_3});
+    res.render('childminder/questions/result/cost/index.html', {cost_of_other_criminal_checks : cost_of_other_criminal_checks, total_cost_1 : total_cost_1, total_cost_2 : total_cost_2, total_cost_3 : total_cost_3});
 
   }
 
 });
 
 // calculate cost for others dbs checks if 
-router.get('/task_list/check_others_criminal_history', function (req, res) {
+router.get('/childminder/task_list/check_others_criminal_history', function (req, res) {
 
   console.log("state cost for check_others_criminal_history");
 
@@ -327,7 +327,7 @@ router.get('/task_list/check_others_criminal_history', function (req, res) {
   if (uploaded_document){
 
     // if user IS related to child
-    res.redirect("/transport_goods/task_list/prove_money/check_your_answers" + res.locals.formQuery);
+    res.redirect("/childminder/transport_goods/task_list/prove_money/check_your_answers" + res.locals.formQuery);
 
   } else {
 
@@ -336,14 +336,14 @@ router.get('/task_list/check_others_criminal_history', function (req, res) {
     cost_of_other_criminal_checks = cost_of_other_criminal_checks.toString().replace(/,/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
     // if user is NOT related to child
-    res.render('task_list/check_others_criminal_history/index.html', {cost_of_other_criminal_checks : cost_of_other_criminal_checks});
+    res.render('childminder/task_list/check_others_criminal_history/index.html', {cost_of_other_criminal_checks : cost_of_other_criminal_checks});
 
   }
 
 });
 
 // Check your answers for 'Check eligibility, cost and time'
-router.get('/questions/reason', function (req, res) {
+router.get('/childminder/questions/reason', function (req, res) {
 
   console.log("check your answers");
 
@@ -354,19 +354,19 @@ router.get('/questions/reason', function (req, res) {
 
 
     // if user IS related to child
-    res.redirect("/questions/check_your_answers" + res.locals.formQuery);
+    res.redirect("/childminder/questions/check_your_answers" + res.locals.formQuery);
 
   } else {
 
     // if user is NOT related to child
-    res.render('questions/reason/index.html');
+    res.render('childminder/questions/reason/index.html');
 
   }
 
 });
 
 // Add cost for OTHERS criminal checks
-router.get('/task_list/check_others_criminal_history', function (req, res) {
+router.get('/childminder/task_list/check_others_criminal_history', function (req, res) {
 
   console.log("check your answers");
 
@@ -377,14 +377,14 @@ router.get('/task_list/check_others_criminal_history', function (req, res) {
 
 
     // if user IS related to child
-    res.redirect("/questions/check_your_answers" + res.locals.formQuery);
+    res.redirect("/childminder/questions/check_your_answers" + res.locals.formQuery);
 
   } else {
 
   var cost_of_other_criminal_checks = (req.query.how_many_others) * 44
 
     // if user is NOT related to child
-    res.render('task_list/check_others_criminal_history/index.html', {cost_of_other_criminal_checks : cost_of_other_criminal_checks});
+    res.render('childminder/task_list/check_others_criminal_history/index.html', {cost_of_other_criminal_checks : cost_of_other_criminal_checks});
 
   }
 
@@ -1324,7 +1324,7 @@ router.get('/transport_goods/task_list/convictions_penalties/reason', function (
 // Become a childminder
 
 // questions for /transport_goods/save_and_return/want_to
-router.get('/save_and_return/email', function (req, res) {
+router.get('/childminder/save_and_return/email', function (req, res) {
 
   console.log("save and return");
 
@@ -1334,12 +1334,12 @@ router.get('/save_and_return/email', function (req, res) {
   if (wants_save_and_return == "no" ){
 
     // if user IS related to child
-    res.redirect("/task_list/" + res.locals.formQuery);
+    res.redirect("/childminder/task_list/" + res.locals.formQuery);
 
   } else {
 
     // if user is NOT related to child
-    res.render('save_and_return/email/index.html');
+    res.render('childminder/save_and_return/email/index.html');
 
   }
 

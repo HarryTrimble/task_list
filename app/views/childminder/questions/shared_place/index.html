@@ -1,0 +1,57 @@
+{% extends "layout.html" %} {% block page_title %} Example - Forms {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/childminder/questions/food" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          Does anyone else 16 or older have access to the place where you'll look after children?
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            Does anyone else 16 or older have access to the place where you'll look after children?
+          </legend>
+
+            <!-- Waiting time if in child's or carers home -->
+          {% if data.place_type=="carers_home" or
+                data.place_type=="carers_home,childs_home" or
+                data.place_type=="carers_home,childs_home,other" or 
+                data.place_type=="carers_home,other"
+          %}
+
+            <p>This includes partners and children 16 or older you live with.</p>
+
+          {% endif %}
+
+          <div class="form-group">
+            <label for="shared_home-1" class="block-label">
+              <input type="radio" id="shared_home-1" name="shared_home" value="yes">
+              Yes
+            </label>
+
+            <label for="shared_home-2" class="block-label">
+              <input type="radio" id="shared_home-2" name="shared_home" value="no">
+              No
+            </label>
+
+          </div>
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}
