@@ -1,0 +1,77 @@
+{% extends "layout.html" %} {% block page_title %} Learn childminding rules {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="breadcrumbs">
+    <ol>
+      <li>
+        <a href="/childminder/task_list/{{ formQuery | safe }}">Become a childminder</a>
+      </li>
+      <li>
+        Learn childminding rules
+      </li> 
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/childminder/task_list#after_you_qualify" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          Learn childminding rules
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            Learn childminding rules
+          </legend>
+
+          <p>Rules for registered childminders.</p>
+
+          <h3 class="heading-medium">You must:</h3>
+
+          <ul class="list list-bullet">
+            <li>pay an <a href="https://www.gov.uk/pay-ofsted-registration-annual-fee">annual registration fee</a></li>
+            <li>pay an annual criminal check fee</li>
+            <li>keep records of children under your care</li>
+            <li><a href="https://ofstedonline.ofsted.gov.uk/ofsted/Ofsted_Early_Years_Notification.ofml">report accidents and incidents</a></li>
+            <li>report changes to premises, contact, staff and childcare hours</li>
+            <li>prepare for <a href="https://www.gov.uk/ofsted-inspection-childcare-provider">regular inspections</a></li>
+          </ul>
+
+          <h3 class="heading-medium">You can't:</h3>
+
+          <ul class="list list-bullet">
+            <li>live in the same place as someone else who is disqualified as a childminder</li>
+            <li class="">look after more than 5 children at a time, without another registered childminder there</li>
+          </ul>
+
+          <h3 class="heading-medium">You can:</h3>
+
+          <ul class="list list-bullet">
+            <li>have pets where you care for children</li>
+            {% if data.number_of_children | int > 5 %}
+              <li>look after up 4 children.</li>
+            {% endif %}
+          </ul>
+
+          <input type="hidden" name="read_rules" value="complete">
+
+        </fieldset>
+
+        <br>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Yes – I have read and undetstood rules" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}
