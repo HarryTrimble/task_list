@@ -1,4 +1,4 @@
-{% extends "bats/layout.html" %}
+{% extends "transport_goods/layout.html" %}
 
 {% block page_title %}
   Confirmation page example
@@ -7,6 +7,7 @@
 {% block content %}
 
 <main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
 
   <div class="grid-row">
     <div class="column-two-thirds">
@@ -21,7 +22,9 @@
       <p>We have sent you a confirmation email.</p>
 
       <h2 class="heading-medium">What happens next</h2>
-      <p>We've sent your application to Natural England.</p>
+      <p>We've sent your application to Driver & Vehicle
+Standards
+Agency.</p>
       <p>They will contact you either to confirm your licence, or to ask for more information.</p>
       <p><a href="https://www.gov.uk/service-manual/user-centred-design/resources/patterns/feedback-pages.html">What did you think of this service?</a> (takes 30 seconds)</p>
 

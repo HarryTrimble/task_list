@@ -993,7 +993,7 @@ router.get('/transport_goods/task_list/check_before_you_start/result/cost', func
 });
 
 // check your answers for 'Check eligibility, cost and time' section
-router.get('/transport_goods/task_list/check_before_you_start/weight/empty', function (req, res) {
+router.get('/transport_goods/task_list/check_before_you_start/reason', function (req, res) {
 
   console.log("check_your_answers");
 
@@ -1008,7 +1008,7 @@ router.get('/transport_goods/task_list/check_before_you_start/weight/empty', fun
   } else {
 
     // if user has NOT yet done this section
-    res.render('transport_goods/task_list/check_before_you_start/weight/empty/index.html');
+    res.render('transport_goods/task_list/check_before_you_start/reason/index.html');
 
   }
 
