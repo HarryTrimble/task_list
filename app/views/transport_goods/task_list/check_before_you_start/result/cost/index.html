@@ -13,7 +13,7 @@
             <br>
 
 
-              <p class="lede">Total cost to apply:</p>
+              <p class="lede">Total cost for your licence:</p>
 
               <div class="data">
                 <h2 class="bold-xxlarge">
@@ -23,12 +23,10 @@
                   <p class="bold-xsmall">plus cost train or hire a transport manager</p>         
                 {% endif %}
               </div>
-            
-              <br>
 
               <details>
 
-                <summary><span class="summary">See each cost</span></summary>
+                <summary><span class="summary lede">See each cost</span></summary>
 
                 <div class="panel panel-border-narrow">
 
@@ -51,13 +49,18 @@
                       {% endif %}
 
                       <tr>
-                        <td>Maintenance costs for <span class="bold">{{ data.how_many_vehicles }} vehicles:</span></td>
+                        <td>Maintenance (5 years) for <span class="bold">{{ data.how_many_vehicles }} vehicles:</span></td>
                         <td class="numeric">£{{maintenance_costs}}</td>
                       </tr>
 
                       <tr>
                        <td>Application fee:</td>
                         <td class="numeric">£257</td>
+                      </tr>
+
+                      <tr>
+                       <td>Issue of a licence:</td>
+                        <td class="numeric">£401</td>
                       </tr>
 
                     </tbody>
@@ -67,89 +70,7 @@
 
               </details>
 
-            <details>
-
-              <summary><span class="summary">See calculation</span></summary>
-
-              <div class="panel panel-border-narrow">
-
-                 <table class="check-your-answers">
-
-                  <thead>
-                    <tr>
-                      <th colspan="2">
-                        <h2 class="heading-medium">
-                          Answers calculating cost
-                        </h2>
-                      </th>
-                      <th>
-                      </th>
-                    </tr>
-                  </thead>
-
-                  <tbody>
-                    <tr>
-                      <td>
-                        Age of children:
-                      </td>
-                      <td>
-                        {{ data.child_age }}
-                      </td>
-                      <td class="change-answer">
-                        <a href="/questions/child_age">
-                          Change <span class="visuallyhidden">Name</span>
-                        </a>
-                      </td>
-                    </tr>
-                    </tr> 
-                      <td>
-                        Place accessible to other adult:
-                      </td>
-                      <td>
-                        {{ data.shared_home }}
-                      </td>
-                      <td class="change-answer">
-                        <a href="/questions/shared_home">
-                          Change <span class="visuallyhidden">Name</span>
-                        </a>
-                      </td>
-                    </tr>
-                    {% if data.shared_home=="yes" %}
-                      <tr>
-                        <td>
-                          Already have DBS checks:
-                        </td>
-                        <td>
-                          {{ data.others_have_dbs }}
-                        </td>
-                        <td class="change-answer">
-                          <a href="#">
-                            Change <span class="visuallyhidden">Name</span>
-                          </a>
-                        </td>
-                      </tr>
-                    {% endif %}
-                    {% if data.others_have_dbs=="no" or data.others_have_dbs=="not sure"  %}
-                      <tr>
-                        <td>
-                          How many others need DBS checks:
-                        </td>
-                        <td>
-                          {{ data.how_many_others }}
-                        </td>
-                        <td class="change-answer">
-                          <a href="#">
-                            Change <span class="visuallyhidden">Name</span>
-                          </a>
-                        </td>
-                      </tr>
-                    {% endif %}
-                  </tbody>
-                </table>
-
-              </div>
-
-            </details>
+            <br>
 
             <br>
 

@@ -49,7 +49,7 @@
 
               <details>
 
-                <summary><span class="summary">See time for each task</span></summary>
+                <summary><span class="summary lede">See time for each task</span></summary>
 
                 <div class="panel panel-border-narrow">
 
@@ -115,51 +115,6 @@
 
               </details>
 
-            <!--
-
-            <details>
-
-              <summary><span class="summary">See calculation</span></summary>
-
-              <div class="panel panel-border-narrow">
-
-                 <table class="check-your-answers">
-
-                  <thead>
-                    <tr>
-                      <th colspan="2">
-                        <h2 class="heading-medium">
-                          Answers calculating time
-                        </h2>
-                      </th>
-                      <th>
-                      </th>
-                    </tr>
-                  </thead>
-
-                  <tbody>
-                    <tr>
-                      <td>
-                        Place of care:
-                      </td>
-                      <td>
-                        {{ data.place_type }}
-                      </td>
-                      <td class="change-answer">
-                        <a href="/questions/place_type">
-                          Change <span class="visuallyhidden">Name</span>
-                        </a>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-
-              </div>
-
-            </details>
-
-            -->
-
             <input type="hidden" name="check_before_you_start" value="completed">
 
             <br>
@@ -175,40 +130,3 @@
 
 </main>
 {% endblock %}
-
-            <!-- application fee calculator
-            <p class="lede">The cost of applying is <span class="bold">£<span id="cost"></span></span></p>
-
-            <script>
-
-              var query = location.search.substr(1);
-              var result = {};
-              query.split("&").forEach(function(part) {
-                var item = part.split("=");
-                result[item[0]] = decodeURIComponent(item[1]);
-              });
-              data = result;
-              console.log(data)
-
-              var costToPay = 0;
-              if(data.shotguns = 'yes'){
-                costToPay += 79.5
-              }
-              if(data.rifles = 'yes'){
-                costToPay += 88
-              }
-
-              {{data.child_age}}
-
-              if(typeof data.number_of_visitors !== 'undefined'){
-                number_of_visitors = parseInt(data.number_of_visitors)
-                var visitorCost = number_of_visitors*20
-                costToPay += visitorCost
-              }
-
-              costToPay = costToPay.toFixed(2)
-
-              document.getElementById('cost').innerHTML = costToPay
-
-            </script>
-            -->

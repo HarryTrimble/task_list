@@ -977,7 +977,7 @@ router.get('/transport_goods/task_list/check_before_you_start/result/cost', func
 
   } else {
 
-    var application_cost = 257 + 6650 + (req.query.how_many_vehicles - 1) * 3700
+    var application_cost = 257 + 401 + 6650 + (req.query.how_many_vehicles - 1) * 3700
 
     application_cost = application_cost.toString().replace(/,/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
