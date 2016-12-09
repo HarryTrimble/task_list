@@ -68,7 +68,7 @@
 
       <!-- Give medical information -->
       {% if data.disability_medical=="yes" %}
-        <tr>
+        <tr id="give_medical_information">
           <td class="task">
             <a href="/driving/task_list/give_medical_information{{formQuery}}">
 
@@ -85,7 +85,7 @@
 
       <!-- Have eye test -->
       {% if data.needs_glasses_or_contacts=="yes" %}
-        <tr>
+        <tr id="eye_test">
           <td class="task">
             <a href="/driving/task_list/eye_test{{formQuery}}">
 
@@ -101,7 +101,7 @@
       {% endif %}
 
       <!-- Apply for provisional licence -->
-      <tr>
+      <tr id="apply_for_provisional">
         <td class="task">
           <a href="/driving/task_list/apply_for_provisional{{formQuery}}">
             <span class="task-name"> Apply for your provisional licence</span>
@@ -116,7 +116,7 @@
       
       <!-- Get adapted car -->
       {% if data.mobility_need=="yes" %}
-        <tr>
+        <tr id="get_adapted_car">
           <td class="task">
             <a href="/driving/task_list/get_adapted_car{{formQuery}}">
 
@@ -132,8 +132,8 @@
       {% endif %}
       
       <!-- Insure your car-->
-      {% if data.practing_in_own_car=="yes" %}
-        <tr>
+      {% if data.practing_in_own_car=="yes" or data.practing_in_own_car=="not sure yet" %}
+        <tr id="insure_car">
           <td class="task">
             <a href="/driving/task_list/insure_car{{formQuery}}">
 
@@ -161,7 +161,7 @@
         <th scope="col" id="col-task">
           <span class="task-group">  
             <span class="group-number" id="task-number"></span>
-              Practice driving
+              Practise driving
           </span>
         </th>
         <th class="numeric" id="task-status" scope="col" id="col-status"></th>
@@ -170,10 +170,10 @@
     <tbody>
       
       <!-- Read rules for practicing driving -->
-      <tr>
+      <tr id="practice_driving">
         <td class="task">
           <a href="/driving/task_list/practice_driving{{formQuery}}">
-            <span class="task-name"> Practise driving</span>
+            <span class="task-name"> Learn practising rules</span>
           </a>
         </td>
         <td class="numeric" id="task-status">          
@@ -184,8 +184,8 @@
       </tr>
 
       <!-- Find a driving instructor -->
-      {% if data.driving_lessons=="yes" %}
-      <tr>
+      {% if data.driving_lessons=="yes" or data.driving_lessons=="not sure yet" %}
+      <tr id="find_instructor">
         <td class="task">
           <a href="/driving/task_list/find_instructor{{formQuery}}">
             <span class="task-name"> Find a driving instructor</span>
@@ -221,7 +221,7 @@
     <tbody>
           
       <!-- Book theory test -->
-      <tr>
+      <tr id="book_theory_test">
         <td class="task">
           <a href="/driving/task_list/book_theory_test{{formQuery}}">
             <span class="task-name"> Book your theory test</span>
@@ -235,7 +235,7 @@
       </tr>
       
       <!-- Revise for theory test -->
-      <tr>
+      <tr id="revise_for_theory_test">
         <td class="task">
           <a href="/driving/task_list/revise_for_theory_test{{formQuery}}">
             <span class="task-name"> Revise for your theory test</span>
@@ -249,7 +249,7 @@
       </tr>
       
       <!-- Take theory test -->
-      <tr>
+      <tr id="check_theory_test_details">
         <td class="task">
           <a href="/driving/task_list/check_theory_test_details{{formQuery}}">
             <span class="task-name"> Check your theory test details</span>
@@ -263,7 +263,7 @@
       </tr>
 
       <!-- Take practical test -->
-      <tr>
+      <tr id="take_theory_test">
         <td class="task">
           <a href="/driving/task_list/take_theory_test{{formQuery}}">
             <span class="task-name"> Take your theory test</span>
@@ -298,7 +298,7 @@
     <tbody>
           
       <!-- Book practical test -->
-      <tr>
+      <tr id="book_driving_test">
         <td class="task">
           <a href="/driving/task_list/book_driving_test{{formQuery}}">
             <span class="task-name"> Book your driving test</span>
@@ -312,7 +312,7 @@
       </tr>
       
       <!-- Check your driving test details -->
-      <tr>
+      <tr id="check_driving_test_details">
         <td class="task">
           <a href="/driving/task_list/check_driving_test_details{{formQuery}}">
             <span class="task-name"> Check your driving test details
@@ -327,7 +327,7 @@
       </tr>
 
       <!-- Take your driving test -->
-      <tr>
+      <tr id="take_driving_test">
         <td class="task">
           <a href="/driving/task_list/take_driving_test{{formQuery}}">
             <span class="task-name"> Take your driving test</span>
@@ -362,7 +362,7 @@
     <tbody>
           
       <!-- Get licence -->
-      <tr>
+      <tr id="get_full_licence">
         <td class="task">
           <a href="/driving/task_list/get_full_licence{{formQuery}}">
             <span class="task-name"> Get full licence</span>
@@ -376,7 +376,7 @@
       </tr>
 
       <!-- Learn driving rules -->
-      <tr>
+      <tr id="after_you_pass">
         <td class="task">
           <a href="/driving/task_list/after_you_pass{{formQuery}}">
             <span class="task-name"> Learn driving rules</span>

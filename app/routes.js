@@ -424,28 +424,22 @@ router.get('/driving/questions/eyes', function (req, res) {
 });
 
 // Question for driving/questions/eyes/index.html
-router.get('/driving/questions/insurance', function (req, res) {
+router.get('/driving/questions/eyes/glasses_contact_lenses', function (req, res) {
 
   console.log("read_from_20_meters");
 
   // get the answer from the query string (eg. ?over18="yes")
   var read_from_20_meters = req.query.read_from_20_meters;
-  var needs_glasses_or_contacts = req.query.needs_glasses_or_contacts;
 
-  if (read_from_20_meters == "yes" && needs_glasses_or_contacts==undefined ){
+  if (read_from_20_meters == "no" ){
 
     // if user CAN read number plate from 20 meets
-    res.redirect("/driving/questions/eyes/glasses_contact_lenses" + res.locals.formQuery);
-
-  } else if (read_from_20_meters == "no" ){
-
-    // if user CANNOT read number plate from 20 meets
     res.redirect("/driving/questions/result" + res.locals.formQuery);
 
   } else {
 
     // if user CAN read number plate from 20 meets
-    res.render('driving/questions/insurance/index.html');
+    res.render('driving/questions/eyes/glasses_contact_lenses/index.html');
 
   }
 
