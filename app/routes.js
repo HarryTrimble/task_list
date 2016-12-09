@@ -473,6 +473,29 @@ router.get('/driving/questions/reason', function (req, res) {
 
 });
 
+// // Check your answers for 'Check eligibility, cost and time'
+// router.get('/driving/task_list', function (req, res) {
+
+//   console.log("confirmation page for driving");
+
+//   // get the answer from the query string (eg. ?over18="yes")
+//   var get_full_licence = req.query.get_full_licence;
+
+//   if (get_full_licence == "complete" ){
+
+
+//     // if user IS related to child
+//     res.redirect("/driving/task_list/confirmation" + res.locals.formQuery);
+
+//   } else {
+
+//     // if user is NOT related to child
+//     res.render('driving/task_list/index.html');
+
+//   }
+
+// });
+
 // BATS
 
 // question in /bats/task_list/inspect_place_where_bats_live/visit_bat_place
