@@ -23,7 +23,7 @@
                 {% if 
                   data.needs_glasses_or_contacts=="yes" and
                   data.practing_in_own_car=="yes" and
-                  data.driving_lessons=="yes" or data.driving_lessons=="not sure yet"
+                  data.driving_lessons=="yes"
                 %}
                   
                   <p class="bold-xsmall">plus an eye test, car insurance and driving lessons</p>
@@ -45,7 +45,7 @@
                 {% if 
                   data.needs_glasses_or_contacts=="yes" and
                   data.practing_in_own_car=="no" and
-                  data.driving_lessons=="yes" or data.driving_lessons=="not sure yet"
+                  data.driving_lessons=="yes"
                 %}
 
                   <p class="bold-xsmall">plus an eye test and driving lessons</p>  
@@ -56,7 +56,7 @@
                 {% if 
                   data.needs_glasses_or_contacts=="no" and
                   data.practing_in_own_car=="yes" and
-                  data.driving_lessons=="yes" or data.driving_lessons=="not sure yet"
+                  data.driving_lessons=="yes"
                 %}
 
                   <p class="bold-xsmall">plus car insurance and driving lessons</p>  
@@ -67,7 +67,7 @@
                 {% if 
                   data.needs_glasses_or_contacts=="no" and
                   data.practing_in_own_car=="no" and
-                  data.driving_lessons=="yes" or data.driving_lessons=="not sure yet"
+                  data.driving_lessons=="yes"
                 %}
 
                   <p class="bold-xsmall">plus driving lessons</p>  
@@ -100,17 +100,11 @@
 
               <br>
 
-              <details>
-
-                <summary><span class="summary lede">See each cost</span></summary>
-
-                <div class="panel panel-border-narrow">
-
                   <table>
                     <thead>
                       <tr>
-                        <th scope="col">Task</th>
-                        <th class="numeric" scope="col">Cost</th>
+                        <th scope="col"></th>
+                        <th class="numeric" scope="col"></th>
                       </tr>
                     </thead>
                     <tbody>
@@ -153,97 +147,8 @@
 
                     </tbody>
                   </table>
-
-                </div>
-
-              </details>
             
-            <!--
-            <details>
-
-              <summary><span class="summary">See calculation</span></summary>
-
-              <div class="panel panel-border-narrow">
-
-                 <table class="check-your-answers">
-
-                  <thead>
-                    <tr>
-                      <th colspan="2">
-                        <h2 class="heading-medium">
-                          Answers calculating cost
-                        </h2>
-                      </th>
-                      <th>
-                      </th>
-                    </tr>
-                  </thead>
-
-                  <tbody>
-                    <tr>
-                      <td>
-                        Age of children:
-                      </td>
-                      <td>
-                        {{ data.child_age }}
-                      </td>
-                      <td class="change-answer">
-                        <a href="/questions/child_age">
-                          Change <span class="visuallyhidden">Name</span>
-                        </a>
-                      </td>
-                    </tr>
-                    </tr> 
-                      <td>
-                        Place accessible to other adult:
-                      </td>
-                      <td>
-                        {{ data.shared_home }}
-                      </td>
-                      <td class="change-answer">
-                        <a href="/questions/shared_home">
-                          Change <span class="visuallyhidden">Name</span>
-                        </a>
-                      </td>
-                    </tr>
-                    {% if data.shared_home=="yes" %}
-                      <tr>
-                        <td>
-                          Already have DBS checks:
-                        </td>
-                        <td>
-                          {{ data.others_have_dbs }}
-                        </td>
-                        <td class="change-answer">
-                          <a href="#">
-                            Change <span class="visuallyhidden">Name</span>
-                          </a>
-                        </td>
-                      </tr>
-                    {% endif %}
-                    {% if data.others_have_dbs=="no" or data.others_have_dbs=="not sure"  %}
-                      <tr>
-                        <td>
-                          How many others need DBS checks:
-                        </td>
-                        <td>
-                          {{ data.how_many_others }}
-                        </td>
-                        <td class="change-answer">
-                          <a href="#">
-                            Change <span class="visuallyhidden">Name</span>
-                          </a>
-                        </td>
-                      </tr>
-                    {% endif %}
-                  </tbody>
-                </table>
-
-              </div>
-
-            </details>
-            -->
-
+            <br>
             <br>
 
             <div class="form-group">

@@ -31,17 +31,11 @@
 
               <br>
 
-              <details>
-
-                <summary><span class="summary lede">See each cost</span></summary>
-
-                <div class="panel panel-border-narrow">
-
                   <table>
                     <thead>
                       <tr>
-                        <th scope="col">Task</th>
-                        <th class="numeric" scope="col">Cost</th>
+                        <th scope="col"></th>
+                        <th class="numeric" scope="col"></th>
                       </tr>
                     </thead>
                     <tbody>
@@ -96,10 +90,6 @@
                       </tr>
                     </tbody>
                   </table>
-
-                </div>
-
-              </details>
 
 
             <!-- Early Years Register AND Childcare Register (£35) + DBS Check fee (£44) -->
@@ -116,17 +106,11 @@
 
               <br>
 
-              <details>
-
-                <summary><span class="summary lede">See each cost</span></summary>
-
-                <div class="panel panel-border-narrow">
-
                   <table>
                     <thead>
                       <tr>
-                        <th scope="col">Task</th>
-                        <th class="numeric" scope="col">Cost</th>
+                        <th scope="col"></th>
+                        <th class="numeric" scope="col"></th>
                       </tr>
                     </thead>
                     <tbody>
@@ -181,10 +165,6 @@
                       </tr>
                     </tbody>
                   </table>
-
-                </div>
-
-              </details>
 
             {% if data.child_age=="8 and older" %}
 
@@ -209,17 +189,11 @@
 
               <br>
 
-              <details>
-
-                <summary><span class="summary lede">See each cost</span></summary>
-
-                <div class="panel panel-border-narrow">
-
                   <table>
                     <thead>
                       <tr>
-                        <th scope="col">Task</th>
-                        <th class="numeric" scope="col">Cost</th>
+                        <th scope="col"></th>
+                        <th class="numeric" scope="col"></th>
                       </tr>
                     </thead>
                     <tbody>
@@ -236,7 +210,7 @@
 
                         <tr>
                           <td>Others' criminal checks <span class="bold">X {{ data.how_many_others }}</span></td>
-                          <td class="numeric"></td>
+                          <td class="numeric">£{{cost_of_other_criminal_checks}}</td>
                         </tr>
 
                       {% endif %}
@@ -275,95 +249,7 @@
                     </tbody>
                   </table>
 
-                </div>
-
-              </details>
-
             {% endif %}
-
-<!--             <details>
-
-              <summary><span class="summary">See calculation</span></summary>
-
-              <div class="panel panel-border-narrow">
-
-                 <table class="check-your-answers">
-
-                  <thead>
-                    <tr>
-                      <th colspan="2">
-                        <h2 class="heading-medium">
-                          Answers calculating cost
-                        </h2>
-                      </th>
-                      <th>
-                      </th>
-                    </tr>
-                  </thead>
-
-                  <tbody>
-                    <tr>
-                      <td>
-                        Age of children:
-                      </td>
-                      <td>
-                        {{ data.child_age }}
-                      </td>
-                      <td class="change-answer">
-                        <a href="/questions/child_age">
-                          Change <span class="visuallyhidden">Name</span>
-                        </a>
-                      </td>
-                    </tr>
-                    </tr> 
-                      <td>
-                        Place accessible to other adult:
-                      </td>
-                      <td>
-                        {{ data.shared_home }}
-                      </td>
-                      <td class="change-answer">
-                        <a href="/questions/shared_home">
-                          Change <span class="visuallyhidden">Name</span>
-                        </a>
-                      </td>
-                    </tr>
-                    {% if data.shared_home=="yes" %}
-                      <tr>
-                        <td>
-                          Already have DBS checks:
-                        </td>
-                        <td>
-                          {{ data.others_have_dbs }}
-                        </td>
-                        <td class="change-answer">
-                          <a href="#">
-                            Change <span class="visuallyhidden">Name</span>
-                          </a>
-                        </td>
-                      </tr>
-                    {% endif %}
-                    {% if data.others_have_dbs=="no" or data.others_have_dbs=="not sure"  %}
-                      <tr>
-                        <td>
-                          How many others need DBS checks:
-                        </td>
-                        <td>
-                          {{ data.how_many_others }}
-                        </td>
-                        <td class="change-answer">
-                          <a href="#">
-                            Change <span class="visuallyhidden">Name</span>
-                          </a>
-                        </td>
-                      </tr>
-                    {% endif %}
-                  </tbody>
-                </table>
-
-              </div>
-
-            </details> -->
 
             <br>
             <br>

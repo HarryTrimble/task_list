@@ -24,51 +24,43 @@
                 {% endif %}
               </div>
 
-              <details>
+              <br>
 
-                <summary><span class="summary lede">See each cost</span></summary>
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col"></th>
+                    <th class="numeric" scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
 
-                <div class="panel panel-border-narrow">
+                  {% if data.transport_manager=="no" %}
 
-                  <table>
-                    <thead>
-                      <tr>
-                        <th scope="col">Task</th>
-                        <th class="numeric" scope="col">Cost</th>
-                      </tr>
-                    </thead>
-                    <tbody>
+                    <tr>
+                     <td>Train transport manager:</td>
+                      <td class="numeric">varies by provider</td>
+                    </tr>
+                  
+                  {% endif %}
 
-                      {% if data.transport_manager=="no" %}
+                  <tr>
+                    <td>Maintenance (5 years) for <span class="bold">{{ data.how_many_vehicles }} vehicles:</span></td>
+                    <td class="numeric">£{{maintenance_costs}}</td>
+                  </tr>
 
-                        <tr>
-                         <td>Train transport manager:</td>
-                          <td class="numeric">varies by provider</td>
-                        </tr>
-                      
-                      {% endif %}
+                  <tr>
+                   <td>Application fee:</td>
+                    <td class="numeric">£257</td>
+                  </tr>
 
-                      <tr>
-                        <td>Maintenance (5 years) for <span class="bold">{{ data.how_many_vehicles }} vehicles:</span></td>
-                        <td class="numeric">£{{maintenance_costs}}</td>
-                      </tr>
+                  <tr>
+                   <td>Issue of a licence:</td>
+                    <td class="numeric">£401</td>
+                  </tr>
 
-                      <tr>
-                       <td>Application fee:</td>
-                        <td class="numeric">£257</td>
-                      </tr>
-
-                      <tr>
-                       <td>Issue of a licence:</td>
-                        <td class="numeric">£401</td>
-                      </tr>
-
-                    </tbody>
-                  </table>
-
-                </div>
-
-              </details>
+                </tbody>
+              </table>
 
             <br>
 
