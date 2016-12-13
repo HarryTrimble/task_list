@@ -11,15 +11,15 @@
 
         {% if data.user_phone %}
 
-          <h1 class="heading-large">Check your phone</h1>
+          <h1 class="heading-large">Check your mobile phone</h1>
 
-          <p>We have sent a code to <span class="bold">{{ data.user_phone }}</span> that allows you to return your information at any time.</p>
+          <p>You'll get a code sent to your <span class="bold">{{ data.user_phone }}</span> that allows you to come back and finish your application at any time.</p>
 
         {% else %}
 
           <h1 class="heading-large">Check your email</h1>
 
-          <p>We have sent a link to <span class="bold">{{ data.user_email }}</span> that allows you to return your information at any time.</p>
+          <p>You'll get a link sent to <span class="bold">{{ data.user_email }}</span> that allows you to come back and finish your application at any time.</p>
 
         {% endif %}
 
