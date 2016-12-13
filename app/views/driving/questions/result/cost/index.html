@@ -23,7 +23,7 @@
                 {% if 
                   data.needs_glasses_or_contacts=="yes" and
                   data.practing_in_own_car=="yes" and
-                  data.driving_lessons=="yes"
+                  data.driving_lessons=="yes" or data.driving_lessons=="not sure yet"
                 %}
                   
                   <p class="bold-xsmall">plus an eye test, car insurance and driving lessons</p>
@@ -45,7 +45,7 @@
                 {% if 
                   data.needs_glasses_or_contacts=="yes" and
                   data.practing_in_own_car=="no" and
-                  data.driving_lessons=="yes"
+                  data.driving_lessons=="yes" or data.driving_lessons=="not sure yet"
                 %}
 
                   <p class="bold-xsmall">plus an eye test and driving lessons</p>  
@@ -56,7 +56,7 @@
                 {% if 
                   data.needs_glasses_or_contacts=="no" and
                   data.practing_in_own_car=="yes" and
-                  data.driving_lessons=="yes"
+                  data.driving_lessons=="yes" or data.driving_lessons=="not sure yet"
                 %}
 
                   <p class="bold-xsmall">plus car insurance and driving lessons</p>  
@@ -67,7 +67,7 @@
                 {% if 
                   data.needs_glasses_or_contacts=="no" and
                   data.practing_in_own_car=="no" and
-                  data.driving_lessons=="yes"
+                  data.driving_lessons=="yes" or data.driving_lessons=="not sure yet"
                 %}
 
                   <p class="bold-xsmall">plus driving lessons</p>  
