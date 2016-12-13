@@ -32,6 +32,40 @@
 
       <tr>
         <td>
+          Total cost for you to learn:
+        </td>
+        <td>
+          £119
+        </td>
+        <td class="change-answer">
+          <a href="/driving/questions/result/cost{{formQuery}}">
+            View <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Total time for you to learn:
+        </td>
+        <td>
+          <!-- Time WITH giving medicial information -->
+          {% if data.disability_medical=="yes" or data.mobility_need=="yes" %}
+            5–7 months
+          <!-- Time WITHOUT giving medicial information -->
+          {% else %}
+            4–6 months
+          {% endif %}
+        </td>
+        <td class="change-answer">
+          <a href="/driving/questions/result/time{{formQuery}}">
+            View <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
           Disability or health condition:
         </td>
         <td>
