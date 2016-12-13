@@ -29,6 +29,17 @@
             Apply for provisional licence
           </legend>
 
+          <p class="cost-and-time">
+            Cost: <span class="bold">£34</span><br>
+            Time: <span class="bold">
+              {% if data.disability_medical=="yes" or data.mobility_need=="yes" %}
+                2 month wait
+              {% else %}
+                3 week wait
+              {% endif %}
+            </span>
+          </p>
+
           <p id="reason_for_task">To learn to drive on UK roads you must first have a provisional driving licence</p>
 
           <p>To apply for a provisional licence:</p>
