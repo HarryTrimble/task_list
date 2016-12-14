@@ -9,9 +9,6 @@
 
             {{formData | safe}}
 
-            <br>
-            <br>
-
             <!--  Early Years Register AND Childcare Register (£35) + first add training (£216.00) + DBS Check fee (£44)  -->
             {% if data.child_age=="5 and younger" or 
                   data.child_age=="5 and younger,6 to 7" or 
@@ -20,16 +17,7 @@
             %}
 
 
-              <p class="lede">Total cost for you:</p>
-
-              <div class="data">
-                <h2 class="bold-xxlarge">
-                  £{{total_cost_1}}
-                </h2>
-                <p class="bold-xsmall">plus a health check, training, insurance</p>
-              </div>
-
-              <br>
+              <h1 class="heading-xlarge">Costs for you:</h1>
 
                   <table>
                     <thead>
@@ -88,23 +76,18 @@
                        <td>Insurance</td>
                         <td class="numeric">varies by provider</td>
                       </tr>
+<!--                       <tr>
+                       <td><span class="bold">Total costs</span></td>
+                        <td class="numeric"><span class="bold">£{{total_cost_1}}</span></td>
+                      </tr> -->
                     </tbody>
                   </table>
 
 
             <!-- Early Years Register AND Childcare Register (£35) + DBS Check fee (£44) -->
-            {% elif data.child_age=="5 and younger" or data.child_age=="5 and younger,8 and older" %}
+            {% elif data.child_age=="5 and younger" or data.child_age=="5 and younger,8 and older" %} 
 
-              <p class="lede">Total cost for you:</p>
-
-              <div class="data">
-                <h2 class="bold-xxlarge">
-                  £{{total_cost_2}}
-                </h2>
-                <p class="bold-xsmall">plus a health check, training, insurance</p>
-              </div>
-
-              <br>
+              <h1 class="heading-xlarge">Costs for you:</h1>
 
                   <table>
                     <thead>
@@ -163,6 +146,10 @@
                        <td>Insurance</td>
                         <td class="numeric">varies by provider</td>
                       </tr>
+<!--                       <tr>
+                       <td><span class="bold">Total costs</span></td>
+                        <td class="numeric"><span class="bold">£{{total_cost_2}}</span></td>
+                      </tr> -->
                     </tbody>
                   </table>
 
@@ -178,16 +165,7 @@
                     data.child_age=="8 and older" 
             %}
 
-              <p class="lede">Total cost for you to apply:</p>
-
-              <div class="data">
-                <h2 class="bold-xxlarge">
-                  £{{total_cost_3}}
-                </h2>
-                <p class="bold-xsmall">plus a health check, training, insurance</p>
-              </div>
-
-              <br>
+                  <h1 class="heading-xlarge">Costs for you:</h1>
 
                   <table>
                     <thead>
@@ -246,6 +224,10 @@
                        <td>Insurance</td>
                         <td class="numeric">varies by provider</td>
                       </tr>
+<!--                       <tr>
+                       <td><span class="bold">Total costs</span></td>
+                        <td class="numeric"><span class="bold">£{{total_cost_3}}</span></td>
+                      </tr> -->
                     </tbody>
                   </table>
 
