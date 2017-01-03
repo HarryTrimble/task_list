@@ -1,32 +1,6 @@
 express = require('express');
 var router = express.Router();
 
-// Notify API
-
-var NotifyClient = require('notifications-node-client').NotifyClient,
-
-notifyClient = new NotifyClient(
-  "https://api.notifications.service.gov.uk",
-  process.env.NOTIFY_SERVICE_ID,
-  process.env.NOTIFY_KEY // API Key
-);
-
-// Send email to user
-router.post('/save_and_return/email', function (req, res) {
-
-  // get the answer from the query string (eg. ?over18="yes")
-  var email = req.body.email;
-  var templateId = 'f9474a23-d3e5-4c14-8b05-d6b19a34b542'
-  var personalisation = {'name':'Tom Riddle', 'ref number':'1280880'}
-
-  console.info(email); 
-  notifyClient.sendEmail(templateId, email, personalisation);
-
-    // if users does NOT have right to work in the UK
-    res.redirect("/save_and_return/saved");
-
-});
-
 router.use(function (req, res, next) {
 
  // Store common vars in string
