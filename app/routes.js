@@ -25,6 +25,135 @@ router.get('/', function (req, res) {
 
 });
 
+// examples/check-before-start/over-18/index.html
+
+router.get('/examples/check-before-start/passengers', function (req, res) {
+
+  console.log("over18");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var over18 = req.query.over18;
+
+  if (over18 == "no" ){
+
+    // if users is NOT 18 or over
+    res.redirect("/examples/check-before-start/result" + res.locals.formQuery);
+
+  } else {
+
+    // if users IS 18 or over
+    res.render('examples/check-before-start/passengers/index.html');
+
+  }
+
+});
+
+// /examplers/check-before-start/passengers
+
+router.get('/examples/check-before-start/weight/empty', function (req, res) {
+
+  console.log("passengers");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var passengers = req.query.passengers;
+
+  if (passengers == "yes" ){
+
+    // if vehicles WILL be carrying passengers
+    res.redirect("/examples/check-before-start/result" + res.locals.formQuery);
+
+  } else {
+
+    // if vehicles will NOT be carrying passengers
+    res.render('examples/check-before-start/weight/empty/index.html');
+
+  }
+
+});
+
+// examples/check-before-start/weight/empty/index.html
+// examples/check-before-start/weight/empty/index.html
+
+router.get('/examples/check-before-start/how-many-vehicles', function (req, res) {
+
+  console.log("weight");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var weight_empty = req.query.weight_empty;
+  var weight_loaded = req.query.weight_loaded;
+
+  if (weight_empty == "less than 1,525 kg" && weight_loaded==undefined ){
+
+    // if vehicles are TOO LIGHT when empty for licence
+    res.redirect("/examples/check-before-start/weight/loaded" + res.locals.formQuery);
+
+  } else if (weight_empty == "less than 1,525 kg" && weight_loaded== "less than 3,5000 kg" ){
+
+    // if vehicles are TOO LIGHT when empty and loaded for licence
+    res.redirect("/examples/check-before-start/result" + res.locals.formQuery);
+
+  } else {
+
+    // if vehicles are HEAVY ENOUGH when empty or loaded for licence
+    res.render('examples/check-before-start/how-many-vehicles/index.html');
+
+  }
+
+});
+
+// examples/check-before-start/licence-type/just-your-goods
+router.get('/examples/check-before-start/result/eligible', function (req, res) {
+
+  console.log("just_your_goods");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var just_your_goods = req.query.just_your_goods;
+  var outside_uk = req.query.outside_uk;
+
+  if (just_your_goods == "no" && outside_uk ==undefined ){
+
+    // user needs INTERNATIONAL licence
+    res.redirect("/examples/check-before-start/licence-type/outside-uk" + res.locals.formQuery);
+
+  } else {
+
+    // user needs STANDARD licence
+    res.render('examples/check-before-start/result/eligible/index.html');
+
+  }
+
+});
+
+// calculate /examples/check-before-start/result/cost
+router.get('/examples/check-before-start/result/cost', function (req, res) {
+
+  console.log("application_cost");
+
+  // get the answer from the query string (eg. ?over18="yes")
+  var transport_manager = req.query.transport_manager;
+
+  if (transport_manager == "have to have it"){
+
+    // if user IS related to child
+    res.redirect("/transport_goods/task_list/check_before_you_start/check_your_answers" + res.locals.formQuery);
+
+  } else {
+
+    var application_cost = 257 + 401 + 6650 + (req.query.how_many_vehicles - 1) * 3700
+
+    application_cost = application_cost.toString().replace(/,/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+    var maintenance_costs = 6650 + (req.query.how_many_vehicles - 1) * 3700
+
+    maintenance_costs = maintenance_costs.toString().replace(/,/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+    // if user is NOT related to child
+    res.render('examples/check-before-start/result/cost/index.html', {application_cost : application_cost, maintenance_costs : maintenance_costs});
+
+  }
+
+});
+
 // Branching
 
 // Questions for childminders
