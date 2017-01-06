@@ -1,3 +1,4 @@
+
 .grid-row:after, #content:after, .notice:after, .panel:after, fieldset:after, .form-section:after, .form-group:after, .form-block:after, .breadcrumbs ol:after {
   content: "";
   display: block;
@@ -2234,6 +2235,7 @@ input[type=number] {
 
 .task a {
   text-decoration: none;
+  font-weight: 700;
 }
 
 .task-name {
@@ -2251,22 +2253,21 @@ input[type=number] {
   font-weight: 400;
 }
 
+.task-name-no-margin-v2 {
+  font-size: 19px;
+  font-weight: 700;
+}
+
 .task-description {
   font-size: 16px;
   font-weight: 400;
 }
 
-.task-status {
-  color: #fff;
-  background: #0b0c0c;
-}
-
 .task-tag {
-  display: -moz-inline-stack;
   display: inline-block;
   vertical-align: top;
   margin: 0 0 0 0;
-  padding: 2px 5px 0;
+  padding: 3px 6px 0;
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
   line-height: 1.25;
@@ -2277,6 +2278,38 @@ input[type=number] {
   text-decoration: none;
   color: #fff;
   background-color: #0b0c0c;
+}
+
+.task-not-started{
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 0 0 0;
+  padding: 3px 6px 0;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #005EA5;
+}
+
+.task-finished {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 0 0 0;
+  padding: 3px 6px 0;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #6f777b;
 }
 
 .total-cost {

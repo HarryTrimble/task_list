@@ -120,17 +120,11 @@ $path: "/public/images/";
   font-weight: 400; 
 }
 
-.task-status {
-  color: $page-colour;
-  background:$black;
-}
-
 .task-tag {
-    display: -moz-inline-stack;
     display: inline-block;
     vertical-align: top;
     margin: 0 0 0 0;
-    padding: 2px 5px 0;
+    padding: 3px 6px 0;
     font-family: "nta", Arial, sans-serif;
     font-size: 16px;
     line-height: 1.25;
@@ -141,6 +135,23 @@ $path: "/public/images/";
     text-decoration: none;
     color: #fff;
     background-color: $black;
+}
+
+.task-finished {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 0 0 0;
+    padding: 3px 6px 0;
+    font-family: "nta", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.25;
+    font-weight: 700;
+    text-transform: none;
+//  text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #fff;
+    background-color: $secondary-text-colour;
 }
 
 

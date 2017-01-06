@@ -1,0 +1,389 @@
+{% extends "transport_goods/layout.html" %}
+{% block page_title %} Transport goods {% endblock %}
+
+{% block extra_css %}<link rel="stylesheet" href="/public/stylesheets/dm_list.css" />{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+   <div id="">
+      
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+      
+        <header class="page-heading page-heading-with-context page-heading-without-breadcrumb">
+          
+          <!--
+          <p class="context">Overview</p>
+          -->
+          <h1>Transport goods</h1>
+
+        </header>
+
+        <p class="">Do the following tasks if you want to transport goods:</p>
+
+        <br>
+      
+
+    {{formData | safe}}
+
+    </div>
+
+  </div>
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">  
+
+      <table>
+        <thead>
+          <tr>
+            <th scope="col" id="col-task"></th>
+            <th class="numeric" id="task-status" scope="col" id="col-status"></th>
+            <th class="numeric" id="task-status" scope="col" id="col-status"></th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <!-- Check before you start -->
+          <tr id="check_before_you_start">
+            {% if data.transport_manager %}
+              <td id="task-status">
+                Check eligibility, cost and time
+              </td>
+            {% else %}
+              <td class="task">
+                <a href="/transport_goods/task_list/check_before_you_start/reason{{formQuery}}">
+                  <span class="task-name-no-margin-v2"> Check eligibility, cost and time</span>
+                  <!--
+                    <br>
+                    <span class="task-description">
+                      Check your eligibility, time and cost to apply
+                    </span>
+                  -->
+                </a>
+              </td>
+            {% endif %}
+            {% if data.transport_manager %}
+              <td class="numeric" id="task-status">
+                {% include "includes/task_status_complete.html" %}
+              </td>
+              <td class="numeric" id="task-status">
+                <a href="/transport_goods/task_list/check_before_you_start/reason{{formQuery}}">edit</a>
+              </td>
+            {% else %}
+              <td class="numeric" id="task-status"></td>
+              <td class="numeric" id="task-status"></td>
+            {% endif %}
+          </tr>
+
+          <!-- Read rules -->
+          <tr id="read_rules">
+            {% if data.read_rules=="yes" %}
+              <td id="task-status">
+                Read the rules
+              </td>
+            {% else %}
+              <td class="task">
+                <a href="/transport_goods/task_list/read_rules{{formQuery}}">
+                  <span class="task-name-no-margin-v2"> Read the rules</span>
+                </a>
+              </td>
+            {% endif %}
+            {% if data.read_rules=="yes" %}
+              <td class="numeric" id="task-status">
+                {% include "includes/task_status_complete.html" %}
+              </td>
+              <td class="numeric" id="task-status">
+                <a href="/transport_goods/task_list/read_rules{{formQuery}}">edit</a>
+              </td>
+            {% else %}
+              <td class="numeric" id="task-status"></td>
+              <td class="numeric" id="task-status"></td>
+            {% endif %}
+          </tr>
+
+          <!-- Apply for interim licence
+          {% if data.need_interim_licence=="no" %}
+            <tr>
+              <td class="task">
+                <a href="/transport_goods/task_list/transport_manager{{formQuery}}">
+
+                  <span class="task-name-no-margin-v2"> Apply for interim licence</span>
+                </a>
+              </td>
+              {% if data.interim_licence=="complete" %}
+                <td class="numeric" id="task-status">
+                  {% include "includes/task_status_complete.html" %}
+                </td>
+                <td class="numeric" id="task-status">
+                  <a href="/transport_goods/task_list/transport_manager{{formQuery}}">edit</a>
+                </td>
+              {% else %}
+                <td class="numeric" id="task-status"></td>
+                <td class="numeric" id="task-status"></td>
+              {% endif %}
+            </tr>
+          {% endif %}
+          -->
+
+          <!-- Become a transport manager -->
+          {% if data.transport_manager=="no" %}
+            <tr>
+              {% if data.transport_manager=="no" %}
+                <td id="task-status">
+                  Become a transport manager
+                </td>
+              {% else %}
+                <td class="task">
+                  <a href="/transport_goods/task_list/transport_manager{{formQuery}}">
+                    <span class="task-name-no-margin-v2"> Become a transport manager</span>
+                  </a>
+                </td>
+              {% endif %}
+              {% if data.now_transport_manager=="yes" %}
+                <td class="numeric" id="task-status">
+                  {% include "includes/task_status_complete.html" %}
+                </td>
+                <td class="numeric" id="task-status">
+                  <a href="/transport_goods/task_list/transport_manager{{formQuery}}">edit</a>
+                </td>
+              {% else %}
+                <td class="numeric" id="task-status"></td>
+                <td class="numeric" id="task-status"></td>
+              {% endif %}
+            </tr>
+          {% endif %}
+
+          <!-- Give public notice -->
+          <tr>
+            {% if data.given_public_notice=="yes" %}
+              <td id="task-status">
+                Tell the public about your application
+              </td>
+            {% else %}
+              <td class="task">
+                <a href="/transport_goods/task_list/give_public_notice/reason{{formQuery}}">
+                  <span class="task-name-no-margin-v2"> Tell the public about your application</span>
+                </a>
+              </td>
+            {% endif %}
+            {% if data.given_public_notice=="yes" %}
+              <td class="numeric" id="task-status">
+                {% include "includes/task_status_complete.html" %}
+              </td>
+              <td class="numeric" id="task-status">
+                <a href="/transport_goods/task_list/give_public_notice/reason{{formQuery}}">edit</a>
+              </td>
+            {% else %}
+              <td class="numeric" id="task-status"></td>
+              <td class="numeric" id="task-status"></td>
+            {% endif %}
+          </tr>
+
+          <!-- List your vehicles -->
+          <tr>
+            {% if data.has_vehicles_already %}
+              <td id="task-status">
+                List your vehicles
+              </td>
+            {% else %}
+              <td class="task">
+                <a href="/transport_goods/task_list/describe_vehicles/has_vehicles_already{{formQuery}}">
+                  <span class="task-name-no-margin-v2"> List your vehicles</span>
+                </a>
+              </td>
+            {% endif %}
+            {% if data.has_vehicles_already %}
+              <td class="numeric" id="task-status">
+                {% include "includes/task_status_complete.html" %}
+              </td>
+              <td class="numeric" id="task-status">
+                <a href="/transport_goods/task_list/describe_vehicles/has_vehicles_already{{formQuery}}">edit</a>
+              </td>
+            {% else %}
+              <td class="numeric" id="task-status"></td>
+              <td class="numeric" id="task-status"></td>
+            {% endif %}
+          </tr>
+
+          <!-- Maintain your vehicles -->
+          <tr>
+            {% if data.has_mechanic=="yes" %}
+              <td id="task-status">
+                Look after your vehicles
+              </td>
+            {% else %}
+              <td class="task">
+                <a href="/transport_goods/task_list/maintain_vehicles/reason{{formQuery}}">
+                  <span class="task-name-no-margin-v2"> Look after your vehicles</span>
+                </a>
+              </td>
+            {% endif %}
+            {% if data.has_mechanic=="yes" %}
+              <td class="numeric" id="task-status">
+                {% include "includes/task_status_complete.html" %}
+              </td>
+              <td class="numeric" id="task-status">
+                <a href="/transport_goods/task_list/maintain_vehicles/reason{{formQuery}}">edit</a>
+              </td>
+            {% else %}
+              <td class="numeric" id="task-status"></td>
+              <td class="numeric" id="task-status"></td>
+            {% endif %}
+          </tr>
+
+          <!-- Prove you have enough money -->
+          <tr>
+            {% if data.uploaded_document %}
+              <td id="task-status">
+                Prove you have enough money
+              </td>
+            {% else %}
+              <td class="task">
+                <a href="/transport_goods/task_list/prove_money/reason{{formQuery}}">
+                  <span class="task-name-no-margin-v2"> Prove you have enough money</span>
+                </a>
+              </td>
+            {% endif %}
+            {% if data.uploaded_document %}
+              <td class="numeric" id="task-status">
+                {% include "includes/task_status_complete.html" %}
+              </td>
+              <td class="numeric" id="task-status">
+                <a href="/transport_goods/task_list/prove_money/reason{{formQuery}}">edit</a>
+              </td>
+            {% else %}
+              <td class="numeric" id="task-status"></td>
+              <td class="numeric" id="task-status"></td>
+            {% endif %}
+          </tr>
+
+          <!-- Declare convictions and penalties -->
+          <tr>
+            {% if data.compensation_order %}
+              <td id="task-status">
+                List convictions
+              </td>
+            {% else %}
+            <td class="task">
+              <a href="/transport_goods/task_list/convictions_penalties/reason{{formQuery}}">
+                <span class="task-name-no-margin-v2"> List convictions</span>
+              </a>
+            </td>
+            {% endif %}
+            {% if data.compensation_order %}
+              <td class="numeric" id="task-status">
+                {% include "includes/task_status_complete.html" %}
+              </td>
+              <td class="numeric" id="task-status">
+                <a href="/transport_goods/task_list/convictions_penalties/reason{{formQuery}}">edit</a>
+              </td>
+            {% else %}
+              <td class="numeric" id="task-status"></td>
+              <td class="numeric" id="task-status"></td>
+            {% endif %}
+          </tr>
+
+          <!-- Your contact details -->
+          <tr>
+            {% if data.contact_by %}
+              <td id="task-status">
+                Your contact details
+              </td>
+            {% else %}
+              <td class="task">
+                <a href="/transport_goods/task_list/contact_details{{formQuery}}">
+                  <span class="task-name-no-margin-v2"> Your contact details</span>
+                </a>
+              </td>
+            {% endif %}
+            {% if data.contact_by %}
+              <td class="numeric" id="task-status">
+                {% include "includes/task_status_complete.html" %}
+              </td>
+              <td class="numeric" id="task-status">
+                <a href="/transport_goods/task_list/contact_details{{formQuery}}">edit</a>
+              </td>
+            {% else %}
+              <td class="numeric" id="task-status"></td>
+              <td class="numeric" id="task-status"></td>
+            {% endif %}
+          </tr>
+
+          <!-- Pay application fee -->
+          <tr>
+            {% if data.pay_application_fee=="complete" %}
+              <td id="task-status">
+                Pay application fee
+              </td>
+            {% else %}
+              <td class="task">
+                <a href="https://payment-prototype.herokuapp.com/tgl/tgl-choose-payment">
+                  <span class="task-name-no-margin-v2"> Pay application fee</span>
+                </a>
+              </td>
+            {% endif %}
+            {% if data.pay_application_fee=="complete" %}
+              <td class="numeric" id="task-status">
+                {% include "includes/task_status_complete.html" %}
+              </td>
+              <td class="numeric" id="task-status">
+                <a href="https://payment-prototype.herokuapp.com/tgl/tgl-choose-payment">edit</a>
+              </td>
+            {% else %}
+              <td class="numeric" id="task-status"></td>
+              <td class="numeric" id="task-status"></td>
+            {% endif %}
+          </tr>
+
+          <tr>
+            <td class="task">
+              <a href="/transport_goods/task_list/check_and_send{{formQuery}}">
+                <span class="task-name-no-margin-v2"> Check and send your application</span>
+              </a>
+            </td>
+            {% if data.apply_for_provisional=="complete" %}
+              <td class="numeric" id="task-status">
+                {% include "includes/task_status_complete.html" %}
+              </td>
+              <td class="numeric" id="task-status">
+                <a href="https://payment-prototype.herokuapp.com/tgl/tgl-choose-payment">edit</a>
+              </td>
+            {% else %}
+              <td class="numeric" id="task-status"></td>
+              <td class="numeric" id="task-status"></td>
+            {% endif %}    
+          </tr>
+
+        </tbody>
+      </table>
+
+    </div>
+
+<!--     <div class="column-quarter">
+
+          <ul class="actions">
+            <li class="bold"><a href="#">Print list</a></li>
+          </ul>
+
+          <br>
+
+          <div class="meta-data">
+            <p class="last-edited font-xsmall">Reference number:<br>
+              <span class="bold-xsmall">HDJ2123F</span>
+            </p>
+          </div>
+
+    </div> -->
+
+  </div>
+    
+  </div>
+
+</main>
+{% endblock %}
+{% block extra_js_1 %}<!-- ticky list javascript one -->{% endblock %}
+{% block extra_js_2 %}<!-- ticky list javascript two -->{% endblock %}
