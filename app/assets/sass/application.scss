@@ -109,12 +109,6 @@ $path: "/public/images/";
     text-decoration: underline;
 }
 
-.task-name-no-margin {
-  font-size: 19px;
-  font-weight: 400;
-}
-
-
 .task-description {
   font-size: 16px;
   font-weight: 400; 
@@ -141,17 +135,23 @@ $path: "/public/images/";
     display: inline-block;
     vertical-align: top;
     margin: 0 0 0 0;
-    padding: 3px 6px 0;
+    padding: 2px 5px 0;
     font-family: "nta", Arial, sans-serif;
     font-size: 16px;
     line-height: 1.25;
     font-weight: 700;
-    text-transform: none;
+    text-transform: none; 
 //  text-transform: uppercase;
     letter-spacing: 1px;
     text-decoration: none;
-    color: #fff;
-    background-color: $secondary-text-colour;
+    color: #0B0C0C;
+    background-color: #FFFFFF;
+    border: 3px solid #0B0C0C;
+}
+
+.task-name-no-margin {
+  font-size: 19px;
+  font-weight: 400;
 }
 
 
