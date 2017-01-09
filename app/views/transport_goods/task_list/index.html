@@ -16,15 +16,13 @@
         <header class="page-heading page-heading-with-context page-heading-without-breadcrumb">
           
           <!--
-          <p class="context">Overview</p>
+          <p class="context">Application</p>
           -->
           <h1>Transport goods</h1>
 
         </header>
 
-        <p class="">Do the following tasks if you want to transport goods:</p>
-
-        <br>
+<!--         <p class="">Do the following tasks if you want to transport goods:</p> -->
       
 
     {{formData | safe}}
@@ -212,18 +210,6 @@
             </td>
           </tr>
 
-          <!-- Check and send your application -->
-          {% if 
-                data.transport_manager and 
-                data.read_rules=="yes" and
-                data.given_public_notice=="yes" and
-                data.has_vehicles_already and
-                data.has_mechanic=="yes" and
-                data.uploaded_document and
-                data.compensation_order and
-                data.contact_by
-          %}
-
             <tr>
               <td class="task">
                 <a href="/transport_goods/task_list/check_and_send{{formQuery}}">
@@ -237,14 +223,12 @@
               </td>
             </tr>
 
-          {% endif %}
-
         </tbody>
       </table>
 
     </div>
 
-    <div class="column-quarter">
+<!--     <div class="column-quarter">
 
           <ul class="actions">
             <li class="bold"><a href="#">Print list</a></li>
@@ -258,7 +242,7 @@
             </p>
           </div>
 
-    </div>
+    </div> -->
 
   </div>
     
