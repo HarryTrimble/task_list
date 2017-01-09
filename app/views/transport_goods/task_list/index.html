@@ -59,7 +59,7 @@
             </td>
             <td class="numeric" id="task-status">
               {% if data.transport_manager %}
-                {% include "includes/task_status_complete.html" %}
+                {% include "includes/task_status_finished.html" %}
               {% endif %}
             </td>
           </tr>
@@ -73,7 +73,7 @@
             </td>
             <td class="numeric" id="task-status">
               {% if data.read_rules=="yes" %}
-                {% include "includes/task_status_complete.html" %}
+                {% include "includes/task_status_finished.html" %}
               {% endif %}
             </td>
           </tr>
@@ -89,7 +89,7 @@
               </td>
               <td class="numeric" id="task-status">
                 {% if data.interim_licence=="complete" %}
-                  {% include "includes/task_status_complete.html" %}
+                  {% include "includes/task_status_finished.html" %}
                 {% endif %}
               </td>
             </tr>
@@ -106,7 +106,7 @@
               </td>
               <td class="numeric" id="task-status">
                 {% if data.now_transport_manager=="yes" %}
-                  {% include "includes/task_status_complete.html" %}
+                  {% include "includes/task_status_finished.html" %}
                 {% endif %}
               </td>
             </tr>
@@ -121,7 +121,7 @@
             </td>
             <td class="numeric" id="task-status">
               {% if data.given_public_notice=="yes" %}
-                {% include "includes/task_status_complete.html" %}
+                {% include "includes/task_status_finished.html" %}
               {% endif %}
             </td>
           </tr>
@@ -135,7 +135,7 @@
             </td>
             <td class="numeric" id="task-status">
               {% if data.has_vehicles_already %}
-                {% include "includes/task_status_complete.html" %}
+                {% include "includes/task_status_finished.html" %}
               {% endif %}
             </td>
           </tr>
@@ -149,7 +149,7 @@
             </td>
             <td class="numeric" id="task-status">
               {% if data.has_mechanic=="yes" %}
-                {% include "includes/task_status_complete.html" %}              
+                {% include "includes/task_status_finished.html" %}              
               {% endif %}
             </td>
           </tr>
@@ -163,7 +163,7 @@
             </td>
             <td class="numeric" id="task-status">
               {% if data.uploaded_document %}
-                {% include "includes/task_status_complete.html" %}
+                {% include "includes/task_status_finished.html" %}
               {% endif %}
             </td>
           </tr>
@@ -177,7 +177,7 @@
             </td>
             <td class="numeric" id="task-status">
               {% if data.compensation_order %}
-                {% include "includes/task_status_complete.html" %}
+                {% include "includes/task_status_finished.html" %}
               {% endif %}
             </td>
           </tr>
@@ -191,7 +191,7 @@
             </td>
             <td class="numeric" id="task-status">
               {% if data.contact_by %}
-                {% include "includes/task_status_complete.html" %}
+                {% include "includes/task_status_finished.html" %}
               {% endif %}
             </td>
           </tr>
@@ -205,7 +205,7 @@
             </td>
             <td class="numeric" id="task-status">
               {% if data.pay_application_fee=="complete" %}
-                {% include "includes/task_status_complete.html" %}
+                {% include "includes/task_status_finished.html" %}
               {% endif %}
             </td>
           </tr>
@@ -218,7 +218,7 @@
               </td>
               <td class="numeric" id="task-status">
                 {% if data.apply_for_provisional=="complete" %}
-                  {% include "includes/task_status_complete.html" %}
+                  {% include "includes/task_status_finished.html" %}
                 {% endif %}
               </td>
             </tr>
