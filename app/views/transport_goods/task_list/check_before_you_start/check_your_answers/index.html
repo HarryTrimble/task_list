@@ -12,7 +12,116 @@
     Check your answers for this section
   </h1>
 
-  <p>{{application_cost}}</p>
+ <table class="check-your-answers">
+
+    <thead>
+      <tr>
+        <th colspan="2">
+          <h2 class="heading-medium">
+            Results
+          </h2>
+        </th>
+        <th>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>
+          Eligible:
+        </td>
+        <td>
+          yes
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+      {% if data.transport_manager=="no" %}
+        <tr>
+          <td>
+            Cost to train transport manager:
+          </td>
+          <td>
+            varies by provider
+          </td>
+          <td class="change-answer">
+            <a href="#">
+              <span class="visuallyhidden">Name</span>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            varies by provider
+          </td>
+          <td>
+            {{ data.weight_loaded }}
+          </td>
+          <td class="change-answer">
+            <a href="#">
+              <span class="visuallyhidden">Name</span>
+            </a>
+          </td>
+        </tr>
+      {% endif %}
+      <tr>
+        <td>
+          Maintenance costs (5 years) for <span class="bold">{{ data.how_many_vehicles }} vehicles</span>:
+        </td>
+        <td>
+          £{{ data.maintenance_costs }}
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Application fee:
+        </td>
+        <td>
+          £257
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Issue of licence: 
+        </td>
+        <td>
+          £401
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Time to wait:
+        </td>
+        <td>
+          9 weeks
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
   <table class="check-your-answers">
 
@@ -20,7 +129,7 @@
       <tr>
         <th colspan="2">
           <h2 class="heading-medium">
-            Check before you start
+            Your answers
           </h2>
         </th>
         <th>

@@ -55,14 +55,78 @@
           </td>
         </tr>
       {% endif %}
-      {% if data.has_vehicles_already=="yes" %}
+      {% if data.has_vehicles_already=="yes" and data.reg_number_1!=null %}
         </tr> 
           <td>
             Vehicle 1:
           </td>
           <td>
-            {{ data.reg_number }}
-            {{ data.loaded_weight }}
+            {{ data.reg_number_1 }}<br>
+            {{ data.weight_1 }}
+          </td>
+          <td class="change-answer">
+            <a href="#">
+              Change <span class="visuallyhidden">Name</span>
+            </a>
+          </td>
+        </tr>
+      {% endif %}
+      {% if data.has_vehicles_already=="yes" and data.reg_number_2!=null %}
+        </tr> 
+          <td>
+            Vehicle 2:
+          </td>
+          <td>
+            {{ data.reg_number_2 }}<br>
+            {{ data.weight_2 }}
+          </td>
+          <td class="change-answer">
+            <a href="#">
+              Change <span class="visuallyhidden">Name</span>
+            </a>
+          </td>
+        </tr>
+      {% endif %}
+      {% if data.has_vehicles_already=="yes" and data.reg_number_3!=null %}
+        </tr> 
+          <td>
+            Vehicle 3:
+          </td>
+          <td>
+            {{ data.reg_number_3 }}<br>
+            {{ data.weight_3 }}
+          </td>
+          <td class="change-answer">
+            <a href="#">
+              Change <span class="visuallyhidden">Name</span>
+            </a>
+          </td>
+        </tr>
+      {% endif %}
+      {% if data.has_vehicles_already=="yes" and data.reg_number_4!=null %}
+        </tr> 
+          <td>
+            Vehicle 4:
+          </td>
+          <td>
+            {{ data.reg_number_4 }}<br>
+            {{ data.weight_4 }}
+          </td>
+          <td class="change-answer">
+            <a href="#">
+              Change <span class="visuallyhidden">Name</span>
+            </a>
+          </td>
+        </tr>
+      {% endif %}
+      {% if data.has_vehicles_already=="yes" and data.reg_number_5!=null %}
+        </tr> 
+          <td>
+            Vehicle 5:
+          </td>
+          <td>
+            {{ data.reg_number_5 }}<br>
+            {{ data.weight_5 }}
           </td>
           <td class="change-answer">
             <a href="#">

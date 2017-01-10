@@ -18,6 +18,7 @@
               <div class="data">
                 <h2 class="bold-xxlarge">
                   £{{application_cost}}
+                  <input type="hidden" name="application_cost" value="{{application_cost}}" />
                 </h2>
                 {% if data.transport_manager=="no" %}
                   <p class="bold-xsmall">plus cost train or hire a transport manager</p>         
@@ -46,7 +47,10 @@
 
                   <tr>
                     <td>Maintenance (5 years) for <span class="bold">{{ data.how_many_vehicles }} vehicles:</span></td>
-                    <td class="numeric">£{{maintenance_costs}}</td>
+                    <td class="numeric">
+                      £{{maintenance_costs}}
+                      <input type="hidden" name="maintenance_costs" value="{{maintenance_costs}}" />
+                    </td>
                   </tr>
 
                   <tr>
@@ -55,7 +59,7 @@
                   </tr>
 
                   <tr>
-                   <td>Issue of a licence:</td>
+                   <td>Issue of licence:</td>
                     <td class="numeric">£401</td>
                   </tr>
 

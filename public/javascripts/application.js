@@ -176,18 +176,18 @@ $(document).ready(function() {
             '<fieldset>' +
               '<div class="column-one-third no-padding">' +
                 '<div class="form-group list-item">' +
-                  '<label class="form-label" for="field-x">' +
+                  '<label class="form-label" for="reg_number_x">' +
                     'Registration number' +
                   '</label>' +
-                  '<input type="text" class="form-control" id="field-x" name="field-x">' +
+                  '<input type="text" class="form-control" id="reg_number_x" name="reg_number_x">' +
                 '</div>' +
               '</div>' +
               '<div class="column-one-third no-padding">' +
                 '<div class="form-group list-item">' +
-                  '<label class="form-label" for="field-x">' +
+                  '<label class="form-label" for="weight_x">' +
                     'Weight when loaded' +
                   '</label>' +
-                  '<input type="text" class="form-control" id="field-x" name="field-x">' +
+                  '<input type="text" class="form-control" id="weight_x" name="weight_x">' +
                 '</div>' +
               '</div>' +
               '<div class="column-one-third no-padding">' +
@@ -202,9 +202,9 @@ $(document).ready(function() {
 
     function sortFields() {
       var listCounter = 1;
-      var inputCounter = 1;
 
       $(document).find('.list-item-wrapper').each(function () {
+        console.log(this)
         $(this).find('h2').text('Vehicle ' + listCounter);
 
         if ($(this).find('.remove-list-item').length === 0) {
@@ -213,16 +213,10 @@ $(document).ready(function() {
           $(this).find('.remove-list-item').attr('id', 'remove-item-' + listCounter);
         }
 
-        $(this).find('.list-item').children('label').each(function () {
-          $(this).attr('for', 'field-' + inputCounter);
-          inputCounter++;
-        });
-
-        $(this).find('.list-item').children('input').each(function () {
-          var labelNo = $(this).parent().find('label').attr('for').split('-').pop();
-          $(this).attr('id', 'field-' + labelNo);
-          $(this).attr('name', 'field-' + labelNo);
-        });
+        $(this).find('label[for^=reg_number_]').attr('for', 'reg_number_' + listCounter);
+        $(this).find('input[id^=reg_number_]').attr('id', 'reg_number_' + listCounter).attr('name', 'reg_number_' + listCounter);
+        $(this).find('label[for^=weight_]').attr('for', 'weight_' + listCounter);
+        $(this).find('input[id^=weight_]').attr('id', 'weight_' + listCounter).attr('name', 'weight_' + listCounter);
 
         listCounter++;
       });
