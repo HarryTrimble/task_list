@@ -1,4 +1,5 @@
 {% extends "transport_goods/layout.html" %}
+
 {% block page_title %} Transport goods {% endblock %}
 
 {% block extra_css %}<link rel="stylesheet" href="/public/stylesheets/dm_list.css" />{% endblock %}
@@ -15,10 +16,8 @@
       
         <header class="page-heading page-heading-with-context page-heading-without-breadcrumb">
           
-          <!--
-          <p class="context">Application</p>
-          -->
-          <h1>Transport goods in lorries and vans</h1>
+
+        <h2 class="heading-large">Complete tasks to apply</h2>
 
         </header>
 
@@ -101,7 +100,7 @@
               <td class="task">
                 <a href="/transport_goods/task_list/transport_manager{{formQuery}}">
 
-                  <span class="task-name-no-margin"> Become a transport manager</span>
+                  <span class="task-name-no-margin"> Hire or train transport manager</span>
                 </a>
               </td>
               <td class="numeric" id="task-status">
