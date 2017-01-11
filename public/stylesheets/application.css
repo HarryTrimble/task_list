@@ -2272,7 +2272,7 @@ input[type=number] {
   display: inline-block;
   vertical-align: top;
   margin: 0 0 0 0;
-  padding: 2px 5px 0;
+  padding: 3px 6px 0;
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
   line-height: 1.25;
@@ -2280,9 +2280,26 @@ input[type=number] {
   text-transform: none;
   letter-spacing: 1px;
   text-decoration: none;
-  color: #0B0C0C;
+  color: #FFFFFF;
+  background-color: #28a197;
+}
+
+.task-started {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 0 0 0;
+  padding: 2px 5px 0;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 700;
+  text-transform: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #28a197;
   background-color: #FFFFFF;
-  border: 3px solid #0B0C0C;
+  border: 3px solid #28a197;
 }
 
 .task-name-no-margin {
