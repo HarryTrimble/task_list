@@ -10,7 +10,7 @@
   {% include "includes/phase_banner_beta.html" %}
 
   <h1 class="heading-large">
-    Check your answers for this section
+    Check your answers for this task
   </h1>
 
   <table class="check-your-answers">
@@ -48,7 +48,13 @@
   <br>
 
   <div class="form-group">
-    <a href="/transport_goods/task_list/give_public_notice/reason{{formQuery}}" class="button">Continue to next section</a>
+    <a href="/transport_goods/task_list/give_public_notice/reason{{formQuery}}" class="button">Continue to next task:  
+              {% if data.transport_manager %}
+                hire or train transport manager
+              {% else %}
+                tell the public about your application
+              {% endif %}
+    </a>
   </div>
 
   <a href="/transport_goods/task_list{{formQuery}}">Return to task list</a>
