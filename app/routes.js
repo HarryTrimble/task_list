@@ -1351,9 +1351,9 @@ router.get('/transport_goods/task_list/prove_money/reason', function (req, res) 
   console.log("uploaded_document");
 
   // get the answer from the query string (eg. ?over18="yes")
-  var uploaded_document = req.query.uploaded_document;
+  var banned_director = req.query.banned_director;
 
-  if (uploaded_document){
+  if (banned_director){
 
     // if user IS related to child
     res.redirect("/transport_goods/task_list/prove_money/check_your_answers" + res.locals.formQuery);
@@ -1524,7 +1524,7 @@ router.get('/transport_goods/save_and_return/email', function (req, res) {
   if (wants_save_and_return == "no" ){
 
     // if user IS related to child
-    res.redirect("/transport_goods/task_list/check_before_you_start/check_your_answers" + res.locals.formQuery);
+    res.redirect("/transport_goods/task_list/" + res.locals.formQuery);
 
   } else {
 
