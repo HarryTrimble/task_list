@@ -13,12 +13,14 @@
             <br>
             <br>
 
-              <p class="lede">Total time to apply:</p>
+              <p class="lede">Total time to wait after applying:</p>
 
               <div class="data">
                 <!-- 20-25 -->
                 <h2 class="bold-xxlarge">9 weeks</h2>
-                <p class="bold-xsmall">plus time train or hire a transport manager</p>
+                {% if data.transport_manager=="no" %}
+                  <p class="bold-xsmall">plus time train or hire a transport manager</p>
+                {% endif %}
               </div>
 
             <input type="hidden" name="check_before_you_start" value="completed">
