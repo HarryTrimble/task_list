@@ -86,6 +86,20 @@
     </thead>
     <tbody>
 
+          <!-- Your contact details -->
+          <tr>
+            <td class="task">
+              <a href="/transport_goods/task_list/contact_details{{formQuery}}">
+                <span class="task-name"> Your contact details</span>
+              </a>
+            </td>
+            <td class="numeric" id="task-status">
+              {% if data.contact_by %}
+                {% include "includes/task_status_finished.html" %}
+              {% endif %}
+            </td>
+          </tr>
+
           <!-- Become a transport manager -->
           {% if data.transport_manager=="no" %}
             <tr>
@@ -173,20 +187,6 @@
             </td>
           </tr>
 
-          <!-- Your contact details -->
-          <tr>
-            <td class="task">
-              <a href="/transport_goods/task_list/contact_details{{formQuery}}">
-                <span class="task-name"> Your contact details</span>
-              </a>
-            </td>
-            <td class="numeric" id="task-status">
-              {% if data.contact_by %}
-                {% include "includes/task_status_finished.html" %}
-              {% endif %}
-            </td>
-          </tr>
-
     </tbody>
   </table>
 
@@ -220,32 +220,10 @@
             </td>
           </tr>
       
-    </tbody>
-  </table>
-
-<br>
-  <br>
-
-  <table id="table-of-tasks">
-  
-    <thead>
-      <tr>
-        <th scope="col" id="col-task">
-          <span class="task-group">  
-            <span class="group-number" id="task-number"></span>
-              After you apply
-          </span>
-        </th>
-        <th class="numeric" id="task-status" scope="col" id="col-status"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-
           <tr>
             <td class="task">
               <a href="#">
-                <span class="task-name"> Wait for decision</span>
+                <span class="task-name"> Wait for a decision</span>
               </a>
             </td>
             <td class="numeric" id="task-status">
@@ -258,7 +236,7 @@
           <tr>
             <td class="task">
               <a href="#">
-                <span class="task-name"> Get licence certificate</span>
+                <span class="task-name"> Get vehicle certificates</span>
               </a>
             </td>
             <td class="numeric" id="task-status">
