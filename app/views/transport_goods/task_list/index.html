@@ -8,46 +8,32 @@
 <main id="content" role="main">
   {% include "includes/phase_banner_beta.html" %}
 
-   <div id="">
-      
-  <div class="grid-row">
-
-    <div class="column-two-thirds">
-      
-        <header class="page-heading page-heading-with-context page-heading-without-breadcrumb">
-          
-
-        <h2 class="heading-large">Complete tasks to apply</h2>
-
-        </header>
-
-<!--  <p class="">Do the following tasks if you want to transport goods:</p> -->
-      
-
-    {{formData | safe}}
-
-    </div>
-
-  </div>
-
   <div class="grid-row">
 
     <div class="column-three-quarters">  
 
-      <table>
-        <thead>
-          <tr>
-            <th scope="col" id="col-task"></th>
-            <th class="numeric" id="task-status" scope="col" id="col-status"></th>
-          </tr>
-        </thead>
-        <tbody>
+<br>
+<br>
+
+  <table id="table-of-tasks">
+
+    <thead>
+      <tr>
+        <th scope="col" id="col-task">
+          <span class="task-group">  
+            <span class="group-number" id="task-number"></span>
+              Check before you start
+          </span>
+        <th class="numeric" id="task-status" scope="col" id="col-status"><span type="hidden" class="visually-hidden">task status</span></th>
+      </tr>
+    </thead>
+    <tbody>
 
           <!-- Check before you start -->
           <tr id="check_before_you_start">
-            <td class="task">
+            <td class="task" style="padding-right:10px">
               <a href="/transport_goods/task_list/check_before_you_start/reason{{formQuery}}">
-                <span class="task-name-no-margin"> 
+                <span class="task-name"> 
                   Check eligibility, cost and time
                 </span>
                 <!--
@@ -69,7 +55,7 @@
           <tr id="read_rules">
             <td class="task">
               <a href="/transport_goods/task_list/read_rules{{formQuery}}">
-                <span class="task-name-no-margin"> Read the rules</span>
+                <span class="task-name"> Read the rules</span>
               </a>
             </td>
             <td class="numeric" id="task-status">
@@ -79,22 +65,26 @@
             </td>
           </tr>
 
-          <!-- Apply for interim licence -->
-          {% if data.need_interim_licence=="no" %}
-            <tr>
-              <td class="task">
-                <a href="/transport_goods/task_list/transport_manager{{formQuery}}">
+    </tbody>
+  </table>
 
-                  <span class="task-name-no-margin"> Apply for interim licence</span>
-                </a>
-              </td>
-              <td class="numeric" id="task-status">
-                {% if data.interim_licence=="complete" %}
-                  {% include "includes/task_status_finished.html" %}
-                {% endif %}
-              </td>
-            </tr>
-          {% endif %}
+  <br>
+  <br>
+
+<table id="table-of-tasks">
+
+    <thead>
+      <tr>
+        <th scope="col" id="col-task">
+          <span class="task-group">  
+            <span class="group-number" id="task-number"></span>
+              Prepare to apply
+          </span>
+        </th>
+        <th class="numeric" id="task-status" scope="col" id="col-status"></th>
+      </tr>
+    </thead>
+    <tbody>
 
           <!-- Become a transport manager -->
           {% if data.transport_manager=="no" %}
@@ -102,7 +92,7 @@
               <td class="task">
                 <a href="/transport_goods/task_list/transport_manager{{formQuery}}">
 
-                  <span class="task-name-no-margin"> Hire or train transport manager</span>
+                  <span class="task-name"> Hire or train transport manager</span>
                 </a>
               </td>
               <td class="numeric" id="task-status">
@@ -117,7 +107,7 @@
           <tr>
             <td class="task">
               <a href="/transport_goods/task_list/give_public_notice/reason{{formQuery}}">
-                <span class="task-name-no-margin"> Tell the public about your application</span>
+                <span class="task-name"> Tell the public about your application</span>
               </a>
             </td>
             <td class="numeric" id="task-status">
@@ -131,7 +121,7 @@
           <tr>
             <td class="task">
               <a href="/transport_goods/task_list/describe_vehicles/has_vehicles_already{{formQuery}}">
-                <span class="task-name-no-margin"> List your vehicles</span>
+                <span class="task-name"> List your vehicles</span>
               </a>
             </td>
             <td class="numeric" id="task-status">
@@ -145,7 +135,7 @@
           <tr>
             <td class="task">
               <a href="/transport_goods/task_list/maintain_vehicles/reason{{formQuery}}">
-                <span class="task-name-no-margin"> Look after your vehicles</span>
+                <span class="task-name"> Look after your vehicles</span>
               </a>
             </td>
             <td class="numeric" id="task-status">
@@ -159,7 +149,7 @@
           <tr>
             <td class="task">
               <a href="/transport_goods/task_list/prove_money/reason{{formQuery}}">
-                <span class="task-name-no-margin"> Prove you have enough money</span>
+                <span class="task-name"> Prove you have enough money</span>
               </a>
             </td>
             <td class="numeric" id="task-status">
@@ -173,7 +163,7 @@
           <tr>
             <td class="task">
               <a href="/transport_goods/task_list/convictions_penalties/reason{{formQuery}}">
-                <span class="task-name-no-margin"> List convictions</span>
+                <span class="task-name"> List convictions</span>
               </a>
             </td>
             <td class="numeric" id="task-status">
@@ -187,7 +177,7 @@
           <tr>
             <td class="task">
               <a href="/transport_goods/task_list/contact_details{{formQuery}}">
-                <span class="task-name-no-margin"> Your contact details</span>
+                <span class="task-name"> Your contact details</span>
               </a>
             </td>
             <td class="numeric" id="task-status">
@@ -197,25 +187,30 @@
             </td>
           </tr>
 
-          <!-- Pay application fee
-          <tr>
-            <td class="task">
-              <a href="https://payment-prototype.herokuapp.com/tgl/tgl-choose-payment">
-                <span class="task-name-no-margin"> Pay application fee</span>
-              </a>
-            </td>
-            <td class="numeric" id="task-status">
-              {% if data.pay_application_fee=="complete" %}
-                {% include "includes/task_status_finished.html" %}
-              {% endif %}
-            </td>
-          </tr>
-          -->
+    </tbody>
+  </table>
+
+  <br>
+  <br>
+
+  <table id="table-of-tasks">
+    <thead>
+      <tr>
+        <th scope="col" id="col-task">
+          <span class="task-group">  
+            <span class="group-number" id="task-number"></span>
+              Apply
+          </span>
+        </th>
+        <th class="numeric" id="task-status" scope="col" id="col-status"></th>
+      </tr>
+    </thead>
+    <tbody>
 
           <tr>
             <td class="task">
               <a href="/transport_goods/task_list/check_and_send{{formQuery}}">
-                <span class="task-name-no-margin"> Submit and pay</span>
+                <span class="task-name"> Submit and pay</span>
               </a>
             </td>
             <td class="numeric" id="task-status">
@@ -224,11 +219,61 @@
               {% endif %}
             </td>
           </tr>
+      
+    </tbody>
+  </table>
 
-        </tbody>
-      </table>
+<br>
+  <br>
+
+  <table id="table-of-tasks">
+  
+    <thead>
+      <tr>
+        <th scope="col" id="col-task">
+          <span class="task-group">  
+            <span class="group-number" id="task-number"></span>
+              After you apply
+          </span>
+        </th>
+        <th class="numeric" id="task-status" scope="col" id="col-status"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+          <tr>
+            <td class="task">
+              <a href="#">
+                <span class="task-name"> Wait for decision</span>
+              </a>
+            </td>
+            <td class="numeric" id="task-status">
+              {% if data.value %}
+                {% include "includes/task_status_finished.html" %}
+              {% endif %}
+            </td>
+          </tr>
+
+          <tr>
+            <td class="task">
+              <a href="#">
+                <span class="task-name"> Get licence certificate</span>
+              </a>
+            </td>
+            <td class="numeric" id="task-status">
+              {% if data.value %}
+                {% include "includes/task_status_finished.html" %}
+              {% endif %}
+            </td>
+          </tr>
+
+    </tbody>
+  </table>
 
     </div>
+
+
 
 <!--     <div class="column-quarter">
 
