@@ -9,21 +9,11 @@
 
             {{formData | safe}}
 
-            <br>
-            <br>
+            <h1 class="heading-large">
+              Wait for decision
+            </h1>
 
-
-              <p class="lede">Money you will need for licence:</p>
-
-<!--               <div class="data">
-                <h2 class="bold-xxlarge">
-                  £{{application_cost}}
-                  <input type="hidden" name="application_cost" value="{{application_cost}}" />
-                </h2>
-                {% if data.transport_manager=="no" %}
-                  <p class="bold-xsmall">plus cost train or hire a transport manager</p>         
-                {% endif %}
-              </div> -->
+              
 
               <table>
                 <thead>
@@ -34,43 +24,23 @@
                 </thead>
                 <tbody>
 
-                  {% if data.transport_manager=="no" %}
-
-                    <tr>
-                     <td>Train transport manager:</td>
-                      <td class="numeric">varies by provider</td>
-                    </tr>
-                  
-                  {% endif %}
-
                   <tr>
-                   <td>Application fee:</td>
-                    <td class="numeric">£257</td>
+                   <td>Application status:</td>
+                    <td class="numeric"><span class="bold">submitted</span></td>
                   </tr>
 
                   <tr>
-                   <td>Issue of licence:</td>
-                    <td class="numeric">£401</td>
-                  </tr>
-
-                  <tr>
-                    <td>Maintenance (5 years) for <span class="bold">{{ data.how_many_vehicles }} vehicles</span>:</td>
-                    <td class="numeric">
-                      £{{maintenance_costs}}
-                      <input type="hidden" name="maintenance_costs" value="{{maintenance_costs}}" />
-                    </td>
+                   <td>Time left to wait:</td>
+                    <td class="numeric"><span class="bold">7 weeks</span></td>
                   </tr>
 
                 </tbody>
               </table>
 
             <br>
-
             <br>
 
-            <div class="form-group">
-              <input type="submit" class="button" value="Continue"/>
-            </div>
+            <a href="/transport_goods/task_list{{formQuery}}">Return to task list</a>
 
       </form>
 

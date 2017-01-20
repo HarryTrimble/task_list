@@ -5,7 +5,7 @@
   <div class="grid-row">
     <div class="column-two-thirds">
 
-      <form method="get" action="/transport_goods/task_list" class="form">
+      <form method="get" action="/transport_goods/task_list#check_before_you_start" class="form">
 
       {{formData | safe}}
 
@@ -13,13 +13,13 @@
 
           <h1 class="heading-large">Check your mobile phone</h1>
 
-          <p>You'll get a code sent to your <span class="bold">{{ data.user_phone }}</span> that allows you to come back and finish your application at any time.</p>
+          <p>You'll get a code sent to your <span class="bold">{{ data.user_phone_checked }}</span> that allows you to come back and finish your application at any time.</p>
 
         {% else %}
 
           <h1 class="heading-large">Check your email</h1>
 
-          <p>You'll get a link sent to <span class="bold">{{ data.user_email }}</span> that allows you to come back and finish your application at any time.</p>
+          <p>You'll get a link sent to <span class="bold">{{ data.user_email_checked }}</span> that allows you to come back and finish your application at any time.</p>
 
         {% endif %}
 

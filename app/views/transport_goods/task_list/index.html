@@ -51,11 +51,11 @@
             </td>
           </tr>
 
-          <!-- Read rules -->
+          <!-- Check rules -->
           <tr id="read_rules">
             <td class="task">
               <a href="/transport_goods/task_list/read_rules{{formQuery}}">
-                <span class="task-name"> Read the rules</span>
+                <span class="task-name"> Read rules</span>
               </a>
             </td>
             <td class="numeric" id="task-status">
@@ -86,23 +86,9 @@
     </thead>
     <tbody>
 
-          <!-- Your contact details -->
-          <tr>
-            <td class="task">
-              <a href="/transport_goods/task_list/contact_details{{formQuery}}">
-                <span class="task-name"> Your contact details</span>
-              </a>
-            </td>
-            <td class="numeric" id="task-status">
-              {% if data.contact_by %}
-                {% include "includes/task_status_finished.html" %}
-              {% endif %}
-            </td>
-          </tr>
-
           <!-- Become a transport manager -->
           {% if data.transport_manager=="no" %}
-            <tr>
+            <tr id="transport_manager">
               <td class="task">
                 <a href="/transport_goods/task_list/transport_manager{{formQuery}}">
 
@@ -118,7 +104,7 @@
           {% endif %}
 
           <!-- Give public notice -->
-          <tr>
+          <tr id="given_public_notice">
             <td class="task">
               <a href="/transport_goods/task_list/give_public_notice/reason{{formQuery}}">
                 <span class="task-name"> Tell the public about your application</span>
@@ -132,7 +118,7 @@
           </tr>
 
           <!-- Enter bat details -->
-          <tr>
+          <tr id="describe_vehicles">
             <td class="task">
               <a href="/transport_goods/task_list/describe_vehicles/has_vehicles_already{{formQuery}}">
                 <span class="task-name"> List your vehicles</span>
@@ -146,7 +132,7 @@
           </tr>
 
           <!-- Maintain your vehicles -->
-          <tr>
+          <tr id="maintain_vehicles">
             <td class="task">
               <a href="/transport_goods/task_list/maintain_vehicles/reason{{formQuery}}">
                 <span class="task-name"> Look after your vehicles</span>
@@ -160,7 +146,7 @@
           </tr>
 
           <!-- Prove you have enough money -->
-          <tr>
+          <tr id="prove_money">
             <td class="task">
               <a href="/transport_goods/task_list/prove_money/reason{{formQuery}}">
                 <span class="task-name"> Prove you have enough money</span>
@@ -174,7 +160,7 @@
           </tr>
 
           <!-- Declare convictions and penalties -->
-          <tr>
+          <tr id="convictions_penalties">
             <td class="task">
               <a href="/transport_goods/task_list/convictions_penalties/reason{{formQuery}}">
                 <span class="task-name"> List convictions</span>
@@ -182,6 +168,20 @@
             </td>
             <td class="numeric" id="task-status">
               {% if data.compensation_order %}
+                {% include "includes/task_status_finished.html" %}
+              {% endif %}
+            </td>
+          </tr>
+
+          <!-- Your contact details -->
+          <tr id="contact_details">
+            <td class="task">
+              <a href="/transport_goods/task_list/contact_details{{formQuery}}">
+                <span class="task-name"> Your contact details</span>
+              </a>
+            </td>
+            <td class="numeric" id="task-status">
+              {% if data.contact_by %}
                 {% include "includes/task_status_finished.html" %}
               {% endif %}
             </td>
@@ -207,7 +207,7 @@
     </thead>
     <tbody>
 
-          <tr>
+          <tr id="check_and_send">
             <td class="task">
               <a href="/transport_goods/task_list/check_and_send{{formQuery}}">
                 <span class="task-name"> Submit and pay</span>
@@ -220,9 +220,9 @@
             </td>
           </tr>
       
-          <tr>
+          <tr id="wait_for_decision">
             <td class="task">
-              <a href="#">
+              <a href="/transport_goods/task_list/wait_for_decision{{formQuery}}">
                 <span class="task-name"> Wait for a decision</span>
               </a>
             </td>
@@ -233,7 +233,7 @@
             </td>
           </tr>
 
-          <tr>
+          <tr id="get_licence">
             <td class="task">
               <a href="#">
                 <span class="task-name"> Get vehicle certificates</span>

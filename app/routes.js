@@ -1524,7 +1524,7 @@ router.get('/transport_goods/save_and_return/email', function (req, res) {
   if (wants_save_and_return == "no" ){
 
     // if user IS related to child
-    res.redirect("/transport_goods/task_list/" + res.locals.formQuery);
+    res.redirect("/transport_goods/task_list" + res.locals.formQuery);
 
   } else {
 
