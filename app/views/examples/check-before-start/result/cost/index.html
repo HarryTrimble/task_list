@@ -4,26 +4,11 @@
   <div class="grid-row">
     <div class="column-two-thirds">
 
-            <form method="get" action="/examples/check-before-start/result/time" class="form">
+            <form method="get" action="/transport_goods/task_list/check_before_you_start/result/time" class="form">
 
             {{formData | safe}}
 
-            <br>
-            <br>
-
-
-              <p class="lede">Total cost for your licence:</p>
-
-              <div class="data">
-                <h2 class="bold-xxlarge">
-                  £{{application_cost}}
-                </h2>
-                {% if data.transport_manager=="no" %}
-                  <p class="bold-xsmall">plus cost train or hire a transport manager</p>         
-                {% endif %}
-              </div>
-
-              <br>
+              <h2 class="heading-large">Money you will need for licence:</h2>
 
               <table>
                 <thead>
@@ -34,28 +19,22 @@
                 </thead>
                 <tbody>
 
-                  {% if data.transport_manager=="no" %}
-
-                    <tr>
-                     <td>Train transport manager:</td>
-                      <td class="numeric">varies by provider</td>
-                    </tr>
-                  
-                  {% endif %}
-
-                  <tr>
-                    <td>Maintenance (5 years) for <span class="bold">{{ data.how_many_vehicles }} vehicles:</span></td>
-                    <td class="numeric">£{{maintenance_costs}}</td>
-                  </tr>
-
                   <tr>
                    <td>Application fee:</td>
                     <td class="numeric">£257</td>
                   </tr>
 
                   <tr>
-                   <td>Issue of a licence:</td>
+                   <td>Issue of licence:</td>
                     <td class="numeric">£401</td>
+                  </tr>
+
+                  <tr>
+                    <td>Maintenance (5 years) for <span class="bold">{{ data.how_many_vehicles }} vehicles</span>:</td>
+                    <td class="numeric">
+                      £{{maintenance_costs}}
+                      <input type="hidden" name="maintenance_costs" value="{{maintenance_costs}}" />
+                    </td>
                   </tr>
 
                 </tbody>

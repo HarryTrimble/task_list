@@ -40,40 +40,12 @@
           </a>
         </td>
       </tr>
-      {% if data.transport_manager=="no" %}
-        <tr>
-          <td>
-            Cost to train transport manager:
-          </td>
-          <td>
-            varies by provider
-          </td>
-          <td class="change-answer">
-            <a href="#">
-              <span class="visuallyhidden">Name</span>
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Time to train transport manager:
-          </td>
-          <td>
-            varies by provider
-          </td>
-          <td class="change-answer">
-            <a href="#">
-              <span class="visuallyhidden">Name</span>
-            </a>
-          </td>
-        </tr>
-      {% endif %}
       <tr>
         <td>
-          Maintenance costs (5 years) for <span class="bold">{{ data.how_many_vehicles }} vehicles</span>:
+          Maintenance costs (5 years) for <span class="bold">4 vehicles</span>:
         </td>
         <td>
-          £{{ data.maintenance_costs }}
+          £17,750
         </td>
         <td class="change-answer">
           <a href="#">
@@ -123,13 +95,13 @@
     </tbody>
   </table>
 
-  <table class="check-your-answers">
+   <table class="check-your-answers">
 
     <thead>
       <tr>
         <th colspan="2">
           <h2 class="heading-medium">
-            Your answers
+            Check eligibility, cost and time
           </h2>
         </th>
         <th>
@@ -140,10 +112,10 @@
     <tbody>
       <tr>
         <td>
-          Weight when empty:
+          Vehicle weight when empty:
         </td>
         <td>
-          {{ data.weight_empty }}
+          1,525 kg or more
         </td>
         <td class="change-answer">
           <a href="#">
@@ -151,27 +123,12 @@
           </a>
         </td>
       </tr>
-      {% if data.weight_empty=="less than 1,525 kg" %}
-        <tr>
-          <td>
-            Weight when loaded:
-          </td>
-          <td>
-            {{ data.weight_loaded }}
-          </td>
-          <td class="change-answer">
-            <a href="#">
-              Change <span class="visuallyhidden">Name</span>
-            </a>
-          </td>
-        </tr>
-      {% endif %}
       <tr>
         <td>
           Operating exempt vehicles:
         </td>
         <td>
-          {{ data.exempt_vehicles }}
+          No
         </td>
         <td class="change-answer">
           <a href="#">
@@ -184,7 +141,7 @@
           Carrying passengers:
         </td>
         <td>
-          {{ data.carrying_passengers }}
+          No
         </td>
         <td class="change-answer">
           <a href="#">
@@ -197,7 +154,7 @@
           Trade plates:
         </td>
         <td>
-          {{ data.trade_plates }}
+          No
         </td>
         <td class="change-answer">
           <a href="#">
@@ -210,7 +167,7 @@
           Carrying passengers:
         </td>
         <td>
-          {{ data.carrying_passengers }}
+          No
         </td>
         <td class="change-answer">
           <a href="#">
@@ -223,7 +180,7 @@
           Trade plates:
         </td>
         <td>
-          {{ data.trade_plates }}
+          No
         </td>
         <td class="change-answer">
           <a href="#">
@@ -236,7 +193,7 @@
           Less than 6 miles a week:
         </td>
         <td>
-          {{ data.six_miles_a_week }}
+          No
         </td>
         <td class="change-answer">
           <a href="#">
@@ -244,42 +201,12 @@
           </a>
         </td>
       </tr>
-      {% if data.six_miles_a_week=="yes" %}
-        <tr>
-          <td>
-            Digging and demolition vehicles:
-          </td>
-          <td>
-            {{ data.digging_demolition }}
-          </td>
-          <td class="change-answer">
-            <a href="#">
-              Change <span class="visuallyhidden">Name</span>
-            </a>
-          </td>
-        </tr>
-      {% endif %}
-      {% if data.digging_demolition=="no" %}
-        <tr>
-          <td>
-            Own private parking:
-          </td>
-          <td>
-            {{ data.same_owner }}
-          </td>
-          <td class="change-answer">
-            <a href="#">
-              Change <span class="visuallyhidden">Name</span>
-            </a>
-          </td>
-        </tr>
-      {% endif %}
       </tr> 
         <td>
           Transporting just your goods:
         </td>
         <td>
-          {{ data.just_your_goods }}
+          Yes
         </td>
         <td class="change-answer">
           <a href="#">
@@ -287,27 +214,12 @@
           </a>
         </td>
       </tr>
-      {% if data.just_your_goods=="no" %}
-        </tr> 
-          <td>
-            Transporting outside UK:
-          </td>
-          <td>
-            {{ data.outside_uk }}
-          </td>
-          <td class="change-answer">
-            <a href="#">
-              Change <span class="visuallyhidden">Name</span>
-            </a>
-          </td>
-        </tr>
-      {% endif %}
       </tr> 
         <td>
           Hired transport manager:
         </td>
         <td>
-          {{ data.transport_manager }}
+          Yes
         </td>
         <td class="change-answer">
           <a href="#">
