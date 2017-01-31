@@ -1,0 +1,328 @@
+{% extends "transport_goods/layout.html" %}
+
+{% block page_title %}
+  Check your answers
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <h1 class="heading-large">
+    Check your answers for this task
+  </h1>
+
+ <table class="check-your-answers">
+
+    <thead>
+      <tr>
+        <th colspan="2">
+          <h2 class="heading-medium">
+            Results
+          </h2>
+        </th>
+        <th>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>
+          Eligible:
+        </td>
+        <td>
+          yes
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+      {% if data.transport_manager=="no" %}
+        <tr>
+          <td>
+            Cost to train transport manager:
+          </td>
+          <td>
+            varies by provider
+          </td>
+          <td class="change-answer">
+            <a href="#">
+              <span class="visuallyhidden">Name</span>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Time to train transport manager:
+          </td>
+          <td>
+            varies by provider
+          </td>
+          <td class="change-answer">
+            <a href="#">
+              <span class="visuallyhidden">Name</span>
+            </a>
+          </td>
+        </tr>
+      {% endif %}
+      <tr>
+        <td>
+          Maintenance costs (5 years) for <span class="bold">{{ data.how_many_vehicles }} vehicles</span>:
+        </td>
+        <td>
+          £{{ data.maintenance_costs }}
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Application fee:
+        </td>
+        <td>
+          £257
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Issue of licence: 
+        </td>
+        <td>
+          £401
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Time to wait:
+        </td>
+        <td>
+          9 weeks
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="check-your-answers">
+
+    <thead>
+      <tr>
+        <th colspan="2">
+          <h2 class="heading-medium">
+            Your answers
+          </h2>
+        </th>
+        <th>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>
+          Weight when empty:
+        </td>
+        <td>
+          {{ data.weight_empty }}
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+      {% if data.weight_empty=="less than 1,525 kg" %}
+        <tr>
+          <td>
+            Weight when loaded:
+          </td>
+          <td>
+            {{ data.weight_loaded }}
+          </td>
+          <td class="change-answer">
+            <a href="#">
+              Change <span class="visuallyhidden">Name</span>
+            </a>
+          </td>
+        </tr>
+      {% endif %}
+      <tr>
+        <td>
+          Operating exempt vehicles:
+        </td>
+        <td>
+          {{ data.exempt_vehicles }}
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Carrying passengers:
+        </td>
+        <td>
+          {{ data.carrying_passengers }}
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Trade plates:
+        </td>
+        <td>
+          {{ data.trade_plates }}
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Carrying passengers:
+        </td>
+        <td>
+          {{ data.carrying_passengers }}
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Trade plates:
+        </td>
+        <td>
+          {{ data.trade_plates }}
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Less than 6 miles a week:
+        </td>
+        <td>
+          {{ data.six_miles_a_week }}
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+      {% if data.six_miles_a_week=="yes" %}
+        <tr>
+          <td>
+            Digging and demolition vehicles:
+          </td>
+          <td>
+            {{ data.digging_demolition }}
+          </td>
+          <td class="change-answer">
+            <a href="#">
+              Change <span class="visuallyhidden">Name</span>
+            </a>
+          </td>
+        </tr>
+      {% endif %}
+      {% if data.digging_demolition=="no" %}
+        <tr>
+          <td>
+            Own private parking:
+          </td>
+          <td>
+            {{ data.same_owner }}
+          </td>
+          <td class="change-answer">
+            <a href="#">
+              Change <span class="visuallyhidden">Name</span>
+            </a>
+          </td>
+        </tr>
+      {% endif %}
+      </tr> 
+        <td>
+          Transporting just your goods:
+        </td>
+        <td>
+          {{ data.just_your_goods }}
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+      {% if data.just_your_goods=="no" %}
+        </tr> 
+          <td>
+            Transporting outside UK:
+          </td>
+          <td>
+            {{ data.outside_uk }}
+          </td>
+          <td class="change-answer">
+            <a href="#">
+              Change <span class="visuallyhidden">Name</span>
+            </a>
+          </td>
+        </tr>
+      {% endif %}
+      </tr> 
+        <td>
+          Hired transport manager:
+        </td>
+        <td>
+          {{ data.transport_manager }}
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Name</span>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+  <br>
+
+  <a href="/examples/task-list">Return to task list</a>
+
+</main>
+
+{% endblock %}

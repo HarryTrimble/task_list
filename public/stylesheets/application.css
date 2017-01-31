@@ -2239,10 +2239,6 @@ input[type=number] {
   color: #005ea5;
 }
 
-.task a {
-  text-decoration: none;
-}
-
 .task-name {
   font-size: 19px;
   font-weight: 400;
