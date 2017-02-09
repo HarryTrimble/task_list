@@ -12,22 +12,30 @@ Published guidance:
 
 - [Naming your service](https://www.gov.uk/service-manual/design/naming-your-service)
 
-## Check before you start (alpha)
+## Check eligibility, cost and time
 
 Help users understand whether they can and should use a service.
+
+Example:
+
+- [Check eligibility, cost and time](https://task-list-govuk.herokuapp.com/examples/check-before-start)
 
 Prototypes:
 
 - [Check if you can become a childminder](https://task-list-govuk.herokuapp.com/start-page-check)
 - [Check before you learn to drive](https://task-list-govuk.herokuapp.com/driving/start-page-check)
 
-## Task list (alpha)
+## Task list
 
 Show users all the tasks involved to do something.
 
+Example:
+
+- [task list](https://task-list-govuk.herokuapp.com/examples/task-list)
+
 Prototypes:
 
-- [Become a childminder](https://task-list-govuk.herokuapp.com/task_list)
+- [Become a childminder](https://task-list-govuk.herokuapp.com/childminder/task_list)
 - [Learn to drive](https://task-list-govuk.herokuapp.com/driving/task_list/)
 - [Transport goods](https://task-list-govuk.herokuapp.com/transport_goods/start-page)
 - [Move bats](https://task-list-govuk.herokuapp.com/bats/task_list)
